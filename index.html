@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPOTEVENT - Conciergerie Billetterie Événements</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --dark-beige: #E6E6C7;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    background-color: #fff7ef;
+        }
+
+        /* Header fixe */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+    height: auto;
+    line-height: 1;
+            margin: 0 auto;
+        }
+
+        .logo {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.logo-text {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+        .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Menu déroulant */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+.dropdown-toggle:hover {
+    color: var(--gold);
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hamburger-line {
+    width: 18px;
+    height: 2.3px;
+    background-color: currentColor;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-beige);
+    color: var(--gold);
+}
+
+        /* Hero Section */
+        .hero {
+    height: 80vh;
+    background: #fff7ef;
+    background-image: url('concert-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 247, 239, 0.85);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+        .cta-button:hover {
+    background-color: var(--gold);
+    color: var(--black);
+    transform: translateY(-3px);
+}
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--black);
+        }
+
+        /* Section Présentation */
+        .presentation {
+            background-color: #fff7ef;
+            text-align: center;
+        }
+
+        .presentation-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        /* Section Vidéo */
+        .video-section {
+            background-color: #fff7ef;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--beige), var(--dark-beige));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+        }
+
+        /* Section Avis */
+        .reviews {
+            background-color: #fff7ef;
+        }
+
+        .reviews-carousel {
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+        }
+
+        .review-card {
+            background-color: var(--beige);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 0 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: absolute;
+            width: calc(100% - 2rem);
+            animation: slideReview 15s infinite;
+            opacity: 0;
+        }
+
+        .review-card:nth-child(1) { animation-delay: 0s; }
+        .review-card:nth-child(2) { animation-delay: 5s; }
+        .review-card:nth-child(3) { animation-delay: 10s; }
+
+        @keyframes slideReview {
+            0%, 20% { opacity: 0; transform: translateX(100%); }
+            25%, 70% { opacity: 1; transform: translateX(0); }
+            75%, 100% { opacity: 0; transform: translateX(-100%); }
+        }
+
+        .review-text {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: bold;
+            color: var(--black);
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Section Actualités */
+        .news {
+            background-color: #fff7ef;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .news-source {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* Bulle de contact flottante */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #000000;
+            color: var(--white);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover {
+    transform: scale(1.1);
+    background: #333333;
+}
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .contact-message {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.contact-message p {
+    margin: 0;
+    color: var(--black);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: var(--black);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: var(--light-beige);
+        }
+
+        .contact-option:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-option i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .contact-bubble {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .contact-toggle {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Animation smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bulle de contact */
+.contact-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.contact-toggle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #000000;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.contact-options {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: none;
+    min-width: 280px;
+}
+
+.contact-options.active {
+    display: block;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.contact-option:hover {
+    background-color: #f0f0f0;
+}
+
+.contact-message {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.contact-message p {
+    margin: 0;
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-message p {
+    margin: 0;
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Carrousel d'actualités - 3 encadrés visibles */
+.news-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.news-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 166.66%; /* 5 slides visibles par 3 = 166.66% */
+}
+
+.news-slide {
+    width: 33.33%; /* 3 slides visibles = 33.33% chacune */
+    flex-shrink: 0;
+    padding: 0 1rem;
+}
+
+.news-slide .news-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.news-slide .news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-slide .news-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+    line-height: 1.3;
+}
+
+.news-slide p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #000000;
+}
+
+.news-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.news-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.news-indicator.active {
+    background-color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .news-carousel {
+        width: 500%; /* Sur mobile, 1 slide visible = 500% pour 5 slides */
+    }
+    
+    .news-slide {
+        width: 100%; /* 1 slide visible = 100% */
+    }
+    
+    .news-slide .news-card {
+        height: 200px;
+    }
+}
+
+/* Section Réseaux Sociaux */
+.social-section {
+    background-color: #fff7ef;
+    text-align: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-grid .social-card:nth-child(1),
+.social-grid .social-card:nth-child(2),
+.social-grid .social-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+.social-grid .social-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.social-grid .social-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.social-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-decoration: none;
+    color: var(--black);
+}
+
+.social-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-card.instagram .social-icon {
+    color: #E4405F;
+}
+
+.social-card.facebook .social-icon {
+    color: #1877F2;
+}
+
+.social-card.tiktok .social-icon {
+    color: #000000;
+}
+
+.social-card.linkedin .social-icon {
+    color: #0A66C2;
+}
+
+.social-card.twitter .social-icon {
+    color: #1DA1F2;
+}
+
+.social-card:hover .social-icon {
+    color: var(--gold);
+}
+
+.social-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.social-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive pour réseaux sociaux */
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .social-grid .social-card:nth-child(4),
+    .social-grid .social-card:nth-child(5) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .social-card {
+        padding: 1.5rem;
+    }
+    
+    .social-icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .social-grid .social-card:nth-child(4),
+    .social-grid .social-card:nth-child(5) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Section Mot du fondateur */
+.founder-section {
+    background-color: var(#fff7ef);
+    padding: 5rem 5%;
+}
+
+.founder-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.founder-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.founder-logo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 4px solid var(--gold);
+}
+
+.founder-logo img {
+    width: 100%;
+    height: auto;
+    max-width: 203px;
+    object-fit: contain;
+}
+
+.founder-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 4px solid var(--gold);
+}
+
+.founder-content {
+    text-align: left;
+}
+
+.founder-title {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.founder-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--black);
+    text-align: justify;
+}
+
+.founder-signature {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--gold);
+    text-align: right;
+}
+
+/* Responsive pour section fondateur */
+@media (max-width: 768px) {
+    .founder-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .founder-photo {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .founder-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .founder-text {
+        text-align: left;
+    }
+    
+    .founder-signature {
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+    <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+        <span class="logo-text">SPOTEVENT</span>
+    </a>
+    <ul class="nav-links">
+    <li class="dropdown">
+        <button class="dropdown-toggle">
+            <div class="hamburger-icon">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            Menu
+        </button>
+        <div class="dropdown-menu">
+    <a href="#video">Présentation</a>
+    <a href="#presentation">Mission</a>
+    <a href="#avis">Avis</a>
+    <a href="#offres">Nos offres</a>
+    <a href="#reseaux">Réseaux sociaux</a>
+    <a href="#fondateur">Mot du fondateur</a>
+</div>
+    </li>
+    <li><a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a></li>
+</ul>
+</nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Accédez à des événements complets !</h1>
+            <p>Transmettez-nous votre recherche et recevez un devis gratuitement</p>
+          <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+        </div>
+    </section>
+
+    <!-- Section Vidéo -->
+    <section id="video" class="video-section">
+    <div class="fade-in">
+        <h2 class="section-title">🎥 Découvrez SPOTEVENT en vidéo</h2>
+        <div class="video-container">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/B5W68XMHMMc" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+    <!-- Section Présentation -->
+    <section id="presentation" class="presentation">
+        <div class="fade-in">
+            <h2 class="section-title">🎯 Notre mission</h2>
+            <div class="presentation-content">
+                <p><strong>SPOTEVENT est une conciergerie spécialisée dans l'acquisition de places de concerts, événements sportifs et festivals à guichet fermé.</strong></p>
+                <br>
+                <p>Notre objectif est de vous permettre de vivre des moments inoubliables, même quand les billetteries officielles affichent complet, tout en garantissant un cadre légal, éthique et sécurisé.</p>
+                <p>Ce service sera désormais accessible à tous et plus uniquement à une clientèle privilégiée.</p>
+                <p>Toute demande de devis est gratuite.</p>
+                <br>
+                <p>⭐ + de 200 avis sur Google</p> 
+                </p>🎟️ + de 1 000 clients accompagnés</p>
+                <br>
+                <p>Avec SPOTEVENT, ne manquez plus jamais un événement qui vous tient à cœur !</p>
+                </div>
+                <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+            </section>
+
+    <!-- Section Avis -->
+    <section id="avis" class="reviews">
+        <div class="fade-in">
+            <h2 class="section-title">Ce que disent nos clients</h2>
+        <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-814c65f6-87ce-4d37-87e2-084fb255841c" data-elfsight-app-lazy></div>
+    </section>
+
+    <!-- Section Actualités -->
+<section id="offres" class="news">
+    <div class="fade-in">
+        <h2 class="section-title">Quelles sont les offres du moment ?</h2>
+        <div class="news-carousel-container">
+            <div class="news-carousel" id="newsCarousel">
+                <!-- Actualité 1 -->
+                <div class="news-slide">
+                    <div class="news-card">
+                        <div class="news-source">Concert</div>
+                        <h3 class="news-title">Lady Gaga à Paris et Lyon en 2025</h3>
+                        <p>Contactez-nous pour assister au concert de cette star internationale</p>
+                    </div>
+                </div>
+                
+                <!-- Actualité 2 -->
+                <div class="news-slide">
+                    <div class="news-card">
+                        <div class="news-source">Événements sportifs</div>
+                        <h3 class="news-title">Tournoi des VI Nations</h3>
+                        <p>De grands matchs vont avoir lieu en France donc ne les manquez pas !</p>
+                    </div>
+                </div>
+                
+                <!-- Actualité 3 -->
+                <div class="news-slide">
+                    <div class="news-card">
+                        <div class="news-source">Concert</div>
+                        <h3 class="news-title">Bad Bunny</h3>
+                        <p>Avez-vous pris vos places pour voir le phénomène portoricain ?</p>
+                    </div>
+                </div>
+                
+                <!-- Actualité 4 -->
+                <div class="news-slide">
+                    <div class="news-card">
+                        <div class="news-source">Concert</div>
+                        <h3 class="news-title">Linkin Park à Lyon en 2026</h3>
+                        <p>Quel retour et quel succès ! Ils débarquent au Groupama Stadium de Lyon !</p>
+                    </div>
+                </div>
+                
+                <!-- Actualité 5 -->
+                <div class="news-slide">
+                    <div class="news-card">
+                        <div class="news-source">Festival</div>
+                        <h3 class="news-title">Hellfest 2026</h3>
+                        <p>À peine la billetterie ouverte et c'est déjà complet ! Vous cherchez des Pass ?</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicateurs -->
+            <div class="news-indicators" id="newsIndicators"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Réseaux Sociaux -->
+<section id="reseaux" class="social-section">
+    <div class="fade-in">
+        <h2 class="section-title">📱 Suivez-nous sur nos réseaux sociaux</h2>
+        <div class="social-grid">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/spotevent.fr/" class="social-card instagram" target="_blank">
+                <i class="fab fa-instagram social-icon"></i>
+                <h3 class="social-name">Instagram</h3>
+                <p class="social-description">Découvrez nos dernières actualités et venez partager vos expériences !</p>
+            </a>
+            
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/maxime.houzard/" class="social-card facebook" target="_blank">
+                <i class="fab fa-facebook social-icon"></i>
+                <h3 class="social-name">Facebook</h3>
+                <p class="social-description">Rejoignez notre communauté et échangez avec les autres membres du groupe !</p>
+            </a>
+            
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@spotevent.fr" class="social-card tiktok" target="_blank">
+                <i class="fab fa-tiktok social-icon"></i>
+                <h3 class="social-name">TikTok</h3>
+                <p class="social-description">Venez découvrir nos dernières actualités en vidéo !</p>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/101880233/admin/dashboard/" class="social-card linkedin" target="_blank">
+                <i class="fab fa-linkedin social-icon"></i>
+                <h3 class="social-name">LinkedIn</h3>
+                <p class="social-description">Suivez nos partenariats et les personnes qui accèdent à des événements complets grâce à SPOTEVENT !</p>
+            </a>
+            
+            <!-- X (Twitter) -->
+            <a href="https://x.com/maximehouzard" class="social-card twitter" target="_blank">
+                <i class="fab fa-twitter social-icon"></i>
+                <h3 class="social-name">X (Twitter)</h3>
+                <p class="social-description">Restez informés de nos dernières annonces en temps réel !</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Section Mot du fondateur -->
+<section id="fondateur" class="founder-section">
+    <div class="fade-in">
+        <div class="founder-container">
+            <!-- Partie visuelle gauche -->
+            <div class="founder-visual">
+                <!-- Remplacez "logo-spotevent.png" par le chemin vers votre logo -->
+                <div class="founder-logo">
+    <img src="spotevent-logo-black.png" alt="Logo SPOTEVENT">
+</div>
+                
+                <!-- Remplacez "photo-fondateur.jpg" par le chemin vers votre photo -->
+                <img src="photo-fondateur.jpg" alt="Maxime Houzard, Fondateur de SPOTEVENT" class="founder-photo">
+            </div>
+            
+            <!-- Partie contenu droite -->
+            <div class="founder-content">
+                <h2 class="founder-title">Le mot du fondateur</h2>
+                <div class="founder-text">
+                    <p>Diplômé d'un Master Marketing et Management européen à l'IDRAC Lyon, j'ai souhaité avoir une première expérience commerciale significative pour parfaire ma formation. <p></p>J'ai donc intégré le Groupe TRYBA afin d'animer commercialement le réseau de franchisés en accompagnant l'ensemble des commerciaux en clientèle.</p>
+                    
+                    <p>Puis, j'ai eu l'opportunité d'intégrer le groupe JCDecaux qui m'a permis de maitriser la relation commerciale BtoB et de commencer à gérer des TPE / PME.</p>
+                    
+                    <p>Ces deux expériences m'ont amené à devenir manager en agence média et à prendre la gestion d'un portefeuille de clients nationaux, de piloter les réponses aux appels d'offres et de mettre en œuvre une stratégie de développement commercial.</p>
+                    
+                    <p>Depuis Octobre 2023, j'ai créé SPOTEVENT et ainsi permis, jusqu'à aujourd'hui, à plus de 1 000 personnes d'accéder à des évènements complets.</p>
+                </div>
+                <div class="founder-signature">Maxime Houzard</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        <a href="tel:+33646558520" class="contact-option">
+            <i class="fas fa-phone"></i>
+            <span>Appeler</span>
+        </a>
+        <a href="sms:+33646558520" class="contact-option">
+            <i class="fas fa-sms"></i>
+            <span>SMS</span>
+        </a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+        }
+    });
+}
+
+// Fonction pour ouvrir la bulle de contact
+function openContactBubble() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = 'block';
+        el.style.position = 'fixed';
+        el.style.bottom = '80px';
+        el.style.right = '30px';
+        el.style.backgroundColor = 'white';
+        el.style.padding = '1rem';
+        el.style.borderRadius = '15px';
+        el.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+        el.style.zIndex = '9999';
+        el.style.minWidth = '280px';
+    }
+}
+
+// Fermer la bulle
+function closeContactBubble() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = 'none';
+    }
+}
+
+// Toggle pour la bulle ronde
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        if (el.style.display === 'block') {
+            closeContactBubble();
+        } else {
+            openContactBubble();
+        }
+    }
+}
+
+// Fermer en cliquant ailleurs
+document.addEventListener('click', function(event) {
+    const contactOptions = document.getElementById('contactOptions');
+    const contactBubble = document.querySelector('.contact-bubble');
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    const contactLink = document.querySelector('a[onclick*="toggleContactOptions"]');
+    
+    if (contactOptions && contactOptions.style.display === 'block') {
+        let clickedOnButton = false;
+        ctaButtons.forEach(button => {
+            if (button.contains(event.target)) {
+                clickedOnButton = true;
+            }
+        });
+        
+        let clickedOnContactLink = contactLink && contactLink.contains(event.target);
+        
+        if (!contactOptions.contains(event.target) && 
+            !clickedOnButton && 
+            !clickedOnContactLink &&
+            !contactBubble.contains(event.target)) {
+            closeContactBubble();
+        }
+    }
+});
+
+// Carrousel d'actualités
+class NewsCarousel {
+    constructor() {
+        this.currentSlide = 0;
+        this.totalSlides = 5;
+        this.carousel = document.getElementById('newsCarousel');
+        this.indicators = document.getElementById('newsIndicators');
+        this.autoSlideInterval = null;
+        
+        this.createIndicators();
+        this.startAutoSlide();
+    }
+    
+    createIndicators() {
+        for (let i = 0; i < this.totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'news-indicator';
+            if (i === 0) indicator.classList.add('active');
+            
+            indicator.addEventListener('click', () => this.goToSlide(i));
+            this.indicators.appendChild(indicator);
+        }
+    }
+    
+    goToSlide(slideIndex) {
+        this.currentSlide = slideIndex;
+        const translateX = -(slideIndex * 20);
+        this.carousel.style.transform = `translateX(${translateX}%)`;
+        
+        document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === slideIndex);
+        });
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.goToSlide(this.currentSlide);
+    }
+    
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => {
+            this.nextSlide();
+        }, 4000);
+    }
+    
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+        }
+    }
+}
+
+// Initialisation
+document.addEventListener('DOMContentLoaded', function() {
+    animateOnScroll();
+    const newsCarousel = new NewsCarousel();
+    
+    const carouselContainer = document.querySelector('.news-carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => newsCarousel.stopAutoSlide());
+        carouselContainer.addEventListener('mouseleave', () => newsCarousel.startAutoSlide());
+    }
+});
+
+window.addEventListener('scroll', animateOnScroll);
+window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
