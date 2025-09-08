@@ -923,8 +923,8 @@
 .founder-signature {
     margin-top: 2rem;
     font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold);
+    font-weight: 700;
+    color: var(--black);
     text-align: right;
 }
 
@@ -957,6 +957,48 @@
     color: var(--gold);
     text-align: right;
 }
+}
+/* CSS pour le bouton RDV dans la section fondateur */
+.founder-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.founder-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--black);
+    color: #fff7ef;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.founder-button:hover {
+    background-color: var(--gold);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.founder-button:active {
+    transform: translateY(-1px);
+}
+
+/* Responsive pour le bouton */
+@media (max-width: 768px) {
+    .founder-button {
+        font-size: 1rem;
+        padding: 0.9rem 1.8rem;
+    }
 }
     </style>
 </head>
@@ -1177,7 +1219,7 @@
     </div>
 </section>
 
-<!-- Section Mot du fondateur -->
+<!-- Section Mot du fondateur avec bouton RDV -->
 <section id="fondateur" class="founder-section">
     <div class="fade-in">
         <div class="founder-container">
@@ -1185,8 +1227,8 @@
             <div class="founder-visual">
                 <!-- Remplacez "logo-spotevent.png" par le chemin vers votre logo -->
                 <div class="founder-logo">
-    <img src="spotevent-logo-black.png" alt="Logo SPOTEVENT">
-</div>
+                    <img src="spotevent-logo-black.png" alt="Logo SPOTEVENT">
+                </div>
                 
                 <!-- Remplacez "photo-fondateur.jpg" par le chemin vers votre photo -->
                 <img src="photo-fondateur.jpg" alt="Maxime Houzard, Fondateur de SPOTEVENT" class="founder-photo">
@@ -1196,7 +1238,7 @@
             <div class="founder-content">
                 <h2 class="founder-title">Le mot du fondateur</h2>
                 <div class="founder-text">
-                    <p>Diplômé d'un Master Marketing et Management européen à l'IDRAC Lyon, j'ai souhaité avoir une première expérience commerciale significative pour parfaire ma formation. <p></p>J'ai donc intégré le Groupe TRYBA afin d'animer commercialement le réseau de franchisés en accompagnant l'ensemble des commerciaux en clientèle.</p>
+                    <p>Diplômé d'un Master Marketing et Management européen à l'IDRAC Lyon, j'ai souhaité avoir une première expérience commerciale significative pour parfaire ma formation. J'ai donc intégré le Groupe TRYBA afin d'animer commercialement le réseau de franchisés en accompagnant l'ensemble des commerciaux en clientèle.</p>
                     
                     <p>Puis, j'ai eu l'opportunité d'intégrer le groupe JCDecaux qui m'a permis de maitriser la relation commerciale BtoB et de commencer à gérer des TPE / PME.</p>
                     
@@ -1205,6 +1247,13 @@
                     <p>Depuis Octobre 2023, j'ai créé SPOTEVENT et ainsi permis, jusqu'à aujourd'hui, à plus de 1 000 personnes d'accéder à des évènements complets.</p>
                 </div>
                 <div class="founder-signature">Maxime Houzard</div>
+                
+                <!-- Bouton pour prendre RDV -->
+                <div class="founder-cta">
+                    <a href="https://meetings-eu1.hubspot.com/maxime-houzard" class="founder-button" target="_blank">
+                        Prendre rendez-vous en visio
+                    </a>
+                </div>
             </div>
         </div>
     </div>
