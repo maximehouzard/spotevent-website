@@ -585,7 +585,7 @@
     font-weight: 500;
 }
 
-/* Carrousel d'actualités - Correction pour 6 slides */
+/* Carrousel d'actualités - Correction pour 7 slides */
 .news-carousel-container {
     position: relative;
     max-width: 1200px;
@@ -596,11 +596,11 @@
 .news-carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 150%; /* 6 slides / 4 visibles = 150% */
+    width: 175%; /* 7 slides / 4 visibles = 175% */
 }
 
 .news-slide {
-    width: 16.67%; /* 100% / 6 slides = 16.67% chacune */
+    width: 14.29%; /* 100% / 7 slides = 14.29% chacune */
     flex-shrink: 0;
     padding: 0 0.5rem;
 }
@@ -701,31 +701,31 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .news-carousel {
-        width: 200%; /* 6 slides / 3 visibles = 200% */
+        width: 233.33%; /* 7 slides / 3 visibles = 233.33% */
     }
     
     .news-slide {
-        width: 16.67%; /* Garde la même largeur relative */
+        width: 14.29%; /* Garde la même largeur relative */
     }
 }
 
 @media (max-width: 768px) {
     .news-carousel {
-        width: 300%; /* 6 slides / 2 visibles = 300% */
+        width: 350%; /* 7 slides / 2 visibles = 350% */
     }
     
     .news-slide {
-        width: 16.67%;
+        width: 14.29%;
     }
 }
 
 @media (max-width: 480px) {
     .news-carousel {
-        width: 600%; /* 6 slides / 1 visible = 600% */
+        width: 700%; /* 7 slides / 1 visible = 700% */
     }
     
     .news-slide {
-        width: 16.67%;
+        width: 14.29%;
     }
 }
 
@@ -1168,6 +1168,19 @@
         </div>
     </div>
 </div>
+<!-- Actualité 7 -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+        <div class="news-source">Concert</div>
+        <h3 class="news-title">The Weeknd en France 2026</h3>
+<p>Stade de France le 10 juillet et Allianz Riviera de Nice le 21 juillet 2026</p>
+        </div>
+        <div class="news-meta">
+            <a href="articles/the-weeknd-france-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Indicateurs -->
@@ -1375,7 +1388,7 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 6;
+        this.totalSlides = 7;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
