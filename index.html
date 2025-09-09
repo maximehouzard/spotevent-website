@@ -1419,19 +1419,19 @@ class NewsCarousel {
     }
     
     createIndicators() {
-        for (let i = 0; i < this.totalSlides; i++) {
-            const indicator = document.createElement('div');
-            indicator.className = 'news-indicator';
-            if (i === 0) indicator.classList.add('active');
-            
-            indicator.addEventListener('click', () => this.goToSlide(i));
-            this.indicators.appendChild(indicator);
-        }
+    for (let i = 0; i < 2; i++) { // 2 au lieu de 8
+        const indicator = document.createElement('div');
+        indicator.className = 'news-indicator';
+        if (i === 0) indicator.classList.add('active');
+        
+        indicator.addEventListener('click', () => this.goToSlide(i));
+        this.indicators.appendChild(indicator);
     }
+}
     
     goToSlide(slideIndex) {
         this.currentSlide = slideIndex;
-        const translateX = -(slideIndex * 25);
+        const translateX = -(slideIndex * 50);
         this.carousel.style.transform = `translateX(${translateX}%)`;
         
         document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
