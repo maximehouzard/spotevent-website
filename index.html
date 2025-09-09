@@ -1016,6 +1016,218 @@
         padding: 0.9rem 1.8rem;
     }
 }
+/* Section Équipe */
+.team-section {
+    background-color: #fff7ef;
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.team-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.team-carousel {
+    display: flex;
+    animation: slideTeamHorizontal 45s infinite linear;
+    width: calc(300px * 20);
+}
+
+@keyframes slideTeamHorizontal {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(calc(-300px * 10)); 
+    }
+}
+
+.team-carousel:hover {
+    animation-play-state: paused;
+}
+
+.team-member {
+    width: 300px;
+    flex-shrink: 0;
+    margin: 0 1rem;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-member:hover::before {
+    left: 0;
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-photo::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: conic-gradient(var(--gold), transparent, var(--gold));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.team-member:hover .team-photo::after {
+    opacity: 0.7;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.team-member:hover .team-photo img {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.team-role {
+    font-size: 1rem;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.team-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* Responsive pour section équipe */
+@media (max-width: 1200px) {
+    .team-carousel {
+        animation-duration: 40s;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 280px;
+        margin: 0 0.5rem;
+        padding: 1.5rem;
+    }
+    
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .team-name {
+        font-size: 1.2rem;
+    }
+    
+    .team-carousel {
+        animation-duration: 35s;
+        width: calc(280px * 20); /* Ajuste la largeur totale */
+    }
+    
+    @keyframes slideTeamHorizontal {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-280px * 10)); /* Ajuste pour la nouvelle largeur */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 220px;
+        padding: 1.2rem;
+    }
+    
+    .team-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-carousel {
+        animation-duration: 30s;
+        width: calc(220px * 20); /* Ajuste la largeur totale */
+    }
+    
+    @keyframes slideTeamHorizontal {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-220px * 10)); /* Ajuste pour la nouvelle largeur */
+        }
+    }
+}
     </style>
 </head>
 <body>
@@ -1206,6 +1418,136 @@
             
             <!-- Indicateurs -->
             <div class="news-indicators" id="newsIndicators"></div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<!-- Section Équipe -->
+<section id="equipe" class="team-section">
+    <div class="fade-in">
+        <h2 class="section-title">🤝 L'équipe SPOTEVENT</h2>
+        <p class="team-subtitle">Des experts passionnés à votre service pour vous offrir la meilleure expérience</p>
+        
+        <div class="team-carousel-container">
+            <div class="team-carousel" id="teamCarousel">
+                
+                <!-- Membre 1 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/photo-fondateur.jpg" alt="Maxime Houzard">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Maxime Houzard</h3>
+                        <p class="team-role">Fondateur</p>
+                        <p class="team-description">Création de SPOTEVENT en octobre 2023</p>
+                    </div>
+                </div>
+                
+                <!-- Membre 2 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Guillaume.png" alt="Guillaume">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Guillaume</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis juillet 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Membre 3 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Madleen.jpeg" alt="Madleen">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Madleen</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis février 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Membre 4 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Séverine.jpg" alt="Séverine">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Séverine</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis août 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Membre 5 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Léa.JPG" alt="Léa">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Léa</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis avril 2024</p>
+                    </div>
+                </div>
+                <!-- Membre 6 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Edouard.jpeg" alt="Edouard">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Edouard</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis mars 2024</p>
+                    </div>
+                </div>
+                <!-- Membre 7 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/JF.jpg" alt="Jean-François">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Jean-François</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis novembre 2024</p>
+                    </div>
+                </div>
+                <!-- Membre 8 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Klervie.jpeg" alt="Klervie">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Klervie</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis avril 2024</p>
+                    </div>
+                </div>
+                <!-- Membre 9 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Agathe.png" alt="Agathe">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Agathe</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis août 2024</p>
+                    </div>
+                </div>
+                <!-- Membre 10 -->
+                <div class="team-member">
+                    <div class="team-photo">
+                        <img src="team/Anna.jpg" alt="Anna">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Anna</h3>
+                        <p class="team-role">Responsable de clientèle</p>
+                        <p class="team-description">Membre de l'équipe depuis aout 2024</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
