@@ -596,13 +596,14 @@
 .news-carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 175%; /* 7 slides / 4 visibles = 175% */
+    width: 200%; /* 7 slides / 4 visibles = 175% */
 }
 
 .news-slide {
-    width: 14.29%; /* 100% / 7 slides = 14.29% chacune */
+    width: 12.5%;
     flex-shrink: 0;
     padding: 0 0.5rem;
+    min-width: 0;
 }
 
 .news-slide .news-card {
@@ -713,8 +714,9 @@
     }
     
     .news-slide {
-        width: 14.29%; /* Garde la même largeur relative */
-    }
+    width: 12.5%;
+    min-width: 0;
+}
 }
 
 @media (max-width: 768px) {
@@ -723,8 +725,9 @@
     }
     
     .news-slide {
-        width: 14.29%;
-    }
+    width: 12.5%;
+    min-width: 0;
+}
 }
 
 @media (max-width: 480px) {
@@ -733,8 +736,9 @@
     }
     
     .news-slide {
-        width: 14.29%;
-    }
+    width: 12.5%;
+    min-width: 0;
+}
 }
 
 /* Section Réseaux Sociaux */
@@ -1186,6 +1190,18 @@
         </div>
     </div>
 </div>
+<!-- Actualité 8 -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+        <div class="news-source">Concert</div>
+        <h3 class="news-title">Ben Mazué au Cepac Silo de Marseille</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/ben-mazue-cepac-silo-18-decembre-2025.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Indicateurs -->
@@ -1393,7 +1409,7 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 7;
+        this.totalSlides = 8;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
