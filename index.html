@@ -710,35 +710,34 @@
 /* Responsive */
 @media (max-width: 1024px) {
     .news-carousel {
-        width: 233.33%; /* 7 slides / 3 visibles = 233.33% */
-    }
+    width: 900%; /* 9 slides × 100% = 900% */
+}
     
     .news-slide {
-    width: 12.5%;
-    min-width: 0;
+    width: 11.11%; /* 100% ÷ 9 slides = 11.11% */
 }
 }
 
 @media (max-width: 768px) {
     .news-carousel {
-        width: 350%; /* 7 slides / 2 visibles = 350% */
+        width: 800%;
     }
     
     .news-slide {
-    width: 12.5%;
-    min-width: 0;
-}
+        width: 12.5%;
+        min-width: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .news-carousel {
-        width: 700%; /* 7 slides / 1 visible = 700% */
+        width: 800%;
     }
     
     .news-slide {
-    width: 12.5%;
-    min-width: 0;
-}
+        width: 12.5%;
+        min-width: 0;
+    }
 }
 
 /* Section Réseaux Sociaux */
@@ -1414,6 +1413,18 @@
         </div>
     </div>
 </div>
+<!-- Actualité 9 - Katy Perry -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Concert</div>
+            <h3 class="news-title">Katy Perry en France en 2025</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/katy-perry-france-2025.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Indicateurs -->
@@ -1749,17 +1760,35 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 8;
+        this.totalSlides = 9;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
+        this.slidesPerView = this.getSlidesPerView();
+        this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
         
         this.createIndicators();
         this.startAutoSlide();
+        
+        window.addEventListener('resize', () => {
+            this.slidesPerView = this.getSlidesPerView();
+            this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
+            this.goToSlide(Math.min(this.currentSlide, this.maxSlides));
+        });
+    }
+    
+    getSlidesPerView() {
+        if (window.innerWidth <= 480) return 1;
+        if (window.innerWidth <= 768) return 2;
+        if (window.innerWidth <= 1024) return 3;
+        return 4;
     }
     
     createIndicators() {
-    for (let i = 0; i < 2; i++) { // 2 au lieu de 8
+    // Pour 9 slides affichées 4 par 4, on a besoin de 3 positions (0, 1, 2)
+    const indicatorCount = 3;
+    
+    for (let i = 0; i < indicatorCount; i++) {
         const indicator = document.createElement('div');
         indicator.className = 'news-indicator';
         if (i === 0) indicator.classList.add('active');
@@ -1770,19 +1799,30 @@ class NewsCarousel {
 }
     
     goToSlide(slideIndex) {
-        this.currentSlide = slideIndex;
-        const translateX = -(slideIndex * 50);
-        this.carousel.style.transform = `translateX(${translateX}%)`;
-        
-        document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === slideIndex);
-        });
+    this.currentSlide = Math.min(slideIndex, 2);
+    
+    let translateX = 0;
+    if (this.currentSlide === 1) {
+        translateX = -44.44; // Montre les slides 5-8
+    } else if (this.currentSlide === 2) {
+        translateX = -66.67; // Montre la dernière slide centrée
     }
     
+    this.carousel.style.transform = `translateX(${translateX}%)`;
+    
+    document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === this.currentSlide);
+    });
+}
+    
     nextSlide() {
-        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-        this.goToSlide(this.currentSlide);
+    if (this.currentSlide < 2) { // Maintenant 3 positions : 0, 1 et 2
+        this.currentSlide++;
+    } else {
+        this.currentSlide = 0;
     }
+    this.goToSlide(this.currentSlide);
+}
     
     startAutoSlide() {
         this.autoSlideInterval = setInterval(() => {
