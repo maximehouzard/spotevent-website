@@ -596,11 +596,11 @@
 .news-carousel {
     display: flex;
     transition: transform 0.5s ease;
-    width: 250%;
+    width: 275%; /* 11 slides × 25% = 275% */
 }
 
 .news-slide {
-    width: 10%;
+    width: 9.09%; /* 100% ÷ 11 slides = 9.09% */
     flex-shrink: 0;
     padding: 0 0.5rem;
     min-width: 0;
@@ -673,10 +673,10 @@
 }
 
 .news-slide .news-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 0.4rem;
     color: var(--black);
-    line-height: 1.2;
+    line-height: 1.1;
     text-align: center;
     margin-top: 0;
 }
@@ -1437,6 +1437,18 @@
         </div>
     </div>
 </div>
+<!-- Actualité 11 - Indochine -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Tournée</div>
+            <h3 class="news-title">Indochine en tournée en France sur 2025-2026</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/indochine-tournee-france-2025-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Indicateurs -->
@@ -1855,7 +1867,7 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 10;
+        this.totalSlides = 11;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
@@ -1873,14 +1885,14 @@ class NewsCarousel {
     }
     
     getSlidesPerView() {
-        if (window.innerWidth <= 480) return 1;
-        if (window.innerWidth <= 768) return 2;
-        if (window.innerWidth <= 1024) return 3;
-        return 4;
-    }
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 2;
+    if (window.innerWidth <= 1024) return 3;
+    return 4; // 4 slides affichées
+}
     
     createIndicators() {
-    // Pour 9 slides affichées 4 par 4, on a besoin de 3 positions (0, 1, 2)
+    // Pour 11 slides avec défilement par 3, on a 3 positions
     const indicatorCount = 3;
     
     for (let i = 0; i < indicatorCount; i++) {
@@ -1898,9 +1910,9 @@ class NewsCarousel {
     
     let translateX = 0;
     if (this.currentSlide === 1) {
-        translateX = -44.44; // Montre les slides 5-8
+        translateX = -27.27; // Position 2 : slides 4-7
     } else if (this.currentSlide === 2) {
-        translateX = -66.67; // Montre la dernière slide centrée
+        translateX = -63.63; // Position 3 : slides 8-11 (pour voir Indochine)
     }
     
     this.carousel.style.transform = `translateX(${translateX}%)`;
@@ -1911,7 +1923,7 @@ class NewsCarousel {
 }
     
     nextSlide() {
-    if (this.currentSlide < 2) { // Maintenant 3 positions : 0, 1 et 2
+    if (this.currentSlide < 2) { // 3 positions : 0, 1 et 2
         this.currentSlide++;
     } else {
         this.currentSlide = 0;
