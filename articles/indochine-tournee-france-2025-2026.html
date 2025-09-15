@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indochine en tournée en France 2025-2026 - SPOTEVENT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --dark-beige: #E6E6C7;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 247, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Main content */
+        main {
+            margin-top: 120px;
+            padding: 2rem 5%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-date {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 0 auto 3rem;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin: 2.5rem 0 1rem;
+            border-left: 4px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: var(--black);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box {
+            background-color: var(--light-beige);
+            border-left: 4px solid var(--gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .contact-cta {
+            background: linear-gradient(135deg, var(--black), #333);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .contact-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background-color: #b8941f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            main {
+                margin-top: 100px;
+                padding: 1rem 5%;
+            }
+
+            .contact-cta {
+                padding: 2rem;
+            }
+
+            .contact-cta h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Retour à l'accueil
+            </a>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <article>
+            <div class="article-header">
+                <span class="article-category">Tournée</span>
+                <h1 class="article-title">Indochine en tournée en France 2025-2026</h1>
+                <p class="article-date">Publié le 15 septembre 2025</p>
+            </div>
+
+            <div class="article-content">
+                <p>Le groupe emblématique français <strong>Indochine</strong> annonce son grand retour sur scène avec une tournée exceptionnelle qui traversera la France en 2025 et 2026. Après le succès phénoménal de leurs précédentes tournées, Nicola Sirkis et ses musiciens s'apprêtent à offrir à leurs fans des concerts inoubliables dans les plus grandes salles et stades de l'Hexagone.</p>
+
+                <h2>Une tournée événement à travers la France</h2>
+                
+                <p>Cette nouvelle tournée d'Indochine promet d'être l'un des événements musicaux majeurs des deux prochaines années. Le groupe, fort de plus de 40 ans de carrière, continuera de présenter ses plus grands succès ainsi que les titres de leur dernier album qui rencontre un succès retentissant.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Attention :</strong> Compte tenu de la popularité d'Indochine et de l'engouement de leurs fans, ces concerts affichent très rapidement complet. La demande dépasse largement l'offre disponible sur les billetteries officielles.</p>
+                </div>
+
+                <h2>Dates et villes de la tournée</h2>
+
+                <p>La tournée d'Indochine 2025-2026 traversera les principales villes françaises :</p>
+
+                <ul>
+                    <li><strong>Paris</strong> - Accor Arena</li>
+                    <li><strong>Lyon</strong> - LDLC Arena</li>
+                    <li><strong>Lille</strong> - Zénith de Lille</li>
+                    <li><strong>Bordeaux</strong> - Arkéa Arena</li>
+                    <li><strong>Nantes</strong> - Zénith de Nantes</li>
+                    <li><strong>Toulouse</strong> - Zénith de Toulouse</li>
+                    <li><strong>Strasbourg</strong> - Zénith de Strasbourg</li>
+                </ul>
+
+                <h2>Un spectacle grandiose attendu</h2>
+
+                <p>Comme à son habitude, Indochine proposera un spectacle total alliant musique, lumières et mise en scène spectaculaire. Les fans peuvent s'attendre à retrouver les grands classiques du groupe comme "L'Aventurier", "3ème sexe", "J'ai demandé à la lune", "Un été français" ou encore "Le Lac", mais aussi à découvrir leurs dernières compositions dans un écrin visuel exceptionnel.</p>
+
+                <h3>Une production d'envergure internationale</h3>
+
+                <p>La production de cette tournée s'annonce particulièrement ambitieuse avec :</p>
+                <ul>
+                    <li>Une scénographie révolutionnaire</li>
+                    <li>Des effets spéciaux inédits</li>
+                    <li>Un système son et lumière de dernière génération</li>
+                    <li>Des surprises visuelles à chaque concert</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>À savoir :</strong> Indochine est réputé pour ses concerts sold out en quelques minutes. Les places disponibles sur le marché secondaire atteignent souvent des prix très élevés en raison de la forte demande.</p>
+                </div>
+
+                <h2>Comment assister aux concerts d'Indochine ?</h2>
+
+                <p>Face à la popularité exceptionnelle du groupe et à la demande massive de billets, obtenir des places pour les concerts d'Indochine relève souvent du défi. Les billetteries officielles affichent complet en quelques minutes, laissant de nombreux fans sur le carreau.</p>
+
+                <p>C'est là qu'intervient <strong>SPOTEVENT</strong>, votre conciergerie spécialisée dans l'acquisition de places pour événements complets. Grâce à notre expertise et notre réseau, nous vous accompagnons pour accéder aux concerts d'Indochine, même quand ils affichent sold out.</p>
+
+                <h3>Les avantages de faire appel à SPOTEVENT</h3>
+
+                <ul>
+                    <li><strong>Expertise prouvée :</strong> Plus de 1 000 clients accompagnés</li>
+                    <li><strong>Réseau étendu :</strong> Accès privilégié aux places disponibles</li>
+                    <li><strong>Légalité garantie :</strong> Toutes nos transactions respectent la législation</li>
+                    <li><strong>Service personnalisé :</strong> Accompagnement sur mesure selon vos besoins</li>
+                    <li><strong>Transparence :</strong> Devis gratuit et tarification claire</li>
+                </ul>
+
+                <div class="contact-cta">
+                    <h3>Ne manquez pas Indochine en concert !</h3>
+                    <p>Nos équipes SPOTEVENT vous accompagnent pour obtenir vos places, même pour les concerts affichés complets. Contactez-nous dès maintenant pour recevoir votre devis gratuit.</p>
+                    <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">Demander un devis gratuit</a>
+                </div>
+
+                <h2>Pourquoi Indochine fait-il toujours le plein ?</h2>
+
+                <p>Indochine reste l'un des groupes français les plus populaires, capable de remplir les plus grandes salles du pays. Cette popularité s'explique par :</p>
+
+                <ul>
+                    <li><strong>Une carrière exceptionnelle :</strong> Plus de 40 ans de succès ininterrompus</li>
+                    <li><strong>Un répertoire intemporel :</strong> Des hits qui traversent les générations</li>
+                    <li><strong>Des concerts spectaculaires :</strong> Une réputation de showman hors pair</li>
+                    <li><strong>Une fidélité exemplaire :</strong> Une base de fans indéfectible</li>
+                    <li><strong>Un renouvellement constant :</strong> Capacité à attirer de nouveaux publics</li>
+                </ul>
+
+                <p>Cette combinaison unique explique pourquoi les concerts d'Indochine sont des événements très attendus et pourquoi les places se vendent si rapidement.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Conseil SPOTEVENT :</strong> Plus vous anticipez votre demande, plus nous avons de chances de vous trouver les meilleures places aux meilleurs tarifs. N'hésitez pas à nous contacter dès l'annonce des dates !</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
