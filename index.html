@@ -285,50 +285,6 @@
             background-color: #fff7ef;
         }
 
-        .reviews-carousel {
-            overflow: hidden;
-            position: relative;
-            height: 300px;
-        }
-
-        .review-card {
-            background-color: var(--beige);
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 0 1rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: absolute;
-            width: calc(100% - 2rem);
-            animation: slideReview 15s infinite;
-            opacity: 0;
-        }
-
-        .review-card:nth-child(1) { animation-delay: 0s; }
-        .review-card:nth-child(2) { animation-delay: 5s; }
-        .review-card:nth-child(3) { animation-delay: 10s; }
-
-        @keyframes slideReview {
-            0%, 20% { opacity: 0; transform: translateX(100%); }
-            25%, 70% { opacity: 1; transform: translateX(0); }
-            75%, 100% { opacity: 0; transform: translateX(-100%); }
-        }
-
-        .review-text {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .review-author {
-            font-weight: 600;
-            color: var(--black);
-        }
-
-        .stars {
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
         /* Section Actualités */
         .news {
             background-color: #fff7ef;
@@ -1227,6 +1183,217 @@
         }
     }
 }
+/* Styles Widget Google Reviews */
+.google-reviews-container {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+}
+
+.reviews-summary {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.review-stats {
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.rating-display {
+    margin-bottom: 1.5rem;
+}
+
+.rating-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+.stars-display {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.stars-display i {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin: 0 3px;
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+}
+
+.review-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.review-count {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.write-review-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.write-review-btn:hover {
+    background-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 768px) {
+    .google-reviews-container iframe {
+        height: 350px;
+    }
+    
+    .review-stats {
+        padding: 2rem 1.5rem;
+    }
+    
+    .rating-number {
+        font-size: 2.8rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .review-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.reviews-carousel {
+    display: flex;
+    width: 500%;
+    transition: transform 0.8s ease-in-out;
+    height: auto;
+}
+
+.review-card {
+    width: 20%;
+    flex-shrink: 0;
+    padding: 2.5rem 3rem;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    font-size: 4rem;
+    color: var(--gold);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+.review-stars {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+}
+
+.review-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-author {
+    font-weight: 600;
+    color: var(--gold);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background-color: var(--gold);
+    transform: scale(1.2);
+}
+
+.reviews-carousel-container {
+    max-width: 800px;
+    margin: 3rem auto 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .review-text {
+        font-size: 1rem;
+    }
+    
+    .review-card::before {
+        font-size: 3rem;
+        left: 1rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -1298,13 +1465,93 @@
                 <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
             </section>
 
-    <!-- Section Avis -->
     <section id="avis" class="reviews">
-        <div class="fade-in">
-            <h2 class="section-title">🗣️ Ce que disent nos clients</h2>
-        <!-- Trustindex Google Reviews | Untitled Google Reviews -->
-<script defer async src='https://cdn.trustindex.io/loader.js?ddc05ef536d1674cb686b633231'></script>
-    </section>
+    <div class="fade-in">
+        <h2 class="section-title">🗣️ Ce que disent nos clients</h2>
+        
+        <!-- Widget Google My Business -->
+        <div class="google-reviews-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.557247!2d4.8270309!3d45.7516122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42a1a9d811d540cb%3A0x8a41f6d43f000d97!2sSPOTEVENT!5e0!3m2!1sfr!2sfr!4v1663789012345!5m2!1sfr!2sfr"
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        <!-- Résumé des avis avec carrousel automatique -->
+        <div class="reviews-summary">
+            <div class="review-stats">
+                <div class="rating-display">
+                    <span class="rating-number">4.9</span>
+                    <div class="stars-display">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="review-info">
+                    <span class="review-count">221 avis Google vérifiés</span>
+                    <a href="https://www.google.com/search?q=SPOTEVENT+avis+Lyon" 
+                       class="write-review-btn" 
+                       target="_blank">
+                        Voir tous nos avis Google
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carrousel d'avis qui défile automatiquement -->
+        <div class="reviews-carousel-container">
+            <div class="reviews-carousel" id="reviewsCarousel">
+                
+                <!-- Avis 1 -->
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Service exceptionnel ! J'ai pu obtenir des places pour un concert sold out en moins de 24h. L'équipe est professionnelle et à l'écoute."</p>
+                    <div class="review-author">- Marie L.</div>
+                </div>
+                
+                <!-- Avis 2 -->
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Grâce à SPOTEVENT, j'ai pu assister au match de mes rêves ! Processus transparent et sécurisé. Je recommande vivement."</p>
+                    <div class="review-author">- Thomas M.</div>
+                </div>
+                
+                <!-- Avis 3 -->
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Excellent service client. Maxime et son équipe ont été d'une aide précieuse pour organiser une soirée mémorable. Merci !"</p>
+                    <div class="review-author">- Sophie D.</div>
+                </div>
+                
+                <!-- Avis 4 -->
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Service de conciergerie au top ! Places obtenues rapidement et en toute sécurité. Une équipe de confiance."</p>
+                    <div class="review-author">- Jean-Pierre R.</div>
+                </div>
+                
+                <!-- Avis 5 -->
+                <div class="review-card">
+                    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="review-text">"Après plusieurs échecs sur d'autres plateformes, SPOTEVENT a réussi à me trouver exactement ce que je cherchais. Bravo !"</p>
+                    <div class="review-author">- Camille B.</div>
+                </div>
+                
+            </div>
+            
+            <!-- Indicateurs du carrousel -->
+            <div class="carousel-indicators" id="reviewIndicators"></div>
+        </div>
+    </div>
+</section>
 
     <!-- Section Actualités -->
 <section id="offres" class="news">
@@ -1958,6 +2205,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+// Script pour le carrousel d'avis avec défilement simple
+document.addEventListener('DOMContentLoaded', function() {
+    const indicators = document.getElementById('reviewIndicators');
+    const carousel = document.getElementById('reviewsCarousel');
+    const reviewCount = 5;
+    let currentIndex = 0;
+    let autoSlideInterval = null;
+    
+    if (indicators && carousel) {
+        // Créer les indicateurs
+        for (let i = 0; i < reviewCount; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'carousel-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicators.appendChild(indicator);
+        }
+        
+        // Fonction pour aller à un avis spécifique
+        function goToReview(index) {
+            currentIndex = index;
+            const translateX = -20 * index; // -20% par avis (100% / 5 avis)
+            carousel.style.transform = `translateX(${translateX}%)`;
+            
+            // Mettre à jour les indicateurs
+            document.querySelectorAll('.carousel-indicator').forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+        
+        // Auto-défilement toutes les 5 secondes
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % reviewCount;
+                goToReview(currentIndex);
+            }, 5000);
+        }
+        
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+            }
+        }
+        
+        // Permettre le clic sur les indicateurs
+        document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                stopAutoSlide();
+                goToReview(index);
+                startAutoSlide();
+            });
+        });
+        
+        // Pause au survol
+        carousel.addEventListener('mouseenter', stopAutoSlide);
+        carousel.addEventListener('mouseleave', startAutoSlide);
+        
+        // Démarrer l'auto-défilement
+        startAutoSlide();
+    }
+});
     </script>
 </body>
 </html>
