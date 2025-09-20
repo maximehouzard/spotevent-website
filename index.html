@@ -1584,6 +1584,19 @@
 </div>
                     </div>
                 </div>
+
+                <!-- Actualité - System Of A Down -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Concert</div>
+            <h3 class="news-title">System Of A Down au Stade de France</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/system-of-a-down-stade-de-france-2-4-juillet-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
                 
                 <!-- Actualité 3 -->
                 <div class="news-slide">
@@ -2113,7 +2126,7 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 12; // Mis à jour pour 12 actualités
+        this.totalSlides = 13;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
@@ -2154,7 +2167,7 @@ class NewsCarousel {
     
     goToSlide(slideIndex) {
     // Limiter slideIndex entre 0 et 8 (pour 12 slides - 4 affichées = 8 positions max)
-    this.currentSlide = Math.min(Math.max(slideIndex, 0), 8);
+    this.currentSlide = Math.min(Math.max(slideIndex, 0), 9);
     
     // Calcul du pourcentage de translation
     // Chaque slide = 8.33% de largeur (100% / 12 slides)
@@ -2170,7 +2183,7 @@ class NewsCarousel {
 }
     
     nextSlide() {
-        if (this.currentSlide < 8) { // Peut aller jusqu'à la position 8
+        if (this.currentSlide < 9) { // Peut aller jusqu'à la position 8
             this.currentSlide++;
         } else {
             this.currentSlide = 0;
