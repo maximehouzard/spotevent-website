@@ -429,9 +429,18 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+    /* On cache seulement le lien "Nous contacter" sur mobile, pas le menu déroulant */
+    .nav-links > li:last-child {
+        display: none;
+    }
+
+    /* Ajustements pour le menu déroulant sur mobile */
+    .dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 250px;
+    }
+}
 
             .hero-content h1 {
                 font-size: 2.5rem;
