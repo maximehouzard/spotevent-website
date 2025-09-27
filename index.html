@@ -684,24 +684,38 @@
 }
 
 @media (max-width: 768px) {
+    .news-carousel-container {
+        padding: 0 0.5rem; /* Ajout de padding pour éviter la coupure */
+    }
+    
     .news-carousel {
         width: 800%;
+        padding: 0 0.5rem; /* Padding interne */
     }
     
     .news-slide {
         width: 12.5%;
         min-width: 0;
+        padding: 0 0.25rem; /* Réduction du padding entre slides */
+    }
+    
+    .news-slide .news-card {
+        margin: 0 auto; /* Centrage de la carte */
+        max-width: 280px; /* Largeur max pour éviter la coupure */
+        height: 160px; /* Hauteur réduite */
+        padding: 1rem; /* Padding réduit */
     }
 }
 
 @media (max-width: 480px) {
-    .news-carousel {
-        width: 800%;
+    .news-carousel-container {
+        padding: 0 0.25rem;
     }
     
-    .news-slide {
-        width: 12.5%;
-        min-width: 0;
+    .news-slide .news-card {
+        max-width: 250px; /* Largeur encore plus réduite */
+        height: 150px;
+        padding: 0.8rem;
     }
 }
 
