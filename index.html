@@ -685,25 +685,28 @@
 
 @media (max-width: 768px) {
     .news-carousel-container {
-        padding: 0 0.5rem; /* Ajout de padding pour éviter la coupure */
+        padding: 0 1rem;
+        margin: 0 auto;
     }
     
     .news-carousel {
-        width: 800%;
-        padding: 0 0.5rem; /* Padding interne */
+        width: 1300%; /* 13 slides × 100% = 1300% */
     }
     
     .news-slide {
-        width: 12.5%;
+        width: 7.69%; /* 100% ÷ 13 slides = 7.69% */
         min-width: 0;
-        padding: 0 0.25rem; /* Réduction du padding entre slides */
+        padding: 0;
+        display: flex;
+        justify-content: center;
     }
     
     .news-slide .news-card {
-        margin: 0 auto; /* Centrage de la carte */
-        max-width: 280px; /* Largeur max pour éviter la coupure */
-        height: 160px; /* Hauteur réduite */
-        padding: 1rem; /* Padding réduit */
+        width: 90%;
+        max-width: none;
+        height: 160px;
+        padding: 1rem;
+        margin: 0;
     }
 }
 
@@ -2179,11 +2182,10 @@ class NewsCarousel {
     }
     
     getSlidesPerView() {
-        if (window.innerWidth <= 480) return 1;
-        if (window.innerWidth <= 768) return 2;
-        if (window.innerWidth <= 1024) return 3;
-        return 4; // 4 slides affichées
-    }
+    if (window.innerWidth <= 768) return 1; // Une seule slide sur mobile
+    if (window.innerWidth <= 1024) return 3;
+    return 4;
+}
     
     createIndicators() {
     // Pour 12 slides avec 4 affichées : 9 positions possibles (0-8)
@@ -2201,17 +2203,23 @@ class NewsCarousel {
 }
     
     goToSlide(slideIndex) {
-    // Limiter slideIndex entre 0 et 8 (pour 12 slides - 4 affichées = 8 positions max)
-    this.currentSlide = Math.min(Math.max(slideIndex, 0), 9);
+    this.currentSlide = Math.min(Math.max(slideIndex, 0), this.totalSlides - this.slidesPerView);
     
-    // Calcul du pourcentage de translation
-    // Chaque slide = 8.33% de largeur (100% / 12 slides)
-    let translateX = -(this.currentSlide * 8.33);
+    // Calcul différent selon la taille d'écran
+    let translateX;
+    if (window.innerWidth <= 768) {
+        // Sur mobile : chaque slide = 7.69% de largeur
+        translateX = -(this.currentSlide * 7.69);
+    } else {
+        // Sur desktop : chaque slide = 8.33% de largeur
+        translateX = -(this.currentSlide * 8.33);
+    }
     
     this.carousel.style.transform = `translateX(${translateX}%)`;
     
-    // Mise à jour des indicateurs (5 indicateurs au lieu de 4)
-    const activeIndicator = Math.min(Math.floor(this.currentSlide / 2), 4);
+    // Mise à jour des indicateurs
+    const totalIndicators = 5;
+    const activeIndicator = Math.min(Math.floor(this.currentSlide / Math.max(1, Math.floor(this.totalSlides / totalIndicators))), totalIndicators - 1);
     document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
         indicator.classList.toggle('active', index === activeIndicator);
     });
