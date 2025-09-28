@@ -550,22 +550,36 @@
     font-weight: 500;
 }
 
-/* Carrousel d'actualités - Correction pour 7 slides */
+/* Carrousel d'actualités - Style équipe avec défilement automatique */
 .news-carousel-container {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 .news-carousel {
     display: flex;
-    transition: transform 0.5s ease;
-    width: 300%;
+    animation: slideNewsHorizontal 60s infinite linear;
+    width: calc(320px * 26); /* 13 slides × 2 pour boucle infinie */
+}
+
+@keyframes slideNewsHorizontal {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(calc(-320px * 13)); /* Défilement continu */
+    }
+}
+
+.news-carousel:hover {
+    animation-play-state: paused;
 }
 
 .news-slide {
-    width: 8.33%;
+    width: 320px;
     flex-shrink: 0;
     padding: 0 0.5rem;
     min-width: 0;
@@ -573,14 +587,20 @@
 
 .news-slide .news-card {
     background-color: var(--white);
-    padding: 1.2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    height: 180px;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 200px;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.news-slide .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
 }
 
 .news-content {
@@ -589,136 +609,136 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .news-slide .news-card .news-source {
     font-size: 0.8rem;
     color: var(--gold);
     font-weight: 600;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     position: absolute;
-    top: 1.2rem;
-    left: 1.2rem;
+    top: 1.5rem;
+    left: 1.5rem;
 }
 
-.news-slide p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #000000;
-    flex-grow: 1;
-    margin-bottom: 0;
+.news-slide .news-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--black);
+    line-height: 1.3;
+    text-align: center;
+    margin-top: 0;
+    font-weight: 600;
 }
 
 .news-meta {
     position: absolute;
-    bottom: 1.2rem;
-    right: 1.2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     margin: 0;
     padding: 0;
     border: none;
 }
 
 .news-read-more {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--gold);
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
 }
 
 .news-read-more:hover {
-    color: var(--black);
-}
-
-.news-slide .news-card:hover {
-    transform: translateY(-3px);
-}
-
-.news-slide .news-title {
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-    color: var(--black);
-    line-height: 1.1;
-    text-align: center;
-    margin-top: 0;
-}
-
-.news-slide p {
-    font-size: 0.85rem;
-    line-height: 1.3;
-    color: #000000;
-}
-
-.news-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.news-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.3);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.news-indicator.active {
+    color: var(--white);
     background-color: var(--gold);
+}
+
+/* Suppression des indicateurs - pas nécessaires pour défilement automatique */
+.news-indicators {
+    display: none;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
     .news-carousel {
-    width: 900%; /* 9 slides × 100% = 900% */
-}
+        animation-duration: 50s;
+        width: calc(280px * 26);
+    }
+    
+    @keyframes slideNewsHorizontal {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-280px * 13));
+        }
+    }
     
     .news-slide {
-    width: 11.11%; /* 100% ÷ 9 slides = 11.11% */
-}
+        width: 280px;
+    }
 }
 
 @media (max-width: 768px) {
     .news-carousel-container {
         padding: 0 1rem;
-        margin: 0 auto;
     }
     
     .news-carousel {
-        width: 1300%; /* 13 slides × 100% = 1300% */
+        animation-duration: 40s;
+        width: calc(250px * 26);
+    }
+    
+    @keyframes slideNewsHorizontal {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-250px * 13));
+        }
     }
     
     .news-slide {
-        width: 7.69%; /* 100% ÷ 13 slides = 7.69% */
-        min-width: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-    }
-    
-    .news-slide .news-card {
-        width: 90%;
-        max-width: none;
-        height: 160px;
-        padding: 1rem;
-        margin: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .news-carousel-container {
+        width: 250px;
         padding: 0 0.25rem;
     }
     
     .news-slide .news-card {
-        max-width: 250px; /* Largeur encore plus réduite */
-        height: 150px;
-        padding: 0.8rem;
+        height: 180px;
+        padding: 1.2rem;
+        margin: 0 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-carousel {
+        animation-duration: 35s;
+        width: calc(220px * 26);
+    }
+    
+    @keyframes slideNewsHorizontal {
+        0% { 
+            transform: translateX(0); 
+        }
+        100% { 
+            transform: translateX(calc(-220px * 13));
+        }
+    }
+    
+    .news-slide {
+        width: 220px;
+    }
+    
+    .news-slide .news-card {
+        height: 160px;
+        padding: 1rem;
     }
 }
 
@@ -1440,12 +1460,12 @@
             Menu
         </button>
         <div class="dropdown-menu">
-    <a href="#video">Présentation</a>
-    <a href="#presentation">Mission</a>
-    <a href="#avis">Avis</a>
-    <a href="#offres">Offres</a>
-    <a href="#reseaux">Réseaux sociaux</a>
-    <a href="#fondateur">Mot du fondateur</a>
+    <a href="#video">Qui sommes-nous ?</a>
+    <a href="#presentation">Notre objectif</a>
+    <a href="#avis">Les avis de nos clients</a>
+    <a href="#offres">Les actualités</a>
+    <a href="#reseaux">Nos réseaux sociaux</a>
+    <a href="#fondateur">Le mot du fondateur</a>
 </div>
     </li>
     <li><a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a></li>
@@ -1569,7 +1589,7 @@
     <!-- Section Actualités -->
 <section id="offres" class="news">
     <div class="fade-in">
-        <h2 class="section-title">Quelles sont les offres du moment ?</h2>
+        <h2 class="section-title">Toutes les actualités événementielles !</h2>
         <div class="news-carousel-container">
             <div class="news-carousel" id="newsCarousel">
                 
@@ -1743,6 +1763,18 @@
         </div>
         <div class="news-meta">
             <a href="articles/indochine-tournee-france-2025-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
+<!-- Actualité - Guide Concerts 2025-2026 -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Guide Concerts</div>
+            <h3 class="news-title">Concerts 2025-2026 : Les Tournées les Plus Attendues</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/concerts-tournees-2025-2026.html" class="news-read-more">En savoir plus</a>
         </div>
     </div>
 </div>
