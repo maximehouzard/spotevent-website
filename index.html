@@ -159,19 +159,29 @@
     color: var(--gold);
 }
 
-        /* Hero Section */
-        .hero {
-    height: 80vh;
+       /* Hero Section */
+.hero {
+    height: 70vh;
     background: #fff7ef;
-    background-image: url('concert-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
 }
 
 .hero::before {
@@ -181,7 +191,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 247, 239, 0.85);
+    background: rgba(255, 247, 239, 0.75);
     z-index: 1;
 }
 
@@ -189,19 +199,6 @@
     position: relative;
     z-index: 2;
 }
-
-        .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--black);
-}
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--black);
-        }
 
         .cta-button {
     display: inline-block;
@@ -217,6 +214,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-top: 1rem;
 }
 
         .cta-button:hover {
@@ -1474,13 +1472,17 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content fade-in">
-            <h1>Comment accéder à un événement complet ?</h1>
-            <p>🎟️ Envie d’assister à votre prochain concert, match ou festival préféré ?</p>
-          <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
-        </div>
-    </section>
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="hero-video.mp4" type="video/mp4">
+        <!-- Fallback pour navigateurs ne supportant pas la vidéo -->
+    </video>
+    <div class="hero-content fade-in">
+        <h1>Comment accéder à un événement complet ?</h1>
+        <p>🎟️ Envie d'assister à votre prochain concert, match ou festival préféré ?</p>
+      <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+    </div>
+</section>
 
     <!-- Section Vidéo -->
     <section id="video" class="video-section">
