@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orelsan en tournée en France en 2026 - SPOTEVENT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--beige);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+            height: auto;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Article */
+        article {
+            max-width: 900px;
+            margin: 120px auto 50px;
+            padding: 0 5%;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--black);
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--black);
+        }
+
+        .article-content strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .dates-list {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .dates-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .dates-list li {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dates-list li:last-child {
+            border-bottom: none;
+        }
+
+        .date-info {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .venue-info {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--gold) 0%, #C49B2A 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--white);
+            color: var(--gold);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: var(--black);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .dates-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <a href="../index.html#offres" class="back-button">
+                <i class="fas fa-arrow-left"></i> Retour
+            </a>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <div class="article-header">
+            <span class="article-category">Tournée</span>
+            <h1>Orelsan en tournée en France en 2026</h1>
+            <div class="article-meta">
+                <i class="far fa-calendar"></i> Publié le 30 septembre 2025
+            </div>
+        </div>
+        <div class="article-content">
+            <p><strong>Orelsan</strong>, l'un des rappeurs français les plus influents de sa génération, revient sur scène en 2026 avec une tournée exceptionnelle à travers la France. Après le succès phénoménal de son album <em>"Civilisation"</em> et de sa série documentaire, l'artiste normand promet des concerts mémorables dans les plus grandes salles et stades du pays.</p>
+
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> À ne pas manquer</h3>
+                <p>Cette tournée s'annonce comme l'événement rap de l'année 2026. Les places se vendent à une vitesse record dès l'ouverture des préventes. <strong>Ne tardez pas à réserver vos billets !</strong></p>
+            </div>
+
+            <h2>🎤 Une tournée événement</h2>
+            <p>Orelsan présentera un spectacle inédit mêlant ses plus grands hits (<em>"Basique"</em>, <em>"La Quête"</em>, <em>"Tout va bien"</em>) et des titres plus récents. Accompagné de musiciens live et d'une scénographie impressionnante, le rappeur caennais promet une expérience immersive unique.</p>
+
+            <p>Avec plus de 2 millions d'albums vendus et des distinctions prestigieuses (Victoires de la Musique, NRJ Music Awards), Orelsan s'est imposé comme une référence incontournable du rap français. Ses textes ciselés, son humour mordant et sa capacité à raconter des histoires font de chaque concert un moment d'exception.</p>
+
+            
+            <h2>🎟️ Informations pratiques</h2>
+            <h3>Tarifs indicatifs</h3>
+            <p>Les tarifs varient généralement entre <strong>45€ et 120€</strong> selon les catégories de places et les salles. Les billets VIP avec accès privilégié peuvent atteindre 200€.</p>
+
+            <h3>Vente des billets</h3>
+            <p>Les billets sont disponibles sur les plateformes officielles : Ticketmaster, Fnac Spectacles, et Digitick. Les préventes débutent généralement quelques jours avant la vente générale pour les membres des clubs de fans et détenteurs de cartes bancaires partenaires.</p>
+
+            <div class="info-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> Attention aux arnaques</h3>
+                <p>Face à la forte demande, de nombreuses arnaques circulent en ligne. Privilégiez toujours les plateformes officielles ou faites appel à <strong>SPOTEVENT</strong> pour sécuriser vos places en toute légalité.</p>
+            </div>
+
+            <h2>🌟 Pourquoi ce concert est incontournable ?</h2>
+            <p><strong>Orelsan</strong> n'est pas qu'un simple rappeur : c'est un artiste complet qui a révolutionné le rap français. Ses concerts sont réputés pour :</p>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+                <li>✨ Une énergie scénique exceptionnelle</li>
+                <li>🎬 Des visuels impressionnants et une scénographie travaillée</li>
+                <li>🎵 Un setlist équilibré entre classiques et nouveautés</li>
+                <li>🤝 Une proximité unique avec son public</li>
+                <li>🎭 Des moments d'émotion et d'humour parfaitement dosés</li>
+            </ul>
+
+            <p>Que vous soyez fan de la première heure ou récent admirateur, cette tournée 2026 sera l'occasion de vivre un moment musical intense et authentique. Orelsan a prouvé au fil des années qu'il savait sublimer ses textes sur scène et créer une communion extraordinaire avec son public.</p>
+
+            <div class="cta-section">
+                <h2>🎫 Les concerts affichent déjà complet ?</h2>
+                <p>Pas de panique ! SPOTEVENT vous accompagne pour obtenir vos places, même pour les dates sold out.</p>
+                <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">
+                    <i class="fas fa-envelope"></i> Contactez-nous maintenant
+                </a>
+            </div>
+
+            <h2>📱 Restez informés</h2>
+            <p>Pour ne manquer aucune information sur la tournée d'Orelsan et recevoir des alertes sur la disponibilité des billets, suivez-nous sur nos réseaux sociaux et inscrivez-vous à notre newsletter.</p>
+
+            <p><strong>SPOTEVENT</strong> vous garantit un accompagnement personnalisé pour vivre cette expérience musicale exceptionnelle en toute sérénité. Notre équipe de spécialistes met tout en œuvre pour vous obtenir les meilleures places aux meilleurs tarifs.</p>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
