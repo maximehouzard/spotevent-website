@@ -588,7 +588,7 @@
 .news-carousel {
     display: flex;
     animation: slideNewsHorizontal 60s infinite linear;
-    width: calc(320px * 26); /* 13 slides × 2 pour boucle infinie */
+    width: calc(320px * 30);
 }
 
 @keyframes slideNewsHorizontal {
@@ -596,7 +596,7 @@
         transform: translateX(0); 
     }
     100% { 
-        transform: translateX(calc(-320px * 13)); /* Défilement continu */
+        transform: translateX(calc(-320px * 15)); /* Défilement continu */
     }
 }
 
@@ -1808,6 +1808,18 @@
         </div>
     </div>
 </div>
+<!-- Actualité - Orelsan -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Tournée</div>
+            <h3 class="news-title">Orelsan en tournée en France en 2026</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/orelsan-tournee-france-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
             </div>
             
             <!-- Indicateurs -->
@@ -2226,7 +2238,7 @@ document.addEventListener('click', function(event) {
 class NewsCarousel {
     constructor() {
         this.currentSlide = 0;
-        this.totalSlides = 13;
+        this.totalSlides = 15;
         this.carousel = document.getElementById('newsCarousel');
         this.indicators = document.getElementById('newsIndicators');
         this.autoSlideInterval = null;
