@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEFA Champions League 2025-2026 - SPOTEVENT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--beige);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 247, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 120px auto 80px;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .article-content {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .article-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .match-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, var(--beige) 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .match-card strong {
+            color: var(--gold);
+        }
+
+        .highlight-box {
+            background-color: var(--beige);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-image {
+                height: 250px;
+            }
+
+            nav {
+                padding: 1rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Retour
+            </a>
+        </nav>
+    </header>
+
+    <div class="article-container">
+        <article>
+            <div class="article-header">
+                <span class="article-category">⚽ Football</span>
+                <h1 class="article-title">UEFA Champions League 2025-2026 : Les Plus Grands Matchs d'Europe</h1>
+                <p class="article-meta">Publié le 4 octobre 2025 | Compétition européenne</p>
+            </div>
+
+            <img src="../images/champions-league.jpg" alt="UEFA Champions League" class="article-image" onerror="this.style.display='none'">
+
+            <div class="article-content">
+                <p><strong>La Ligue des Champions 2024-2025 bat son plein avec des affiches exceptionnelles qui passionnent les supporters du monde entier.</strong> Cette compétition mythique réunit les meilleurs clubs européens dans une bataille pour le titre le plus prestigieux du football de clubs.</p>
+
+                <h2>🏆 Le Format de la Compétition</h2>
+                <p>Cette saison inaugure un nouveau format révolutionnaire de la Champions League :</p>
+                <ul>
+                    <li><strong>36 équipes</strong> participent à une phase de ligue unique</li>
+                    <li>Chaque club dispute <strong>8 matchs</strong> contre des adversaires différents</li>
+                    <li>Les 8 premiers se qualifient directement pour les huitièmes de finale</li>
+                    <li>Les équipes classées de la 9ème à la 24ème place disputent des barrages</li>
+                    <li>La finale se tiendra à Munich le <strong>31 mai 2025</strong></li>
+                </ul>
+
+                <h2>⭐ Les Grands Clubs Favoris</h2>
+                
+                <div class="match-card">
+                    <h3>Real Madrid CF</h3>
+                    <p>Le tenant du titre et recordman de la compétition vise une nouvelle couronne européenne avec une équipe rajeunie mais toujours aussi ambitieuse.</p>
+                </div>
+
+                <div class="match-card">
+                    <h3>Manchester City</h3>
+                    <p>Les Citizens de Pep Guardiola, champions en 2023, restent parmi les favoris avec leur jeu spectaculaire et leur effectif de classe mondiale.</p>
+                </div>
+
+                <div class="match-card">
+                    <h3>Bayern Munich</h3>
+                    <p>Le géant bavarois accueillera la finale dans son Allianz Arena et rêve de soulever le trophée à domicile.</p>
+                </div>
+
+                <div class="match-card">
+                    <h3>Paris Saint-Germain</h3>
+                    <p>Vont-ils conserver leur tittre ?</p>
+                </div>
+                </ul>
+
+                <h2>🎟️ Les Phases Clés de la Saison</h2>
+                
+                <h3>Phase de Ligue (septembre 2025 - janvier 2026)</h3>
+                <p>8 journées de matchs palpitants où chaque point compte pour la qualification.</p>
+                <h3>Phase à Élimination Directe (février - mai 2026)</h3>
+                <p>Des huitièmes de finale jusqu'à la grande finale à Munich !</p>
+                <ul>
+                </ul>
+
+                <div class="highlight-box">
+                    <h3>💎 Les Moments Forts de Cette Saison</h3>
+                    <ul>
+                        <li>Le retour de clubs historiques comme Aston Villa et Girona</li>
+                        <li>Les débuts du nouveau format avec plus de matchs</li>
+                        <li>L'atmosphère électrique des soirées de Champions League</li>
+                        <li>La course au Soulier d'Or entre Haaland, Mbappé et Kane</li>
+                        <li>La quête du Real Madrid pour un 16ème titre</li>
+                    </ul>
+                </div>
+
+                <h2>🌟 Pourquoi Choisir SPOTEVENT ?</h2>
+                <p>Assister à un match de Ligue des Champions est une expérience unique, mais obtenir des billets peut s'avérer complexe :</p>
+                <ul>
+                    <li><strong>Places épuisées rapidement</strong> pour les plus grands matchs</li>
+                    <li><strong>Restrictions d'accès</strong> selon votre club et votre nationalité</li>
+                    <li><strong>Complexité des systèmes de billetterie</strong> de chaque club</li>
+                    <li><strong>Risques élevés</strong> avec les revendeurs non officiels</li>
+                </ul>
+
+                <p>SPOTEVENT simplifie votre accès aux matchs de Champions League :</p>
+                <ul>
+                    <li>✅ Accès aux matchs complets et aux meilleures places</li>
+                    <li>✅ Service légal et sécurisé</li>
+                    <li>✅ Accompagnement personnalisé de A à Z</li>
+                    <li>✅ Plus de 1000 clients satisfaits</li>
+                    <li>✅ Note de 4.9/5 sur Google (222 avis)</li>
+                </ul>
+
+                <div class="cta-section">
+                    <h3>🎯 Vivez la Magie de la Champions League !</h3>
+                    <p>Ne manquez pas les plus grands matchs de football européen. Que ce soit pour un match de phase de groupes, un quart de finale ou la grande finale à Munich, SPOTEVENT vous accompagne.</p>
+                    <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">
+                        Demander un Devis Gratuit
+                    </a>
+                </div>
+
+                <h2>📞 Comment Ça Marche ?</h2>
+                <ol>
+                    <li><strong>Contactez-nous</strong> avec vos souhaits (match, nombre de places, catégorie)</li>
+                    <li><strong>Recevez un devis gratuit</strong> sous 24-48h</li>
+                    <li><strong>Validation</strong> et paiement sécurisé</li>
+                    <li><strong>Réception de vos billets</strong> en toute sécurité</li>
+                    <li><strong>Profitez du spectacle</strong> dans les meilleures conditions !</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <p><strong>💡 Conseil SPOTEVENT :</strong> Les places pour les matchs de Champions League se réservent plusieurs semaines à l'avance, surtout pour les affiches prestigieuses et les phases finales. N'attendez pas le dernier moment pour nous contacter !</p>
+                </div>
+
+                <p><em>La Champions League, c'est bien plus qu'une compétition : c'est l'essence même du football européen, des nuits magiques et des émotions inoubliables. Avec SPOTEVENT, transformez votre rêve en réalité !</em></p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
