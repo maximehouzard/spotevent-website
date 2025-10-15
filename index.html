@@ -222,16 +222,133 @@ section {
         }
 
         /* Section Présentation */
-        .presentation {
-            background-color: #fff7ef;
-            text-align: center;
-        }
+.presentation {
+    background-color: #fff7ef;
+}
 
-        .presentation-content {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-        }
+.presentation-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.presentation-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.presentation-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.presentation-image:hover img {
+    transform: scale(1.05);
+}
+
+.presentation-content {
+    text-align: left;
+}
+
+.presentation-intro {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.presentation-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.presentation-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2.5rem 0;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: center;
+}
+
+.stat-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 280px;
+}
+
+.stat-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.stat-text {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.4;
+}
+
+.presentation-closing {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin: 1.5rem 0;
+}
+
+.presentation-content .cta-button {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 968px) {
+    .presentation-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .presentation-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .presentation-content {
+        text-align: center;
+    }
+
+    .presentation-stats {
+        grid-template-columns: 1fr;
+    }
+    .stat-badge {
+        max-width: 100%;
+    }
+}
 
         /* Section Vidéo */
         .video-section {
@@ -1546,23 +1663,44 @@ section {
 </section>
 
     <!-- Section Présentation -->
-    <section id="presentation" class="presentation">
-        <div class="fade-in">
-            <h2 class="section-title">🎯 Notre mission</h2>
+<section id="presentation" class="presentation">
+    <div class="fade-in">
+        <h2 class="section-title">🎯 Notre mission</h2>
+        <div class="presentation-container">
+            <div class="presentation-image">
+                <img src="spotevent-jacket.jpg" alt="SPOTEVENT - Conciergerie événementielle">
+            </div>
             <div class="presentation-content">
-                <p><strong>SPOTEVENT est une conciergerie spécialisée dans l'acquisition de places de concerts, événements sportifs et festivals à guichet fermé.</strong></p>
-                <br>
+                <p class="presentation-intro">SPOTEVENT est une conciergerie spécialisée dans l'acquisition de places de concerts, événements sportifs et festivals à guichet fermé.</strong></p>
+                
                 <p>Notre objectif est de vous permettre de vivre des moments inoubliables, même quand les billetteries officielles affichent complet, tout en garantissant un cadre légal, éthique et sécurisé.</p>
+                
                 <p>Ce service sera désormais accessible à tous et plus uniquement à une clientèle privilégiée.</p>
+                
                 <p>Toute demande de devis est gratuite.</p>
-                <br>
-                <p>⭐ + de 200 avis sur Google</p> 
-                <p>🎟️ + de 1 000 clients accompagnés</p>
-                <br>
-                <p>Avec SPOTEVENT, ne manquez plus jamais des événements sold out qui vous tiennent à cœur !</p>
-                </div>
+                
+                <div class="presentation-stats">
+    <div class="stat-item">
+        <div class="stat-badge">
+            <span class="stat-icon">⭐</span>
+            <span class="stat-text">+ de 200 avis sur Google</span>
+        </div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-badge">
+            <span class="stat-icon">🎟️</span>
+            <span class="stat-text">+ de 1 000 clients accompagnés</span>
+        </div>
+    </div>
+</div>
+                
+                <p class="presentation-closing">Avec SPOTEVENT, ne manquez plus jamais des événements sold out qui vous tiennent à cœur !</p>
+                
                 <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
-            </section>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section id="avis" class="reviews">
     <div class="fade-in">
