@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPOTEVENT - Offres Corporate</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-contact a:hover {
+            color: var(--gold);
+        }
+
+        .hero-corporate {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #fff7ef 0%, #f5e6d3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-corporate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="2" opacity="0.1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .hero-corporate h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .hero-corporate p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .offers-section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .offer-card {
+            background-color: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+            border-color: var(--gold);
+        }
+
+        .offer-card.popular {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .offer-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--black);
+            text-align: center;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .offer-features li {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--black);
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .offer-features li:last-child {
+            border-bottom: none;
+        }
+
+        .offer-features i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            min-width: 24px;
+        }
+
+        .offer-price {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 2rem;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .offer-cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        .offer-cta-button:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .vip-card .offer-cta-button {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+
+        .vip-card .offer-cta-button:hover {
+            background-color: var(--white);
+            color: var(--black);
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--black);
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: #f0f0f0;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .vip-section {
+            max-width: 600px;
+            margin: 4rem auto 0;
+        }
+
+        .vip-card {
+            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            color: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border: 3px solid var(--gold);
+        }
+
+        .vip-card .offer-title {
+            color: var(--gold);
+        }
+
+        .vip-card .offer-features li {
+            color: var(--white);
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .vip-card .offer-features i {
+            color: var(--gold);
+        }
+
+        .vip-card .offer-price {
+            border-top-color: rgba(255,255,255,0.2);
+        }
+
+        .vip-card .price-amount {
+            color: var(--white);
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-radius: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .benefits-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .benefit-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        /* Bulle de contact flottante */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #000000;
+            color: var(--white);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+            background: #333333;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+            animation: fadeInUpBubble 0.3s ease;
+        }
+
+        .contact-message {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
+
+        .contact-message p {
+            margin: 0;
+            color: var(--black);
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        @keyframes fadeInUpBubble {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: var(--black);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: var(--beige);
+        }
+
+        .contact-option:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-option i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-corporate h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-corporate p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-card.popular {
+                transform: scale(1);
+            }
+
+            .price-amount {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                </svg>
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <div class="nav-contact">
+                <a href="javascript:void(0)" onclick="toggleContactOptions()">Contactez-nous</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="benefits-section fade-in" style="padding-top: 8rem;">
+        <h2 class="section-title">Pourquoi choisir SPOTEVENT<br>pour votre entreprise ?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3 class="benefit-title">Fidélisez vos équipes</h3>
+                <p class="benefit-text">Récompensez vos collaborateurs avec des expériences inoubliables</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⭐</div>
+                <h3 class="benefit-title">Démarquez-vous</h3>
+                <p class="benefit-text">Offrez des avantages uniques que vos concurrents ne peuvent pas proposer</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3 class="benefit-title">Renforcez la cohésion</h3>
+                <p class="benefit-text">Créez des moments de partage qui fédèrent vos équipes</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💼</div>
+                <h3 class="benefit-title">Solution clé en main</h3>
+                <p class="benefit-text">Nous gérons tout de A à Z pour vous simplifier la vie</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <h2 class="section-title fade-in">Des réductions et des accès à des événements complets !</h2>
+        
+        <div class="offers-grid">
+            <div class="offer-card fade-in">
+                <h3 class="offer-title">Classique</h3>
+                <div class="discount-badge">10% de remise</div>
+                <ul class="offer-features">
+                    <li><i class="fas fa-check-circle"></i> <span>10% de remise sur chaque commande</span></li>
+                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
+                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
+                </ul>
+                <div class="offer-price">
+                    <div class="price-amount">
+                        <span>29€</span>
+                        <span class="price-period">HT/mois</span>
+                    </div>
+                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
+                </div>
+            </div>
+
+            <div class="offer-card fade-in" style="animation-delay: 0.1s">
+                <h3 class="offer-title">Privilège</h3>
+                <div class="discount-badge">15% de remise</div>
+                <ul class="offer-features">
+                    <li><i class="fas fa-check-circle"></i> <span>15% de remise sur chaque commande</span></li>
+                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
+                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
+                </ul>
+                <div class="offer-price">
+                    <div class="price-amount">
+                        <span>49€</span>
+                        <span class="price-period">HT/mois</span>
+                    </div>
+                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
+                </div>
+            </div>
+
+            <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
+                <span class="popular-badge">Le + populaire !</span>
+                <h3 class="offer-title">Prestige</h3>
+                <div class="discount-badge">20% de remise</div>
+                <ul class="offer-features">
+                    <li><i class="fas fa-check-circle"></i> <span>20% de remise sur chaque commande</span></li>
+                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
+                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
+                </ul>
+                <div class="offer-price">
+                    <div class="price-amount">
+                        <span>79€</span>
+                        <span class="price-period">HT/mois</span>
+                    </div>
+                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="vip-section fade-in" style="animation-delay: 0.3s">
+            <h2 class="section-title">Offrez à votre équipe un accès à un événement complet !</h2>
+            <div class="vip-card">
+                <h3 class="offer-title">VIP</h3>
+                <ul class="offer-features">
+                    <li><i class="fas fa-gift"></i> <span>2 places offertes par mois</span></li>
+                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
+                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
+                </ul>
+                <div class="offer-price">
+                    <div class="price-amount">
+                        <span>689€</span>
+                        <span class="price-period">HT/mois</span>
+                    </div>
+                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-container fade-in" id="contact">
+            <p class="cta-text">Prêt à offrir des expériences exceptionnelles<br>à vos équipes ?</p>
+            <a href="javascript:void(0)" onclick="toggleContactOptions()" class="cta-button">
+                Demandez un devis
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Bulle de contact flottante -->
+    <div class="contact-bubble">
+        <button class="contact-toggle" onclick="toggleContactOptions()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-message">
+                <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+            </div>
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Toggle pour la bulle de contact
+        function toggleContactOptions() {
+            const contactOptions = document.getElementById('contactOptions');
+            contactOptions.classList.toggle('active');
+        }
+
+        // Fermer en cliquant ailleurs
+        document.addEventListener('click', function(event) {
+            const contactOptions = document.getElementById('contactOptions');
+            const contactBubble = document.querySelector('.contact-bubble');
+            const navContact = document.querySelector('.nav-contact');
+            
+            if (contactOptions && contactOptions.classList.contains('active')) {
+                if (!contactOptions.contains(event.target) && 
+                    !contactBubble.contains(event.target) &&
+                    !navContact.contains(event.target)) {
+                    contactOptions.classList.remove('active');
+                }
+            }
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
