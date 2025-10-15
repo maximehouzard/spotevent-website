@@ -378,9 +378,12 @@
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .benefit-card {
@@ -516,6 +519,10 @@
         }
 
         @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
             .hero-corporate h1 {
                 font-size: 2.2rem;
             }
@@ -736,11 +743,21 @@
             const contactOptions = document.getElementById('contactOptions');
             const contactBubble = document.querySelector('.contact-bubble');
             const navContact = document.querySelector('.nav-contact');
+            const ctaButtons = document.querySelectorAll('.offer-cta-button, .cta-button');
             
             if (contactOptions && contactOptions.classList.contains('active')) {
+                // Vérifier si on a cliqué sur un bouton CTA
+                let clickedOnButton = false;
+                ctaButtons.forEach(button => {
+                    if (button.contains(event.target)) {
+                        clickedOnButton = true;
+                    }
+                });
+                
                 if (!contactOptions.contains(event.target) && 
                     !contactBubble.contains(event.target) &&
-                    !navContact.contains(event.target)) {
+                    !navContact.contains(event.target) &&
+                    !clickedOnButton) {
                     contactOptions.classList.remove('active');
                 }
             }
