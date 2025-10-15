@@ -134,6 +134,8 @@ nav {
     text-align: center;
     overflow: hidden;
     margin-top: 80px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
 .hero-video {
@@ -2199,6 +2201,25 @@ function animateOnScroll() {
         }
     });
 }
+
+// Toggle menu mobile
+function toggleMobileMenu() {
+    const navCenter = document.getElementById('navCenter');
+    navCenter.classList.toggle('active');
+}
+
+// Fermer le menu mobile quand on clique sur un lien
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-center a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navCenter = document.getElementById('navCenter');
+            if (navCenter.classList.contains('active')) {
+                navCenter.classList.remove('active');
+            }
+        });
+    });
+});
 
 // Fonction pour ouvrir la bulle de contact
 function openContactBubble() {
