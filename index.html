@@ -30,6 +30,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    width: 100%;
 }
 
         /* Header fixe */
@@ -134,8 +135,6 @@ nav {
     text-align: center;
     overflow: hidden;
     margin-top: 80px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
 }
 
 .hero-video {
@@ -190,12 +189,13 @@ nav {
     transform: translateY(-3px);
 }
 
-        /* Sections */
-        section {
-            padding: 5rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+       /* Sections */
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
 
         .section-title {
             font-size: 2.5rem;
@@ -438,20 +438,24 @@ nav {
     }
 
     /* Cacher le menu principal sur mobile */
-    .nav-center {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background-color: var(--white);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 2rem;
-        gap: 2rem;
-        transition: left 0.3s ease;
-        overflow-y: auto;
-    }
+.nav-center {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 280px;
+    max-width: 80%;
+    height: auto;
+    max-height: calc(100vh - 70px);
+    background-color: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+}
 
     .nav-center.active {
         left: 0;
