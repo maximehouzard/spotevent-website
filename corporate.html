@@ -34,7 +34,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #fff7ef;
+            background-color: rgba(255, 247, 239, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
@@ -85,7 +85,11 @@
 
         .hero-corporate {
             min-height: 70vh;
-            background: linear-gradient(135deg, #fff7ef 0%, #f5e6d3 100%);
+            background-image: 
+                linear-gradient(rgba(255, 247, 239, 0.75), rgba(245, 230, 211, 0.75)),
+                url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -102,8 +106,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="none" stroke="%23D4AF37" stroke-width="2" opacity="0.1"/></svg>');
-            opacity: 0.3;
+            background: rgba(255, 247, 239, 0.1);
         }
 
         .hero-content {
@@ -127,10 +130,11 @@
             font-weight: 500;
         }
 
-        .offers-section {
-            padding: 5rem 5%;
-            max-width: 1400px;
+        .benefits-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .section-title {
@@ -147,6 +151,76 @@
             margin-bottom: 4rem;
             color: #666;
             font-weight: 500;
+        }
+
+        .benefits-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-card {
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 280px;
+    max-width: 350px;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.benefits-section:first-of-type .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 350px));
+    gap: 2rem;
+}
+
+.benefits-section:first-of-type .benefit-card:nth-child(4),
+.benefits-section:first-of-type .benefit-card:nth-child(5) {
+    grid-column: auto;
+    justify-self: center;
+}
+
+.benefits-section:first-of-type .benefits-grid::after {
+    content: '';
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 280px;
+    max-width: 350px;
+}
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .benefit-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .offers-section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .offers-grid {
@@ -284,17 +358,6 @@
             font-weight: 600;
         }
 
-        .discount-badge {
-            display: inline-block;
-            background-color: #f0f0f0;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
         .vip-section {
             max-width: 600px;
             margin: 4rem auto 0;
@@ -369,54 +432,6 @@
             box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
         }
 
-        .benefits-section {
-            padding: 4rem 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .benefit-card {
-            padding: 2rem;
-            background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .benefit-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--black);
-        }
-
-        .benefit-text {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
         footer {
             background-color: var(--black);
             color: var(--white);
@@ -425,7 +440,6 @@
             margin-top: 4rem;
         }
 
-        /* Bulle de contact flottante */
         .contact-bubble {
             position: fixed;
             bottom: 30px;
@@ -518,9 +532,16 @@
             font-size: 1.2rem;
         }
 
+        @media (max-width: 1100px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, minmax(280px, 350px));
+            }
+        }
+
         @media (max-width: 768px) {
             .benefits-grid {
                 grid-template-columns: 1fr;
+                justify-items: center;
             }
 
             .hero-corporate h1 {
@@ -586,48 +607,82 @@
         </nav>
     </header>
 
-    <section class="benefits-section fade-in" style="padding-top: 8rem;">
-        <h2 class="section-title">Pourquoi choisir SPOTEVENT<br>pour votre entreprise ?</h2>
+    <section class="hero-corporate">
+        <div class="hero-content fade-in">
+            <h1>Que diraient vos collaborateurs<br>s'ils pouvaient accéder à des événements complets ?</h1>
+            <p>Un bon moyen de motiver et fidéliser vos équipes avec des avantages qui sortent vraiment de l'ordinaire !</p>
+        </div>
+    </section>
+
+    <section class="benefits-section fade-in" style="padding-top: 2rem;">
+        <h2 class="section-title">Quels avantages pour votre entreprise ?</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
-                <div class="benefit-icon">🎯</div>
-                <h3 class="benefit-title">Fidélisez vos équipes</h3>
-                <p class="benefit-text">Récompensez vos collaborateurs avec des expériences inoubliables</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">⭐</div>
-                <h3 class="benefit-title">Démarquez-vous</h3>
-                <p class="benefit-text">Offrez des avantages uniques que vos concurrents ne peuvent pas proposer</p>
-            </div>
-            <div class="benefit-card">
                 <div class="benefit-icon">🤝</div>
-                <h3 class="benefit-title">Renforcez la cohésion</h3>
-                <p class="benefit-text">Créez des moments de partage qui fédèrent vos équipes</p>
+                <h3 class="benefit-title">Cohésion et fédération des équipes</h3>
+                <p class="benefit-text">Créez des moments de partage qui renforcent durablement les liens entre collaborateurs</p>
             </div>
             <div class="benefit-card">
-                <div class="benefit-icon">💼</div>
-                <h3 class="benefit-title">Solution clé en main</h3>
-                <p class="benefit-text">Nous gérons tout de A à Z pour vous simplifier la vie</p>
+                <div class="benefit-icon">🏆</div>
+                <h3 class="benefit-title">Marque employeur renforcée</h3>
+                <p class="benefit-text">Attirez et retenez les meilleurs talents grâce à des avantages qui marquent vraiment</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3 class="benefit-title">Exonération de charges sociales</h3>
+                <p class="benefit-text">Les activités sociales et culturelles pour salariés bénéficient d'exonérations de cotisations</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <h3 class="benefit-title">Déductibilité fiscale</h3>
+                <p class="benefit-text">Les dépenses engagées constituent des charges déductibles du résultat imposable</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3 class="benefit-title">ROI mesurable</h3>
+                <p class="benefit-text">Des collaborateurs plus engagés = meilleure productivité</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 class="section-title">Quels avantages pour vos collaborateurs ?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎫</div>
+                <h3 class="benefit-title">Accès privilégié aux événements complets</h3>
+                <p class="benefit-text">Concerts, événements sportifs, festivals... même quand les billetteries officielles sont fermées</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎉</div>
+                <h3 class="benefit-title">Moments de partage exceptionnels</h3>
+                <p class="benefit-text">Des expériences uniques à vivre en famille, entre amis ou avec ses collègues</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🙏🏼</div>
+                <h3 class="benefit-title">Très forte reconnaissance</h3>
+                <p class="benefit-text">"Merci pour votre travail grâce à vous nous avons passé un moment magique, hors du temps"</p>
             </div>
         </div>
     </section>
 
     <section class="offers-section">
-        <h2 class="section-title fade-in">Des réductions et des accès à des événements complets !</h2>
+        <h2 class="section-title fade-in">Nos solutions</h2>
+        <p class="section-subtitle fade-in">Des réductions et des accès à des événements complets !</p>
         
         <div class="offers-grid">
             <div class="offer-card fade-in">
                 <h3 class="offer-title">Classique</h3>
-                <div class="discount-badge">10% de remise</div>
                 <ul class="offer-features">
                     <li><i class="fas fa-check-circle"></i> <span>10% de remise sur chaque commande</span></li>
-                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
-                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
                 </ul>
                 <div class="offer-price">
                     <div class="price-amount">
                         <span>29€</span>
                         <span class="price-period">HT/mois</span>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
+                        313€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
                     </div>
                     <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
@@ -635,16 +690,16 @@
 
             <div class="offer-card fade-in" style="animation-delay: 0.1s">
                 <h3 class="offer-title">Privilège</h3>
-                <div class="discount-badge">15% de remise</div>
                 <ul class="offer-features">
                     <li><i class="fas fa-check-circle"></i> <span>15% de remise sur chaque commande</span></li>
-                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
-                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
                 </ul>
                 <div class="offer-price">
                     <div class="price-amount">
                         <span>49€</span>
                         <span class="price-period">HT/mois</span>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
+                        529€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
                     </div>
                     <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
@@ -653,16 +708,16 @@
             <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
                 <span class="popular-badge">Le + populaire !</span>
                 <h3 class="offer-title">Prestige</h3>
-                <div class="discount-badge">20% de remise</div>
                 <ul class="offer-features">
                     <li><i class="fas fa-check-circle"></i> <span>20% de remise sur chaque commande</span></li>
-                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
-                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
                 </ul>
                 <div class="offer-price">
                     <div class="price-amount">
                         <span>79€</span>
                         <span class="price-period">HT/mois</span>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
+                        853€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
                     </div>
                     <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
@@ -670,13 +725,11 @@
         </div>
 
         <div class="vip-section fade-in" style="animation-delay: 0.3s">
-            <h2 class="section-title">Offrez à votre équipe un accès à un événement complet !</h2>
+            <h2 class="section-title" style="font-size: 2rem;">Offrez à votre équipe un accès<br>à un événement complet !</h2>
             <div class="vip-card">
                 <h3 class="offer-title">VIP</h3>
                 <ul class="offer-features">
                     <li><i class="fas fa-gift"></i> <span>2 places offertes par mois</span></li>
-                    <li><i class="fas fa-headset"></i> <span>Support 7j/7</span></li>
-                    <li><i class="fas fa-globe"></i> <span>Événements nationaux et internationaux</span></li>
                 </ul>
                 <div class="offer-price">
                     <div class="price-amount">
@@ -703,7 +756,6 @@
         </div>
     </footer>
 
-    <!-- Bulle de contact flottante -->
     <div class="contact-bubble">
         <button class="contact-toggle" onclick="toggleContactOptions()">
             <i class="fas fa-comments"></i>
@@ -732,13 +784,11 @@
     </div>
 
     <script>
-        // Toggle pour la bulle de contact
         function toggleContactOptions() {
             const contactOptions = document.getElementById('contactOptions');
             contactOptions.classList.toggle('active');
         }
 
-        // Fermer en cliquant ailleurs
         document.addEventListener('click', function(event) {
             const contactOptions = document.getElementById('contactOptions');
             const contactBubble = document.querySelector('.contact-bubble');
@@ -746,7 +796,6 @@
             const ctaButtons = document.querySelectorAll('.offer-cta-button, .cta-button');
             
             if (contactOptions && contactOptions.classList.contains('active')) {
-                // Vérifier si on a cliqué sur un bouton CTA
                 let clickedOnButton = false;
                 ctaButtons.forEach(button => {
                     if (button.contains(event.target)) {
@@ -763,7 +812,6 @@
             }
         });
 
-        // Animation au scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -785,6 +833,5 @@
             observer.observe(el);
         });
     </script>
-    <script src="../tag.js"></script>
 </body>
 </html>
