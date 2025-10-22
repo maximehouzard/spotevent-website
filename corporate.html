@@ -154,46 +154,27 @@
         }
 
         .benefits-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 3rem;
-    justify-content: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.benefit-card {
-    flex: 0 1 calc(33.333% - 1.5rem);
-    min-width: 280px;
-    max-width: 350px;
-    padding: 2rem;
-    background-color: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    width: 100%;
-}
-
-.benefits-section:first-of-type .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(280px, 350px));
-    gap: 2rem;
-}
-
-.benefits-section:first-of-type .benefit-card:nth-child(4),
-.benefits-section:first-of-type .benefit-card:nth-child(5) {
-    grid-column: auto;
-    justify-self: center;
-}
-
-.benefits-section:first-of-type .benefits-grid::after {
-    content: '';
-    flex: 0 1 calc(33.333% - 1.5rem);
-    min-width: 280px;
-    max-width: 350px;
-}
+        .benefit-card {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 280px;
+            max-width: 350px;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
 
         .benefit-card:hover {
             transform: translateY(-5px);
@@ -219,24 +200,30 @@
 
         .offers-section {
             padding: 5rem 5%;
+            background-color: var(--beige);
             max-width: 1400px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
-            margin-bottom: 4rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
 
         .offer-card {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 300px;
+            max-width: 380px;
             background-color: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 3px solid transparent;
-            transition: all 0.3s ease;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -244,32 +231,31 @@
 
         .offer-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
-            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
         .offer-card.popular {
-            border-color: var(--gold);
-            transform: scale(1.05);
+            border: 3px solid var(--gold);
         }
 
         .popular-badge {
             position: absolute;
             top: -15px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: var(--gold);
             color: var(--white);
             padding: 0.5rem 1.5rem;
-            border-radius: 25px;
+            border-radius: 20px;
             font-weight: 700;
             font-size: 0.9rem;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            white-space: nowrap;
         }
 
         .offer-title {
             font-size: 2rem;
             font-weight: 800;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--black);
             text-align: center;
         }
@@ -281,163 +267,183 @@
         }
 
         .offer-features li {
-            padding: 1rem 0;
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 1.1rem;
-            color: var(--black);
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .offer-features li:last-child {
-            border-bottom: none;
+            padding: 0.8rem 0;
+            font-size: 1rem;
         }
 
         .offer-features i {
             color: var(--gold);
-            font-size: 1.5rem;
-            min-width: 24px;
+            font-size: 1.2rem;
         }
 
         .offer-price {
-            text-align: center;
             margin-top: auto;
-            padding-top: 2rem;
-            border-top: 2px solid #f0f0f0;
         }
 
-        .offer-cta-button {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: var(--black);
-            color: #fff7ef;
-            text-decoration: none;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+        .price-monthly {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            color: #888;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin-top: 1.5rem;
-            width: 100%;
-        }
-
-        .offer-cta-button:hover {
-            background-color: var(--gold);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .vip-card .offer-cta-button {
-            background-color: var(--gold);
-            color: var(--white);
-        }
-
-        .vip-card .offer-cta-button:hover {
-            background-color: var(--white);
-            color: var(--black);
+            margin-bottom: 0.5rem;
         }
 
         .price-amount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--black);
             display: flex;
             align-items: baseline;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
+        }
+
+        .price-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
         }
 
         .price-period {
             font-size: 1rem;
             color: #666;
+            font-weight: 500;
+        }
+
+        .price-annual {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(212, 175, 55, 0.08);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .annual-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            color: #888;
             font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .annual-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--black);
+            white-space: nowrap;
+        }
+
+        .price-ttc {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        .annual-discount {
+            color: var(--gold);
+            font-weight: 800;
+            margin-left: 0.5rem;
+        }
+
+        .offer-cta-button {
+            display: block;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .offer-cta-button:hover {
+            background-color: var(--gold);
+            transform: scale(1.02);
         }
 
         .vip-section {
-            max-width: 600px;
-            margin: 4rem auto 0;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 2px solid #e0e0e0;
         }
 
         .vip-card {
-            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
-            color: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            max-width: 500px;
+            margin: 2rem auto 0;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 3px solid var(--gold);
         }
 
-        .vip-card .offer-title {
-            color: var(--gold);
-        }
-
-        .vip-card .offer-features li {
-            color: var(--white);
-            border-bottom-color: rgba(255,255,255,0.2);
-        }
-
-        .vip-card .offer-features i {
-            color: var(--gold);
-        }
-
-        .vip-card .offer-price {
-            border-top-color: rgba(255,255,255,0.2);
-        }
-
-        .vip-card .price-amount {
-            color: var(--white);
-        }
-
         .cta-container {
+            margin-top: 5rem;
             text-align: center;
-            margin-top: 4rem;
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border-radius: 20px;
+            padding: 3rem;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
         }
 
         .cta-text {
             font-size: 1.5rem;
-            font-weight: 600;
             margin-bottom: 2rem;
             color: var(--black);
+            font-weight: 600;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
             background-color: var(--black);
-            color: #fff7ef;
+            color: var(--white);
             text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-family: 'Inter', sans-serif;
+            border-radius: 8px;
+            font-size: 1.2rem;
             font-weight: 700;
-            cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .cta-button:hover {
             background-color: var(--gold);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+            transform: scale(1.05);
         }
 
         footer {
             background-color: var(--black);
             color: var(--white);
             text-align: center;
-            padding: 3rem 5%;
-            margin-top: 4rem;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
         }
 
         .contact-bubble {
@@ -448,27 +454,24 @@
         }
 
         .contact-toggle {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: #000000;
+            background-color: var(--black);
             color: var(--white);
             border: none;
-            font-size: 1.5rem;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
         }
 
         .contact-toggle:hover {
+            background-color: var(--gold);
             transform: scale(1.1);
-            background: #333333;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
 
         .contact-options {
@@ -477,115 +480,92 @@
             right: 0;
             background-color: var(--white);
             border-radius: 15px;
-            padding: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            display: none;
-            min-width: 280px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 1.5rem;
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
         }
 
         .contact-options.active {
-            display: block;
-            animation: fadeInUpBubble 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         .contact-message {
-            padding-bottom: 1rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #f0f0f0;
-            text-align: left;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .contact-message p {
-            margin: 0;
-            color: var(--black);
             font-size: 0.95rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        @keyframes fadeInUpBubble {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: #666;
+            line-height: 1.5;
         }
 
         .contact-option {
             display: flex;
             align-items: center;
-            padding: 0.8rem;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            background-color: var(--beige);
+            border-radius: 8px;
             text-decoration: none;
             color: var(--black);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .contact-option:hover {
-            background-color: var(--beige);
-        }
-
-        .contact-option:last-child {
-            margin-bottom: 0;
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateX(5px);
         }
 
         .contact-option i {
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
-        @media (max-width: 1100px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, minmax(280px, 350px));
+        @media (max-width: 1200px) {
+            .offer-card {
+                flex: 0 1 calc(50% - 1rem);
             }
         }
 
         @media (max-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                justify-items: center;
-            }
-
             .hero-corporate h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-corporate p {
                 font-size: 1.2rem;
             }
 
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-
             .offers-grid {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .offer-card.popular {
-                transform: scale(1);
+            .offer-card {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
 
-            .price-amount {
-                font-size: 2rem;
+            .benefit-card {
+                flex: 1 1 100%;
             }
-        }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+            .section-title {
+                font-size: 1.8rem;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        .fade-in {
-            animation: fadeInUp 0.8s ease forwards;
+            .price-value {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -602,19 +582,19 @@
                 <span class="logo-text">SPOTEVENT</span>
             </a>
             <div class="nav-contact">
-                <a href="javascript:void(0)" onclick="toggleContactOptions()">Contactez-nous !</a>
+                <a href="javascript:void(0)" onclick="toggleContactOptions()">Contactez-nous</a>
             </div>
         </nav>
     </header>
 
     <section class="hero-corporate">
-        <div class="hero-content fade-in">
-            <h1>Que diraient vos collaborateurs<br>s'ils pouvaient accéder à des événements complets ?</h1>
-            <p>Un bon moyen de motiver et fidéliser vos équipes avec des avantages qui sortent vraiment de l'ordinaire !</p>
+        <div class="hero-content">
+            <h1>Nos solutions Corporate</h1>
+            <p>Apportez de la valeur, générez de l'engagement et de la reconnaissance !</p>
         </div>
     </section>
 
-    <section class="benefits-section fade-in" style="padding-top: 2rem;">
+    <section class="benefits-section">
         <h2 class="section-title">Quels avantages pour votre entreprise ?</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
@@ -639,8 +619,13 @@
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">📈</div>
-                <h3 class="benefit-title">ROI mesurable</h3>
+                <h3 class="benefit-title">Boost de productivité</h3>
                 <p class="benefit-text">Des collaborateurs plus engagés = meilleure productivité</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3 class="benefit-title">Générateur de business</h3>
+                <p class="benefit-text">Fidélisez vos clients et convertissez des prospects en les invitant aux événements les plus prisés de l'année</p>
             </div>
         </div>
     </section>
@@ -677,15 +662,25 @@
                     <li><i class="fas fa-check-circle"></i> <span>10% de remise sur chaque commande</span></li>
                 </ul>
                 <div class="offer-price">
-                    <div class="price-amount">
-                        <span>29€</span>
-                        <span class="price-period">HT/mois</span>
+                    <div class="price-monthly">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">29</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
                     </div>
-                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
-                        313€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
+                    <div class="price-annual">
+                        <div class="annual-label">Facturation annuelle</div>
+                        <div class="annual-price">
+                            313€ HT/an <span class="annual-discount">(-10%)</span>
+                        </div>
+                        <div class="price-ttc">376€ TTC/an</div>
                     </div>
-                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
+                <a href="https://pay.sumup.com/b2c/Q9RZ898F" target="_blank" class="offer-cta-button">
+                    Offrez-le dès maintenant
+                </a>
             </div>
 
             <div class="offer-card fade-in" style="animation-delay: 0.1s">
@@ -694,15 +689,25 @@
                     <li><i class="fas fa-check-circle"></i> <span>15% de remise sur chaque commande</span></li>
                 </ul>
                 <div class="offer-price">
-                    <div class="price-amount">
-                        <span>49€</span>
-                        <span class="price-period">HT/mois</span>
+                    <div class="price-monthly">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">49</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
                     </div>
-                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
-                        529€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
+                    <div class="price-annual">
+                        <div class="annual-label">Facturation annuelle</div>
+                        <div class="annual-price">
+                            529€ HT/an <span class="annual-discount">(-10%)</span>
+                        </div>
+                        <div class="price-ttc">635€ TTC/an</div>
                     </div>
-                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
+                <a href="https://pay.sumup.com/b2c/QLVU0IVR" target="_blank" class="offer-cta-button">
+                    Offrez-le dès maintenant
+                </a>
             </div>
 
             <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
@@ -712,15 +717,25 @@
                     <li><i class="fas fa-check-circle"></i> <span>20% de remise sur chaque commande</span></li>
                 </ul>
                 <div class="offer-price">
-                    <div class="price-amount">
-                        <span>79€</span>
-                        <span class="price-period">HT/mois</span>
+                    <div class="price-monthly">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">79</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
                     </div>
-                    <div style="margin-top: 0.5rem; font-size: 1.1rem; color: #666;">
-                        853€ HT par an <span style="color: var(--gold); font-weight: 700;">(-10%)</span>
+                    <div class="price-annual">
+                        <div class="annual-label">Facturation annuelle</div>
+                        <div class="annual-price">
+                            853€ HT/an <span class="annual-discount">(-10%)</span>
+                        </div>
+                        <div class="price-ttc">1 024€ TTC/an</div>
                     </div>
-                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
                 </div>
+                <a href="https://pay.sumup.com/b2c/QAM63GFS" target="_blank" class="offer-cta-button">
+                    Offrez-le dès maintenant
+                </a>
             </div>
         </div>
 
@@ -732,19 +747,23 @@
                     <li><i class="fas fa-gift"></i> <span>2 places offertes par mois</span></li>
                 </ul>
                 <div class="offer-price">
-                    <div class="price-amount">
-                        <span>689€</span>
-                        <span class="price-period">HT/mois</span>
+                    <div class="price-monthly">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">689</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
                     </div>
-                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
                 </div>
             </div>
         </div>
 
         <div class="cta-container fade-in" id="contact">
-            <p class="cta-text">Prêt à offrir des expériences exceptionnelles<br>à vos équipes ?</p>
-            <a href="javascript:void(0)" onclick="toggleContactOptions()" class="cta-button">
-                Demandez un devis
+            <p class="cta-text">Prêt à offrir des expériences exceptionnelles<br>à vos équipes et vos clients ?</p>
+            <a href="https://meetings-eu1.hubspot.com/maxime-houzard" onclick="toggleContactOptions()" class="cta-button">
+                Prenez RDV en visio !
             </a>
         </div>
     </section>
