@@ -215,6 +215,19 @@
             margin-top: 3rem;
         }
 
+        .discount-badge {
+            background: var(--beige);
+            color: var(--black);
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            margin: 1rem auto 1.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--black);
+        }
+
         .offer-card {
             flex: 0 1 calc(33.333% - 1.5rem);
             min-width: 300px;
@@ -658,9 +671,7 @@
         <div class="offers-grid">
             <div class="offer-card fade-in">
                 <h3 class="offer-title">Classique</h3>
-                <ul class="offer-features">
-                    <li><i class="fas fa-check-circle"></i> <span>10% de remise sur chaque commande</span></li>
-                </ul>
+                <div class="discount-badge">-10% par commande</div>
                 <div class="offer-price">
                     <div class="price-monthly">
                         <div class="price-label">Prix mensuel</div>
@@ -685,9 +696,7 @@
 
             <div class="offer-card fade-in" style="animation-delay: 0.1s">
                 <h3 class="offer-title">Privilège</h3>
-                <ul class="offer-features">
-                    <li><i class="fas fa-check-circle"></i> <span>15% de remise sur chaque commande</span></li>
-                </ul>
+                <div class="discount-badge">-15% par commande</div>
                 <div class="offer-price">
                     <div class="price-monthly">
                         <div class="price-label">Prix mensuel</div>
@@ -713,9 +722,7 @@
             <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
                 <span class="popular-badge">Le + populaire !</span>
                 <h3 class="offer-title">Prestige</h3>
-                <ul class="offer-features">
-                    <li><i class="fas fa-check-circle"></i> <span>20% de remise sur chaque commande</span></li>
-                </ul>
+                <div class="discount-badge">-20% par commande</div>
                 <div class="offer-price">
                     <div class="price-monthly">
                         <div class="price-label">Prix mensuel</div>
@@ -743,9 +750,7 @@
             <h2 class="section-title" style="font-size: 2rem;">Offrez à votre équipe et à vos clients un accès<br>à un événement complet !</h2>
             <div class="vip-card">
                 <h3 class="offer-title">VIP</h3>
-                <ul class="offer-features">
-                    <li><i class="fas fa-gift"></i> <span>2 places offertes par mois</span></li>
-                </ul>
+                <div class="discount-badge">2 places offertes par mois</div>
                 <div class="offer-price">
                     <div class="price-monthly">
                         <div class="price-label">Prix mensuel</div>
