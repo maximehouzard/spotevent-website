@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fidélisez vos collaborateurs et développez votre business avec l'accès aux événements sold out | SPOTEVENT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--beige);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        .top-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--beige);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.3rem;
+        }
+
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-contact a:hover {
+            color: var(--gold);
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        /* Header de l'article */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--beige) 100%);
+            border-bottom: 3px solid var(--gold);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--black);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.8;
+        }
+
+        .emoji-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        /* Article principal */
+        article {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: var(--black);
+            margin: 40px 0 25px 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--gold);
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fffbf5 0%, var(--beige) 100%);
+            border-left: 5px solid var(--gold);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .benefit-card h4 {
+            color: var(--gold);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: #555;
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            background: var(--beige);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid var(--gold);
+        }
+
+        .use-case-item {
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+        }
+
+        .use-case-item h4 {
+            color: var(--gold);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .use-case-item p {
+            margin: 0;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: var(--black);
+            margin-top: 10px;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: linear-gradient(135deg, #fffbf5 0%, var(--beige) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid var(--gold);
+            font-style: italic;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial p {
+            color: var(--black);
+            font-size: 1.1em;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, var(--gold) 0%, #c99b2e 100%);
+            border-radius: 15px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin: 0 0 20px 0;
+            font-size: 2.5em;
+            border: none;
+            padding: 0;
+        }
+
+        .cta-section p {
+            color: var(--white);
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--black);
+            color: var(--beige);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            background: var(--white);
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--white);
+            margin-top: 60px;
+            border-top: 3px solid var(--gold);
+            border-radius: 15px 15px 0 0;
+        }
+
+        footer p {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .brand {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+
+        /* Bulle de contact flottante */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .contact-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-toggle:hover {
+            background: #c99b2e;
+            transform: scale(1.1);
+        }
+
+        .contact-toggle i {
+            font-size: 28px;
+            color: var(--white);
+        }
+
+        .contact-options {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 9998;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+        }
+
+        .contact-message {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--beige);
+        }
+
+        .contact-message p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--black);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            text-decoration: none;
+            color: var(--black);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: var(--beige);
+        }
+
+        .contact-option:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-option i {
+            font-size: 1.5rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-option span {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            article {
+                padding: 30px 20px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .contact-bubble {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .contact-options {
+                right: 20px;
+                bottom: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <div class="top-header">
+        <nav>
+            <a href="https://spotevent.fr" class="logo">
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <div class="nav-contact">
+                <a onclick="toggleContactOptions()">Nous contacter</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><span class="emoji-icon">🎟️</span>Fidéliser et Développer votre Business</h1>
+            <p class="subtitle">L'accès exclusif aux événements sold out : un levier stratégique pour les entreprises</p>
+            <p class="intro">Dans un monde professionnel en quête perpétuelle de différenciation, offrir à vos collaborateurs et clients l'accès à des événements à guichet fermé devient un avantage compétitif majeur.</p>
+        </header>
+
+        <article>
+            <h2><span class="emoji-icon">🚀</span>L'événementiel exclusif : bien plus qu'un simple cadeau</h2>
+            
+            <p>Dans un contexte où la guerre des talents fait rage et où la fidélisation client représente un enjeu crucial, les entreprises doivent réinventer leurs stratégies de reconnaissance et de récompense. L'accès à des événements sold out – qu'il s'agisse de concerts mythiques, de compétitions sportives prestigieuses ou de festivals incontournables – s'impose comme un outil de différenciation puissant et mémorable.</p>
+
+            <p>Contrairement aux avantages traditionnels, offrir des places pour un événement complet crée une expérience émotionnelle forte, génératrice d'attachement et de reconnaissance durable. C'est l'opportunité de transformer une simple relation professionnelle en un lien authentique et marquant.</p>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">+1000</span>
+                    <span class="stat-label">Clients accompagnés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+200</span>
+                    <span class="stat-label">Avis Google</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Délai moyen d'obtention</span>
+                </div>
+            </div>
+
+            <h2><span class="emoji-icon">💼</span>Fidéliser vos collaborateurs : investir dans l'humain</h2>
+
+            <p>La fidélisation des talents ne passe plus uniquement par la rémunération. Les collaborateurs d'aujourd'hui recherchent du sens, de la reconnaissance et des expériences uniques. Offrir l'accès à un événement sold out démontre une attention particulière et valorise la contribution individuelle de manière exceptionnelle.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>🎯 Reconnaissance authentique</h4>
+                    <p>Récompenser les performances exceptionnelles avec une expérience que l'argent ne peut habituellement pas acheter renforce le sentiment de valeur et d'appartenance.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🤝 Renforcement du lien</h4>
+                    <p>Créer des souvenirs mémorables qui dépassent le cadre professionnel et tissent des liens durables au sein de vos équipes.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>⭐ Différenciation employeur</h4>
+                    <p>Se démarquer sur le marché du recrutement en proposant des avantages exclusifs et originaux qui attirent et retiennent les meilleurs talents.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>📈 Motivation accrue</h4>
+                    <p>Stimuler l'engagement et la performance en créant des objectifs désirables et des récompenses exceptionnelles.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>💡 Culture d'entreprise forte</h4>
+                    <p>Affirmer vos valeurs et votre capacité à penser différemment pour le bien-être de vos équipes.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🎊 Moments de partage</h4>
+                    <p>Favoriser la cohésion d'équipe en organisant des sorties collectives mémorables lors d'événements prestigieux.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💎 Le cas d'usage idéal</h3>
+                <p>Imaginez récompenser votre meilleur commercial de l'année avec des places VIP pour la finale de Roland-Garros, alors que l'événement affiche complet depuis des mois. Au-delà du geste, c'est le message que vous envoyez : "Nous reconnaissons votre valeur et nous sommes prêts à déplacer des montagnes pour vous."</p>
+            </div>
+
+            <h2><span class="emoji-icon">🎯</span>Développer votre business : l'arme secrète de la relation client</h2>
+
+            <p>Dans le B2B comme dans le B2C, la capacité à créer des moments privilégiés avec vos clients et prospects représente un avantage concurrentiel décisif. L'invitation à un événement sold out transcende la simple relation commerciale pour créer une expérience partagée, fondement de partenariats durables.</p>
+
+            <h3>🔑 Les leviers stratégiques du développement commercial</h3>
+
+            <div class="use-cases">
+                <div class="use-case-item">
+                    <h4>Conquête de grands comptes</h4>
+                    <p>Inviter un prospect stratégique à un événement prestigieux crée un contexte relationnel privilégié, loin des salles de réunion classiques. C'est dans ces moments informels que naissent les plus belles collaborations.</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4>Fidélisation premium</h4>
+                    <p>Récompenser vos meilleurs clients avec des accès exclusifs renforce leur attachement à votre marque et leur sentiment d'appartenir à un cercle privilégié.</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4>Différenciation concurrentielle</h4>
+                    <p>Quand vos concurrents offrent des déjeuners d'affaires, proposez une soirée inoubliable à un concert sold out. La différence est mémorable.</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4>Occasions de networking</h4>
+                    <p>Organiser des événements privés lors de manifestations prestigieuses crée des opportunités de networking uniques dans un cadre exceptionnel.</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4>Communication corporate</h4>
+                    <p>Associer votre marque à des événements majeurs renforce votre image et votre notoriété auprès d'une audience qualifiée.</p>
+                </div>
+            </div>
+
+            <h2><span class="emoji-icon">✨</span>SPOTEVENT : votre partenaire pour l'impossible</h2>
+
+            <p>Accéder à des événements sold out relève souvent du parcours du combattant. C'est précisément là qu'intervient SPOTEVENT, conciergerie spécialisée dans l'acquisition de places pour concerts, événements sportifs et festivals à guichet fermé.</p>
+
+            <div class="highlight-box">
+                <h3>🛡️ Notre engagement : légalité, éthique et sécurité</h3>
+                <p>SPOTEVENT garantit un cadre entièrement légal et sécurisé pour toutes vos acquisitions. Chaque place est obtenue dans le respect des règles, offrant une tranquillité d'esprit totale à nos clients professionnels.</p>
+            </div>
+
+            <h3>🎯 Solutions sur mesure pour les entreprises</h3>
+
+            <p>Nous accompagnons les entreprises dans leurs stratégies de fidélisation et de développement commercial en proposant :</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>🎫 Accès garanti</h4>
+                    <p>Même pour les événements les plus demandés, nous trouvons des solutions adaptées à vos besoins.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>⚡ Réactivité</h4>
+                    <p>Des places obtenues en moyenne sous 24h pour répondre à vos urgences et opportunités business.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🎭 Diversité</h4>
+                    <p>Concerts, sport, festivals, spectacles... Une offre complète pour tous les profils et toutes les occasions.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🤝 Accompagnement personnalisé</h4>
+                    <p>Une équipe dédiée qui comprend vos enjeux et vous conseille sur les meilleures opportunités.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>💼 Solutions B2B</h4>
+                    <p>Devis gratuit, facturation adaptée et gestion de volumes pour vos programmes de fidélisation.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🔒 Transparence totale</h4>
+                    <p>Un processus clair et sécurisé du début à la fin, pour une collaboration en toute confiance.</p>
+                </div>
+            </div>
+
+            <h2><span class="emoji-icon">💡</span>Cas d'usage concrets en entreprise</h2>
+
+            <p>Les applications professionnelles de l'accès aux événements sold out sont multiples et s'adaptent à tous les secteurs et toutes les tailles d'entreprise :</p>
+
+            <div class="benefit-card">
+                <h4>🏆 Programme de récompense annuel</h4>
+                <p>Une entreprise de services informatiques offre à ses meilleurs performers le choix entre plusieurs événements sold out : finale de Top 14, concert d'un artiste international, ou festival de musique réputé. Résultat : une motivation décuplée et un turnover réduit de 30%.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h4>🎯 Conquête de client stratégique</h4>
+                <p>Une société de conseil invite un prospect majeur à Roland-Garros dans une loge VIP. Dans un cadre détendu et privilégié, les discussions avancent naturellement. Le contrat est signé le mois suivant.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h4>🤝 Team building exceptionnel</h4>
+                <p>Pour célébrer une année record, une PME offre à toute son équipe des places pour un festival sold out. L'expérience partagée renforce la cohésion et devient un souvenir fondateur de la culture d'entreprise.</p>
+            </div>
+
+            <div class="benefit-card">
+                <h4>💼 Programme de fidélité client</h4>
+                <p>Un réseau de franchises met en place un système de points permettant à ses meilleurs partenaires d'accéder à des événements exclusifs. L'adhésion au réseau augmente de 25% en un an.</p>
+            </div>
+
+            <h2><span class="emoji-icon">📊</span>Un investissement rentable</h2>
+
+            <p>Investir dans l'accès à des événements sold out pour vos collaborateurs et clients n'est pas une dépense, c'est un investissement stratégique aux retombées mesurables :</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>📉 Réduction du turnover</h4>
+                    <p>Le coût de remplacement d'un collaborateur représente 6 à 9 mois de salaire. Investir dans sa fidélisation est économiquement rationnel.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>💰 Augmentation de la lifetime value client</h4>
+                    <p>Un client fidèle génère en moyenne 5 fois plus de revenus qu'un nouveau client sur sa durée de vie.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>🗣️ Bouche-à-oreille positif</h4>
+                    <p>Une expérience exceptionnelle se partage. Vos collaborateurs et clients deviennent naturellement des ambassadeurs de votre marque.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>⚡ Accélération des cycles de vente</h4>
+                    <p>La création d'un lien émotionnel raccourcit les processus de décision et facilite les négociations.</p>
+                </div>
+            </div>
+
+            <h2><span class="emoji-icon">🎪</span>Comment démarrer ?</h2>
+
+            <p>Mettre en place une stratégie d'accès aux événements sold out est plus simple qu'il n'y paraît avec le bon partenaire. SPOTEVENT vous accompagne à chaque étape :</p>
+
+            <div class="use-case-item">
+                <h4>1. Définition de vos objectifs</h4>
+                <p>Fidélisation collaborateurs, développement commercial, team building... Nous identifions ensemble vos priorités.</p>
+            </div>
+
+            <div class="use-case-item">
+                <h4>2. Sélection des événements</h4>
+                <p>En fonction des profils de vos bénéficiaires et de vos objectifs, nous vous conseillons sur les meilleures opportunités.</p>
+            </div>
+
+            <div class="use-case-item">
+                <h4>3. Obtention des places</h4>
+                <p>Nous nous occupons de tout, dans un cadre légal et sécurisé, pour vous garantir l'accès aux événements souhaités.</p>
+            </div>
+
+            <div class="use-case-item">
+                <h4>4. Gestion logistique</h4>
+                <p>De la billetterie à l'organisation sur place si nécessaire, nous assurons une expérience fluide et mémorable.</p>
+            </div>
+
+            <div class="use-case-item">
+                <h4>5. Suivi et évaluation</h4>
+                <p>Nous mesurons ensemble l'impact de vos actions pour optimiser continuellement votre stratégie.</p>
+            </div>
+
+        </article>
+
+        <div class="cta-section">
+            <h2>Prêt à transformer votre stratégie RH et commerciale ?</h2>
+            <p>Découvrez comment SPOTEVENT peut vous aider à fidéliser vos talents et développer votre business grâce à l'accès aux événements les plus convoités.</p>
+            <a onclick="toggleContactOptions()" class="cta-button" style="cursor: pointer;">Demander un devis gratuit</a>
+            <p style="margin-top: 30px; font-size: 0.95em;">⭐ Plus de 200 avis Google • 🎟️ Plus de 1 000 clients accompagnés</p>
+        </div>
+    </div>
+
+    <!-- Bulle de contact flottante -->
+    <div class="contact-bubble">
+        <button class="contact-toggle" onclick="toggleContactOptions()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-message">
+                <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+            </div>
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p class="brand">SPOTEVENT</p>
+        <p>Conciergerie spécialisée dans l'acquisition de places pour événements à guichet fermé</p>
+        <p>Un service légal, éthique et sécurité</p>
+        <p style="margin-top: 20px;">© 2025 SPOTEVENT - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Fonction pour ouvrir/fermer la bulle de contact
+        function toggleContactOptions() {
+            const el = document.getElementById('contactOptions');
+            if (el) {
+                if (el.classList.contains('active')) {
+                    el.classList.remove('active');
+                } else {
+                    el.classList.add('active');
+                    // Scroll vers le haut pour voir la bulle si on est en bas de page
+                    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+                        window.scrollBy({ top: -300, behavior: 'smooth' });
+                    }
+                }
+            }
+        }
+
+        // Fermer la bulle en cliquant ailleurs
+        document.addEventListener('click', function(event) {
+            const contactOptions = document.getElementById('contactOptions');
+            const contactBubble = document.querySelector('.contact-bubble');
+            const navContact = document.querySelector('.nav-contact a');
+            const ctaButton = document.querySelector('.cta-button');
+            
+            if (contactOptions && contactOptions.classList.contains('active')) {
+                if (!contactOptions.contains(event.target) && 
+                    !contactBubble.contains(event.target) &&
+                    !navContact.contains(event.target) &&
+                    !ctaButton.contains(event.target)) {
+                    contactOptions.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
