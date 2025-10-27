@@ -206,6 +206,63 @@
             text-align: center;
         }
 
+        /* NOUVEAU: Toggle Switch */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toggle-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+            transition: color 0.3s ease;
+        }
+
+        .toggle-label.inactive {
+            color: #999;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 70px;
+            height: 36px;
+            background-color: var(--gold);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .toggle-switch.annual .toggle-slider {
+            transform: translateX(34px);
+        }
+
+        .annual-savings {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
         .offers-grid {
             display: flex;
             flex-wrap: wrap;
@@ -225,7 +282,6 @@
             margin: 1rem auto 1.5rem;
             display: inline-block;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--black);
         }
 
         .offer-card {
@@ -296,6 +352,10 @@
             margin-top: auto;
         }
 
+        .price-display {
+            margin-bottom: 1.5rem;
+        }
+
         .price-monthly {
             text-align: center;
             margin-bottom: 1.5rem;
@@ -321,6 +381,42 @@
             font-size: 3.5rem;
             font-weight: 800;
             color: var(--black);
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .price-details {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .price-ttc {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
         }
 
         .price-currency {
@@ -668,79 +764,127 @@
         <h2 class="section-title fade-in">Nos solutions</h2>
         <p class="section-subtitle fade-in">Des réductions et des accès à des événements complets !</p>
         
+        <!-- NOUVEAU: Toggle Mensuel/Annuel -->
+        <div class="pricing-toggle fade-in">
+            <span class="toggle-label" id="monthlyLabel">Mensuel</span>
+            <div class="toggle-switch" id="pricingToggle" onclick="togglePricing()">
+                <div class="toggle-slider"></div>
+            </div>
+            <span class="toggle-label inactive" id="annualLabel">
+                Annuel
+                <span class="annual-savings">Économisez 10% !</span>
+            </span>
+        </div>
+        
         <div class="offers-grid">
+            <!-- Offre Classique -->
             <div class="offer-card fade-in">
                 <h3 class="offer-title">Classique</h3>
-                <div class="discount-badge">-10% par commande</div>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 10% par commande de places</div>
                 <div class="offer-price">
-                    <div class="price-monthly">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
                         <div class="price-label">Prix mensuel</div>
                         <div class="price-amount">
                             <span class="price-value">29</span>
                             <span class="price-currency">€</span>
                             <span class="price-period">HT/mois</span>
                         </div>
+                        <div class="price-ttc">34,80€ TTC/mois</div>
                     </div>
-                    <div class="price-annual">
-                        <div class="annual-label">Facturation annuelle</div>
-                        <div class="annual-price">
-                            313€ HT/an <span class="annual-discount">(-10%)</span>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">316</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
                         </div>
-                        <div class="price-ttc">375,60€ TTC/an</div>
+                        <div class="price-details">
+                            Soit 26€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">379,20€ TTC/an</div>
                     </div>
                 </div>
-                <a href="https://pay.sumup.com/b2c/Q9RZ898F" target="_blank" class="offer-cta-button">
+                <a href="https://buy.stripe.com/bJebJ33t9fxZ9GmcsQasg08" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/7sY7sN7JpdpRaKq9gEasg0g" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
                     Abonnez-vous dès maintenant
                 </a>
             </div>
 
+            <!-- Offre Privilège -->
             <div class="offer-card fade-in" style="animation-delay: 0.1s">
                 <h3 class="offer-title">Privilège</h3>
-                <div class="discount-badge">-15% par commande</div>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 15% par commande de places</div>
                 <div class="offer-price">
-                    <div class="price-monthly">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
                         <div class="price-label">Prix mensuel</div>
                         <div class="price-amount">
                             <span class="price-value">49</span>
                             <span class="price-currency">€</span>
                             <span class="price-period">HT/mois</span>
                         </div>
+                        <div class="price-ttc">58,80€ TTC/mois</div>
                     </div>
-                    <div class="price-annual">
-                        <div class="annual-label">Facturation annuelle</div>
-                        <div class="annual-price">
-                            529€ HT/an <span class="annual-discount">(-10%)</span>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">534</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
                         </div>
-                        <div class="price-ttc">634,80€ TTC/an</div>
+                        <div class="price-details">
+                            Soit 44€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">640,80€ TTC/an</div>
                     </div>
                 </div>
-                <a href="https://pay.sumup.com/b2c/QLVU0IVR" target="_blank" class="offer-cta-button">
+                <a href="https://buy.stripe.com/dRmbJ31l10D5bOu78wasg09" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/00w4gB1l11H905MakIasg0h" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
                     Abonnez-vous dès maintenant
                 </a>
             </div>
 
+            <!-- Offre Prestige (Populaire) -->
             <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
                 <span class="popular-badge">Le + populaire !</span>
                 <h3 class="offer-title">Prestige</h3>
-                <div class="discount-badge">-20% par commande</div>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 20% par commande de places</div>
                 <div class="offer-price">
-                    <div class="price-monthly">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
                         <div class="price-label">Prix mensuel</div>
                         <div class="price-amount">
                             <span class="price-value">79</span>
                             <span class="price-currency">€</span>
                             <span class="price-period">HT/mois</span>
                         </div>
+                        <div class="price-ttc">94,80€ TTC/mois</div>
                     </div>
-                    <div class="price-annual">
-                        <div class="annual-label">Facturation annuelle</div>
-                        <div class="annual-price">
-                            853€ HT/an <span class="annual-discount">(-10%)</span>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">861</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
                         </div>
-                        <div class="price-ttc">1 023,60€ TTC/an</div>
+                        <div class="price-details">
+                            Soit 71€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">1 033,20€ TTC/an</div>
                     </div>
                 </div>
-                <a href="https://pay.sumup.com/b2c/QAM63GFS" target="_blank" class="offer-cta-button">
+                <a href="https://buy.stripe.com/28EdRb6Fl3Ph5q6gJ6asg0a" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/3cI8wR6Fl85x3hY2Sgasg0i" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
                     Abonnez-vous dès maintenant
                 </a>
             </div>
@@ -750,24 +894,44 @@
             <h2 class="section-title" style="font-size: 2rem;">Offrez à votre équipe et à vos clients un accès<br>à un événement complet !</h2>
             <div class="vip-card">
                 <h3 class="offer-title">VIP</h3>
-                <div class="discount-badge">2 places offertes par mois</div>
+                <div class="discount-badge">2 places offertes par mois pour un événement à guichet fermé</div>
                 <div class="offer-price">
-                    <div class="price-monthly">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
                         <div class="price-label">Prix mensuel</div>
                         <div class="price-amount">
                             <span class="price-value">689</span>
                             <span class="price-currency">€</span>
                             <span class="price-period">HT/mois</span>
                         </div>
+                        <div class="price-ttc">826,80€ TTC/mois</div>
                     </div>
-                    <button class="offer-cta-button" onclick="toggleContactOptions()">Contactez-nous</button>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">7 516</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
+                        </div>
+                        <div class="price-details">
+                            Soit 626€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">9 019,20€ TTC/an</div>
+                    </div>
+                    <a href="https://buy.stripe.com/5kQdRb7Jp1H9f0G64sasg0b" target="_blank" class="offer-cta-button monthly-cta">
+                        Abonnez-vous dès maintenant
+                    </a>
+                    <a href="https://buy.stripe.com/8x228t2p53Ph19QcsQasg0j" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
+                        Abonnez-vous dès maintenant
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="cta-container fade-in" id="contact">
             <p class="cta-text">Prêt à offrir des expériences exceptionnelles<br>à vos équipes et vos clients ?</p>
-            <a href="https://meetings-eu1.hubspot.com/maxime-houzard" onclick="toggleContactOptions()" class="cta-button">
+            <a href="https://meetings-eu1.hubspot.com/maxime-houzard" class="cta-button">
                 Prenez RDV en visio !
             </a>
         </div>
@@ -808,6 +972,37 @@
     </div>
 
     <script>
+        // Fonction pour basculer entre mensuel et annuel
+        function togglePricing() {
+            const toggle = document.getElementById('pricingToggle');
+            const monthlyLabel = document.getElementById('monthlyLabel');
+            const annualLabel = document.getElementById('annualLabel');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const annualPrices = document.querySelectorAll('.annual-price');
+            const monthlyCtas = document.querySelectorAll('.monthly-cta');
+            const annualCtas = document.querySelectorAll('.annual-cta');
+            
+            toggle.classList.toggle('annual');
+            
+            if (toggle.classList.contains('annual')) {
+                // Mode annuel
+                monthlyLabel.classList.add('inactive');
+                annualLabel.classList.remove('inactive');
+                monthlyPrices.forEach(price => price.style.display = 'none');
+                annualPrices.forEach(price => price.style.display = 'block');
+                monthlyCtas.forEach(cta => cta.style.display = 'none');
+                annualCtas.forEach(cta => cta.style.display = 'inline-block');
+            } else {
+                // Mode mensuel
+                monthlyLabel.classList.remove('inactive');
+                annualLabel.classList.add('inactive');
+                monthlyPrices.forEach(price => price.style.display = 'block');
+                annualPrices.forEach(price => price.style.display = 'none');
+                monthlyCtas.forEach(cta => cta.style.display = 'inline-block');
+                annualCtas.forEach(cta => cta.style.display = 'none');
+            }
+        }
+
         function toggleContactOptions() {
             const contactOptions = document.getElementById('contactOptions');
             contactOptions.classList.toggle('active');
