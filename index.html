@@ -732,7 +732,7 @@ section {
         transform: translateX(0); 
     }
     100% { 
-        transform: translateX(calc(-320px * 15)); /* Défilement continu */
+        transform: translateX(calc(-320px * 15));
     }
 }
 
@@ -820,11 +820,6 @@ section {
 .news-read-more:hover {
     color: var(--white);
     background-color: var(--gold);
-}
-
-/* Suppression des indicateurs - pas nécessaires pour défilement automatique */
-.news-indicators {
-    display: none;
 }
 
 /* Responsive */
@@ -1782,8 +1777,20 @@ section {
     <div class="fade-in">
         <h2 class="section-title">Toutes les actualités événementielles !</h2>
         <div class="news-carousel-container">
-            <div class="news-carousel" id="newsCarousel">
+    <div class="news-carousel" id="newsCarousel">
                 
+                <!-- Actualité - Aya Nakamura -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Concert</div>
+            <h3 class="news-title">Aya Nakamura au Stade de France les 28, 29 & 30 mai 2026</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/aya-nakamura-stade-de-france-28-29-30-mai-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
                 <!-- Actualité 1 -->
 <div class="news-slide">
     <div class="news-card">
@@ -2006,9 +2013,8 @@ section {
     </div>
 </div>
             </div>
-            
-            <!-- Indicateurs -->
-            <div class="news-indicators" id="newsIndicators"></div>
+        </div>
+        
         </div>
     </div>
 </section>
@@ -2451,103 +2457,9 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Carrousel d'actualités
-class NewsCarousel {
-    constructor() {
-        this.currentSlide = 0;
-        this.totalSlides = 17;
-        this.carousel = document.getElementById('newsCarousel');
-        this.indicators = document.getElementById('newsIndicators');
-        this.autoSlideInterval = null;
-        this.slidesPerView = this.getSlidesPerView();
-        this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
-        
-        this.createIndicators();
-        this.startAutoSlide();
-        
-        window.addEventListener('resize', () => {
-            this.slidesPerView = this.getSlidesPerView();
-            this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
-            this.goToSlide(Math.min(this.currentSlide, this.maxSlides));
-        });
-    }
-    
-    getSlidesPerView() {
-    if (window.innerWidth <= 768) return 1; // Une seule slide sur mobile
-    if (window.innerWidth <= 1024) return 3;
-    return 4;
-}
-    
-    createIndicators() {
-    // Pour 12 slides avec 4 affichées : 9 positions possibles (0-8)
-    // On utilise 5 indicateurs pour couvrir toutes les positions
-    const indicatorCount = 5;
-    
-    for (let i = 0; i < indicatorCount; i++) {
-        const indicator = document.createElement('div');
-        indicator.className = 'news-indicator';
-        if (i === 0) indicator.classList.add('active');
-        
-        indicator.addEventListener('click', () => this.goToSlide(i * 2)); // Saut par 2
-        this.indicators.appendChild(indicator);
-    }
-}
-    
-    goToSlide(slideIndex) {
-    this.currentSlide = Math.min(Math.max(slideIndex, 0), this.totalSlides - this.slidesPerView);
-    
-    // Calcul différent selon la taille d'écran
-    let translateX;
-    if (window.innerWidth <= 768) {
-        // Sur mobile : chaque slide = 7.69% de largeur
-        translateX = -(this.currentSlide * 7.69);
-    } else {
-        // Sur desktop : chaque slide = 8.33% de largeur
-        translateX = -(this.currentSlide * 8.33);
-    }
-    
-    this.carousel.style.transform = `translateX(${translateX}%)`;
-    
-    // Mise à jour des indicateurs
-    const totalIndicators = 5;
-    const activeIndicator = Math.min(Math.floor(this.currentSlide / Math.max(1, Math.floor(this.totalSlides / totalIndicators))), totalIndicators - 1);
-    document.querySelectorAll('.news-indicator').forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === activeIndicator);
-    });
-}
-    
-    nextSlide() {
-        if (this.currentSlide < 9) { // Peut aller jusqu'à la position 8
-            this.currentSlide++;
-        } else {
-            this.currentSlide = 0;
-        }
-        this.goToSlide(this.currentSlide);
-    }
-    
-    startAutoSlide() {
-        this.autoSlideInterval = setInterval(() => {
-            this.nextSlide();
-        }, 4000);
-    }
-    
-    stopAutoSlide() {
-        if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-        }
-    }
-}
-
 // Initialisation
 document.addEventListener('DOMContentLoaded', function() {
     animateOnScroll();
-    const newsCarousel = new NewsCarousel();
-    
-    const carouselContainer = document.querySelector('.news-carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', () => newsCarousel.stopAutoSlide());
-        carouselContainer.addEventListener('mouseleave', () => newsCarousel.startAutoSlide());
-    }
 });
 
 window.addEventListener('scroll', animateOnScroll);
