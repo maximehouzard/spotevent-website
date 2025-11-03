@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jul en concert au Stade de France Paris les 15 et 16 mai 2026 et à l'Orange Vélodrome Marseille les 29 et 30 mai 2026. Obtenez vos places sold out avec SPOTEVENT, conciergerie billetterie événementielle.">
+    <meta name="keywords" content="Jul concert 2026, Jul Stade de France, Jul Orange Vélodrome, billets Jul Paris, billets Jul Marseille, places Jul sold out, concert Jul complet, SPOTEVENT Jul, conciergerie billetterie Jul, Jul tournée 2026, rap français concert, Jul mai 2026">
+    <meta name="geo.region" content="FR-IDF">
+    <meta name="geo.placename" content="Paris, Marseille, Lyon">
+    <meta name="geo.position" content="48.856614;2.352222">
+    <title>Jul en Concert : Stade de France & Orange Vélodrome 2026 | SPOTEVENT</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --dark-beige: #E6E6C7;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header fixe */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            height: auto;
+            line-height: 1;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .nav-center {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin: 0 2rem;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-center a:hover {
+            color: var(--gold);
+        }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.3rem;
+        }
+
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-contact a:hover {
+            color: var(--gold);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 120px auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .article-meta i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+        }
+
+        .article-content {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: justify;
+        }
+
+        .article-content strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff7ef 0%, #f8f9fa 100%);
+            border-left: 5px solid var(--gold);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .concert-dates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .date-card {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .date-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+            border-color: var(--gold);
+        }
+
+        .date-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .date-card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .date-card-location {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .date-card-date {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-section h3 {
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #fff7ef;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .info-list {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+
+        .info-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--gold);
+            margin-right: 1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.8rem 2rem;
+            background-color: transparent;
+            color: var(--black);
+            text-decoration: none;
+            border: 2px solid var(--black);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background-color: var(--black);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 3%;
+            }
+
+            .nav-center {
+                gap: 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .nav-center a,
+            .nav-contact a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+            }
+
+            .mobile-menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--black);
+                transition: all 0.3s ease;
+            }
+
+            .nav-center {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 280px;
+                max-width: 80%;
+                height: auto;
+                max-height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-center.active {
+                left: 0;
+            }
+
+            .nav-contact {
+                display: none;
+            }
+
+            .article-container {
+                margin: 100px auto 2rem;
+                padding: 0 1rem;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.6rem;
+            }
+
+            .article-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .concert-dates {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Bulle de contact */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #000000;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+            background: #333333;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: black;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-option i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-message {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
+
+        .contact-message p {
+            margin: 0;
+            color: black;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                </svg>
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            
+            <ul class="nav-center" id="navCenter">
+                <li><a href="../index.html#video">Qui sommes-nous ?</a></li>
+                <li><a href="../index.html#avis">Les avis clients</a></li>
+                <li><a href="../index.html#offres">Les actualités</a></li>
+                <li><a href="../index.html#reseaux">Nos réseaux</a></li>
+                <li><a href="../corporate.html">Nos tarifs</a></li>
+            </ul>
+            
+            <div class="nav-contact">
+                <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+            </div>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-header fade-in">
+            <span class="article-category">🎤 Concert Rap</span>
+            <h1 class="article-title">Jul en concert : Stade de France & Orange Vélodrome 2026</h1>
+            <p class="article-subtitle">Le phénomène du rap français revient pour 4 dates exceptionnelles à Paris et Marseille</p>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i>15-16 mai & 29-30 mai 2026</span>
+                <span><i class="fas fa-map-marker-alt"></i>Paris & Marseille</span>
+                <span><i class="fas fa-users"></i>Plus de 300 000 spectateurs attendus</span>
+            </div>
+        </div>
+
+        <div class="article-content fade-in">
+            <p><strong>Jul</strong>, l'artiste le plus certifié de l'histoire de la musique française, annonce son grand retour sur scène en 2026 avec <strong>quatre concerts événementiels</strong> qui promettent d'entrer dans l'histoire du rap français. Après avoir enchaîné les records et multiplié les disques d'or et de platine, le rappeur marseillais s'apprête à remplir les plus grandes enceintes de France.</p>
+
+            <h2>🎫 Les dates des concerts de Jul en 2026</h2>
+            
+            <div class="concert-dates">
+                <div class="date-card">
+                    <div class="date-card-icon">🏟️</div>
+                    <h3 class="date-card-title">Paris</h3>
+                    <p class="date-card-location">Stade de France</p>
+                    <p class="date-card-date"><strong>15 & 16 mai 2026</strong></p>
+                </div>
+                
+                <div class="date-card">
+                    <div class="date-card-icon">⚽</div>
+                    <h3 class="date-card-title">Marseille</h3>
+                    <p class="date-card-location">Orange Vélodrome</p>
+                    <p class="date-card-date"><strong>29 & 30 mai 2026</strong></p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <p><strong>⚠️ Attention :</strong> Avec le succès phénoménal de Jul et sa base de fans inconditionnels, ces concerts affichent déjà <strong>COMPLET</strong> ou le seront très rapidement. Les billets pour les concerts de Jul au Stade de France à Paris et à l'Orange Vélodrome à Marseille sont extrêmement recherchés et difficiles à obtenir sur les plateformes officielles.</p>
+            </div>
+
+            <h2>🎤 Jul au Stade de France : Un événement historique à Paris</h2>
+            
+            <p>Les <strong>15 et 16 mai 2026</strong>, Jul investira le mythique <strong>Stade de France</strong> pour deux soirées exceptionnelles. C'est la première fois que l'artiste marseillais se produit dans cette enceinte légendaire de <strong>80 000 places</strong>, marquant ainsi une étape majeure dans sa carrière déjà jalonnée de records.</p>
+
+            <p>Le <strong>Stade de France à Saint-Denis</strong>, situé en région parisienne (Seine-Saint-Denis, Île-de-France), accueillera ces deux concerts sold out qui réuniront près de <strong>160 000 spectateurs</strong> sur deux soirées. Cette performance confirme le statut de Jul comme l'un des artistes français les plus populaires de sa génération.</p>
+
+            <h3>Informations pratiques - Stade de France Paris</h3>
+            <div class="info-list">
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><strong>Adresse :</strong> Stade de France, 93200 Saint-Denis, Paris Île-de-France</li>
+                    <li><i class="fas fa-subway"></i><strong>Accès :</strong> Métro Ligne 13 - Station Saint-Denis Porte de Paris / RER B et D - Station La Plaine Stade de France</li>
+                    <li><i class="fas fa-users"></i><strong>Capacité :</strong> 80 000 spectateurs par concert</li>
+                    <li><i class="fas fa-clock"></i><strong>Ouverture des portes :</strong> 18h00 (horaires à confirmer)</li>
+                </ul>
+            </div>
+
+            <h2>🏟️ Jul à l'Orange Vélodrome : Le retour triomphal à Marseille</h2>
+            
+            <p>Après Paris, Jul reviendra dans sa ville natale pour deux concerts événementiels les <strong>29 et 30 mai 2026</strong> à l'<strong>Orange Vélodrome</strong>. Pour l'enfant des quartiers nord de Marseille, c'est un retour aux sources empreint d'émotion et de symbole.</p>
+
+            <p>L'<strong>Orange Vélodrome de Marseille</strong>, situé dans le 8ème arrondissement des Bouches-du-Rhône en région Provence-Alpes-Côte d'Azur (PACA), accueillera plus de <strong>130 000 fans</strong> sur ces deux dates. Ces concerts à domicile promettent une ambiance électrique et des moments inoubliables pour la cité phocéenne.</p>
+
+            <h3>Informations pratiques - Orange Vélodrome Marseille</h3>
+            <div class="info-list">
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><strong>Adresse :</strong> 3 Boulevard Michelet, 13008 Marseille, Provence-Alpes-Côte d'Azur</li>
+                    <li><i class="fas fa-subway"></i><strong>Accès :</strong> Métro Ligne 2 - Station Rond-Point du Prado / Tramway T2 - Station Stade Vélodrome</li>
+                    <li><i class="fas fa-users"></i><strong>Capacité :</strong> 65 000 spectateurs par concert</li>
+                    <li><i class="fas fa-clock"></i><strong>Ouverture des portes :</strong> 18h00 (horaires à confirmer)</li>
+                </ul>
+            </div>
+
+            <h2>📈 Jul : Un phénomène du rap français</h2>
+            
+            <p>Avec plus de <strong>450 certifications</strong> de la SNEP (Syndicat National de l'Édition Phonographique), Jul détient le record absolu de l'artiste français le plus certifié de tous les temps. Son style unique, sa productivité hors norme (il sort en moyenne plusieurs projets par an) et sa connexion authentique avec son public en ont fait une véritable légende vivante du rap français.</p>
+
+            <p>Des tubes comme "Mon Bijou", "La Zone", "Bande Organisée", "Wesh Alors", ou encore "Ça va aller" ont marqué plusieurs générations et continuent de résonner dans toute la France, de Lille à Lyon, de Nice à Bordeaux, de Toulouse à Nantes.</p>
+
+            <h2>🎵 Un setlist prometteur</h2>
+            
+            <p>Avec une discographie prolifique comptant plus de 20 albums studio, Jul aura l'embarras du choix pour composer le setlist de ses concerts 2026. Les fans pourront s'attendre à :</p>
+
+            <div class="info-list">
+                <ul>
+                    <li><i class="fas fa-music"></i>Ses plus grands classiques qui ont marqué le rap français</li>
+                    <li><i class="fas fa-fire"></i>Les tubes incontournables des albums "La Trahison", "L'Ovni" et "Demain ça ira"</li>
+                    <li><i class="fas fa-star"></i>Des collaborations exceptionnelles avec d'autres artistes marseillais et français</li>
+                    <li><i class="fas fa-crown"></i>Des nouveautés exclusives pour ces concerts événementiels</li>
+                    <li><i class="fas fa-heart"></i>Des moments intimistes avec ses morceaux les plus personnels</li>
+                </ul>
+            </div>
+
+            <h2>🎟️ Comment obtenir des places pour les concerts de Jul sold out ?</h2>
+            
+            <p>Face à l'engouement exceptionnel pour ces concerts de Jul, les <strong>billets officiels</strong> pour le Stade de France à Paris et l'Orange Vélodrome à Marseille sont <strong>épuisés depuis longtemps</strong>. Les plateformes de billetterie officielles comme Ticketmaster, Fnac Spectacles ou See Tickets affichent <strong>COMPLET</strong>.</p>
+
+            <p><strong>SPOTEVENT</strong>, conciergerie spécialisée en billetterie événementielle basée à <strong>Lyon</strong>, vous offre une <strong>solution légale, sécurisée et garantie</strong> pour obtenir vos places de concert de Jul, même sold out :</p>
+
+            <div class="highlight-box">
+                <h3>✅ Pourquoi choisir SPOTEVENT pour vos billets Jul ?</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Garantie 100%</strong> : Billets authentiques et valides</li>
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Service légal</strong> : Conformité totale avec la législation française</li>
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Expertise reconnue</strong> : Plus de 1000 clients satisfaits, 200+ avis 5 étoiles Google</li>
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Accompagnement personnalisé</strong> : De la recherche à la réception de vos billets</li>
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Devis gratuit</strong> : Sans engagement, réponse rapide 24-48h</li>
+                    <li style="padding: 0.5rem 0;"><i class="fas fa-check-circle" style="color: var(--gold); margin-right: 1rem;"></i><strong>Places premium disponibles</strong> : Fosse, catégories 1, loges VIP</li>
+                </ul>
+            </div>
+
+            <div class="cta-section">
+                <h3>🎟️ Obtenez vos places pour Jul dès maintenant !</h3>
+                <p>Ne manquez pas l'événement rap de l'année 2026. Contactez SPOTEVENT pour obtenir vos billets garantis pour les concerts de Jul au Stade de France à Paris ou à l'Orange Vélodrome à Marseille.</p>
+                <button class="cta-button" onclick="toggleContactOptions()">Demander un devis gratuit</button>
+            </div>
+
+            <h2>🌟 SPOTEVENT : Votre conciergerie billetterie de confiance</h2>
+            
+            <p>Basée à <strong>Lyon en Auvergne-Rhône-Alpes</strong>, <strong>SPOTEVENT</strong> est la conciergerie de référence pour accéder aux événements complets partout en France. Que vous soyez à Paris, Marseille, Lyon, Toulouse, Nice, Nantes, Bordeaux, Lille, Strasbourg ou ailleurs en France, SPOTEVENT vous accompagne pour obtenir vos places.</p>
+
+            <p>Depuis octobre 2023, SPOTEVENT a permis à <strong>plus de 1000 clients</strong> d'accéder à leurs événements préférés : concerts (Jul, Aya Nakamura, Lady Gaga, Orelsan, Indochine), festivals (Hellfest, Lollapalooza), événements sportifs (Ligue des Champions, Tournoi des VI Nations, Top 14), et bien plus encore.</p>
+
+            <h3>📞 Contactez SPOTEVENT maintenant</h3>
+            
+            <div class="info-list">
+                <ul>
+                    <li><i class="fas fa-globe"></i><strong>Site web :</strong> <a href="https://spotevent.fr" target="_blank" style="color: var(--gold); font-weight: 600;">spotevent.fr</a></li>
+                    <li><i class="fas fa-envelope"></i><strong>Email :</strong> maxime.houzard@spotevent.fr</li>
+                    <li><i class="fas fa-phone"></i><strong>Téléphone :</strong> +33 6 46 55 85 20</li>
+                    <li><i class="fab fa-whatsapp"></i><strong>WhatsApp :</strong> +33 6 46 55 85 20</li>
+                    <li><i class="fas fa-map-marker-alt"></i><strong>Basé à :</strong> Lyon, France (interventions dans toute la France)</li>
+                </ul>
+            </div>
+
+            <h2>🎭 D'autres événements accessibles avec SPOTEVENT</h2>
+            
+            <p>Au-delà des concerts de Jul, SPOTEVENT vous donne accès à tous les événements sold out en France :</p>
+
+            <div class="info-list">
+                <ul>
+                    <li><i class="fas fa-microphone"></i><strong>Concerts :</strong> Aya Nakamura, Orelsan, Lady Gaga, Indochine, The Weeknd, Katy Perry, Bad Bunny, System Of A Down, Linkin Park, David Guetta</li>
+                    <li><i class="fas fa-guitar"></i><strong>Festivals :</strong> Hellfest, Lollapalooza Paris, Solidays, Les Vieilles Charrues, Garorock</li>
+                    <li><i class="fas fa-futbol"></i><strong>Football :</strong> Ligue des Champions, Ligue 1, PSG Parc des Princes, OM Orange Vélodrome, OL Groupama Stadium</li>
+                    <li><i class="fas fa-trophy"></i><strong>Rugby :</strong> Tournoi des VI Nations, Top 14, Champions Cup</li>
+                    <li><i class="fas fa-basketball-ball"></i><strong>Basket :</strong> NBA Paris Games, Euroleague, Betclic Elite</li>
+                    <li><i class="fas fa-tennis-ball"></i><strong>Tennis :</strong> Roland-Garros, Masters 1000 Paris-Bercy, Open d'Australie</li>
+                </ul>
+            </div>
+
+            <h2>⭐ Les avis de nos clients SPOTEVENT</h2>
+            
+            <p>Avec une note moyenne de <strong>4.9/5 étoiles</strong> sur Google (basée sur plus de 200 avis vérifiés), SPOTEVENT est la conciergerie billetterie la mieux notée de France :</p>
+
+            <div class="highlight-box">
+                <p><em>"Grâce à SPOTEVENT, j'ai pu obtenir des places pour le concert de Jul à Marseille alors que c'était complet partout. Service impeccable, billets reçus rapidement, je recommande à 100% !"</em> - <strong>Thomas M., Marseille</strong></p>
+                
+                <p><em>"Équipe ultra professionnelle et réactive. J'ai eu mes billets pour le Stade de France en moins de 48h. SPOTEVENT est la solution pour tous les événements sold out."</em> - <strong>Karim B., Paris</strong></p>
+                
+                <p><em>"Merci à Maxime et toute l'équipe SPOTEVENT ! Processus transparent, prix honnête, billets authentiques. Une conciergerie de confiance."</em> - <strong>Sophie L., Lyon</strong></p>
+            </div>
+
+            <h2>📍 Concerts de Jul : rayonnement national et international</h2>
+            
+            <p>Ces concerts de Jul au Stade de France et à l'Orange Vélodrome attireront des fans de toute la France et même de l'étranger. Les villes suivantes seront particulièrement représentées :</p>
+
+            <p><strong>Région parisienne et Île-de-France :</strong> Paris, Versailles, Saint-Denis, Nanterre, Créteil, Boulogne-Billancourt</p>
+
+            <p><strong>Région PACA :</strong> Marseille, Nice, Toulon, Aix-en-Provence, Cannes, Avignon</p>
+
+            <p><strong>Auvergne-Rhône-Alpes :</strong> Lyon, Grenoble, Saint-Étienne, Villeurbanne, Annecy, Chambéry</p>
+
+            <p><strong>Occitanie :</strong> Toulouse, Montpellier, Nîmes, Perpignan, Béziers</p>
+
+            <p><strong>Nouvelle-Aquitaine :</strong> Bordeaux, La Rochelle, Pau, Bayonne, Limoges</p>
+
+            <p><strong>Pays de la Loire :</strong> Nantes, Angers, Le Mans, Saint-Nazaire</p>
+
+            <p><strong>Bretagne :</strong> Rennes, Brest, Quimper, Saint-Malo</p>
+
+            <p><strong>Hauts-de-France :</strong> Lille, Amiens, Valenciennes, Dunkerque</p>
+
+            <p><strong>Grand Est :</strong> Strasbourg, Reims, Metz, Nancy, Mulhouse</p>
+
+            <h2>🚀 Conclusion : Ne manquez pas Jul en 2026</h2>
+            
+            <p>Les concerts de <strong>Jul au Stade de France à Paris (15-16 mai 2026)</strong> et à <strong>l'Orange Vélodrome à Marseille (29-30 mai 2026)</strong> s'annoncent comme les événements rap incontournables de l'année. Avec plus de <strong>300 000 spectateurs attendus</strong> sur ces quatre dates, ces concerts marquent un tournant historique dans la carrière du rappeur marseillais.</p>
+
+            <p>Face à la demande exceptionnelle et aux billetteries officielles affichant <strong>COMPLET</strong>, <strong>SPOTEVENT</strong> reste votre meilleure solution pour obtenir vos places de manière <strong>légale, sécurisée et garantie</strong>.</p>
+
+            <div class="cta-section">
+                <h3>🎤 Vivez l'expérience Jul en 2026</h3>
+                <p><strong>Contactez SPOTEVENT dès maintenant pour votre devis gratuit et sans engagement</strong></p>
+                <p>Que vous recherchiez des places en fosse, en catégorie 1, en tribune ou en loge VIP, SPOTEVENT trouvera la solution adaptée à vos besoins.</p>
+                <button class="cta-button" onclick="toggleContactOptions()">📞 Obtenir mes billets !</button>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: #666;">
+                <strong>SPOTEVENT - Votre conciergerie billetterie de confiance depuis 2023</strong><br>
+                Lyon | Paris | Marseille | Toute la France<br>
+                +33 6 46 55 85 20 | <a href="https://spotevent.fr" style="color: var(--gold);">spotevent.fr</a>
+            </p>
+
+            <a href="../index.html" class="back-to-home">← Retour à l'accueil SPOTEVENT</a>
+        </div>
+    </article>
+
+    <!-- Bulle de contact -->
+    <div class="contact-bubble">
+        <button class="contact-toggle" id="contactToggleBtn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-message">
+                <p>Obtenez vos billets pour Jul avec SPOTEVENT</p>
+            </div>
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Toggle menu mobile
+        function toggleMobileMenu() {
+            const navCenter = document.getElementById('navCenter');
+            navCenter.classList.toggle('active');
+        }
+
+        // Toggle contact options - VERSION CORRIGÉE
+        function toggleContactOptions(event) {
+            // Empêcher la propagation pour éviter que le clic global ne ferme la bulle
+            if (event) {
+                event.stopPropagation();
+            }
+            
+            const contactOptions = document.getElementById('contactOptions');
+            const contactBubble = document.querySelector('.contact-toggle');
+            
+            // Toujours ouvrir la bulle (ne jamais la fermer via cette fonction)
+            if (!contactOptions.classList.contains('active')) {
+                contactOptions.classList.add('active');
+                // Scroll vers la bulle si nécessaire
+                setTimeout(() => {
+                    if (contactBubble) {
+                        contactBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 100);
+            }
+        }
+
+        // Fermer le menu mobile quand on clique sur un lien
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-center a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const navCenter = document.getElementById('navCenter');
+                    if (navCenter.classList.contains('active')) {
+                        navCenter.classList.remove('active');
+                    }
+                });
+            });
+            
+            animateOnScroll();
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Fermer la bulle de contact en cliquant ailleurs OU sur le bouton rond
+        document.addEventListener('click', function(event) {
+            const contactOptions = document.getElementById('contactOptions');
+            const contactBubble = document.querySelector('.contact-bubble');
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            const navContactLink = document.querySelector('.nav-contact a');
+            
+            // Vérifier si on a cliqué sur un élément qui doit ouvrir la bulle
+            let isCtaButton = false;
+            ctaButtons.forEach(btn => {
+                if (btn.contains(event.target)) {
+                    isCtaButton = true;
+                }
+            });
+            
+            let isNavContact = navContactLink && navContactLink.contains(event.target);
+            
+            if (contactOptions && contactOptions.classList.contains('active')) {
+                // Fermer si on clique en dehors (sauf sur les CTA et le lien header)
+                if (!contactOptions.contains(event.target) && 
+                    !contactBubble.contains(event.target) &&
+                    !isCtaButton &&
+                    !isNavContact) {
+                    contactOptions.classList.remove('active');
+                }
+            }
+        });
+
+        // Gestion spéciale du bouton rond de la bulle pour toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactToggleBtn = document.querySelector('.contact-toggle');
+            if (contactToggleBtn) {
+                contactToggleBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const contactOptions = document.getElementById('contactOptions');
+                    // Le bouton rond fait un vrai toggle
+                    contactOptions.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="../tag.js"></script>
+</body>
+</html>
