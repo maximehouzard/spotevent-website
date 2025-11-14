@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Snake au Château de Chambord le 28 juin 2026 | SPOTEVENT</title>
+    <meta name="description" content="DJ Snake en concert exceptionnel au Château de Chambord le 28 juin 2026. Billetterie, informations pratiques et accès VIP avec SPOTEVENT, votre conciergerie événementielle.">
+    <meta name="keywords" content="DJ Snake, Château de Chambord, concert 2026, billetterie DJ Snake, festival électro, Loir-et-Cher, Val de Loire, conciergerie billetterie, places VIP, événement complet, SPOTEVENT">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--beige);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--beige);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Article */
+        article {
+            max-width: 900px;
+            margin: 120px auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta i {
+            color: var(--gold);
+            margin-right: 0.5rem;
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 2rem 0 1rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-left: 4px solid var(--gold);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .info-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        /* Bulle de contact */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+            background: #333;
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+        }
+
+        .contact-message {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: var(--black);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: var(--beige);
+        }
+
+        .contact-option i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                </svg>
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Retour à l'accueil
+            </a>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <div class="article-header">
+            <span class="article-category">Concert Exceptionnel</span>
+            <h1>DJ Snake au Château de Chambord : Un événement électro-royal le 28 juin 2026</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i>28 juin 2026</span>
+                <span><i class="fas fa-map-marker-alt"></i>Château de Chambord, Loir-et-Cher</span>
+                <span><i class="fas fa-music"></i>Musique Électronique</span>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <p><strong>Le DJ français le plus célèbre au monde revient en France pour un concert exceptionnel dans un lieu d'exception.</strong> DJ Snake investira le majestueux Château de Chambord, joyau de la Renaissance française et site classé au patrimoine mondial de l'UNESCO, le samedi 28 juin 2026 pour une soirée électro inoubliable en plein cœur du Val de Loire.</p>
+
+            <h2>🏰 Un cadre historique pour un événement moderne</h2>
+            <p>Le Château de Chambord, chef-d'œuvre architectural commandé par François Ier au XVIe siècle, accueillera pour la première fois un événement électro de cette envergure. Avec son escalier à double révolution attribué à Léonard de Vinci et ses 440 pièces, ce monument emblématique du Loir-et-Cher offrira un décor grandiose et unique pour ce concert exceptionnel.</p>
+
+            <p>Cette rencontre entre patrimoine historique et musique électronique contemporaine promet une expérience sensorielle inédite, où les façades Renaissance illuminées serviront d'écrin naturel aux productions lumineuses spectaculaires de DJ Snake.</p>
+
+            <h2>🎧 DJ Snake : Le maestro français de l'électro mondiale</h2>
+            <p>William Grigahcine, connu sous le nom de DJ Snake, s'est imposé comme l'un des producteurs et DJ les plus influents de la scène électronique internationale. Originaire de Paris, ce talent français a conquis le monde avec des tubes planétaires comme :</p>
+
+            <ul>
+                <li><strong>"Turn Down for What"</strong> avec Lil Jon (plus de 1,5 milliard de vues sur YouTube)</li>
+                <li><strong>"Lean On"</strong> avec Major Lazer et MØ (tube mondial de 2015)</li>
+                <li><strong>"Taki Taki"</strong> avec Selena Gomez, Ozuna et Cardi B</li>
+                <li><strong>"Let Me Love You"</strong> avec Justin Bieber</li>
+                <li><strong>"Magenta Riddim"</strong>, hymne des festivals électro</li>
+            </ul>
+
+            <p>Avec plus de 10 milliards de streams cumulés et des collaborations avec les plus grandes stars internationales, DJ Snake représente l'excellence de la scène électronique française à l'international.</p>
+
+            <div class="highlight-box">
+                <h3>🎵 Un set exceptionnel attendu</h3>
+                <p>Pour ce concert unique à Chambord, DJ Snake promet un set exclusif mêlant ses plus grands hits, des inédits et des collaborations surprises. L'artiste français, habitué des plus grandes scènes mondiales (Coachella, Tomorrowland, Ultra Music Festival), a annoncé préparer une expérience visuelle et sonore spécialement conçue pour sublimer l'architecture historique du château.</p>
+            </div>
+
+            <h2>📍 Informations pratiques : Château de Chambord</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Date</h4>
+                    <p>Samedi 28 juin 2026<br>Ouverture des portes : 18h00<br>Début du concert : 21h00</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Lieu</h4>
+                    <p>Château de Chambord<br>41250 Chambord<br>Loir-et-Cher, Centre-Val de Loire</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Capacité</h4>
+                    <p>20 000 spectateurs<br>Billetterie limitée<br>Event sold-out attendu</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-car"></i>
+                    <h4>Accès</h4>
+                    <p>2h de Paris (A10)<br>1h d'Orléans<br>1h30 de Tours<br>Parking sur site</p>
+                </div>
+            </div>
+
+            <h2>🚗 Comment se rendre au Château de Chambord ?</h2>
+            
+            <h3>En voiture</h3>
+            <ul>
+                <li><strong>Depuis Paris :</strong> 2h via l'A10 (sortie Blois, puis D951)</li>
+                <li><strong>Depuis Lyon :</strong> 4h via l'A71 et l'A10</li>
+                <li><strong>Depuis Nantes :</strong> 2h30 via l'A11 et l'A10</li>
+                <li><strong>Depuis Bordeaux :</strong> 4h via l'A10</li>
+            </ul>
+            <p><strong>Parkings :</strong> Plusieurs parkings seront mis à disposition autour du château avec un système de navettes gratuites. Réservation conseillée.</p>
+
+            <h3>En train</h3>
+            <p><strong>Gare la plus proche :</strong> Blois-Chambord (ligne Paris-Austerlitz / Tours)<br>
+            Puis navettes spéciales concert depuis la gare de Blois (20 minutes de trajet).</p>
+
+            <h3>Hébergement dans la région</h3>
+            <p>La région Centre-Val de Loire offre de nombreuses options d'hébergement :</p>
+            <ul>
+                <li>Hôtels et chambres d'hôtes à Blois (15 km)</li>
+                <li>Gîtes et locations dans les communes voisines (Bracieux, Huisseau-sur-Cosson)</li>
+                <li>Campings dans le Loir-et-Cher</li>
+                <li>Châteaux-hôtels de la Loire</li>
+            </ul>
+            <p><em>Conseil SPOTEVENT : Réservez votre hébergement dès maintenant, la région sera très demandée ce week-end-là !</em></p>
+
+            <h2>🎟️ Billetterie DJ Snake Chambord 2026</h2>
+            <p>Face à l'engouement exceptionnel pour cet événement unique, la billetterie officielle s'annonce particulièrement tendue. Plusieurs catégories de places seront proposées :</p>
+
+            <ul>
+                <li><strong>Placement debout (pelouse) :</strong> Accès à l'esplanade devant le château</li>
+                <li><strong>Carré VIP :</strong> Zone privilégiée avec vue optimale sur la scène</li>
+                <li><strong>Packages Premium :</strong> Accès VIP + visite privée du château + cocktail</li>
+                <li><strong>Loges royales :</strong> Expérience ultra-exclusive dans les salons du château</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>⚠️ Attention : Billetterie à guichet fermé attendue</h3>
+                <p>Compte tenu de la notoriété internationale de DJ Snake et du caractère exceptionnel du lieu, cet événement devrait afficher complet en quelques minutes lors de la mise en vente officielle prévue pour février 2026.</p>
+                <p><strong>Les plateformes officielles de billetterie :</strong> Ticketmaster, Fnac Spectacles, See Tickets</p>
+            </div>
+
+            <h2>💎 SPOTEVENT : Votre accès garanti à l'événement complet</h2>
+            <p>Vous rêvez d'assister à ce concert exceptionnel mais craignez de ne pas obtenir vos places lors de la vente officielle ? <strong>SPOTEVENT, conciergerie spécialisée en billetterie événementielle depuis octobre 2023, vous accompagne pour sécuriser votre accès à cet événement d'exception.</strong></p>
+
+            <h3>🌟 Nos services pour DJ Snake à Chambord :</h3>
+            <ul>
+                <li><strong>Accès garanti</strong> même en cas de billetterie sold-out</li>
+                <li><strong>Places VIP et packages premium</strong> dans toutes les catégories</li>
+                <li><strong>Service de conciergerie complète :</strong> transport, hébergement, restauration</li>
+                <li><strong>Accompagnement personnalisé</strong> par notre équipe basée à Lyon</li>
+                <li><strong>Transactions sécurisées</strong> et conformes à la réglementation française</li>
+                <li><strong>Devis gratuit et sans engagement</strong></li>
+            </ul>
+
+            <p>Avec plus de <strong>1 000 clients accompagnés</strong> et une note de <strong>4,9/5 sur Google</strong> (plus de 200 avis vérifiés), SPOTEVENT est votre partenaire de confiance pour accéder aux événements les plus demandés en France et à l'international.</p>
+
+            <div class="cta-section">
+                <h3>🎫 Ne manquez pas DJ Snake à Chambord !</h3>
+                <p>Contactez dès maintenant notre équipe pour obtenir vos places VIP et vivre une expérience inoubliable au cœur du patrimoine français.</p>
+                <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">Demander un devis gratuit</a>
+            </div>
+
+            <h2>🎭 Pourquoi cet événement est-il exceptionnel ?</h2>
+            <p>Ce concert représente bien plus qu'une simple performance musicale. Il incarne la rencontre entre :</p>
+
+            <ul>
+                <li><strong>Le patrimoine français :</strong> Un des châteaux les plus visités de France (plus de 1 million de visiteurs par an)</li>
+                <li><strong>L'excellence artistique :</strong> Un DJ français au sommet de la scène internationale</li>
+                <li><strong>L'innovation culturelle :</strong> L'ouverture du patrimoine à des événements contemporains</li>
+                <li><strong>La région Centre-Val de Loire :</strong> Une valorisation touristique et culturelle d'exception</li>
+            </ul>
+
+            <p>Ce type d'événement, alliant musique électronique et patrimoine historique, reste rare en France. Après le succès des concerts au Château de Versailles ou au Palais des Papes d'Avignon, Chambord s'inscrit dans cette dynamique de démocratisation culturelle tout en préservant l'excellence et le prestige de ces lieux d'exception.</p>
+
+            <h2>🌍 DJ Snake : Un ambassadeur français à l'international</h2>
+            <p>Au-delà de ses performances musicales, DJ Snake représente le rayonnement de la culture française dans le monde. Ce concert à Chambord est également un symbole fort :</p>
+
+            <ul>
+                <li>Le retour aux sources d'un artiste français qui a conquis le monde</li>
+                <li>La valorisation du patrimoine français auprès d'une audience internationale</li>
+                <li>La promotion du tourisme culturel et événementiel en région Centre-Val de Loire</li>
+                <li>L'attractivité de la France pour les grands événements musicaux</li>
+            </ul>
+
+            <h2>📱 Restez informés avec SPOTEVENT</h2>
+            <p>Pour ne rien manquer des actualités concernant DJ Snake à Chambord et tous les événements majeurs en France et à l'étranger, suivez SPOTEVENT sur :</p>
+
+            <ul>
+                <li><strong>Instagram :</strong> @spotevent.fr - Actualités quotidiennes et coulisses</li>
+                <li><strong>Facebook :</strong> Groupe communautaire et échanges entre fans</li>
+                <li><strong>TikTok :</strong> Vidéos exclusives et interviews</li>
+                <li><strong>LinkedIn :</strong> Partenariats et événements corporate</li>
+                <li><strong>Twitter/X :</strong> Annonces en temps réel</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>💼 Services SPOTEVENT pour les entreprises</h3>
+                <p>Vous êtes une entreprise et souhaitez organiser un événement corporate autour de ce concert ? SPOTEVENT propose des packages sur-mesure incluant places VIP, privatisation d'espaces, restauration gastronomique et services de conciergerie complète pour vos collaborateurs et clients.</p>
+                <p><a href="../corporate.html" style="color: var(--gold); font-weight: 600;">Découvrez nos offres entreprises</a></p>
+            </div>
+
+            <h2>🎉 Un été 2026 exceptionnel pour les concerts en France</h2>
+            <p>Le concert de DJ Snake à Chambord s'inscrit dans une programmation estivale 2026 particulièrement riche en France. Parmi les autres événements majeurs accessibles via SPOTEVENT :</p>
+
+            <ul>
+                <li>Aya Nakamura au Stade de France (mai 2026)</li>
+                <li>Jul au Stade de France et à l'Orange Vélodrome (mai 2026)</li>
+                <li>David Guetta au Stade de France (juin 2026)</li>
+                <li>Linkin Park à Lyon (juin 2026)</li>
+                <li>System Of A Down au Stade de France (juillet 2026)</li>
+                <li>Hellfest à Clisson (juin 2026)</li>
+            </ul>
+
+            <p><em>Consultez toutes nos actualités sur <a href="../index.html" style="color: var(--gold); font-weight: 600;">spotevent.fr</a></em></p>
+
+            <h2>🏆 Conclusion : Un événement à ne manquer sous aucun prétexte</h2>
+            <p>Le concert de DJ Snake au Château de Chambord le 28 juin 2026 s'annonce comme <strong>l'événement électro de l'année en France</strong>. La combinaison unique d'un artiste international au sommet de sa carrière et d'un lieu patrimonial d'exception crée une opportunité rare de vivre une expérience musicale et culturelle inoubliable.</p>
+
+            <p>Face à la demande exceptionnelle attendue, <strong>anticipez dès maintenant votre réservation avec SPOTEVENT</strong>. Notre équipe d'experts, basée à Lyon et disponible partout en France, vous garantit un accès privilégié et un accompagnement personnalisé pour faire de cette soirée un moment d'exception.</p>
+
+            <div class="cta-section">
+                <h3>🎤 Vivez la magie DJ Snake x Chambord avec SPOTEVENT</h3>
+                <p><strong>Plus de 1 000 clients nous font déjà confiance - Rejoignez-les !</strong></p>
+                <p>📞 Téléphone : <a href="tel:+33646558520" style="color: var(--gold);">06 46 55 85 20</a><br>
+                📧 Email : <a href="mailto:maxime.houzard@spotevent.fr" style="color: var(--gold);">maxime.houzard@spotevent.fr</a><br>
+                💬 WhatsApp : <a href="https://wa.me/33646558520" style="color: var(--gold);">Discuter maintenant</a></p>
+                <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">Obtenir mes places VIP</a>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: #666; font-size: 0.95rem;">
+                <em>SPOTEVENT - Votre conciergerie événementielle de confiance depuis octobre 2023<br>
+                Basée à Lyon, Rhône-Alpes - Service national et international<br>
+                Note : 4,9/5 - Plus de 200 avis Google vérifiés</em>
+            </p>
+        </div>
+    </article>
+
+    <!-- Bulle de contact -->
+    <div class="contact-bubble">
+        <button class="contact-toggle" onclick="toggleContactOptions()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-message">
+                <p>Contactez-nous pour obtenir vos places :</p>
+            </div>
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContactOptions() {
+            const options = document.getElementById('contactOptions');
+            options.classList.toggle('active');
+        }
+
+        // Fermer la bulle en cliquant ailleurs
+        document.addEventListener('click', function(event) {
+            const contactBubble = document.querySelector('.contact-bubble');
+            const contactOptions = document.getElementById('contactOptions');
+            
+            if (!contactBubble.contains(event.target) && contactOptions.classList.contains('active')) {
+                contactOptions.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
