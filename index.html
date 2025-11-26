@@ -228,9 +228,9 @@ section {
 
 .presentation-container {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr;  /* Image à gauche (1fr), Texte à droite (1.5fr) */
     gap: 4rem;
-    align-items: center;
+    align-items: start;  /* Alignement en haut */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -276,7 +276,8 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin: 2.5rem 0;
+    margin: 2.5rem auto;  /* Changé de "2.5rem 0" à "2.5rem auto" */
+    max-width: 600px;     /* Ajouté */
 }
 
 .stat-item {
@@ -319,12 +320,17 @@ section {
 .presentation-closing {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--black);
     margin: 1.5rem 0;
+    text-align: center;  /* Ajouté */
 }
 
-.presentation-content .cta-button {
+.presentation-cta-button {
     margin-top: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 @media (max-width: 968px) {
@@ -1618,8 +1624,7 @@ section {
             <li><a href="#video">Qui sommes-nous ?</a></li>
             <li><a href="#avis">Les avis de nos clients</a></li>
             <li><a href="#offres">Les actualités</a></li>
-            <li><a href="#reseaux">Nos réseaux sociaux</a></li>
-            <li><a href="corporate.html">Nos tarifs</a></li>
+            <li><a href="corporate.html">TPE, PME & CSE</a></li>
         </ul>
         
         <div class="nav-contact">
@@ -1657,8 +1662,7 @@ section {
     </div>
 </section>
 
-    <!-- Section Présentation -->
-<section id="presentation" class="presentation">
+  <section id="presentation" class="presentation">
     <div class="fade-in">
         <h2 class="section-title">🎯 Notre mission</h2>
         <div class="presentation-container">
@@ -1666,34 +1670,34 @@ section {
                 <img src="spotevent-jacket.jpg" alt="SPOTEVENT - Conciergerie événementielle">
             </div>
             <div class="presentation-content">
-                <p class="presentation-intro">SPOTEVENT est une conciergerie spécialisée dans l'acquisition de places de concerts, événements sportifs et festivals à guichet fermé.</strong></p>
-                
-                <p>Notre objectif est de vous permettre de vivre des moments inoubliables, même quand les billetteries officielles affichent complet, tout en garantissant un cadre légal, éthique et sécurisé.</p>
-                
+                <p class="presentation-intro">SPOTEVENT est une conciergerie spécialisée dans l'acquisition de places de concerts, événements sportifs et festivals à guichet fermé.</p>
+                <p>Pour les particuliers, notre objectif est de vous permettre de vivre des moments inoubliables, même quand les billetteries officielles affichent complet, tout en garantissant un cadre sécurisé.</p>
                 <p>Ce service sera désormais accessible à tous et plus uniquement à une clientèle privilégiée.</p>
-                
                 <p>Toute demande de devis est gratuite.</p>
-                
-                <div class="presentation-stats">
-    <div class="stat-item">
-        <div class="stat-badge">
-            <span class="stat-icon">⭐</span>
-            <span class="stat-text">+ de 200 avis sur Google</span>
-        </div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-badge">
-            <span class="stat-icon">🎟️</span>
-            <span class="stat-text">+ de 1 000 clients accompagnés</span>
-        </div>
-    </div>
-</div>
-                
-                <p class="presentation-closing">Avec SPOTEVENT, ne manquez plus jamais des événements sold out qui vous tiennent à cœur !</p>
-                
-                <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+                <p>Pour les entreprises, notre objectif est de vous permettre de fédérer vos collaborateurs et de renforcer votre marque employeur en leur mettant à disposition un service qui sort de l'ordinaire, celui d'accéder à des événements à guichet fermé tout en bénéficiant de remise.</p>
+                <p>Cet avantage vous permettra également de fidéliser vos clients et de transformer vos prospects en le sinvitant aux événements les plus prisés de l'année.</p>
             </div>
         </div>
+        
+        <!-- MAINTENANT EN DEHORS du presentation-container -->
+        <div class="presentation-stats">
+            <div class="stat-item">
+                <div class="stat-badge">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-text">+ de 200 avis sur Google</span>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-badge">
+                    <span class="stat-icon">🎟️</span>
+                    <span class="stat-text">+ de 1 000 clients accompagnés</span>
+                </div>
+            </div>
+        </div>
+        
+        <p class="presentation-closing">Avec SPOTEVENT, ne manquez plus jamais des événements sold out qui vous tiennent à cœur !</p>
+        
+        <button class="cta-button presentation-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
     </div>
 </section>
 
