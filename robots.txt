@@ -1,5 +1,19 @@
+# Robots.txt pour SPOTEVENT
+# https://www.spotevent.fr
+
+# Autoriser tous les robots à indexer tout le site
 User-agent: *
 Allow: /
 
+# Bloquer l'accès aux fichiers et dossiers non pertinents (si applicable)
+# Décommentez les lignes ci-dessous si vous avez ces dossiers
+# Disallow: /admin/
+# Disallow: /cgi-bin/
+# Disallow: /tmp/
+# Disallow: *.pdf$
+
 # Sitemap
 Sitemap: https://www.spotevent.fr/sitemap.xml
+
+# Délai entre les requêtes (optionnel, en secondes)
+# Crawl-delay: 1
