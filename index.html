@@ -731,8 +731,8 @@ section {
 
 .news-carousel {
     display: flex;
-    animation: slideNewsHorizontal 90s infinite linear; /* Augmenté de 60s à 90s pour ralentir */
-    width: calc(320px * 30);
+    animation: slideNewsHorizontal 100s infinite linear; /* Augmenté de 60s à 90s pour ralentir */
+    width: calc(320px * 34);
 }
 
 @keyframes slideNewsHorizontal {
@@ -740,7 +740,7 @@ section {
         transform: translateX(0); 
     }
     100% { 
-        transform: translateX(calc(-320px * 15));
+        transform: translateX(calc(-320px * 17));
     }
 }
 
@@ -833,8 +833,8 @@ section {
 /* Responsive */
 @media (max-width: 1024px) {
     .news-carousel {
-        animation-duration: 75s; /* Ajusté proportionnellement */
-        width: calc(280px * 26);
+        animation-duration: 85s; /* Ajusté proportionnellement */
+        width: calc(280px * 34);
     }
     
     @keyframes slideNewsHorizontal {
@@ -842,7 +842,7 @@ section {
             transform: translateX(0); 
         }
         100% { 
-            transform: translateX(calc(-280px * 13));
+            transform: translateX(calc(-280px * 17));
         }
     }
     
@@ -857,8 +857,8 @@ section {
     }
     
     .news-carousel {
-        animation-duration: 60s; /* Ajusté proportionnellement */
-        width: calc(250px * 26);
+        animation-duration: 70s; /* Ajusté proportionnellement */
+        width: calc(250px * 34);
     }
     
     @keyframes slideNewsHorizontal {
@@ -866,7 +866,7 @@ section {
             transform: translateX(0); 
         }
         100% { 
-            transform: translateX(calc(-250px * 13));
+            transform: translateX(calc(-250px * 17));
         }
     }
     
@@ -884,8 +884,8 @@ section {
 
 @media (max-width: 480px) {
     .news-carousel {
-        animation-duration: 50s; /* Ajusté proportionnellement */
-        width: calc(220px * 26);
+        animation-duration: 60s; /* Ajusté proportionnellement */
+        width: calc(220px * 34);
     }
     
     @keyframes slideNewsHorizontal {
@@ -893,7 +893,7 @@ section {
             transform: translateX(0); 
         }
         100% { 
-            transform: translateX(calc(-220px * 13));
+            transform: translateX(calc(-220px * 17));
         }
     }
     
@@ -1794,6 +1794,18 @@ section {
         </div>
         <div class="news-meta">
             <a href="articles/aya-nakamura-stade-de-france-28-29-30-mai-2026.html" class="news-read-more">En savoir plus</a>
+        </div>
+    </div>
+</div>
+<!-- Actualité - Rosalía -->
+<div class="news-slide">
+    <div class="news-card">
+        <div class="news-content">
+            <div class="news-source">Concert</div>
+            <h3 class="news-title">Rosalía en concert à Paris et Lyon en mars 2026</h3>
+        </div>
+        <div class="news-meta">
+            <a href="articles/rosalia-concerts-paris-lyon-mars-2026.html" class="news-read-more">En savoir plus</a>
         </div>
     </div>
 </div>
