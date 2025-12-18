@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosalía en Concert à Paris et Lyon - Mars 2026 | SPOTEVENT</title>
+    <meta name="description" content="Rosalía de retour en France ! Concerts à Paris Accor Arena (18 et 20 mars) et Lyon LDLC Arena (16 mars 2026). Billetterie complète ? SPOTEVENT vous trouve vos places pour la tournée Motomami de l'icône flamenco urbaine.">
+    <meta name="keywords" content="Rosalía concert Paris 2026, Rosalía Lyon 2026, Rosalía Accor Arena, Rosalía LDLC Arena, concert Rosalía France mars 2026, billetterie Rosalía, places Rosalía complet, Motomami tour 2026, concert flamenco urbain Paris, Rosalía billets sold out, SPOTEVENT conciergerie billetterie">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--beige);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 247, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .back-button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Article */
+        .article-container {
+            max-width: 900px;
+            margin: 120px auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--black);
+        }
+
+        .article-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 20px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--black);
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--black);
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: var(--gold);
+        }
+
+        .concert-details {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .concert-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .concert-details li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .concert-details li:last-child {
+            border-bottom: none;
+        }
+
+        .concert-details i {
+            color: var(--gold);
+            font-size: 1.3rem;
+            min-width: 30px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(212, 175, 55, 0.3) 0%, rgba(212, 175, 55, 0.1) 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Contact Bubble */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-toggle:hover {
+            transform: scale(1.1);
+            background: #333;
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active {
+            display: block;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: var(--black);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: var(--beige);
+        }
+
+        .contact-option i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .article-content {
+                font-size: 1rem;
+            }
+
+            .article-container {
+                margin-top: 100px;
+                padding: 0 1.5rem;
+            }
+
+            nav {
+                padding: 1rem 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                </svg>
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <a href="../index.html" class="back-button">← Retour à l'accueil</a>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article class="article-container">
+        <div class="article-header">
+            <span class="article-category">🎤 Concert Exceptionnel</span>
+            <h1>Rosalía en Concert à Paris et Lyon - Mars 2026</h1>
+            <div class="article-meta">
+                <i class="far fa-calendar"></i> Publié le 18 décembre 2024 | <i class="far fa-clock"></i> Lecture : 5 min
+            </div>
+        </div>
+
+        <div class="article-content">
+            <p class="highlight" style="font-size: 1.2rem; text-align: center; padding: 1.5rem; margin: 2rem 0;">
+                <strong>🔥 L'icône mondiale du flamenco urbain revient en France ! Rosalía annonce trois concerts exceptionnels en mars 2026 : Lyon le 16 mars et Paris les 18 et 20 mars.</strong>
+            </p>
+
+            <h2>🌟 Rosalía : La Révolution du Flamenco Moderne</h2>
+            
+            <p>Après avoir conquis le monde entier avec son album révolutionnaire <strong>"Motomami"</strong> et accumulé des milliards de streams, <strong>Rosalía</strong> revient en France pour trois concerts événementiels qui promettent d'être inoubliables. L'artiste barcelonaise, multiple lauréate de Grammy Awards et icône de la musique urbaine latine, présentera son spectacle visuel et sonore époustouflant dans les deux plus grandes villes de France.</p>
+
+            <p>Avec des hits planétaires comme <em>"Malamente"</em>, <em>"Con Altura"</em>, <em>"Despechá"</em> et <em>"La Fama"</em>, Rosalía a redéfini les codes du flamenco en y intégrant reggaeton, électro et expérimentation avant-gardiste. Ses concerts sont réputés pour être de véritables performances artistiques totales, mêlant chorégraphies innovantes, mise en scène spectaculaire et énergie débordante.</p>
+
+            <h2>📅 Informations Pratiques : Concerts de Rosalía en France</h2>
+
+            <div class="concert-details">
+                <h3 style="margin-top: 0; color: var(--gold);">🎫 Dates et Lieux Confirmés</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Lyon - LDLC Arena</strong><br>
+                            Dimanche 16 mars 2026<br>
+                            Capacité : 16 000 places
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Paris - Accor Arena (Bercy)</strong><br>
+                            Mercredi 18 mars 2026<br>
+                            Vendredi 20 mars 2026<br>
+                            Capacité : 20 000 places par soir
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <strong>Billetterie officielle</strong><br>
+                            Ouverture prévue : Janvier 2026<br>
+                            Prix estimés : 59€ à 199€
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horaires</strong><br>
+                            Ouverture des portes : 19h00<br>
+                            Début du concert : 21h00
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>🎭 Ce Qui Vous Attend au Concert de Rosalía</h2>
+
+            <p>Les concerts de Rosalía sont bien plus que de simples performances musicales. Voici ce qui rend ses shows absolument incontournables :</p>
+
+            <h3>🎨 Une Expérience Visuelle Immersive</h3>
+            <p>Scénographie avant-gardiste, jeux de lumières spectaculaires, écrans LED géants et effets visuels à couper le souffle. Chaque concert de Rosalía est une œuvre d'art visuelle totale qui repousse les limites du spectacle vivant.</p>
+
+            <h3>💃 Chorégraphies Révolutionnaires</h3>
+            <p>Entourée de ses danseurs, Rosalía présente des chorégraphies inspirées du flamenco traditionnel revisité avec une énergie urbaine contemporaine. Ses mouvements iconiques ont fait le tour des réseaux sociaux et deviennent instantanément viraux.</p>
+
+            <h3>🎵 Setlist Épique</h3>
+            <p>Attendez-vous à entendre tous ses plus grands hits : <em>"Malamente"</em>, <em>"Pienso en tu mirá"</em>, <em>"Con Altura"</em>, <em>"Juro Que"</em>, <em>"La Fama"</em>, <em>"Despechá"</em>, <em>"Saoko"</em>, <em>"Bizcochito"</em> et bien d'autres. Un voyage musical entre tradition flamenca et modernité urbaine.</p>
+
+            <h3>🌍 Une Star Internationale au Sommet</h3>
+            <p>Avec 11 Grammy Latino Awards, 2 Grammy Awards américains et des collaborations avec The Weeknd, Billie Eilish, Travis Scott et Bad Bunny, Rosalía est devenue l'une des artistes les plus influentes de sa génération.</p>
+
+            <div class="info-box">
+                <h3>💎 Pourquoi Ces Concerts Seront Sold Out ?</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>✅ <strong>Première tournée française depuis 2022</strong> - Une attente de 4 ans</li>
+                    <li>✅ <strong>Seulement 3 dates en France</strong> - Offre limitée pour tout le pays</li>
+                    <li>✅ <strong>Artiste au sommet de sa popularité</strong> - Phénomène mondial</li>
+                    <li>✅ <strong>Spectacle réputé exceptionnel</strong> - Critiques dithyrambiques partout dans le monde</li>
+                    <li>✅ <strong>Communauté de fans ultra-mobilisée</strong> - La "Motomami Army" est prête</li>
+                </ul>
+            </div>
+
+            <h2>🚇 Comment Se Rendre aux Concerts</h2>
+
+            <h3>📍 Lyon - LDLC Arena</h3>
+            <p><strong>Adresse :</strong> 255 Avenue Tony Garnier, 69007 Lyon</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Métro :</strong> Ligne B - Station "Debourg"</li>
+                <li><strong>Tramway :</strong> T1 et T2 - Station "Debourg" ou "Jet d'Eau Mendès France"</li>
+                <li><strong>Bus :</strong> Lignes 35, C7, C10, C12</li>
+                <li><strong>Vélo :</strong> Stations Vélo'v à proximité</li>
+                <li><strong>Voiture :</strong> Parking sur place (13€) - Réservation recommandée</li>
+            </ul>
+
+            <h3>📍 Paris - Accor Arena (Bercy)</h3>
+            <p><strong>Adresse :</strong> 8 Boulevard de Bercy, 75012 Paris</p>
+            <ul style="margin-left: 1.5rem;">
+                <li><strong>Métro :</strong> Ligne 6 et 14 - Station "Bercy"</li>
+                <li><strong>RER :</strong> Ligne D - Station "Gare de Lyon" (10 min à pied)</li>
+                <li><strong>Tramway :</strong> T3a - Station "Porte de Charenton"</li>
+                <li><strong>Bus :</strong> Lignes 24, 87, 109, 111</li>
+                <li><strong>Voiture :</strong> Parking Bercy Arena - Réservation fortement conseillée</li>
+            </ul>
+
+            <h2>🏨 Hébergement : Où Dormir ?</h2>
+
+            <h3>À Lyon</h3>
+            <p>Les quartiers <strong>Gerland, Confluence, Perrache et Part-Dieu</strong> offrent un accès facile à la LDLC Arena. Le 7ème arrondissement est particulièrement pratique avec la ligne de métro B directe.</p>
+
+            <h3>À Paris</h3>
+            <p>Privilégiez les arrondissements bien desservis par les lignes 6 et 14 : <strong>12ème (Bercy), 11ème (Bastille), 13ème, ou 4ème arrondissements</strong>. Les quartiers Gare de Lyon, Nation et Bastille sont très proches de l'Accor Arena.</p>
+
+            <div class="info-box">
+                <h3>⚠️ Conseils Importants</h3>
+                <ul style="margin-left: 1.5rem;">
+                    <li>🎟️ <strong>Réservez votre billet dès l'ouverture</strong> - Ces concerts afficheront complet en quelques minutes</li>
+                    <li>🚆 <strong>Privilégiez les transports en commun</strong> - Plus rapide et écologique</li>
+                    <li>🏨 <strong>Réservez votre hôtel à l'avance</strong> - Forte affluence attendue</li>
+                    <li>📱 <strong>Téléchargez votre billet sur mobile</strong> - Format dématérialisé privilégié</li>
+                    <li>⏰ <strong>Arrivez tôt</strong> - Contrôles de sécurité renforcés</li>
+                </ul>
+            </div>
+
+            <h2>💡 Billetterie Complète ? SPOTEVENT Vous Trouve Vos Places !</h2>
+
+            <p>Vous n'avez pas réussi à obtenir vos billets lors de l'ouverture de la billetterie officielle ? Les places se sont envolées en quelques minutes ? <strong>Pas de panique !</strong></p>
+
+            <p><strong>SPOTEVENT</strong>, conciergerie lyonnaise spécialisée dans l'acquisition de places pour événements complets, est là pour vous aider. Avec plus de <strong>1 000 clients satisfaits</strong> et plus de <strong>200 avis 5 étoiles sur Google</strong>, nous avons fait nos preuves dans la recherche de billets introuvables.</p>
+
+            <h3>✨ Nos Avantages</h3>
+            <ul style="margin-left: 1.5rem;">
+                <li>✅ <strong>Réseau étendu de fournisseurs vérifiés</strong> partout en France</li>
+                <li>✅ <strong>Billets 100% authentiques et sécurisés</strong></li>
+                <li>✅ <strong>Processus transparent et personnalisé</strong></li>
+                <li>✅ <strong>Accompagnement de A à Z</strong> jusqu'à votre entrée dans la salle</li>
+                <li>✅ <strong>Devis gratuit et sans engagement</strong></li>
+                <li>✅ <strong>Spécialistes des concerts sold-out</strong> (Lady Gaga, Taylor Swift, Coldplay...)</li>
+            </ul>
+
+            <div class="cta-section">
+                <h2>🎟️ Ne Manquez Pas Rosalía !</h2>
+                <p style="font-size: 1.1rem; margin: 1.5rem 0;">
+                    Que ce soit pour les concerts de Paris à l'Accor Arena (18 et 20 mars) ou celui de Lyon à la LDLC Arena (16 mars), 
+                    SPOTEVENT vous aide à accéder à ces événements exceptionnels, même sold-out.
+                </p>
+                <a href="javascript:void(0)" onclick="toggleContactOptions()" class="cta-button">
+                    💬 Contactez-nous maintenant
+                </a>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">
+                    Réponse rapide • Devis gratuit • Service premium
+                </p>
+            </div>
+
+            <h2>🌟 Pourquoi Rosalía Est Incontournable</h2>
+
+            <p>Rosalía Vila Tobella, née à Barcelone, a révolutionné la musique contemporaine en fusionnant <strong>flamenco traditionnel catalan</strong>, <strong>musique urbaine latine</strong> et <strong>expérimentation électronique</strong>. Son album <em>"El Mal Querer"</em> (2018) a été salué comme un chef-d'œuvre, suivi du phénoménal <em>"Motomami"</em> (2022) qui a confirmé son statut de superstar mondiale.</p>
+
+            <p>Ses collaborations prestigieuses incluent :</p>
+            <ul style="margin-left: 1.5rem;">
+                <li>🎵 <strong>The Weeknd</strong> - "Blinding Lights (Remix)" & "La Fama"</li>
+                <li>🎵 <strong>Billie Eilish</strong> - "Lo Vas A Olvidar"</li>
+                <li>🎵 <strong>Travis Scott</strong> - "TKN"</li>
+                <li>🎵 <strong>Bad Bunny</strong> - "La Noche De Anoche"</li>
+                <li>🎵 <strong>Ozuna</strong> - "Yo x Ti, Tu x Mi"</li>
+            </ul>
+
+            <p>Ses clips vidéo, véritables courts-métrages artistiques réalisés par des cinéastes renommés, cumulent des milliards de vues et redéfinissent les standards de l'industrie musicale.</p>
+
+            <h2>📱 Suivez l'Actualité de Rosalía</h2>
+
+            <p>Restez informés des dernières actualités concernant la tournée de Rosalía :</p>
+            <ul style="margin-left: 1.5rem;">
+                <li>📸 <strong>Instagram :</strong> @rosalia.vt (67M+ followers)</li>
+                <li>🎵 <strong>TikTok :</strong> @rosalia (25M+ followers)</li>
+                <li>🐦 <strong>Twitter/X :</strong> @rosalia</li>
+                <li>🎧 <strong>Spotify :</strong> 45M+ auditeurs mensuels</li>
+            </ul>
+
+            <div class="info-box" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); border-left-color: #000;">
+                <h3 style="color: #000;">🎁 Offrez un Cadeau Inoubliable</h3>
+                <p style="color: #000;">Un concert de Rosalía est <strong>le cadeau parfait</strong> pour :</p>
+                <ul style="margin-left: 1.5rem; color: #000;">
+                    <li>🎂 Un anniversaire mémorable</li>
+                    <li>❤️ Une Saint-Valentin romantique</li>
+                    <li>🎄 Un cadeau de Noël exceptionnel</li>
+                    <li>🎓 Une réussite à célébrer</li>
+                    <li>👫 Un moment unique entre amis</li>
+                </ul>
+                <p style="color: #000;"><strong>SPOTEVENT vous accompagne dans l'achat de vos places cadeaux.</strong></p>
+            </div>
+
+            <h2>🎤 L'Impact Culturel de Rosalía</h2>
+
+            <p>Au-delà de la musique, Rosalía est devenue une <strong>icône de mode</strong> et une <strong>ambassadrice culturelle</strong> de la culture catalane et espagnole dans le monde entier. Ses tenues scéniques avant-gardistes, créées en collaboration avec les plus grands designers (Rick Owens, Balenciaga, Jean Paul Gaultier), font sensation à chaque apparition.</p>
+
+            <p>Elle a été désignée :</p>
+            <ul style="margin-left: 1.5rem;">
+                <li>🏆 <strong>TIME 100</strong> - Parmi les 100 personnalités les plus influentes</li>
+                <li>🏆 <strong>Forbes 30 Under 30</strong> - Leader de sa génération</li>
+                <li>🏆 <strong>Billboard Women in Music</strong> - Impact Award</li>
+                <li>🏆 <strong>Vogue</strong> - Icône de style internationale</li>
+            </ul>
+
+            <h2>🎼 Setlist Prévue (Non Définitive)</h2>
+
+            <p>Bien que la setlist officielle ne soit pas encore annoncée, voici les titres que les fans espèrent entendre :</p>
+
+            <div class="concert-details">
+                <h3 style="margin-top: 0;">🎵 Hits Incontournables</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0;">🔥 Malamente</li>
+                    <li style="padding: 0.5rem 0;">🔥 Pienso en tu mirá</li>
+                    <li style="padding: 0.5rem 0;">🔥 Con Altura (feat. J Balvin)</li>
+                    <li style="padding: 0.5rem 0;">🔥 Yo x Ti, Tu x Mi (feat. Ozuna)</li>
+                    <li style="padding: 0.5rem 0;">🔥 La Fama (feat. The Weeknd)</li>
+                    <li style="padding: 0.5rem 0;">🔥 Despechá</li>
+                    <li style="padding: 0.5rem 0;">🔥 Saoko</li>
+                    <li style="padding: 0.5rem 0;">🔥 Chicken Teriyaki</li>
+                    <li style="padding: 0.5rem 0;">🔥 Bizcochito</li>
+                    <li style="padding: 0.5rem 0;">🔥 Hentai</li>
+                    <li style="padding: 0.5rem 0;">🔥 La Combi Versace</li>
+                    <li style="padding: 0.5rem 0;">🔥 Juro Que</li>
+                </ul>
+            </div>
+
+            <h2>🎯 Conclusion : Ne Ratez Pas Cet Événement Historique</h2>
+
+            <p>Les concerts de <strong>Rosalía à Lyon (16 mars) et Paris (18 et 20 mars 2026)</strong> s'annoncent comme des événements musicaux majeurs. Que vous soyez fan de longue date ou simplement curieux de découvrir l'une des artistes les plus innovantes de sa génération, ces shows promettent d'être <strong>absolument spectaculaires</strong>.</p>
+
+            <p>Avec seulement <strong>trois dates en France</strong> et une demande qui s'annonce exceptionnelle, les billets partiront en quelques minutes. Si vous n'avez pas pu sécuriser vos places lors de l'ouverture officielle, <strong>SPOTEVENT est votre solution</strong> pour accéder à ces concerts sold-out.</p>
+
+            <p class="highlight" style="text-align: center; font-size: 1.2rem; padding: 1.5rem; margin: 2rem 0;">
+                <strong>🎤 Vivez la magie Rosalía en direct ! Paris ou Lyon, nous trouvons vos billets même sold-out.</strong>
+            </p>
+
+            <div class="cta-section">
+                <h2>🚀 Réservez Votre Place Maintenant</h2>
+                <p style="font-size: 1.1rem; margin: 1.5rem 0;">
+                    <strong>Plus de 1 000 clients satisfaits</strong> nous font confiance pour leurs événements exceptionnels.<br>
+                    Pourquoi pas vous ?
+                </p>
+                <a href="javascript:void(0)" onclick="toggleContactOptions()" class="cta-button">
+                    📞 Demandez votre devis gratuit
+                </a>
+                <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.9;">
+                    ⭐ Note moyenne : 4.9/5 sur Google (200+ avis) | ✅ Service sécurisé et transparent
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Contact Bubble -->
+    <div class="contact-bubble">
+        <button class="contact-toggle" onclick="toggleContactOptions()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleContactOptions() {
+            const options = document.getElementById('contactOptions');
+            options.classList.toggle('active');
+        }
+
+        // Fermer en cliquant ailleurs
+        document.addEventListener('click', function(event) {
+            const contactBubble = document.querySelector('.contact-bubble');
+            const contactOptions = document.getElementById('contactOptions');
+            
+            if (!contactBubble.contains(event.target) && contactOptions.classList.contains('active')) {
+                contactOptions.classList.remove('active');
+            }
+        });
+    </script>
+    <script src="../tag.js"></script>
+</body>
+</html>
