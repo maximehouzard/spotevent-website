@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir Ambassadeur - SPOTEVENT</title>
+    <meta name="description" content="Rejoignez l'équipe SPOTEVENT en tant qu'ambassadeur ! Rémunération à la commission, liberté totale, passion événementielle. Postulez dès maintenant.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --dark-beige: #E6E6C7;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* ── HEADER ── */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            height: auto;
+            line-height: 1;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon { width: 32px; height: 32px; }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .nav-center {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin: 0 2rem;
+        }
+
+        .nav-center a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-center a:hover { color: var(--gold); }
+        .nav-center a.active { color: var(--gold); }
+
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.3rem;
+        }
+
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-contact a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle { display: none; }
+
+        /* ── HERO ── */
+        .ambassador-hero {
+            min-height: 60vh;
+            background: linear-gradient(135deg, #fff7ef 0%, #f5e8d8 50%, #fff7ef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ambassador-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--black);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span { color: var(--gold); }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #444;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: none;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--black);
+        }
+
+        /* ── WHY JOIN ── */
+        .why-section { background: #fff7ef; }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212,175,55,0.15);
+        }
+
+        .why-icon {
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .why-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+        }
+
+        .why-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* ── HOW IT WORKS ── */
+        .how-section { background: #fff7ef; }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease;
+        }
+
+        .step-item:hover { transform: translateX(8px); }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .step-text h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.4rem;
+        }
+
+        .step-text p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ── FORM SECTION ── */
+        .form-section { background: #fff7ef; }
+
+        .form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+
+        .form-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group label span.required {
+            color: var(--gold);
+            margin-left: 2px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--black);
+            background: #fafafa;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Upload zones */
+        .upload-zone {
+            border: 2px dashed #ccc;
+            border-radius: 14px;
+            padding: 2rem;
+            text-align: center;
+            background: #fafafa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .upload-zone:hover,
+        .upload-zone.drag-over {
+            border-color: var(--gold);
+            background: rgba(212,175,55,0.04);
+        }
+
+        .upload-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: block;
+            color: var(--gold);
+        }
+
+        .upload-zone p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+            pointer-events: none;
+        }
+
+        .upload-zone .upload-hint {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 0.3rem;
+        }
+
+        .upload-zone.has-file {
+            border-color: #4caf50;
+            background: rgba(76,175,80,0.04);
+        }
+
+        .upload-zone .file-name {
+            display: none;
+            font-weight: 600;
+            color: #4caf50;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .upload-zone.has-file .file-name { display: block; }
+        .upload-zone.has-file .upload-main { display: none; }
+
+        .form-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+            margin: 2rem 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--black);
+            color: #fff7ef;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 1.2rem;
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .success-message h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+        }
+
+        .success-message p { color: #555; font-size: 1rem; }
+
+        /* ── CONTACT BUBBLE ── */
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #000000;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover { transform: scale(1.1); background: #333; }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: white;
+            border-radius: 15px;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            min-width: 280px;
+        }
+
+        .contact-options.active { display: block; }
+
+        .contact-message {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .contact-message p { margin: 0; color: black; font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: black;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-option:hover { background-color: #f0f0f0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        /* ── FOOTER ── */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+
+        html { scroll-behavior: smooth; }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+            }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background-color: var(--black); transition: all 0.3s ease; }
+            .nav-center {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 280px;
+                max-width: 80%;
+                height: auto;
+                max-height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-contact { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1.1rem; }
+            .why-grid { grid-template-columns: 1fr; }
+            .form-wrapper { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
+        </a>
+
+        <ul class="nav-center" id="navCenter">
+            <li><a href="index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="index.html#offres">Les actualités</a></li>
+            <li><a href="corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="ambassadeur.html" class="active">Devenir Ambassadeur</a></li>
+        </ul>
+
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Hero -->
+<div class="ambassador-hero">
+    <div class="hero-content fade-in">
+        <span class="hero-badge">🌟 On recrute !</span>
+        <h1>Devenez <span>Ambassadeur</span><br>SPOTEVENT</h1>
+        <p>Rejoignez une équipe passionnée, rémunérée à la commission, et faites vivre des expériences inoubliables autour de vous.</p>
+        <a href="#candidater" class="hero-cta">Postuler maintenant</a>
+    </div>
+</div>
+
+<!-- Pourquoi rejoindre -->
+<section class="why-section">
+    <div class="fade-in">
+        <h2 class="section-title">🎯 Pourquoi devenir ambassadeur SPOTEVENT ?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="why-icon">💰</span>
+                <h3>Rémunération attractive</h3>
+                <p>Vous êtes rémunéré à la commission sur chaque vente réalisée. Plus vous vendez, plus vous gagnez — sans plafond.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🕐</span>
+                <h3>Liberté & flexibilité</h3>
+                <p>Travaillez à votre rythme, depuis où vous voulez. L'activité d'ambassadeur s'adapte à votre emploi du temps.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🎟️</span>
+                <h3>Univers passionnant</h3>
+                <p>Concerts, matchs, festivals… Évoluez dans un secteur dynamique et partagez votre passion des événements avec vos clients.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">📈</span>
+                <h3>Montée en compétences</h3>
+                <p>Bénéficiez de l'accompagnement de Maxime et de l'équipe pour développer vos compétences commerciales.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🤝</span>
+                <h3>Une vraie communauté</h3>
+                <p>Rejoignez une équipe soudée de plus de 18 ambassadeurs partageant les mêmes valeurs : confiance, transparence, enthousiasme.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🏆</span>
+                <h3>Un service qui se vend</h3>
+                <p>+1 000 clients satisfaits, 4.9/5 sur Google et +200 avis. Vous représentez une marque reconnue et de confiance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Comment ça marche -->
+<section class="how-section">
+    <div class="fade-in">
+        <h2 class="section-title">⚙️ Comment ça marche ?</h2>
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-text">
+                    <h3>Vous postulez</h3>
+                    <p>Vous envoyez votre CV et une courte vidéo de présentation via le formulaire ci-dessous.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-text">
+                    <h3>Candidature acceptée</h3>
+                    <p>Si votre profil correspond, Maxime vous enverra par email les accès aux outils SPOTEVENT pour commencer l'activité et devenir un Ambassadeur.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-text">
+                    <h3>Vous rejoignez l'équipe</h3>
+                    <p>Vous êtes intégré(e) à l'équipe SPOTEVENT, formé(e) et accompagné(e) dans vos premières démarches.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-text">
+                    <h3>Vous développez votre activité</h3>
+                    <p>Vous recommandez SPOTEVENT autour de vous et générez des commissions sur chaque vente conclue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formulaire de candidature -->
+<section id="candidater" class="form-section">
+    <div class="fade-in">
+        <h2 class="section-title">📩 Candidatez dès maintenant</h2>
+        <div class="form-wrapper">
+            <p class="form-intro">
+                Pour postuler, merci de remplir le formulaire ci-dessous, de déposer votre CV et d'envoyer une courte vidéo de <strong>1 minute maximum</strong> dans laquelle vous vous présentez et expliquez pourquoi le secteur événementiel vous intéresse.
+            </p>
+
+            <form id="ambassadorForm" action="https://formsubmit.co/maxime.houzard@spotevent.fr" method="POST" enctype="multipart/form-data">
+
+                <!-- Champs cachés FormSubmit -->
+                <input type="hidden" name="_subject" value="Nouvelle candidature Ambassadeur SPOTEVENT">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <div class="form-group">
+                    <label for="prenom_nom">Prénom et nom <span class="required">*</span></label>
+                    <input type="text" id="prenom_nom" name="Prénom et nom" placeholder="Ex : Marie Dupont" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresse e-mail <span class="required">*</span></label>
+                    <input type="email" id="email" name="Email" placeholder="votre@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ville">Ville <span class="required">*</span></label>
+                    <input type="text" id="ville" name="Ville" placeholder="Ex : Lyon, Paris, Marseille…" required>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <!-- Upload CV -->
+                <div class="form-group">
+                    <label>Votre CV (PDF ou Word) <span class="required">*</span></label>
+                    <div class="upload-zone" id="cvZone">
+                        <input type="file" name="CV" id="cvFile" accept=".pdf,.doc,.docx" required onchange="handleFileUpload(this, 'cvZone')">
+                        <div class="upload-main">
+                            <span class="upload-icon">📄</span>
+                            <p>Cliquez pour déposer votre CV</p>
+                            <p class="upload-hint">PDF, DOC ou DOCX — max 10 Mo</p>
+                        </div>
+                        <p class="file-name" id="cvFileName"></p>
+                    </div>
+                </div>
+
+                <!-- Upload Vidéo -->
+                <div class="form-group">
+                    <label>Votre vidéo de présentation (1 min max) <span class="required">*</span></label>
+                    <div class="upload-zone" id="videoZone">
+                        <input type="file" name="Vidéo de présentation" id="videoFile" accept="video/*" required onchange="handleFileUpload(this, 'videoZone')">
+                        <div class="upload-main">
+                            <span class="upload-icon">🎥</span>
+                            <p>Cliquez pour déposer votre vidéo</p>
+                            <p class="upload-hint">MP4, MOV, AVI — max 50 Mo</p>
+                        </div>
+                        <p class="file-name" id="videoFileName"></p>
+                    </div>
+                    <p style="font-size:0.85rem; color:#888; margin-top:0.5rem;">
+                        💡 <strong>Dans votre vidéo</strong> : présentez-vous brièvement et expliquez pourquoi le secteur événementiel vous intéresse et ce qui vous attire chez SPOTEVENT.
+                    </p>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <button type="submit" class="submit-btn">🚀 Envoyer ma candidature</button>
+                </div>
+
+                <p class="form-note">🔒 Vos informations sont confidentielles et ne seront utilisées qu'à des fins de recrutement.</p>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <span class="success-icon">🎉</span>
+                <h3>Candidature envoyée !</h3>
+                <p>Merci pour votre intérêt. Maxime et son équipe reviendront vers vous dans les meilleurs délais.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+            <i class="fas fa-envelope"></i><span>Email</span>
+        </a>
+        <a href="tel:+33646558520" class="contact-option">
+            <i class="fas fa-phone"></i><span>Appeler</span>
+        </a>
+        <a href="sms:+33646558520" class="contact-option">
+            <i class="fas fa-sms"></i><span>SMS</span>
+        </a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés</p>
+    </div>
+</footer>
+
+<script>
+    // Scroll animations
+    function animateOnScroll() {
+        document.querySelectorAll('.fade-in').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 150) {
+                el.classList.add('visible');
+            }
+        });
+    }
+
+    // Mobile menu
+    function toggleMobileMenu() {
+        document.getElementById('navCenter').classList.toggle('active');
+    }
+
+    // Contact bubble
+    function toggleContactOptions() {
+        const el = document.getElementById('contactOptions');
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        if (el.style.display === 'block') {
+            Object.assign(el.style, {
+                position: 'absolute', bottom: '80px', right: '0',
+                backgroundColor: 'white', padding: '1rem',
+                borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+                zIndex: '9999', minWidth: '280px'
+            });
+        }
+    }
+
+    document.addEventListener('click', function(e) {
+        const el = document.getElementById('contactOptions');
+        const bubble = document.querySelector('.contact-bubble');
+        if (el && el.style.display === 'block' && !bubble.contains(e.target)) {
+            el.style.display = 'none';
+        }
+    });
+
+    // File upload feedback
+    function handleFileUpload(input, zoneId) {
+        const zone = document.getElementById(zoneId);
+        const fileName = input.files[0] ? input.files[0].name : '';
+        if (fileName) {
+            zone.classList.add('has-file');
+            const nameEl = zone.querySelector('.file-name');
+            if (nameEl) nameEl.textContent = '✅ ' + fileName;
+        } else {
+            zone.classList.remove('has-file');
+        }
+    }
+
+    // Drag & drop visual feedback
+    document.querySelectorAll('.upload-zone').forEach(zone => {
+        zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+        zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+        zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('drag-over'); });
+    });
+
+    // Init
+    document.addEventListener('DOMContentLoaded', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+</script>
+</body>
+<script src="../tag.js"></script>
+</html>
