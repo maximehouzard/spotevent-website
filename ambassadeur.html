@@ -864,26 +864,18 @@
     }
 
     // Contact bubble
-    function toggleContactOptions() {
-        const el = document.getElementById('contactOptions');
-        el.style.display = el.style.display === 'block' ? 'none' : 'block';
-        if (el.style.display === 'block') {
-            Object.assign(el.style, {
-                position: 'absolute', bottom: '80px', right: '0',
-                backgroundColor: 'white', padding: '1rem',
-                borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
-                zIndex: '9999', minWidth: '280px'
-            });
-        }
-    }
+   function toggleContactOptions() {
+    document.getElementById('contactOptions').classList.toggle('active');
+}
 
-    document.addEventListener('click', function(e) {
-        const el = document.getElementById('contactOptions');
-        const bubble = document.querySelector('.contact-bubble');
-        if (el && el.style.display === 'block' && !bubble.contains(e.target)) {
-            el.style.display = 'none';
-        }
-    });
+document.addEventListener('click', function(e) {
+    const el = document.getElementById('contactOptions');
+    const bubble = document.querySelector('.contact-bubble');
+    const navContact = document.querySelector('.nav-contact');
+    if (el && el.classList.contains('active') && !bubble.contains(e.target) && !navContact.contains(e.target)) {
+        el.classList.remove('active');
+    }
+});
 
     // File upload feedback
     function handleFileUpload(input, zoneId) {
