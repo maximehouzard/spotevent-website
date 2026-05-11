@@ -42,7 +42,7 @@ nav{display:flex;justify-content:space-between;align-items:flex-end;padding:1.5r
 .nav-center a{text-decoration:none;color:var(--black);font-weight:600;font-size:.95rem;transition:color .3s;white-space:nowrap}
 .nav-center a:hover{color:var(--gold)}
 .nav-contact{display:flex;align-items:center;padding-bottom:.3rem}
-.nav-contact a{text-decoration:none;color:var(--black);font-weight:600;font-size:1.1rem;transition:color .3s}
+.nav-contact a{text-decoration:none;color:var(--black);font-weight:600;font-size:1.1rem;transition:color .3s;white-space:nowrap;cursor:pointer}
 .nav-contact a:hover{color:var(--gold)}
 .mobile-menu-toggle{display:none}
 
@@ -272,7 +272,7 @@ html{scroll-behavior:smooth}
       <li><a href="https://www.spotevent.fr/ambassadeur.html">Devenir Ambassadeur</a></li>
     </ul>
     <div class="nav-contact">
-      <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+      <a onclick="toggleContactOptions(); event.stopPropagation()">Nous contacter</a>
     </div>
     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
       <span></span><span></span><span></span>
