@@ -1637,7 +1637,7 @@ section {
         <ul class="nav-center" id="navCenter">
             <li><a href="#video">Qui sommes-nous ?</a></li>
             <li><a href="#avis">Les avis de nos clients</a></li>
-            <li><a href="#offres">Les actualités</a></li>
+            <li><a href="#agenda">Les actualités</a></li>
             <li><a href="corporate.html">TPE, PME & CSE</a></li>
             <li><a href="ambassadeur.html">Devenir Ambassadeur</a></li>
         </ul>
@@ -1790,7 +1790,241 @@ section {
         </div>
     </div>
 </section>
+<!-- ============================================================
+     BLOC AGENDA HOMEPAGE — à insérer dans index.html
+     Affiche les 6 prochains événements + lien vers agenda.html
+     Le bouton "Demander des places" ouvre la bulle de contact
+     existante via toggleContactOptions() déjà présent dans index.html
+     ============================================================ -->
 
+<section id="agenda" style="background:#fff7ef; padding:5rem 5%;">
+    <div class="fade-in">
+        <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto 2rem; flex-wrap:wrap; gap:1rem;">
+            <h2 class="section-title" style="margin:0;">🎟️ Les prochains événements</h2>
+            <a href="agenda.html" style="font-size:0.9rem; font-weight:600; color:#000; border:1.5px solid #000; border-radius:50px; padding:0.5rem 1.2rem; text-decoration:none; transition:all 0.3s; white-space:nowrap;"
+               onmouseover="this.style.background='#D4AF37';this.style.borderColor='#D4AF37';this.style.color='#fff7ef';"
+               onmouseout="this.style.background='transparent';this.style.borderColor='#000';this.style.color='#000';">
+                Voir tous les événements →
+            </a>
+        </div>
+
+        <div id="agendaHomeGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:1rem; max-width:1200px; margin:0 auto;"></div>
+
+        <div style="text-align:center; margin-top:2rem;">
+            <a href="agenda.html" class="cta-button">Voir tous les événements disponibles</a>
+        </div>
+    </div>
+</section>
+
+<style>
+.agenda-home-card {
+    background:#fff;
+    border:1px solid rgba(0,0,0,0.08);
+    border-radius:16px;
+    padding:1.1rem 1.3rem;
+    display:flex;
+    gap:14px;
+    align-items: stretch;
+    transition:border-color 0.2s, transform 0.25s, box-shadow 0.25s;
+    min-height: 130px;
+}
+.agenda-home-card:hover {
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(212,175,55,0.12);
+}
+.ah-date {
+    display:flex; flex-direction:column; align-items:center;
+    min-width:50px; padding:7px 9px;
+    background:#000; border-radius:11px; color:#fff7ef; flex-shrink:0;
+    height: 100%;
+    justify-content: center;
+}
+.ah-day { font-size:1.45rem; font-weight:800; line-height:1; }
+.ah-month { font-size:0.6rem; text-transform:uppercase; letter-spacing:1px; margin-top:2px; color:#D4AF37; font-weight:700; }
+.ah-cat { font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:1.2px; color:#D4AF37; margin-bottom:3px; }
+.ah-name { font-size:0.95rem; font-weight:700; color:#000; margin:0 0 4px; line-height:1.3; }
+.ah-venue { font-size:0.78rem; color:#888; display:flex; align-items:center; gap:4px; margin-bottom:9px; }
+.ah-soon { display:inline-block; font-size:0.6rem; background:#D4AF37; color:#000; padding:2px 7px; border-radius:10px; font-weight:700; margin-left:5px; vertical-align:middle; }
+.ah-btn { font-size:0.75rem; font-weight:600; color:#000; border:1.5px solid #000; border-radius:20px; padding:4px 12px; cursor:pointer; background:none; font-family:'Inter',sans-serif; transition:all 0.3s; }
+.ah-btn:hover { background:#000; color:#fff7ef; }
+</style>
+
+<script>
+(function() {
+    var MONTHS = ["jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"];
+    var today = new Date(); today.setHours(0,0,0,0);
+
+    var EVENTS = [
+        { date: new Date(2026,4,22), name: "Finale Coupe de France 2026", venue: "Stade de France", cat: "Sport" },
+        { date: new Date(2026,4,22), name: "Metallica", venue: "Francfort", cat: "Concert" },
+        { date: new Date(2026,4,23), name: "Champions Cup", venue: "", cat: "Sport" },
+        { date: new Date(2026,4,24), name: "Metallica", venue: "Francfort", cat: "Concert" },
+        { date: new Date(2026,4,27), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,4,28), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
+        { date: new Date(2026,4,28), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,4,29), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,4,29), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,4,29), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
+        { date: new Date(2026,4,29), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,4,30), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,4,30), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
+        { date: new Date(2026,4,30), name: "Diffusion PSG vs Arsenal", venue: "Parc des Princes", cat: "Sport" },
+        { date: new Date(2026,4,30), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
+        { date: new Date(2026,4,31), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,4,31), name: "Pinkpantheress", venue: "Zénith la Villette", cat: "Concert" },
+        { date: new Date(2026,4,31), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,5,4), name: "France vs Côte d'Ivoire", venue: "Nantes", cat: "Sport" },
+        { date: new Date(2026,5,5), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,5,6), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,5,7), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+        { date: new Date(2026,5,8), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,5,9), name: "Doja Cat", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,5,9), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,5,10), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,5,11), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,11), name: "Kanye West", venue: "Orange Vélodrome", cat: "Concert" },
+        { date: new Date(2026,5,11), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,5,12), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,13), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,16), name: "Linkin Park", venue: "Groupama Stadium", cat: "Concert" },
+        { date: new Date(2026,5,16), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+        { date: new Date(2026,5,17), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+        { date: new Date(2026,5,18), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,18), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+        { date: new Date(2026,5,18), name: "Jack White", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,5,18), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+        { date: new Date(2026,5,19), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,5,19), name: "Foo Fighters", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,5,19), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
+        { date: new Date(2026,5,19), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+        { date: new Date(2026,5,19), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
+        { date: new Date(2026,5,20), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,20), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
+        { date: new Date(2026,5,20), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+        { date: new Date(2026,5,20), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
+        { date: new Date(2026,5,21), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,21), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+        { date: new Date(2026,5,23), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,5,26), name: "Orelsan", venue: "Chambord", cat: "Concert" },
+        { date: new Date(2026,5,27), name: "Maroon 5", venue: "Chambord Live", cat: "Concert" },
+        { date: new Date(2026,5,27), name: "Top 14 – Finale", venue: "Stade de France", cat: "Sport" },
+        { date: new Date(2026,5,28), name: "DJ Snake", venue: "Chambord Live", cat: "Concert" },
+        { date: new Date(2026,6,1), name: "Bad Bunny", venue: "Orange Vélodrome", cat: "Concert" },
+        { date: new Date(2026,6,1), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,6,2), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,2), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,3), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,6,3), name: "The Weeknd", venue: "Lille", cat: "Concert" },
+        { date: new Date(2026,6,4), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,6,4), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,4), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,5), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,6,5), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,7), name: "Luke Combs", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,6,8), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,9), name: "Agnes Obel", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,9), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,10), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,11), name: "Katy Perry", venue: "Arène de Nîmes", cat: "Concert" },
+        { date: new Date(2026,6,11), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,12), name: "Pitbull", venue: "Nice", cat: "Concert" },
+        { date: new Date(2026,6,12), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,13), name: "Charlie Puth", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,15), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+        { date: new Date(2026,6,15), name: "Lorde", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,16), name: "Asaf Avidan", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,17), name: "BTS", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,17), name: "Charlotte Cardin", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,17), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
+        { date: new Date(2026,6,18), name: "BTS", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,6,18), name: "Polo & Pan", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,21), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
+        { date: new Date(2026,6,22), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
+        { date: new Date(2026,6,24), name: "Clair Obscur", venue: "Nuits de Fourvière", cat: "Concert" },
+        { date: new Date(2026,6,24), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
+        { date: new Date(2026,6,25), name: "The Cure", venue: "Nîmes", cat: "Concert" },
+        { date: new Date(2026,6,28), name: "Sting", venue: "Vienne", cat: "Concert" },
+        { date: new Date(2026,7,16), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,19), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,20), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,23), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,24), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,27), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,28), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,7,30), name: "The Cure", venue: "Rock en Seine", cat: "Festival" },
+        { date: new Date(2026,7,31), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,8,1), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+        { date: new Date(2026,8,4), name: "PLK", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,8,5), name: "PLK", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,8,6), name: "BTS", venue: "Sofi Stadium", cat: "Concert" },
+        { date: new Date(2026,8,9), name: "Katseye", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,8,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,17), name: "Evanescence", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,8,18), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,19), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,19), name: "Pussycat Dolls", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,8,23), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,25), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,25), name: "Matt Pokora", venue: "Lille", cat: "Concert" },
+        { date: new Date(2026,8,26), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,8,30), name: "ASAP Rocky", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,8,30), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,2), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,3), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,7), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,8), name: "Patrick Bruel", venue: "Zénith de Paris", cat: "Concert" },
+        { date: new Date(2026,9,9), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,10), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,14), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,17), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,9,23), name: "Korn", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,9,27), name: "Meryl", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,9,30), name: "Tokio Hotel", venue: "Adidas Arena", cat: "Concert" },
+        { date: new Date(2026,10,11), name: "Pitbull", venue: "LDLC Arena", cat: "Concert" },
+        { date: new Date(2026,10,17), name: "Vanessa Paradis", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2026,11,5), name: "Joe Dwet File", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,11,9), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,11), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,12), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,14), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,16), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,11,17), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2026,11,18), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,19), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2026,11,20), name: "Orelsan", venue: "Paris", cat: "Concert" },
+        { date: new Date(2027,0,6), name: "Florent Pagny", venue: "Accor Arena", cat: "Concert" },
+        { date: new Date(2027,0,15), name: "Florent Pagny", venue: "LDLC Arena", cat: "Concert" },
+        { date: new Date(2027,1,27), name: "Enhypen", venue: "La Défense Arena", cat: "Concert" },
+        { date: new Date(2027,2,13), name: "Irlande vs France", venue: "Dublin", cat: "Sport" },
+        { date: new Date(2027,3,24), name: "SCH", venue: "Stade de France", cat: "Concert" },
+    ];
+
+    var future = EVENTS
+        .filter(function(e){ return e.date >= today; })
+        .sort(function(a,b){ return a.date - b.date; })
+        .slice(0, 6);
+
+    var grid = document.getElementById('agendaHomeGrid');
+    if (!grid) return;
+
+    grid.innerHTML = future.map(function(e) {
+        var days = Math.round((e.date - today) / 86400000);
+        var badge = days <= 30 ? '<span class="ah-soon">' + (days===0?"Auj.":days===1?"Demain":"J-"+days) + '</span>' : '';
+        var venueHtml = e.venue ? '<div class="ah-venue"><i class="fas fa-map-marker-alt" style="font-size:10px;color:#D4AF37;flex-shrink:0"></i>' + e.venue + '</div>' : '';
+        return '<div class="agenda-home-card">'
+            + '<div class="ah-date"><span class="ah-day">' + e.date.getDate() + '</span><span class="ah-month">' + MONTHS[e.date.getMonth()] + '</span></div>'
+            + '<div style="flex:1;min-width:0;display:flex;flex-direction:column;">'
+            +   '<div class="ah-cat">' + e.cat + '</div>'
+            +   '<p class="ah-name">' + e.name + badge + '</p>'
+            +   venueHtml
+            +   '<button class="ah-btn" style="margin-top:auto;" onclick="event.stopPropagation(); toggleContactOptions()">Demander des places</button>'
+            + '</div>'
+            + '</div>';
+    }).join('');
+})();
+</script>
     <!-- Section Actualités -->
 <section id="offres" class="news">
     <div class="fade-in">
@@ -2390,9 +2624,13 @@ section {
             <span>SMS</span>
         </a>
         <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
-        </a>
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp</span>
+</a>
+<a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank">
+    <i class="fas fa-calendar-alt"></i>
+    <span>Prendre RDV en visio</span>
+</a>
     </div>
 </div>
 
@@ -2481,12 +2719,15 @@ document.addEventListener('click', function(event) {
     const contactLink = document.querySelector('a[onclick*="toggleContactOptions"]');
     
     if (contactOptions && contactOptions.style.display === 'block') {
-        let clickedOnButton = false;
+       let clickedOnButton = false;
         ctaButtons.forEach(button => {
             if (button.contains(event.target)) {
                 clickedOnButton = true;
             }
         });
+        if (event.target.classList.contains('ah-btn')) {
+            clickedOnButton = true;
+        }
         
         let clickedOnContactLink = contactLink && contactLink.contains(event.target);
         
