@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda des événements – SPOTEVENT</title>
+    <meta name="description" content="Tous les concerts, festivals et événements sportifs disponibles via SPOTEVENT. Obtenez vos places pour des événements sold out en toute sécurité.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --beige: #fff7ef; --gold: #D4AF37; --black: #000; --white: #fff; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #fff7ef; color: #000; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+
+        /* HEADER */
+        header { position: fixed; top: 0; width: 100%; background: #fff7ef; backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: flex-end; padding: 1.5rem 5%; max-width: 1400px; margin: 0 auto; }
+        .logo { text-decoration: none; color: #000; display: flex; align-items: center; gap: 0.6rem; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08rem; text-transform: uppercase; }
+        .nav-center { display: flex; list-style: none; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; margin: 0 2rem; }
+        .nav-center a { text-decoration: none; color: #000; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; white-space: nowrap; }
+        .nav-center a:hover, .nav-center a.active { color: var(--gold); }
+        .nav-contact { display: flex; align-items: center; padding-bottom: 0.3rem; }
+        .nav-contact a { text-decoration: none; color: #000; font-weight: 600; font-size: 1.1rem; transition: color 0.3s; white-space: nowrap; }
+        .nav-contact a:hover { color: var(--gold); }
+        .mobile-menu-toggle { display: none; }
+
+        /* PAGE HERO */
+        .page-hero { background: #fff7ef; padding: 9rem 5% 2rem; text-align: center; }
+        .page-hero h1 { font-size: 2.5rem; font-weight: 800; color: #000; margin-bottom: 0.8rem; }
+        .page-hero p { font-size: 1.05rem; color: #666; max-width: 560px; margin: 0 auto; }
+
+        /* FILTRES */
+        .filters-bar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 1.5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .filter-btn { padding: 0.5rem 1.4rem; border-radius: 50px; border: 1.5px solid #000; background: transparent; color: #000; font-size: 0.88rem; font-family: 'Inter', sans-serif; font-weight: 600; cursor: pointer; transition: all 0.25s; }
+        .filter-btn:hover { background: #f0e9e0; }
+        .filter-btn.active { background: #000; color: #fff7ef; border-color: #000; }
+
+        /* COMPTEUR */
+        .events-count { text-align: center; font-size: 0.85rem; color: #999; margin-bottom: 1.2rem; font-weight: 500; }
+
+        /* GRILLE */
+        .agenda-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5% 6rem; }
+        .agenda-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+
+        /* CARTE — même style que homepage */
+        .agenda-home-card {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 1.1rem 1.3rem;
+            display: flex;
+            gap: 14px;
+            align-items: stretch;
+            min-height: 130px;
+            transition: border-color 0.2s, transform 0.25s, box-shadow 0.25s;
+        }
+        .agenda-home-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.12);
+        }
+        .ah-date {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-width: 50px; padding: 7px 9px;
+            background: #000; border-radius: 11px; color: #fff7ef; flex-shrink: 0;
+        }
+        .ah-day { font-size: 1.45rem; font-weight: 800; line-height: 1; }
+        .ah-month { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; color: var(--gold); font-weight: 700; }
+        .ah-cat { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--gold); margin-bottom: 3px; }
+        .ah-name { font-size: 0.95rem; font-weight: 700; color: #000; margin: 0 0 4px; line-height: 1.3; }
+        .ah-venue { font-size: 0.78rem; color: #888; display: flex; align-items: center; gap: 4px; margin-bottom: 9px; }
+        .ah-soon { display: inline-block; font-size: 0.6rem; background: var(--gold); color: #000; padding: 2px 7px; border-radius: 10px; font-weight: 700; margin-left: 5px; vertical-align: middle; }
+        .ah-btn { font-size: 0.75rem; font-weight: 600; color: #000; border: 1.5px solid #000; border-radius: 20px; padding: 4px 12px; cursor: pointer; background: none; font-family: 'Inter', sans-serif; transition: all 0.3s; }
+        .ah-btn:hover { background: #000; color: #fff7ef; }
+
+        .no-events { grid-column: 1/-1; text-align: center; padding: 3rem; color: #aaa; font-size: 1rem; }
+
+        /* CONTACT BUBBLE */
+        .contact-bubble { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+        .contact-toggle { width: 70px; height: 70px; border-radius: 50%; background: #000; color: #fff; border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transition: all 0.3s; animation: pulse 2s infinite; }
+        .contact-toggle:hover { transform: scale(1.1); background: #333; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .contact-options { position: absolute; bottom: 80px; right: 0; background: #fff; border-radius: 15px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; min-width: 280px; z-index: 9999; }
+        .contact-options.active { display: block; animation: fadeInUp 0.3s ease; }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+        .contact-message { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; text-align: left; }
+        .contact-message p { font-size: 0.95rem; font-weight: 500; color: #000; line-height: 1.4; }
+        .contact-option { display: flex; align-items: center; padding: 0.8rem; text-decoration: none; color: #000; border-radius: 8px; margin-bottom: 0.5rem; transition: background 0.2s; }
+        .contact-option:hover { background: #fff7ef; }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        /* FOOTER */
+        footer { background: #000; color: #fff; text-align: center; padding: 3rem 5%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+
+        /* MOBILE */
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+        }
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background: #000; transition: all 0.3s; }
+            .nav-center { position: fixed; top: 70px; left: -100%; width: 280px; max-width: 80%; background: #fff; flex-direction: column; justify-content: flex-start; padding: 2rem; gap: 2rem; transition: left 0.3s; border-radius: 0 15px 15px 0; box-shadow: 5px 0 20px rgba(0,0,0,0.1); }
+            .nav-center.active { left: 0; }
+            .nav-contact { display: none; }
+            .page-hero h1 { font-size: 1.9rem; }
+            .agenda-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
+        </a>
+        <ul class="nav-center" id="navCenter">
+            <li><a href="index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="agenda.html" class="active">Les événements</a></li>
+            <li><a href="corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="ambassadeur.html">Devenir Ambassadeur</a></li>
+        </ul>
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<div class="page-hero">
+    <h1>🎟️ Tous les événements disponibles</h1>
+    <p>Concerts, festivals, événements sportifs — même sold out, on vous trouve vos places.</p>
+</div>
+
+<div class="filters-bar">
+    <button class="filter-btn active" onclick="filterEvents('all',this)">Tous</button>
+    <button class="filter-btn" onclick="filterEvents('Concert',this)">Concerts</button>
+    <button class="filter-btn" onclick="filterEvents('Festival',this)">Festivals</button>
+    <button class="filter-btn" onclick="filterEvents('Sport',this)">Sport</button>
+</div>
+
+<div class="agenda-wrapper">
+    <p class="events-count" id="eventsCount"></p>
+    <div class="agenda-grid" id="agendaGrid"></div>
+</div>
+
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()"><i class="fas fa-comments"></i></button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message"><p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p></div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 SPOTEVENT — Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés</p>
+    </div>
+</footer>
+
+<script>
+const MONTHS = ["jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"];
+const today = new Date(); today.setHours(0,0,0,0);
+
+/* ─── LISTE COMPLÈTE DES ÉVÉNEMENTS ───────────────────────────
+   Pour ajouter : { date: new Date(YYYY,MM-1,DD), name:"Artiste", venue:"Lieu", cat:"Concert|Festival|Sport" }
+   ─────────────────────────────────────────────────────────── */
+const EVENTS = [
+    { date: new Date(2026,4,22), name: "Finale Coupe de France 2026", venue: "Stade de France", cat: "Sport" },
+    { date: new Date(2026,4,22), name: "Metallica", venue: "Francfort", cat: "Concert" },
+    { date: new Date(2026,4,23), name: "Champions Cup", venue: "", cat: "Sport" },
+    { date: new Date(2026,4,24), name: "Metallica", venue: "Francfort", cat: "Concert" },
+    { date: new Date(2026,4,27), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,4,28), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
+    { date: new Date(2026,4,28), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,4,29), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,4,29), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,4,29), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
+    { date: new Date(2026,4,29), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,4,30), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,4,30), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
+    { date: new Date(2026,4,30), name: "Diffusion PSG vs Arsenal", venue: "Parc des Princes", cat: "Sport" },
+    { date: new Date(2026,4,30), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
+    { date: new Date(2026,4,31), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,4,31), name: "Pinkpantheress", venue: "Zénith la Villette", cat: "Concert" },
+    { date: new Date(2026,4,31), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,5,4), name: "France vs Côte d'Ivoire", venue: "Nantes", cat: "Sport" },
+    { date: new Date(2026,5,5), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,5,6), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,5,7), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,5,8), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,5,9), name: "Doja Cat", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,5,9), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,5,10), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,5,11), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,11), name: "Kanye West", venue: "Orange Vélodrome", cat: "Concert" },
+    { date: new Date(2026,5,11), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,5,12), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,13), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,16), name: "Linkin Park", venue: "Groupama Stadium", cat: "Concert" },
+    { date: new Date(2026,5,16), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+    { date: new Date(2026,5,17), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+    { date: new Date(2026,5,18), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,18), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+    { date: new Date(2026,5,18), name: "Jack White", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,5,18), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+    { date: new Date(2026,5,19), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,5,19), name: "Foo Fighters", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,5,19), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
+    { date: new Date(2026,5,19), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+    { date: new Date(2026,5,19), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
+    { date: new Date(2026,5,20), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,20), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
+    { date: new Date(2026,5,20), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+    { date: new Date(2026,5,20), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
+    { date: new Date(2026,5,21), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,5,21), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+    { date: new Date(2026,5,23), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,5,26), name: "Orelsan", venue: "Chambord", cat: "Concert" },
+    { date: new Date(2026,5,27), name: "Maroon 5", venue: "Chambord Live", cat: "Concert" },
+    { date: new Date(2026,5,27), name: "Top 14 – Finale", venue: "Stade de France", cat: "Sport" },
+    { date: new Date(2026,5,28), name: "DJ Snake", venue: "Chambord Live", cat: "Concert" },
+    { date: new Date(2026,6,1), name: "Bad Bunny", venue: "Orange Vélodrome", cat: "Concert" },
+    { date: new Date(2026,6,1), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,6,2), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,2), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,3), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,6,3), name: "The Weeknd", venue: "Lille", cat: "Concert" },
+    { date: new Date(2026,6,4), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,6,4), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,4), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,5), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,6,5), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,7), name: "Luke Combs", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,6,8), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,9), name: "Agnes Obel", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,9), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,10), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,11), name: "Katy Perry", venue: "Arène de Nîmes", cat: "Concert" },
+    { date: new Date(2026,6,11), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,12), name: "Pitbull", venue: "Nice", cat: "Concert" },
+    { date: new Date(2026,6,12), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,13), name: "Charlie Puth", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,15), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,6,15), name: "Lorde", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,16), name: "Asaf Avidan", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,17), name: "BTS", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,17), name: "Charlotte Cardin", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,17), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
+    { date: new Date(2026,6,18), name: "BTS", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,6,18), name: "Polo & Pan", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,21), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
+    { date: new Date(2026,6,22), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
+    { date: new Date(2026,6,24), name: "Clair Obscur", venue: "Nuits de Fourvière", cat: "Concert" },
+    { date: new Date(2026,6,24), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
+    { date: new Date(2026,6,25), name: "The Cure", venue: "Nîmes", cat: "Concert" },
+    { date: new Date(2026,6,28), name: "Sting", venue: "Vienne", cat: "Concert" },
+    { date: new Date(2026,7,16), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,19), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,20), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,23), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,24), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,27), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,28), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,30), name: "The Cure", venue: "Rock en Seine", cat: "Festival" },
+    { date: new Date(2026,7,31), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,8,1), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,8,4), name: "PLK", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,8,5), name: "PLK", venue: "Stade de France", cat: "Concert" },
+    { date: new Date(2026,8,6), name: "BTS", venue: "Sofi Stadium", cat: "Concert" },
+    { date: new Date(2026,8,9), name: "Katseye", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,8,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,17), name: "Evanescence", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,8,18), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,19), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,19), name: "Pussycat Dolls", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,8,23), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,25), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,25), name: "Matt Pokora", venue: "Lille", cat: "Concert" },
+    { date: new Date(2026,8,26), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,8,30), name: "ASAP Rocky", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,8,30), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,2), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,3), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,7), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,8), name: "Patrick Bruel", venue: "Zénith de Paris", cat: "Concert" },
+    { date: new Date(2026,9,9), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,10), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,14), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,17), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,9,23), name: "Korn", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,9,27), name: "Meryl", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,9,30), name: "Tokio Hotel", venue: "Adidas Arena", cat: "Concert" },
+    { date: new Date(2026,10,11), name: "Pitbull", venue: "LDLC Arena", cat: "Concert" },
+    { date: new Date(2026,10,17), name: "Vanessa Paradis", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,11,5), name: "Joe Dwet File", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,11,9), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,11), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,12), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,14), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,16), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,11,17), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,11,18), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,19), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2026,11,20), name: "Orelsan", venue: "Paris", cat: "Concert" },
+    { date: new Date(2027,0,6), name: "Florent Pagny", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2027,0,15), name: "Florent Pagny", venue: "LDLC Arena", cat: "Concert" },
+    { date: new Date(2027,1,27), name: "Enhypen", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2027,2,13), name: "Irlande vs France", venue: "Dublin", cat: "Sport" },
+    { date: new Date(2027,3,24), name: "SCH", venue: "Stade de France", cat: "Concert" },
+];
+
+function renderEvents(filter) {
+    const grid = document.getElementById('agendaGrid');
+    const counter = document.getElementById('eventsCount');
+    const list = EVENTS
+        .filter(e => e.date >= today)
+        .filter(e => filter === 'all' || e.cat === filter)
+        .sort((a,b) => a.date - b.date);
+
+    counter.textContent = list.length + ' événement' + (list.length > 1 ? 's' : '') + ' disponible' + (list.length > 1 ? 's' : '');
+
+    if (!list.length) {
+        grid.innerHTML = '<p class="no-events">Aucun événement disponible pour cette catégorie.</p>';
+        return;
+    }
+
+    grid.innerHTML = list.map(e => {
+        const days = Math.round((e.date - today) / 86400000);
+        const badge = days <= 30
+            ? '<span class="ah-soon">' + (days === 0 ? "Auj." : days === 1 ? "Demain" : "J-" + days) + '</span>'
+            : '';
+        const venueHtml = e.venue
+            ? '<div class="ah-venue"><i class="fas fa-map-marker-alt" style="font-size:10px;color:#D4AF37;flex-shrink:0"></i>' + e.venue + '</div>'
+            : '';
+        return '<div class="agenda-home-card">'
+            + '<div class="ah-date">'
+            +   '<span class="ah-day">' + e.date.getDate() + '</span>'
+            +   '<span class="ah-month">' + MONTHS[e.date.getMonth()] + ' ' + e.date.getFullYear() + '</span>'
+            + '</div>'
+            + '<div style="flex:1;min-width:0;display:flex;flex-direction:column;">'
+            +   '<div class="ah-cat">' + e.cat + '</div>'
+            +   '<p class="ah-name">' + e.name + badge + '</p>'
+            +   venueHtml
+            +   '<button class="ah-btn" style="margin-top:auto;" onclick="event.stopPropagation(); toggleContactOptions()">Demander des places</button>'
+            + '</div>'
+            + '</div>';
+    }).join('');
+}
+
+function filterEvents(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderEvents(cat);
+}
+
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) el.classList.toggle('active');
+}
+
+function toggleMobileMenu() {
+    document.getElementById('navCenter').classList.toggle('active');
+}
+
+document.addEventListener('click', function(e) {
+    const bubble = document.querySelector('.contact-bubble');
+    const opts = document.getElementById('contactOptions');
+    if (opts && opts.classList.contains('active') && bubble && !bubble.contains(e.target)) {
+        const isAskBtn = e.target.classList.contains('ah-btn');
+        const isNavContact = document.querySelector('.nav-contact') && document.querySelector('.nav-contact').contains(e.target);
+        if (!isAskBtn && !isNavContact) opts.classList.remove('active');
+    }
+});
+
+renderEvents('all');
+</script>
+</body>
+</html>
