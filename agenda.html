@@ -45,7 +45,7 @@
         .agenda-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5% 6rem; }
         .agenda-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
 
-        /* CARTE — même style que homepage */
+        /* CARTE */
         .agenda-home-card {
             background: #fff;
             border: 1px solid rgba(0,0,0,0.08);
@@ -183,28 +183,8 @@
 const MONTHS = ["jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"];
 const today = new Date(); today.setHours(0,0,0,0);
 
-/* ─── LISTE COMPLÈTE DES ÉVÉNEMENTS ───────────────────────────
-   Pour ajouter : { date: new Date(YYYY,MM-1,DD), name:"Artiste", venue:"Lieu", cat:"Concert|Festival|Sport" }
-   ─────────────────────────────────────────────────────────── */
 const EVENTS = [
-    { date: new Date(2026,4,22), name: "Finale Coupe de France 2026", venue: "Stade de France", cat: "Sport" },
-    { date: new Date(2026,4,22), name: "Metallica", venue: "Francfort", cat: "Concert" },
-    { date: new Date(2026,4,23), name: "Champions Cup", venue: "", cat: "Sport" },
-    { date: new Date(2026,4,24), name: "Metallica", venue: "Francfort", cat: "Concert" },
-    { date: new Date(2026,4,27), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-    { date: new Date(2026,4,28), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
-    { date: new Date(2026,4,28), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
-    { date: new Date(2026,4,29), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-    { date: new Date(2026,4,29), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
-    { date: new Date(2026,4,29), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
-    { date: new Date(2026,4,29), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-    { date: new Date(2026,4,30), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-    { date: new Date(2026,4,30), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
-    { date: new Date(2026,4,30), name: "Diffusion PSG vs Arsenal", venue: "Parc des Princes", cat: "Sport" },
-    { date: new Date(2026,4,30), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
-    { date: new Date(2026,4,31), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-    { date: new Date(2026,4,31), name: "Pinkpantheress", venue: "Zénith la Villette", cat: "Concert" },
-    { date: new Date(2026,4,31), name: "Roland Garros", venue: "Paris", cat: "Sport" },
+    { date: new Date(2026,5,2), name: "Roland Garros", venue: "Paris", cat: "Sport" },
     { date: new Date(2026,5,4), name: "France vs Côte d'Ivoire", venue: "Nantes", cat: "Sport" },
     { date: new Date(2026,5,5), name: "Roland Garros", venue: "Paris", cat: "Sport" },
     { date: new Date(2026,5,6), name: "Roland Garros", venue: "Paris", cat: "Sport" },
@@ -214,19 +194,16 @@ const EVENTS = [
     { date: new Date(2026,5,9), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
     { date: new Date(2026,5,10), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
     { date: new Date(2026,5,11), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
-    { date: new Date(2026,5,11), name: "Kanye West", venue: "Orange Vélodrome", cat: "Concert" },
     { date: new Date(2026,5,11), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
     { date: new Date(2026,5,12), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
     { date: new Date(2026,5,13), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
     { date: new Date(2026,5,16), name: "Linkin Park", venue: "Groupama Stadium", cat: "Concert" },
-    { date: new Date(2026,5,16), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
-    { date: new Date(2026,5,17), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
+    { date: new Date(2026,5,16), name: "Coupe du Monde – France vs Sénégal", venue: "New York", cat: "Sport" },
     { date: new Date(2026,5,18), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
     { date: new Date(2026,5,18), name: "Hellfest", venue: "Clisson", cat: "Festival" },
     { date: new Date(2026,5,18), name: "Jack White", venue: "Nuits de Fourvière", cat: "Concert" },
-    { date: new Date(2026,5,18), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
-    { date: new Date(2026,5,19), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
     { date: new Date(2026,5,19), name: "Foo Fighters", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2026,5,19), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
     { date: new Date(2026,5,19), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
     { date: new Date(2026,5,19), name: "Hellfest", venue: "Clisson", cat: "Festival" },
     { date: new Date(2026,5,19), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
@@ -236,7 +213,9 @@ const EVENTS = [
     { date: new Date(2026,5,20), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
     { date: new Date(2026,5,21), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
     { date: new Date(2026,5,21), name: "Hellfest", venue: "Clisson", cat: "Festival" },
+    { date: new Date(2026,5,22), name: "Coupe du Monde – France vs Irak", venue: "Philadelphie", cat: "Sport" },
     { date: new Date(2026,5,23), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
+    { date: new Date(2026,5,26), name: "Coupe du Monde – Norvège vs France", venue: "Boston", cat: "Sport" },
     { date: new Date(2026,5,26), name: "Orelsan", venue: "Chambord", cat: "Concert" },
     { date: new Date(2026,5,27), name: "Maroon 5", venue: "Chambord Live", cat: "Concert" },
     { date: new Date(2026,5,27), name: "Top 14 – Finale", venue: "Stade de France", cat: "Sport" },
@@ -276,12 +255,14 @@ const EVENTS = [
     { date: new Date(2026,6,24), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
     { date: new Date(2026,6,25), name: "The Cure", venue: "Nîmes", cat: "Concert" },
     { date: new Date(2026,6,28), name: "Sting", venue: "Vienne", cat: "Concert" },
+    { date: new Date(2026,6,30), name: "Jul", venue: "Fréjus", cat: "Concert" },
     { date: new Date(2026,7,16), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,19), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,20), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,23), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,24), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,27), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
+    { date: new Date(2026,7,27), name: "Équipe de France de Basket", venue: "Accor Arena", cat: "Sport" },
     { date: new Date(2026,7,28), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
     { date: new Date(2026,7,30), name: "The Cure", venue: "Rock en Seine", cat: "Festival" },
     { date: new Date(2026,7,31), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
@@ -304,13 +285,13 @@ const EVENTS = [
     { date: new Date(2026,9,2), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,3), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,7), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-    { date: new Date(2026,9,8), name: "Patrick Bruel", venue: "Zénith de Paris", cat: "Concert" },
     { date: new Date(2026,9,9), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,10), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,14), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,17), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2026,9,23), name: "Korn", venue: "Accor Arena", cat: "Concert" },
+    { date: new Date(2026,9,25), name: "NFL Paris", venue: "Stade de France", cat: "Sport" },
     { date: new Date(2026,9,27), name: "Meryl", venue: "Accor Arena", cat: "Concert" },
     { date: new Date(2026,9,30), name: "Tokio Hotel", venue: "Adidas Arena", cat: "Concert" },
     { date: new Date(2026,10,11), name: "Pitbull", venue: "LDLC Arena", cat: "Concert" },
@@ -329,6 +310,8 @@ const EVENTS = [
     { date: new Date(2027,0,15), name: "Florent Pagny", venue: "LDLC Arena", cat: "Concert" },
     { date: new Date(2027,1,27), name: "Enhypen", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2027,2,13), name: "Irlande vs France", venue: "Dublin", cat: "Sport" },
+    { date: new Date(2027,3,23), name: "Olivia Rodrigo", venue: "La Défense Arena", cat: "Concert" },
+    { date: new Date(2027,3,24), name: "Olivia Rodrigo", venue: "La Défense Arena", cat: "Concert" },
     { date: new Date(2027,3,24), name: "SCH", venue: "Stade de France", cat: "Concert" },
 ];
 
