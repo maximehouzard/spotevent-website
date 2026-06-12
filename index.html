@@ -6,7 +6,7 @@
     <title>SPOTEVENT - Conciergerie Billetterie Événements</title>
     <meta name="description" content="SPOTEVENT, conciergerie lyonnaise spécialisée dans la billetterie d'événements complets. + de 1000 clients satisfaits et + de 200 avis sur Google. Concerts, événements sportifs, festivals. Service sécurisé et personnalisé. Confiance et transparence.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,195 +24,182 @@
         }
 
         body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--black);
-    background-color: #fff7ef;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 100%;
-}
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
 
         /* Header fixe */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff7ef;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-}
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 1.5rem 5%;
-    height: auto;
-    line-height: 1;
-    margin: 0 auto;
-    max-width: 1400px;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            height: auto;
+            line-height: 1;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
 
-.logo {
-    text-decoration: none;
-    color: var(--black);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
 
-.logo-icon {
-    width: 32px;
-    height: 32px;
-}
+        .logo-icon { width: 32px; height: 32px; }
 
-.logo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    color: var(--black);
-}
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
 
-.nav-center {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
-    margin: 0 2rem;
-}
+        .nav-center {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin: 0 2rem;
+        }
 
-.nav-center a {
-    text-decoration: none;
-    color: var(--black);
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
+        .nav-center a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
 
-.nav-center a:hover {
-    color: var(--gold);
-}
+        .nav-center a:hover { color: var(--gold); }
 
-.nav-contact {
-    display: flex;
-    align-items: center;
-    padding-bottom: 0.3rem;
-}
+        .nav-contact {
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.3rem;
+        }
 
-.nav-contact a {
-    text-decoration: none;
-    color: var(--black);
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
 
-.nav-contact a:hover {
-    color: var(--gold);
-}
+        .nav-contact a:hover { color: var(--gold); }
 
-/* Menu mobile hamburger - caché par défaut */
-.mobile-menu-toggle {
-    display: none;
-}
+        .mobile-menu-toggle { display: none; }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: #fff7ef;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    margin-top: 0;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: #fff7ef;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            margin-top: 0;
+        }
 
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    object-fit: cover;
-}
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 247, 239, 0.75);
-    z-index: 1;
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 247, 239, 0.75);
+            z-index: 1;
+        }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 0 2rem;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: var(--black);
-    line-height: 1.2;
-}
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
 
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--black);
-}
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
 
         .cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--black);
-    color: #fff7ef;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    margin-top: 1rem;
-}
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-top: 1rem;
+        }
 
         .cta-button:hover {
-    background-color: var(--gold);
-    color: #fff7ef;
-    transform: translateY(-3px);
-}
+            background-color: var(--gold);
+            color: #fff7ef;
+            transform: translateY(-3px);
+        }
 
-       /* Sections */
-section {
-    padding: 5rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
 
         .section-title {
             font-size: 2.5rem;
@@ -223,139 +210,121 @@ section {
         }
 
         /* Section Présentation */
-.presentation {
-    background-color: #fff7ef;
-}
+        .presentation { background-color: #fff7ef; }
 
-.presentation-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;  /* Image à gauche (1fr), Texte à droite (1.5fr) */
-    gap: 4rem;
-    align-items: start;  /* Alignement en haut */
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .presentation-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.presentation-image {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-}
+        .presentation-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
 
-.presentation-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
-}
+        .presentation-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-.presentation-image:hover img {
-    transform: scale(1.05);
-}
+        .presentation-image:hover img { transform: scale(1.05); }
 
-.presentation-content {
-    text-align: left;
-}
+        .presentation-content { text-align: left; }
 
-.presentation-intro {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-}
+        .presentation-intro {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
 
-.presentation-content p {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: #333;
-}
+        .presentation-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #333;
+        }
 
-.presentation-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    margin: 2.5rem auto;  /* Changé de "2.5rem 0" à "2.5rem auto" */
-    max-width: 600px;     /* Ajouté */
-}
+        .presentation-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2.5rem auto;
+            max-width: 600px;
+        }
 
-.stat-item {
-    display: flex;
-    justify-content: center;
-}
+        .stat-item { display: flex; justify-content: center; }
 
-.stat-badge {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-    padding: 2.5rem 2rem;
-    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-    max-width: 280px;
-}
+        .stat-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1rem;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 280px;
+        }
 
-.stat-badge:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
-}
+        .stat-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+        }
 
-.stat-icon {
-    font-size: 3rem;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-}
+        .stat-icon {
+            font-size: 3rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
 
-.stat-text {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--black);
-    line-height: 1.4;
-}
+        .stat-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--black);
+            line-height: 1.4;
+        }
 
-.presentation-closing {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--black);
-    margin: 1.5rem 0;
-    text-align: center;  /* Ajouté */
-}
+        .presentation-closing {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 1.5rem 0;
+            text-align: center;
+        }
 
-.presentation-cta-button {
-    margin-top: 1.5rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-}
+        .presentation-cta-button {
+            margin-top: 1.5rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
 
-@media (max-width: 968px) {
-    .presentation-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .presentation-image {
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .presentation-content {
-        text-align: center;
-    }
-
-    .presentation-stats {
-        grid-template-columns: 1fr;
-    }
-    .stat-badge {
-        max-width: 100%;
-    }
-}
+        @media (max-width: 968px) {
+            .presentation-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .presentation-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .presentation-content { text-align: center; }
+            .presentation-stats { grid-template-columns: 1fr; }
+            .stat-badge { max-width: 100%; }
+        }
 
         /* Section Vidéo */
         .video-section {
@@ -374,57 +343,11 @@ section {
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .video-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--beige), var(--dark-beige));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--black);
-        }
-
         /* Section Avis */
-        .reviews {
-            background-color: #fff7ef;
-        }
+        .reviews { background-color: #fff7ef; }
 
         /* Section Actualités */
-        .news {
-            background-color: #fff7ef;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .news-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .news-title {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--black);
-        }
-
-        .news-source {
-            font-size: 0.9rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
+        .news { background-color: #fff7ef; }
 
         /* Bulle de contact flottante */
         .contact-bubble {
@@ -449,9 +372,9 @@ section {
         }
 
         .contact-toggle:hover {
-    transform: scale(1.1);
-    background: #333333;
-}
+            transform: scale(1.1);
+            background: #333333;
+        }
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
@@ -476,19 +399,19 @@ section {
         }
 
         .contact-message {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-    text-align: left;
-}
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            text-align: left;
+        }
 
-.contact-message p {
-    margin: 0;
-    color: var(--black);
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.4;
-}
+        .contact-message p {
+            margin: 0;
+            color: var(--black);
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
 
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(10px); }
@@ -506,18 +429,9 @@ section {
             transition: background-color 0.3s ease;
         }
 
-        .contact-option:hover {
-            background-color: var(--light-beige);
-        }
-
-        .contact-option:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-option i {
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
-        }
+        .contact-option:hover { background-color: var(--light-beige); }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
 
         /* Footer */
         footer {
@@ -527,1101 +441,741 @@ section {
             padding: 3rem 5%;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
 
         /* Responsive */
-@media (max-width: 1024px) {
-    nav {
-        padding: 1rem 3%;
-    }
-
-    .nav-center {
-        gap: 1.5rem;
-        margin: 0 1rem;
-    }
-
-    .nav-center a,
-    .nav-contact a {
-        font-size: 0.85rem;
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .logo-text {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Afficher le bouton hamburger sur mobile */
-    .mobile-menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-    }
-
-    .mobile-menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background-color: var(--black);
-        transition: all 0.3s ease;
-    }
-
-    /* Cacher le menu principal sur mobile */
-.nav-center {
-    position: fixed;
-    top: 70px;
-    left: -100%;
-    width: 280px;
-    max-width: 80%;
-    height: auto;
-    max-height: calc(100vh - 70px);
-    background-color: var(--white);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 2rem;
-    gap: 2rem;
-    transition: left 0.3s ease;
-    overflow-y: auto;
-    border-radius: 0 15px 15px 0;
-    box-shadow: 5px 0 20px rgba(0,0,0,0.1);
-}
-
-    .nav-center.active {
-        left: 0;
-    }
-
-    .nav-center a {
-        font-size: 1.2rem;
-    }
-
-    /* Cacher "Nous contacter" du header sur mobile */
-    .nav-contact {
-        display: none;
-    }
-
-    .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .logo-text {
-        font-size: 1.2rem;
-    }
-    .hero {
-        margin-top: 70px;
-        height: 70vh;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.1rem;
-    }
-}
-
-        /* Animation smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+            .logo-icon { width: 35px; height: 35px; }
+            .logo-text { font-size: 1.2rem; }
         }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 8px;
+            }
+            .mobile-menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--black);
+                transition: all 0.3s ease;
+            }
+            .nav-center {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 280px;
+                max-width: 80%;
+                height: auto;
+                max-height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 2rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+                border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-center a { font-size: 1.2rem; }
+            .nav-contact { display: none; }
+            .logo-icon { width: 35px; height: 35px; }
+            .logo-text { font-size: 1.2rem; }
+            .hero { margin-top: 70px; height: 70vh; }
+            .hero-content h1 { font-size: 2rem; }
+            .hero-content p { font-size: 1.1rem; }
+        }
+
+        html { scroll-behavior: smooth; }
 
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
-
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Bulle de contact */
-.contact-bubble {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
-}
-
-.contact-toggle {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: #000000;
-    color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-}
-
-.contact-options {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    background-color: white;
-    border-radius: 15px;
-    padding: 1rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    display: none;
-    min-width: 280px;
-}
-
-.contact-options.active {
-    display: block;
-}
-
-.contact-option {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem;
-    text-decoration: none;
-    color: black;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-}
-
-.contact-option:hover {
-    background-color: #f0f0f0;
-}
-
-.contact-message {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #f0f0f0;
-    text-align: left;
-}
-
-.contact-message p {
-    margin: 0;
-    color: black;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.contact-message p {
-    margin: 0;
-    color: black;
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* Carrousel d'actualités - Style équipe avec défilement automatique */
-.news-carousel-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 20px;
-    padding: 2rem 0; /* Ajout d'un padding pour mieux voir les cartes */
-}
-
-.news-carousel {
-    display: flex;
-    animation: slideNewsHorizontal 100s infinite linear;
-    width: calc(320px * 40);
-}
-@keyframes slideNewsHorizontal {
-    100% { transform: translateX(calc(-320px * 20)); }
-}
-
-.news-carousel:hover {
-    animation-play-state: paused;
-}
-
-.news-slide {
-    width: 320px;
-    flex-shrink: 0;
-    padding: 0 0.5rem;
-    min-width: 0;
-}
-
-.news-slide .news-card {
-    background-color: var(--white);
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 0.5rem;
-}
-
-.news-slide .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
-}
-
-.news-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.news-slide .news-card .news-source {
-    font-size: 0.8rem;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-}
-
-.news-slide .news-title {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--black);
-    line-height: 1.3;
-    text-align: center;
-    margin-top: 0;
-    font-weight: 600;
-}
-
-.news-meta {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-.news-read-more {
-    font-size: 0.9rem;
-    color: var(--gold);
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--gold);
-    border-radius: 20px;
-}
-
-.news-read-more:hover {
-    color: var(--white);
-    background-color: var(--gold);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .news-carousel {
-        animation-duration: 85s; /* Ajusté proportionnellement */
-        width: calc(280px * 34);
-    }
-    
-    @keyframes slideNewsHorizontal {
-        0% { 
-            transform: translateX(0); 
+        /* Carrousel actualités */
+        .news-carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            padding: 2rem 0;
         }
-        100% { 
-            transform: translateX(calc(-280px * 19));
+
+        .news-carousel {
+            display: flex;
+            animation: slideNewsHorizontal 100s infinite linear;
+            width: calc(320px * 40);
         }
-    }
-    
-    .news-slide {
-        width: 280px;
-    }
-}
 
-@media (max-width: 768px) {
-    .news-carousel-container {
-        padding: 1rem;
-    }
-    
-    .news-carousel {
-        animation-duration: 70s; /* Ajusté proportionnellement */
-        width: calc(250px * 34);
-    }
-    
-    @keyframes slideNewsHorizontal {
-        0% { 
-            transform: translateX(0); 
+        @keyframes slideNewsHorizontal {
+            100% { transform: translateX(calc(-320px * 20)); }
         }
-        100% { 
-            transform: translateX(calc(-250px * 19));
+
+        .news-carousel:hover { animation-play-state: paused; }
+
+        .news-slide {
+            width: 320px;
+            flex-shrink: 0;
+            padding: 0 0.5rem;
+            min-width: 0;
         }
-    }
-    
-    .news-slide {
-        width: 250px;
-        padding: 0 0.25rem;
-    }
-    
-    .news-slide .news-card {
-        height: 180px;
-        padding: 1.2rem;
-        margin: 0 0.25rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .news-carousel {
-        animation-duration: 60s; /* Ajusté proportionnellement */
-        width: calc(220px * 34);
-    }
-    
-    @keyframes slideNewsHorizontal {
-        0% { 
-            transform: translateX(0); 
+        .news-slide .news-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 0.5rem;
         }
-        100% { 
-            transform: translateX(calc(-220px * 19));
+
+        .news-slide .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
         }
-    }
-    
-    .news-slide {
-        width: 220px;
-    }
-    
-    .news-slide .news-card {
-        height: 160px;
-        padding: 1rem;
-    }
-}
 
-/* Section Réseaux Sociaux */
-.social-section {
-    background-color: #fff7ef;
-    text-align: center;
-}
-
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.social-grid .social-card:nth-child(1),
-.social-grid .social-card:nth-child(2),
-.social-grid .social-card:nth-child(3) {
-    grid-column: span 2;
-}
-
-.social-grid .social-card:nth-child(4) {
-    grid-column: 2 / span 2;
-}
-
-.social-grid .social-card:nth-child(5) {
-    grid-column: 4 / span 2;
-}
-
-.social-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: var(--black);
-}
-
-.social-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    text-decoration: none;
-    color: var(--black);
-}
-
-.social-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-card.instagram .social-icon {
-    color: #E4405F;
-}
-
-.social-card.facebook .social-icon {
-    color: #1877F2;
-}
-
-.social-card.tiktok .social-icon {
-    color: #000000;
-}
-
-.social-card.linkedin .social-icon {
-    color: #0A66C2;
-}
-
-.social-card.twitter .social-icon {
-    color: #1DA1F2;
-}
-
-.social-card:hover .social-icon {
-    color: var(--gold);
-}
-
-.social-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.social-description {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.4;
-}
-
-/* Responsive pour réseaux sociaux */
-@media (max-width: 768px) {
-    .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .social-grid .social-card:nth-child(1),
-    .social-grid .social-card:nth-child(2),
-    .social-grid .social-card:nth-child(3),
-    .social-grid .social-card:nth-child(4),
-    .social-grid .social-card:nth-child(5) {
-        grid-column: span 1;
-    }
-    
-    .social-card {
-        padding: 1.5rem;
-    }
-    
-    .social-icon {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .social-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .social-grid .social-card:nth-child(1),
-    .social-grid .social-card:nth-child(2),
-    .social-grid .social-card:nth-child(3),
-    .social-grid .social-card:nth-child(4),
-    .social-grid .social-card:nth-child(5) {
-        grid-column: span 1;
-    }
-}
-
-/* Section Mot du fondateur */
-.founder-section {
-    background-color: #fff7ef;
-    padding: 5rem 5%;
-}
-.founder-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.founder-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.founder-logo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 4px solid var(--gold);
-}
-
-.founder-logo img {
-    width: 100%;
-    height: auto;
-    max-width: 203px;
-    object-fit: contain;
-}
-
-.founder-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border: 4px solid var(--gold);
-}
-
-.founder-content {
-    text-align: left;
-}
-
-.founder-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.founder-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--black);
-    text-align: justify;
-}
-
-.founder-signature {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--black);
-    text-align: right;
-}
-
-/* Responsive pour section fondateur */
-@media (max-width: 768px) {
-    .founder-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-    
-    .founder-photo {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .founder-title {
-        font-size: 2rem;
-        text-align: center;
-    }
-    
-    .founder-text {
-        text-align: left;
-    }
-    
-    .founder-signature {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold);
-    text-align: right;
-}
-}
-/* CSS pour le bouton RDV dans la section fondateur */
-.founder-cta {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.founder-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--black);
-    color: #fff7ef;
-    text-decoration: none;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.founder-button:hover {
-    background-color: var(--gold);
-    color: var(--white);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-.founder-button:active {
-    transform: translateY(-1px);
-}
-
-/* Responsive pour le bouton */
-@media (max-width: 768px) {
-    .founder-button {
-        font-size: 1rem;
-        padding: 0.9rem 1.8rem;
-    }
-}
-/* Section Équipe */
-.team-section {
-    background-color: #fff7ef;
-    padding: 5rem 5%;
-    text-align: center;
-}
-
-.team-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.team-carousel-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.team-carousel {
-    display: flex;
-    align-items: flex-start;   /* ← ajout */
-    animation: slideTeamHorizontal 45s infinite linear;
-    width: calc(300px * 44);
-}
-
-@keyframes slideTeamHorizontal {
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        transform: translateX(calc(-300px * 22)); 
-    }
-}
-
-.team-carousel:hover {
-    animation-play-state: paused;
-}
-
-.team-member {
-    width: 300px;
-    flex-shrink: 0;
-    margin: 0 1rem;
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 380px;        /* ← hauteur fixe identique pour tous */
-    align-self: flex-start;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-}
-
-.team-member::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    transition: left 0.5s ease;
-}
-
-.team-member:hover::before {
-    left: 0;
-}
-
-.team-photo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1.5rem;
-    position: relative;
-}
-
-.team-photo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--gold);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Ajout : masquer les images cassées */
-    display: block;
-}
-
-/* Cacher les images non chargées */
-.team-photo img[src=""],
-.team-photo img:not([src]) {
-    display: none;
-}
-
-.team-photo::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 50%;
-    background: conic-gradient(var(--gold), transparent, var(--gold));
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.team-member:hover .team-photo::after {
-    opacity: 0.7;
-    animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.team-member:hover .team-photo img {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
-.team-info {
-    text-align: center;
-}
-
-.team-name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 0.5rem;
-}
-
-.team-role {
-    font-size: 1rem;
-    color: var(--gold);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 1rem;
-}
-
-.team-description {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-/* Responsive pour section équipe */
-@media (max-width: 1200px) {
-    .team-carousel {
-        animation-duration: 40s;
-    }
-}
-
-@media (max-width: 768px) {
-    .team-member {
-        width: 280px;
-        margin: 0 0.5rem;
-        padding: 1.5rem;
-    }
-    
-    .team-photo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .team-name {
-        font-size: 1.2rem;
-    }
-    
-    .team-carousel {
-        animation-duration: 35s;
-        width: calc(280px * 20); /* Ajuste la largeur totale */
-    }
-    
-    @keyframes slideTeamHorizontal {
-        0% { 
-            transform: translateX(0); 
+        .news-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        100% { 
-            transform: translateX(calc(-280px * 10)); /* Ajuste pour la nouvelle largeur */
+
+        .news-slide .news-card .news-source {
+            font-size: 0.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
         }
-    }
-}
 
-@media (max-width: 480px) {
-    .team-member {
-        width: 220px;
-        padding: 1.2rem;
-    }
-    
-    .team-photo {
-        width: 100px;
-        height: 100px;
-    }
-
-    .team-carousel {
-        animation-duration: 30s;
-        width: calc(220px * 20); /* Ajuste la largeur totale */
-    }
-    
-    @keyframes slideTeamHorizontal {
-        0% { 
-            transform: translateX(0); 
+        .news-slide .news-title {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+            line-height: 1.3;
+            text-align: center;
+            margin-top: 0;
+            font-weight: 600;
         }
-        100% { 
-            transform: translateX(calc(-220px * 10)); /* Ajuste pour la nouvelle largeur */
+
+        .news-meta {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            margin: 0;
+            padding: 0;
+            border: none;
         }
-    }
-}
-/* Styles Widget Google Reviews */
-.google-reviews-container {
-    max-width: 900px;
-    margin: 0 auto 3rem;
-    padding: 0 1rem;
-}
 
-.reviews-summary {
-    max-width: 600px;
-    margin: 0 auto;
-}
+        .news-read-more {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gold);
+            border-radius: 20px;
+        }
 
-.review-stats {
-    background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
-    padding: 2.5rem 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    text-align: center;
-    border: 1px solid rgba(212, 175, 55, 0.1);
-}
+        .news-read-more:hover {
+            color: var(--white);
+            background-color: var(--gold);
+        }
 
-.rating-display {
-    margin-bottom: 1.5rem;
-}
+        @media (max-width: 1024px) {
+            .news-carousel {
+                animation-duration: 85s;
+                width: calc(280px * 34);
+            }
+            @keyframes slideNewsHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-280px * 19)); }
+            }
+            .news-slide { width: 280px; }
+        }
 
-.rating-number {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--black);
-    margin-right: 1rem;
-    vertical-align: middle;
-}
+        @media (max-width: 768px) {
+            .news-carousel-container { padding: 1rem; }
+            .news-carousel {
+                animation-duration: 70s;
+                width: calc(250px * 34);
+            }
+            @keyframes slideNewsHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-250px * 19)); }
+            }
+            .news-slide { width: 250px; padding: 0 0.25rem; }
+            .news-slide .news-card { height: 180px; padding: 1.2rem; margin: 0 0.25rem; }
+        }
 
-.stars-display {
-    display: inline-block;
-    vertical-align: middle;
-}
+        @media (max-width: 480px) {
+            .news-carousel {
+                animation-duration: 60s;
+                width: calc(220px * 34);
+            }
+            @keyframes slideNewsHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-220px * 19)); }
+            }
+            .news-slide { width: 220px; }
+            .news-slide .news-card { height: 160px; padding: 1rem; }
+        }
 
-.stars-display i {
-    color: var(--gold);
-    font-size: 1.8rem;
-    margin: 0 3px;
-    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
-}
+        /* Section Réseaux Sociaux */
+        .social-section {
+            background-color: #fff7ef;
+            text-align: center;
+        }
 
-.review-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-.review-count {
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 600;
-}
+        .social-grid .social-card:nth-child(1),
+        .social-grid .social-card:nth-child(2),
+        .social-grid .social-card:nth-child(3) { grid-column: span 2; }
+        .social-grid .social-card:nth-child(4) { grid-column: 2 / span 2; }
+        .social-grid .social-card:nth-child(5) { grid-column: 4 / span 2; }
 
-.write-review-btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--black);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
+        .social-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: var(--black);
+        }
 
-.write-review-btn:hover {
-    background-color: var(--gold);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-}
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: var(--black);
+        }
 
-@media (max-width: 768px) {
-    .google-reviews-container iframe {
-        height: 350px;
-    }
-    
-    .review-stats {
-        padding: 2rem 1.5rem;
-    }
-    
-    .rating-number {
-        font-size: 2.8rem;
-        display: block;
-        margin-bottom: 0.5rem;
-    }
-    
-    .review-info {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+        .social-icon { font-size: 3rem; margin-bottom: 1rem; transition: color 0.3s ease; }
+        .social-card.instagram .social-icon { color: #E4405F; }
+        .social-card.facebook .social-icon { color: #1877F2; }
+        .social-card.tiktok .social-icon { color: #000000; }
+        .social-card.linkedin .social-icon { color: #0A66C2; }
+        .social-card.twitter .social-icon { color: #1DA1F2; }
+        .social-card:hover .social-icon { color: var(--gold); }
+        .social-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .social-description { font-size: 0.9rem; color: #666; line-height: 1.4; }
 
-.reviews-carousel {
-    display: flex;
-    width: 500%;
-    transition: transform 0.8s ease-in-out;
-    height: auto;
-}
+        @media (max-width: 768px) {
+            .social-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .social-grid .social-card:nth-child(1),
+            .social-grid .social-card:nth-child(2),
+            .social-grid .social-card:nth-child(3),
+            .social-grid .social-card:nth-child(4),
+            .social-grid .social-card:nth-child(5) { grid-column: span 1; }
+            .social-card { padding: 1.5rem; }
+            .social-icon { font-size: 2.5rem; }
+        }
 
-.review-card {
-    width: 20%;
-    flex-shrink: 0;
-    padding: 2.5rem 3rem;
-    text-align: center;
-    position: relative;
-    background-color: transparent;
-    border-radius: 0;
-    margin: 0;
-    box-shadow: none;
-}
+        @media (max-width: 480px) {
+            .social-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .social-grid .social-card:nth-child(1),
+            .social-grid .social-card:nth-child(2),
+            .social-grid .social-card:nth-child(3),
+            .social-grid .social-card:nth-child(4),
+            .social-grid .social-card:nth-child(5) { grid-column: span 1; }
+        }
 
-.review-card::before {
-    content: '"';
-    position: absolute;
-    top: 1rem;
-    left: 2rem;
-    font-size: 4rem;
-    color: var(--gold);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-}
+        /* Section Mot du fondateur */
+        .founder-section { background-color: #fff7ef; padding: 5rem 5%; }
 
-.review-stars {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
-}
+        .founder-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-.review-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-    font-style: italic;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .founder-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
 
-.review-author {
-    font-weight: 600;
-    color: var(--gold);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+        .founder-logo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 4px solid var(--gold);
+        }
 
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1.5rem 0;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
-}
+        .founder-logo img { width: 100%; height: auto; max-width: 203px; object-fit: contain; }
 
-.carousel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+        .founder-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 4px solid var(--gold);
+        }
 
-.carousel-indicator.active {
-    background-color: var(--gold);
-    transform: scale(1.2);
-}
+        .founder-content { text-align: left; }
 
-.reviews-carousel-container {
-    max-width: 800px;
-    margin: 3rem auto 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.5s;
-}
+        .founder-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 2rem;
+            text-align: left;
+        }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .founder-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--black);
+            text-align: justify;
+        }
 
-@media (max-width: 768px) {
-    .review-card {
-        padding: 2rem 1.5rem;
-    }
-    
-    .review-text {
-        font-size: 1rem;
-    }
-    
-    .review-card::before {
-        font-size: 3rem;
-        left: 1rem;
-    }
-}
-.team-photo .enzo-photo {
-    object-fit: cover;
-    object-position: center 20%;
-}
+        .founder-signature {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--black);
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .founder-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+            .founder-photo { width: 200px; height: 200px; }
+            .founder-title { font-size: 2rem; text-align: center; }
+            .founder-text { text-align: left; }
+            .founder-signature { margin-top: 2rem; font-size: 1.2rem; font-weight: 600; color: var(--gold); text-align: right; }
+        }
+
+        .founder-cta { margin-top: 2rem; text-align: center; }
+
+        .founder-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--black);
+            color: #fff7ef;
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .founder-button:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-button:active { transform: translateY(-1px); }
+
+        @media (max-width: 768px) {
+            .founder-button { font-size: 1rem; padding: 0.9rem 1.8rem; }
+        }
+
+        /* Section Équipe */
+        .team-section {
+            background-color: #fff7ef;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .team-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .team-carousel {
+            display: flex;
+            align-items: flex-start;
+            animation: slideTeamHorizontal 45s infinite linear;
+            width: calc(300px * 44);
+        }
+
+        @keyframes slideTeamHorizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-300px * 22)); }
+        }
+
+        .team-carousel:hover { animation-play-state: paused; }
+
+        .team-member {
+            width: 300px;
+            flex-shrink: 0;
+            margin: 0 1rem;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 380px;
+            align-self: flex-start;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .team-member:hover::before { left: 0; }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .team-photo img[src=""],
+        .team-photo img:not([src]) { display: none; }
+
+        .team-photo::after {
+            content: '';
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%;
+            background: conic-gradient(var(--gold), transparent, var(--gold));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .team-member:hover .team-photo::after {
+            opacity: 0.7;
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .team-member:hover .team-photo img {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .team-info { text-align: center; }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .team-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+            .team-carousel { animation-duration: 40s; }
+        }
+
+        @media (max-width: 768px) {
+            .team-member { width: 280px; margin: 0 0.5rem; padding: 1.5rem; }
+            .team-photo { width: 120px; height: 120px; }
+            .team-name { font-size: 1.2rem; }
+            .team-carousel { animation-duration: 35s; width: calc(280px * 20); }
+            @keyframes slideTeamHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-280px * 10)); }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-member { width: 220px; padding: 1.2rem; }
+            .team-photo { width: 100px; height: 100px; }
+            .team-carousel { animation-duration: 30s; width: calc(220px * 20); }
+            @keyframes slideTeamHorizontal {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-220px * 10)); }
+            }
+        }
+
+        /* Styles Google Reviews */
+        .google-reviews-container {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .reviews-summary { max-width: 600px; margin: 0 auto; }
+
+        .review-stats {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .rating-display { margin-bottom: 1.5rem; }
+
+        .rating-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-right: 1rem;
+            vertical-align: middle;
+        }
+
+        .stars-display { display: inline-block; vertical-align: middle; }
+
+        .stars-display i {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin: 0 3px;
+            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+        }
+
+        .review-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .review-count { font-size: 1.2rem; color: #666; font-weight: 600; }
+
+        .write-review-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .write-review-btn:hover {
+            background-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .google-reviews-container iframe { height: 350px; }
+            .review-stats { padding: 2rem 1.5rem; }
+            .rating-number { font-size: 2.8rem; display: block; margin-bottom: 0.5rem; }
+            .review-info { flex-direction: column; text-align: center; }
+        }
+
+        .reviews-carousel {
+            display: flex;
+            width: 500%;
+            transition: transform 0.8s ease-in-out;
+            height: auto;
+        }
+
+        .review-card {
+            width: 20%;
+            flex-shrink: 0;
+            padding: 2.5rem 3rem;
+            text-align: center;
+            position: relative;
+            background-color: transparent;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .review-stars { font-size: 1.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3)); }
+
+        .review-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1.5rem 0;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background-color: var(--gold);
+            transform: scale(1.2);
+        }
+
+        .reviews-carousel-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .review-card { padding: 2rem 1.5rem; }
+            .review-text { font-size: 1rem; }
+            .review-card::before { font-size: 3rem; left: 1rem; }
+        }
+
+        .team-photo .enzo-photo {
+            object-fit: cover;
+            object-position: center 20%;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-<!-- Header -->
+
 <header>
     <nav>
         <a href="#" class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
@@ -1633,7 +1187,7 @@ section {
             </svg>
             <span class="logo-text">SPOTEVENT</span>
         </a>
-        
+
         <ul class="nav-center" id="navCenter">
             <li><a href="#video">Qui sommes-nous ?</a></li>
             <li><a href="#avis">Les avis de nos clients</a></li>
@@ -1641,7 +1195,7 @@ section {
             <li><a href="corporate.html">TPE, PME & CSE</a></li>
             <li><a href="ambassadeur.html">Devenir Ambassadeur</a></li>
         </ul>
-        
+
         <div class="nav-contact">
             <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
         </div>
@@ -1654,21 +1208,20 @@ section {
     </nav>
 </header>
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
         <source src="hero-video.mp4" type="video/mp4">
-        <!-- Fallback pour navigateurs ne supportant pas la vidéo -->
     </video>
     <div class="hero-content fade-in">
         <h1>Comment accéder à un événement complet ?</h1>
         <p>🎟️ Envie d'assister à votre prochain concert, match ou festival préféré ?</p>
-      <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
+        <button class="cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
     </div>
 </section>
 
-    <!-- Section Vidéo -->
-    <section id="video" class="video-section">
+<!-- Section Vidéo -->
+<section id="video" class="video-section">
     <div class="fade-in">
         <h2 class="section-title">🎥 Découvrez SPOTEVENT en vidéo</h2>
         <div class="video-container">
@@ -1677,7 +1230,8 @@ section {
     </div>
 </section>
 
-  <section id="presentation" class="presentation">
+<!-- Section Présentation -->
+<section id="presentation" class="presentation">
     <div class="fade-in">
         <h2 class="section-title">🎯 Notre mission</h2>
         <div class="presentation-container">
@@ -1693,8 +1247,7 @@ section {
                 <p>Cet avantage vous permettra également de fidéliser vos clients et de transformer vos prospects en les invitant aux événements les plus prisés de l'année.</p>
             </div>
         </div>
-        
-        <!-- MAINTENANT EN DEHORS du presentation-container -->
+
         <div class="presentation-stats">
             <div class="stat-item">
                 <div class="stat-badge">
@@ -1709,18 +1262,17 @@ section {
                 </div>
             </div>
         </div>
-        
+
         <p class="presentation-closing">Avec SPOTEVENT, ne manquez plus jamais des événements sold out qui vous tiennent à cœur !</p>
-        
         <button class="cta-button presentation-cta-button" onclick="toggleContactOptions()">Contactez-nous !</button>
     </div>
 </section>
 
-    <section id="avis" class="reviews">
+<!-- Section Avis -->
+<section id="avis" class="reviews">
     <div class="fade-in">
         <h2 class="section-title">🗣️ Ce que disent nos clients</h2>
-        
-        <!-- Résumé des avis avec carrousel automatique -->
+
         <div class="reviews-summary">
             <div class="review-stats">
                 <div class="rating-display">
@@ -1735,68 +1287,45 @@ section {
                 </div>
                 <div class="review-info">
                     <span class="review-count">+ de 250 avis Google vérifiés</span>
-                    <a href="https://www.google.com/search?q=SPOTEVENT+avis+Lyon" 
-                       class="write-review-btn" 
-                       target="_blank">
-                        Voir tous nos avis Google
-                    </a>
+                    <a href="https://www.google.com/search?q=SPOTEVENT+avis+Lyon" class="write-review-btn" target="_blank">Voir tous nos avis Google</a>
                 </div>
             </div>
         </div>
-        
-        <!-- Carrousel d'avis qui défile automatiquement -->
+
         <div class="reviews-carousel-container">
             <div class="reviews-carousel" id="reviewsCarousel">
-                
-                <!-- Avis 1 -->
                 <div class="review-card">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Service exceptionnel ! J'ai pu obtenir des places pour un concert sold out en moins de 24h. L'équipe est professionnelle et à l'écoute."</p>
                     <div class="review-author">- Marie L.</div>
                 </div>
-                
-                <!-- Avis 2 -->
                 <div class="review-card">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Grâce à SPOTEVENT, j'ai pu assister au match de mes rêves ! Processus transparent et sécurisé. Je recommande vivement."</p>
                     <div class="review-author">- Thomas M.</div>
                 </div>
-                
-                <!-- Avis 3 -->
                 <div class="review-card">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Excellent service client. Maxime et son équipe ont été d'une aide précieuse pour organiser une soirée mémorable. Merci !"</p>
                     <div class="review-author">- Sophie D.</div>
                 </div>
-                
-                <!-- Avis 4 -->
                 <div class="review-card">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Service de conciergerie au top ! Places obtenues rapidement et en toute sécurité. Une équipe de confiance."</p>
                     <div class="review-author">- Jean-Pierre R.</div>
                 </div>
-                
-                <!-- Avis 5 -->
                 <div class="review-card">
                     <div class="review-stars">⭐⭐⭐⭐⭐</div>
                     <p class="review-text">"Après plusieurs échecs sur d'autres plateformes, SPOTEVENT a réussi à me trouver exactement ce que je cherchais. Bravo !"</p>
                     <div class="review-author">- Camille B.</div>
                 </div>
-                
             </div>
-            
-            <!-- Indicateurs du carrousel -->
             <div class="carousel-indicators" id="reviewIndicators"></div>
         </div>
     </div>
 </section>
-<!-- ============================================================
-     BLOC AGENDA HOMEPAGE — à insérer dans index.html
-     Affiche les 6 prochains événements + lien vers agenda.html
-     Le bouton "Demander des places" ouvre la bulle de contact
-     existante via toggleContactOptions() déjà présent dans index.html
-     ============================================================ -->
 
+<!-- Section Agenda -->
 <section id="agenda" style="background:#fff7ef; padding:5rem 5%;">
     <div class="fade-in">
         <div style="display:flex; align-items:center; justify-content:space-between; max-width:1200px; margin:0 auto 2rem; flex-wrap:wrap; gap:1rem;">
@@ -1855,150 +1384,145 @@ section {
     var MONTHS = ["jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"];
     var today = new Date(); today.setHours(0,0,0,0);
 
+    // Tableau complet du CSV — les 6 premiers à partir de la date du jour
+    // sont sélectionnés automatiquement par le filtre .filter() ci-dessous
     var EVENTS = [
-        { date: new Date(2026,4,22), name: "Finale Coupe de France 2026", venue: "Stade de France", cat: "Sport" },
-        { date: new Date(2026,4,22), name: "Metallica", venue: "Francfort", cat: "Concert" },
-        { date: new Date(2026,4,23), name: "Champions Cup", venue: "", cat: "Sport" },
-        { date: new Date(2026,4,24), name: "Metallica", venue: "Francfort", cat: "Concert" },
-        { date: new Date(2026,4,27), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,4,28), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
-        { date: new Date(2026,4,28), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,4,29), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,4,29), name: "Damso", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,4,29), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
-        { date: new Date(2026,4,29), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,4,30), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,4,30), name: "Clair Obscur", venue: "La Seine musicale", cat: "Concert" },
-        { date: new Date(2026,4,30), name: "Diffusion PSG vs Arsenal", venue: "Parc des Princes", cat: "Sport" },
-        { date: new Date(2026,4,30), name: "Jul", venue: "Orange Vélodrome", cat: "Concert" },
-        { date: new Date(2026,4,31), name: "Aya Nakamura", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,4,31), name: "Pinkpantheress", venue: "Zénith la Villette", cat: "Concert" },
-        { date: new Date(2026,4,31), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,5,4), name: "France vs Côte d'Ivoire", venue: "Nantes", cat: "Sport" },
-        { date: new Date(2026,5,5), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,5,6), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,5,7), name: "Roland Garros", venue: "Paris", cat: "Sport" },
-        { date: new Date(2026,5,8), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,5,9), name: "Doja Cat", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,5,9), name: "Vanessa Paradis", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,5,10), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,5,11), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,11), name: "Kanye West", venue: "Orange Vélodrome", cat: "Concert" },
-        { date: new Date(2026,5,11), name: "Massive Attack", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,5,12), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,13), name: "David Guetta", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,16), name: "Linkin Park", venue: "Groupama Stadium", cat: "Concert" },
-        { date: new Date(2026,5,16), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
-        { date: new Date(2026,5,17), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
-        { date: new Date(2026,5,18), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,18), name: "Hellfest", venue: "Clisson", cat: "Festival" },
-        { date: new Date(2026,5,18), name: "Jack White", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,5,18), name: "Patrick Bruel", venue: "Cirque d'hiver", cat: "Concert" },
-        { date: new Date(2026,5,19), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,5,19), name: "Foo Fighters", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,5,19), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
-        { date: new Date(2026,5,19), name: "Hellfest", venue: "Clisson", cat: "Festival" },
-        { date: new Date(2026,5,19), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
-        { date: new Date(2026,5,20), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,20), name: "Harry Styles", venue: "Wembley Stadium", cat: "Concert" },
-        { date: new Date(2026,5,20), name: "Hellfest", venue: "Clisson", cat: "Festival" },
-        { date: new Date(2026,5,20), name: "Top 14 – Demi-Finale", venue: "Orange Vélodrome", cat: "Sport" },
-        { date: new Date(2026,5,21), name: "Bruno Mars", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,5,21), name: "Hellfest", venue: "Clisson", cat: "Festival" },
-        { date: new Date(2026,5,23), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,5,26), name: "Orelsan", venue: "Chambord", cat: "Concert" },
-        { date: new Date(2026,5,27), name: "Maroon 5", venue: "Chambord Live", cat: "Concert" },
-        { date: new Date(2026,5,27), name: "Top 14 – Finale", venue: "Stade de France", cat: "Sport" },
-        { date: new Date(2026,5,28), name: "DJ Snake", venue: "Chambord Live", cat: "Concert" },
-        { date: new Date(2026,6,1), name: "Bad Bunny", venue: "Orange Vélodrome", cat: "Concert" },
-        { date: new Date(2026,6,1), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,6,2), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,2), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,3), name: "Guns N'Roses", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,6,3), name: "The Weeknd", venue: "Lille", cat: "Concert" },
-        { date: new Date(2026,6,4), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,6,4), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,4), name: "System Of A Down", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,5), name: "Bad Bunny", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,6,5), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,7), name: "Luke Combs", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,6,8), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,9), name: "Agnes Obel", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,9), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,10), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,11), name: "Katy Perry", venue: "Arène de Nîmes", cat: "Concert" },
-        { date: new Date(2026,6,11), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,12), name: "Pitbull", venue: "Nice", cat: "Concert" },
-        { date: new Date(2026,6,12), name: "The Weeknd", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,13), name: "Charlie Puth", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,15), name: "Florent Pagny", venue: "Olympia", cat: "Concert" },
-        { date: new Date(2026,6,15), name: "Lorde", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,16), name: "Asaf Avidan", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,17), name: "BTS", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,17), name: "Charlotte Cardin", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,17), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
-        { date: new Date(2026,6,18), name: "BTS", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,6,18), name: "Polo & Pan", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,21), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
-        { date: new Date(2026,6,22), name: "The Weeknd", venue: "Allianz Riviera", cat: "Concert" },
-        { date: new Date(2026,6,24), name: "Clair Obscur", venue: "Nuits de Fourvière", cat: "Concert" },
-        { date: new Date(2026,6,24), name: "Tomorrowland 2026", venue: "Boom (Belgique)", cat: "Festival" },
-        { date: new Date(2026,6,25), name: "The Cure", venue: "Nîmes", cat: "Concert" },
-        { date: new Date(2026,6,28), name: "Sting", venue: "Vienne", cat: "Concert" },
-        { date: new Date(2026,7,16), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,19), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,20), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,23), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,24), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,27), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,28), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,7,30), name: "The Cure", venue: "Rock en Seine", cat: "Festival" },
-        { date: new Date(2026,7,31), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,8,1), name: "Ariana Grande", venue: "O2 Arena, Londres", cat: "Concert" },
-        { date: new Date(2026,8,4), name: "PLK", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,8,5), name: "PLK", venue: "Stade de France", cat: "Concert" },
-        { date: new Date(2026,8,6), name: "BTS", venue: "Sofi Stadium", cat: "Concert" },
-        { date: new Date(2026,8,9), name: "Katseye", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,8,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,17), name: "Evanescence", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,8,18), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,19), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,19), name: "Pussycat Dolls", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,8,23), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,25), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,25), name: "Matt Pokora", venue: "Lille", cat: "Concert" },
-        { date: new Date(2026,8,26), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,8,30), name: "ASAP Rocky", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,8,30), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,2), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,3), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,7), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,8), name: "Patrick Bruel", venue: "Zénith de Paris", cat: "Concert" },
-        { date: new Date(2026,9,9), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,10), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,14), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,16), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,17), name: "Céline Dion", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,9,23), name: "Korn", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,9,27), name: "Meryl", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,9,30), name: "Tokio Hotel", venue: "Adidas Arena", cat: "Concert" },
-        { date: new Date(2026,10,11), name: "Pitbull", venue: "LDLC Arena", cat: "Concert" },
-        { date: new Date(2026,10,17), name: "Vanessa Paradis", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2026,11,5), name: "Joe Dwet File", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,11,9), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,11), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,12), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,14), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,16), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,11,17), name: "Gims", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2026,11,18), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,19), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2026,11,20), name: "Orelsan", venue: "Paris", cat: "Concert" },
-        { date: new Date(2027,0,6), name: "Florent Pagny", venue: "Accor Arena", cat: "Concert" },
-        { date: new Date(2027,0,15), name: "Florent Pagny", venue: "LDLC Arena", cat: "Concert" },
-        { date: new Date(2027,1,27), name: "Enhypen", venue: "La Défense Arena", cat: "Concert" },
-        { date: new Date(2027,2,13), name: "Irlande vs France", venue: "Dublin", cat: "Sport" },
-        { date: new Date(2027,3,24), name: "SCH", venue: "Stade de France", cat: "Concert" },
+        { date: new Date(2026,5,12), name: "David Guetta",                          venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,5,13), name: "Coupe du Monde – Maroc vs Brésil",      venue: "New York",                 cat: "Sport"    },
+        { date: new Date(2026,5,13), name: "David Guetta",                          venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,5,16), name: "Coupe du Monde – France vs Sénégal",    venue: "New York",                 cat: "Sport"    },
+        { date: new Date(2026,5,16), name: "Linkin Park",                           venue: "Groupama Stadium",         cat: "Concert"  },
+        { date: new Date(2026,5,18), name: "Bruno Mars",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,5,18), name: "Hellfest",                              venue: "Clisson",                  cat: "Festival" },
+        { date: new Date(2026,5,18), name: "Jack White",                            venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,5,19), name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,5,19), name: "Foo Fighters",                          venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,5,19), name: "Harry Styles",                          venue: "Wembley Stadium",          cat: "Concert"  },
+        { date: new Date(2026,5,19), name: "Hellfest",                              venue: "Clisson",                  cat: "Festival" },
+        { date: new Date(2026,5,19), name: "Top 14 – Demi-Finale",                  venue: "Orange Vélodrome",         cat: "Sport"    },
+        { date: new Date(2026,5,20), name: "Bruno Mars",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,5,20), name: "Harry Styles",                          venue: "Wembley Stadium",          cat: "Concert"  },
+        { date: new Date(2026,5,20), name: "Hellfest",                              venue: "Clisson",                  cat: "Festival" },
+        { date: new Date(2026,5,20), name: "Top 14 – Demi-Finale",                  venue: "Orange Vélodrome",         cat: "Sport"    },
+        { date: new Date(2026,5,21), name: "Bruno Mars",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,5,21), name: "Hellfest",                              venue: "Clisson",                  cat: "Festival" },
+        { date: new Date(2026,5,22), name: "Coupe du Monde – France vs Irak",       venue: "Philadelphie",             cat: "Sport"    },
+        { date: new Date(2026,5,23), name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,5,26), name: "Coupe du Monde – Norvège vs France",    venue: "Boston",                   cat: "Sport"    },
+        { date: new Date(2026,5,26), name: "Orelsan",                               venue: "Chambord",                 cat: "Concert"  },
+        { date: new Date(2026,5,27), name: "Maroon 5",                              venue: "Chambord Live",            cat: "Festival" },
+        { date: new Date(2026,5,27), name: "Top 14 – Finale",                       venue: "Stade de France",          cat: "Sport"    },
+        { date: new Date(2026,5,28), name: "DJ Snake",                              venue: "Chambord Live",            cat: "Festival" },
+        { date: new Date(2026,6,1),  name: "Bad Bunny",                             venue: "Orange Vélodrome",         cat: "Concert"  },
+        { date: new Date(2026,6,1),  name: "Guns N'Roses",                          venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,6,2),  name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,2),  name: "System Of A Down",                      venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,3),  name: "Guns N'Roses",                          venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,6,3),  name: "The Weeknd",                            venue: "Lille",                    cat: "Concert"  },
+        { date: new Date(2026,6,4),  name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,4),  name: "System Of A Down",                      venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,5),  name: "Bad Bunny",                             venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,6,5),  name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,7),  name: "Luke Combs",                            venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,6,8),  name: "The Weeknd",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,9),  name: "Agnès Obel",                            venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,9),  name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,10), name: "The Weeknd",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,11), name: "Katy Perry",                            venue: "Arènes de Nîmes",          cat: "Concert"  },
+        { date: new Date(2026,6,11), name: "The Weeknd",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,12), name: "Pitbull",                               venue: "Nice",                     cat: "Concert"  },
+        { date: new Date(2026,6,12), name: "The Weeknd",                            venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,13), name: "Charlie Puth",                          venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,15), name: "Florent Pagny",                         venue: "Olympia",                  cat: "Concert"  },
+        { date: new Date(2026,6,15), name: "Lorde",                                 venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,16), name: "Asaf Avidan",                           venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,17), name: "BTS",                                   venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,17), name: "Charlotte Cardin",                      venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,17), name: "Tomorrowland 2026",                     venue: "Boom (Belgique)",          cat: "Festival" },
+        { date: new Date(2026,6,18), name: "BTS",                                   venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,6,18), name: "Polo & Pan",                            venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,19), name: "Tomorrowland 2026",                     venue: "Boom (Belgique)",          cat: "Festival" },
+        { date: new Date(2026,6,21), name: "The Weeknd",                            venue: "Allianz Riviera",          cat: "Concert"  },
+        { date: new Date(2026,6,22), name: "The Weeknd",                            venue: "Allianz Riviera",          cat: "Concert"  },
+        { date: new Date(2026,6,24), name: "Clair Obscur",                          venue: "Nuits de Fourvière",       cat: "Concert"  },
+        { date: new Date(2026,6,24), name: "Tomorrowland 2026",                     venue: "Boom (Belgique)",          cat: "Festival" },
+        { date: new Date(2026,6,25), name: "The Cure",                              venue: "Nîmes",                    cat: "Concert"  },
+        { date: new Date(2026,6,26), name: "Tomorrowland 2026",                     venue: "Boom (Belgique)",          cat: "Festival" },
+        { date: new Date(2026,6,28), name: "Sting",                                 venue: "Vienne",                   cat: "Concert"  },
+        { date: new Date(2026,6,30), name: "Jul",                                   venue: "Fréjus",                   cat: "Concert"  },
+        { date: new Date(2026,7,16), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,19), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,20), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,23), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,24), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,27), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,27), name: "Équipe de France de Basket",            venue: "Accor Arena",              cat: "Sport"    },
+        { date: new Date(2026,7,28), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,7,30), name: "The Cure",                              venue: "Rock en Seine",            cat: "Festival" },
+        { date: new Date(2026,7,31), name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,8,1),  name: "Ariana Grande",                         venue: "O2 Arena, Londres",        cat: "Concert"  },
+        { date: new Date(2026,8,4),  name: "PLK",                                   venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,8,5),  name: "PLK",                                   venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2026,8,6),  name: "BTS",                                   venue: "Sofi Stadium",             cat: "Concert"  },
+        { date: new Date(2026,8,8),  name: "The Neighbourhood",                     venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,8,9),  name: "Katseye",                               venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,8,16), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,17), name: "Evanescence",                           venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,8,18), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,19), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,19), name: "Pussycat Dolls",                        venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,8,23), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,25), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,25), name: "Matt Pokora",                           venue: "Lille",                    cat: "Concert"  },
+        { date: new Date(2026,8,26), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,8,26), name: "Shakira",                               venue: "Madrid",                   cat: "Concert"  },
+        { date: new Date(2026,8,30), name: "ASAP Rocky",                            venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,8,30), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,2),  name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,3),  name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,7),  name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,8),  name: "Patrick Bruel",                         venue: "Zénith de Paris",          cat: "Concert"  },
+        { date: new Date(2026,9,9),  name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,10), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,14), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,16), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,17), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,9,23), name: "Korn",                                  venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,9,25), name: "NFL Paris",                             venue: "Stade de France",          cat: "Sport"    },
+        { date: new Date(2026,9,27), name: "Meryl",                                 venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,9,30), name: "Tokio Hotel",                           venue: "Adidas Arena",             cat: "Concert"  },
+        { date: new Date(2026,10,6), name: "Rolex Paris Masters – Quarts",          venue: "Accor Arena",              cat: "Sport"    },
+        { date: new Date(2026,10,8), name: "Rolex Paris Masters – Finale",          venue: "Accor Arena",              cat: "Sport"    },
+        { date: new Date(2026,10,11),name: "Pitbull",                               venue: "LDLC Arena",               cat: "Concert"  },
+        { date: new Date(2026,10,17),name: "Vanessa Paradis",                       venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2026,11,5), name: "Joe Dwet File",                         venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,11,9), name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,11),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,12),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,14),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,16),name: "Gims",                                  venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,11,17),name: "Gims",                                  venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2026,11,18),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,19),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2026,11,20),name: "Orelsan",                               venue: "Paris",                    cat: "Concert"  },
+        { date: new Date(2027,0,6),  name: "Florent Pagny",                         venue: "Accor Arena",              cat: "Concert"  },
+        { date: new Date(2027,0,15), name: "Florent Pagny",                         venue: "LDLC Arena",               cat: "Concert"  },
+        { date: new Date(2027,1,27), name: "Enhypen",                               venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,2,13), name: "Irlande vs France",                     venue: "Dublin",                   cat: "Sport"    },
+        { date: new Date(2027,3,10), name: "Niska",                                 venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2027,3,11), name: "Niska",                                 venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2027,3,23), name: "Olivia Rodrigo",                        venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,3,24), name: "Olivia Rodrigo",                        venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,3,24), name: "SCH",                                   venue: "Stade de France",          cat: "Concert"  },
+        { date: new Date(2027,4,8),  name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,12), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,14), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,15), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,19), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,21), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,26), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,28), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
+        { date: new Date(2027,4,29), name: "Céline Dion",                           venue: "La Défense Arena",         cat: "Concert"  },
     ];
 
     var future = EVENTS
@@ -2025,571 +1549,103 @@ section {
     }).join('');
 })();
 </script>
-    <!-- Section Actualités -->
+
+<!-- Section Actualités -->
 <section id="offres" class="news">
     <div class="fade-in">
         <h2 class="section-title">Toutes les actualités événementielles !</h2>
         <div class="news-carousel-container">
-    <div class="news-carousel" id="newsCarousel">
-
-                <!-- Actualité - Céline Dion -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Céline Dion à la Défense Arena – Septembre & Octobre 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/celine-dion-defense-arena-septembre-octobre-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Olivia Rodrigo -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Olivia Rodrigo à la Défense Arena – 23 & 24 Avril 2027</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/oliviarodrigo.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Aya Nakamura -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Aya Nakamura au Stade de France les 28, 29 & 30 mai 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/aya-nakamura-stade-de-france-28-29-30-mai-2026.html" class="news-read-more">En savoir plus</a>
+            <div class="news-carousel" id="newsCarousel">
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Céline Dion à la Défense Arena – Septembre & Octobre 2026</h3></div><div class="news-meta"><a href="articles/celine-dion-defense-arena-septembre-octobre-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Olivia Rodrigo à la Défense Arena – 23 & 24 Avril 2027</h3></div><div class="news-meta"><a href="articles/oliviarodrigo.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Aya Nakamura au Stade de France les 28, 29 & 30 mai 2026</h3></div><div class="news-meta"><a href="articles/aya-nakamura-stade-de-france-28-29-30-mai-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Les Pussycat Dolls à l'Accor Arena le 19 septembre 2026</h3></div><div class="news-meta"><a href="articles/pussycat-dolls-accor-arena-19-septembre-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">BTS au Stade de France les 17 & 18 juillet 2026</h3></div><div class="news-meta"><a href="articles/bts-stade-de-france-17-18-juillet-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Jul au Stade de France et à l'Orange Vélodrome en mai 2026</h3></div><div class="news-meta"><a href="articles/jul-concerts-stade-de-france-orange-velodrome-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">DJ Snake au Château de Chambord le 28 juin 2026</h3></div><div class="news-meta"><a href="articles/dj-snake-chateau-chambord-28-juin-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">David Guetta au Stade de France le 13 juin 2026</h3></div><div class="news-meta"><a href="articles/david-guetta-stade-de-france-13-juin-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">System Of A Down au Stade de France</h3></div><div class="news-meta"><a href="articles/system-of-a-down-stade-de-france-2-4-juillet-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Bad Bunny débarque à Paris et Marseille</h3></div><div class="news-meta"><a href="articles/bad-bunny-paris-marseille-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Linkin Park à Lyon en 2026</h3></div><div class="news-meta"><a href="articles/linkin-park-lyon-16-juin-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Florent Pagny – La Tournée des 65 Ans en France en 2026</h3></div><div class="news-meta"><a href="articles/florent-pagny-tournee-65-ans-retour-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Festival</div><h3 class="news-title">Hellfest 2026</h3></div><div class="news-meta"><a href="articles/hellfest-2026-clisson-19-21-juin.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Conseils</div><h3 class="news-title">Évitez les arnaques !</h3></div><div class="news-meta"><a href="articles/eviter-arnaques-billetterie-confiance.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Backstreet Boys à la Sphere de Las Vegas</h3></div><div class="news-meta"><a href="articles/backstreet-boys-sphere-las-vegas-2025-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">The Weeknd en France en 2026</h3></div><div class="news-meta"><a href="articles/the-weeknd-france-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Guide Cadeaux</div><h3 class="news-title">Offrir des places pour Noël : le cadeau parfait</h3></div><div class="news-meta"><a href="articles/places-spectacles-cadeau-noel-2024.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Guide Concerts</div><h3 class="news-title">Concerts 2025-2026 : Les tournées les plus attendues</h3></div><div class="news-meta"><a href="articles/concerts-tournees-2025-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Tournée</div><h3 class="news-title">Orelsan en tournée en France en 2026</h3></div><div class="news-meta"><a href="articles/orelsan-tournee-france-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Guide Pratique</div><h3 class="news-title">Comment trouver un billet quand c'est complet ?</h3></div><div class="news-meta"><a href="articles/trouver-billet-evenement-complet.html" class="news-read-more">En savoir plus</a></div></div></div>
+                <div class="news-slide"><div class="news-card"><div class="news-content"><div class="news-source">Concert</div><h3 class="news-title">Rosalía en concert à Paris et Lyon en mars 2026</h3></div><div class="news-meta"><a href="articles/rosalia-concerts-paris-lyon-mars-2026.html" class="news-read-more">En savoir plus</a></div></div></div>
+            </div>
         </div>
     </div>
-</div>
-<!-- Actualité - Pussycat Dolls -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Les Pussycat Dolls à l'Accor Arena le 19 septembre 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/pussycat-dolls-accor-arena-19-septembre-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - BTS -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">BTS au Stade de France les 17 & 18 juillet 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/bts-stade-de-france-17-18-juillet-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Jul -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Jul au Stade de France et à l'Orange Vélodrome en mai 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/jul-concerts-stade-de-france-orange-velodrome-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - DJ Snake -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">DJ Snake au Château de Chambord le 28 juin 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/dj-snake-chateau-chambord-28-juin-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité 12 - David Guetta -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">David Guetta au Stade de France le 13 juin 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/david-guetta-stade-de-france-13-juin-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-                <!-- Actualité - System Of A Down -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">System Of A Down au Stade de France</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/system-of-a-down-stade-de-france-2-4-juillet-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-                <!-- Actualité 3 -->
-                <div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-                        <div class="news-source">Concert</div>
-                        <h3 class="news-title">Bad Bunny débarque à Paris et Marseille</h3>
-                        </div>
-        <div class="news-meta">
-    <a href="articles/bad-bunny-paris-marseille-2026.html" class="news-read-more">En savoir plus</a>
-</div>
-                    </div>
-                </div>
-                <!-- Actualité 4 -->
-                <div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-                        <div class="news-source">Concert</div>
-                        <h3 class="news-title">Linkin Park à Lyon en 2026</h3>
-                        </div>
-        <div class="news-meta">
-    <a href="articles/linkin-park-lyon-16-juin-2026.html" class="news-read-more">En savoir plus</a>
-</div>
-                    </div>
-                </div>
-<!-- Actualité - Florent Pagny -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Florent Pagny – La Tournée des 65 Ans en France en 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/florent-pagny-tournee-65-ans-retour-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-                <!-- Actualité 5 -->
-                <div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-                        <div class="news-source">Festival</div>
-                        <h3 class="news-title">Hellfest 2026</h3>
-                        </div>
-        <div class="news-meta">
-    <a href="articles/hellfest-2026-clisson-19-21-juin.html" class="news-read-more">En savoir plus</a>
-</div>
-                    </div>
-                </div>
-                <!-- Actualité 12 - Article Arnaques -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Conseils</div>
-            <h3 class="news-title">Évitez les arnaques !</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/eviter-arnaques-billetterie-confiance.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-                <!-- Actualité 6 -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-        <div class="news-source">Concert</div>
-        <h3 class="news-title">Backstreet Boys à la Sphere de Las Vegas</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/backstreet-boys-sphere-las-vegas-2025-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité 7 -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-        <div class="news-source">Concert</div>
-        <h3 class="news-title">The Weeknd en France en 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/the-weeknd-france-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Cadeau Noël -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Guide Cadeaux</div>
-            <h3 class="news-title">Offrir des places pour Noël : le cadeau parfait</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/places-spectacles-cadeau-noel-2024.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Guide Concerts 2025-2026 -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Guide Concerts</div>
-            <h3 class="news-title">Concerts 2025-2026 : Les tournées les plus attendues</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/concerts-tournees-2025-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Orelsan -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Tournée</div>
-            <h3 class="news-title">Orelsan en tournée en France en 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/orelsan-tournee-france-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Trouver un billet complet -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Guide Pratique</div>
-            <h3 class="news-title">Comment trouver un billet quand c'est complet ?</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/trouver-billet-evenement-complet.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-<!-- Actualité - Rosalía -->
-<div class="news-slide">
-    <div class="news-card">
-        <div class="news-content">
-            <div class="news-source">Concert</div>
-            <h3 class="news-title">Rosalía en concert à Paris et Lyon en mars 2026</h3>
-        </div>
-        <div class="news-meta">
-            <a href="articles/rosalia-concerts-paris-lyon-mars-2026.html" class="news-read-more">En savoir plus</a>
-        </div>
-    </div>
-</div>
-</div>
-</section>
-
 </section>
 
 <!-- Section Équipe -->
 <section id="equipe" class="team-section">
     <div class="fade-in">
-        <h2 class="section-title">🤝 L'équipe SPOTEVENT</h2>        
+        <h2 class="section-title">🤝 L'équipe SPOTEVENT</h2>
         <div class="team-carousel-container">
             <div class="team-carousel" id="teamCarousel">
-<!-- MH -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/photo-max.jpg" alt="Maxime Houzard">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Maxime Houzard</h3>
-                        <p class="team-role">Fondateur</p>
-                        <p class="team-description">Création de SPOTEVENT en octobre 2023</p>
-                    </div>
-                </div>
-<!-- Membre Guillaume -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Guillaume.png" alt="Guillaume">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Guillaume</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis juillet 2024</p>
-                    </div>
-                </div>
-<!-- Madleen -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Madleen.jpeg" alt="Madleen">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Madleen</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis février 2024</p>
-                    </div>
-                </div>
-<!-- Andréa -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Andrea.png" alt="Andréa">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Andréa</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis décembre 2024</p>
-                    </div>
-                </div>
-<!-- Julie -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/juliestopnicer.jpg" alt="Julie">
+                <div class="team-member"><div class="team-photo"><img src="team/photo-max.jpg" alt="Maxime Houzard"></div><div class="team-info"><h3 class="team-name">Maxime Houzard</h3><p class="team-role">Fondateur</p><p class="team-description">Création de SPOTEVENT en octobre 2023</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Guillaume.png" alt="Guillaume"></div><div class="team-info"><h3 class="team-name">Guillaume</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis juillet 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Madleen.jpeg" alt="Madleen"></div><div class="team-info"><h3 class="team-name">Madleen</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis février 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Andrea.png" alt="Andréa"></div><div class="team-info"><h3 class="team-name">Andréa</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis décembre 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/juliestopnicer.jpg" alt="Julie"></div><div class="team-info"><h3 class="team-name">Julie</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis septembre 2025</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Lea.JPG" alt="Léa"></div><div class="team-info"><h3 class="team-name">Léa</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis avril 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/JF.jpg" alt="Jean-François"></div><div class="team-info"><h3 class="team-name">Jean-François</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis novembre 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Severine.jpg" alt="Séverine"></div><div class="team-info"><h3 class="team-name">Séverine</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis août 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Edouard.jpeg" alt="Edouard"></div><div class="team-info"><h3 class="team-name">Edouard</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis mars 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Klervie.jpeg" alt="Klervie"></div><div class="team-info"><h3 class="team-name">Klervie</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis avril 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Aurane.png" alt="Aurane"></div><div class="team-info"><h3 class="team-name">Aurane</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis novembre 2025</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Agathe.png" alt="Agathe"></div><div class="team-info"><h3 class="team-name">Agathe</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis août 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Anna.jpg" alt="Anna"></div><div class="team-info"><h3 class="team-name">Anna</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis août 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Oriana.jpg" alt="Oriana"></div><div class="team-info"><h3 class="team-name">Oriana</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis février 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Anthonin.jpg" alt="Anthonin"></div><div class="team-info"><h3 class="team-name">Anthonin</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis janvier 2025</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Sandra.jpg" alt="Sandra"></div><div class="team-info"><h3 class="team-name">Sandra</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis mai 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Agnes.jpg" alt="Agnès"></div><div class="team-info"><h3 class="team-name">Agnès</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis octobre 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Marie-Ange.jpg" alt="Marie-Ange"></div><div class="team-info"><h3 class="team-name">Marie-Ange</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis avril 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Sandy.jpg" alt="Sandy"></div><div class="team-info"><h3 class="team-name">Sandy</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis novembre 2024</p></div></div>
+                <div class="team-member"><div class="team-photo"><img src="team/Enzo.png" alt="Enzo" class="enzo-photo"></div><div class="team-info"><h3 class="team-name">Enzo</h3><p class="team-role">Responsable de clientèle</p><p class="team-description">Membre de l'équipe depuis Mars 2026</p></div></div>
+            </div>
+        </div>
     </div>
-    <div class="team-info">
-        <h3 class="team-name">Julie</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis septembre 2025</p>
-    </div>
-</div>
-<!-- Lea -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Lea.JPG" alt="Léa">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Léa</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis avril 2024</p>
-                    </div>
-                </div>
-<!-- JF -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/JF.jpg" alt="Jean-François">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Jean-François</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis novembre 2024</p>
-                    </div>
-                </div>
-<!-- Severine -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Severine.jpg" alt="Séverine">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Séverine</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis août 2024</p>
-                    </div>
-                </div>
-<!-- Edouard -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Edouard.jpeg" alt="Edouard">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Edouard</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis mars 2024</p>
-                    </div>
-                </div>
-<!-- Klervie -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Klervie.jpeg" alt="Klervie">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Klervie</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis avril 2024</p>
-                    </div>
-                </div>
-<!-- Aurane -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Aurane.png" alt="Aurane">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Aurane</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis novembre 2025</p>
-                    </div>
-                </div>
-<!-- Agathe -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Agathe.png" alt="Agathe">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Agathe</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis août 2024</p>
-                    </div>
-                </div>
-<!-- Anna -->
-                <div class="team-member">
-                    <div class="team-photo">
-                        <img src="team/Anna.jpg" alt="Anna">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Anna</h3>
-                        <p class="team-role">Responsable de clientèle</p>
-                        <p class="team-description">Membre de l'équipe depuis aout 2024</p>
-                    </div>
-                </div>
-<!-- Oriana -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Oriana.jpg" alt="Oriana">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Oriana</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis février 2024</p>
-    </div>
-</div>
-<!-- Anthonin -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Anthonin.jpg" alt="Anthonin">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Anthonin</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis janvier 2025</p>
-    </div>
-</div>
-<!-- Sandra -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Sandra.jpg" alt="Sandra">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Sandra</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis mai 2024</p>
-    </div>
-</div>
-<!-- Agnès -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Agnes.jpg" alt="Agnès">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Agnès</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis octobre 2024</p>
-    </div>
-</div>
-<!-- Marie-Ange -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Marie-Ange.jpg" alt="Marie-Ange">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Marie-Ange</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis avril 2024</p>
-    </div>
-</div>
-<!-- Sandy -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Sandy.jpg" alt="Sandy">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Sandy</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis novembre 2024</p>
-    </div>
-</div>
-<!-- Enzo -->
-<div class="team-member">
-    <div class="team-photo">
-        <img src="team/Enzo.png" alt="Enzo" class="enzo-photo">
-    </div>
-    <div class="team-info">
-        <h3 class="team-name">Enzo</h3>
-        <p class="team-role">Responsable de clientèle</p>
-        <p class="team-description">Membre de l'équipe depuis Mars 2026</p>
-    </div>
-</div>
-</div>
 </section>
+
 <!-- Section Réseaux Sociaux -->
 <section id="reseaux" class="social-section">
     <div class="fade-in">
         <h2 class="section-title">📱 Suivez-nous sur nos réseaux sociaux</h2>
         <div class="social-grid">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/spotevent.fr/" class="social-card instagram" target="_blank">
-                <i class="fab fa-instagram social-icon"></i>
-                <h3 class="social-name">Instagram</h3>
-                <p class="social-description">Découvrez nos dernières actualités et venez partager vos expériences !</p>
-            </a>
-            
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/maxime.houzard/" class="social-card facebook" target="_blank">
-                <i class="fab fa-facebook social-icon"></i>
-                <h3 class="social-name">Facebook</h3>
-                <p class="social-description">Rejoignez notre communauté et échangez avec les autres membres du groupe !</p>
-            </a>
-            
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@spotevent.fr" class="social-card tiktok" target="_blank">
-                <i class="fab fa-tiktok social-icon"></i>
-                <h3 class="social-name">TikTok</h3>
-                <p class="social-description">Venez découvrir nos dernières actualités en vidéo !</p>
-            </a>
-            
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/company/101880233/admin/dashboard/" class="social-card linkedin" target="_blank">
-                <i class="fab fa-linkedin social-icon"></i>
-                <h3 class="social-name">LinkedIn</h3>
-                <p class="social-description">Suivez nos partenariats et les personnes qui accèdent à des événements complets grâce à SPOTEVENT !</p>
-            </a>
-            
-            <!-- X (Twitter) -->
-            <a href="https://x.com/maximehouzard" class="social-card twitter" target="_blank">
-                <i class="fab fa-twitter social-icon"></i>
-                <h3 class="social-name">X (Twitter)</h3>
-                <p class="social-description">Restez informés de nos dernières annonces en temps réel !</p>
-            </a>
+            <a href="https://www.instagram.com/spotevent.fr/" class="social-card instagram" target="_blank"><i class="fab fa-instagram social-icon"></i><h3 class="social-name">Instagram</h3><p class="social-description">Découvrez nos dernières actualités et venez partager vos expériences !</p></a>
+            <a href="https://www.facebook.com/maxime.houzard/" class="social-card facebook" target="_blank"><i class="fab fa-facebook social-icon"></i><h3 class="social-name">Facebook</h3><p class="social-description">Rejoignez notre communauté et échangez avec les autres membres du groupe !</p></a>
+            <a href="https://www.tiktok.com/@spotevent.fr" class="social-card tiktok" target="_blank"><i class="fab fa-tiktok social-icon"></i><h3 class="social-name">TikTok</h3><p class="social-description">Venez découvrir nos dernières actualités en vidéo !</p></a>
+            <a href="https://www.linkedin.com/company/101880233/admin/dashboard/" class="social-card linkedin" target="_blank"><i class="fab fa-linkedin social-icon"></i><h3 class="social-name">LinkedIn</h3><p class="social-description">Suivez nos partenariats et les personnes qui accèdent à des événements complets grâce à SPOTEVENT !</p></a>
+            <a href="https://x.com/maximehouzard" class="social-card twitter" target="_blank"><i class="fab fa-twitter social-icon"></i><h3 class="social-name">X (Twitter)</h3><p class="social-description">Restez informés de nos dernières annonces en temps réel !</p></a>
         </div>
     </div>
 </section>
 
-<!-- Section Mot du fondateur avec bouton RDV -->
+<!-- Section Mot du fondateur -->
 <section id="fondateur" class="founder-section">
     <div class="fade-in">
         <div class="founder-container">
-            <!-- Partie visuelle gauche -->
             <div class="founder-visual">
-                <!-- Remplacez "logo-spotevent.png" par le chemin vers votre logo -->
                 <div class="founder-logo">
                     <img src="spotevent-logo-black.png" alt="Logo SPOTEVENT">
                 </div>
-                
-                <!-- Remplacez "photo-fondateur.jpg" par le chemin vers votre photo -->
                 <img src="photo-fondateur.jpg" alt="Maxime Houzard, Fondateur de SPOTEVENT" class="founder-photo">
             </div>
-            
-            <!-- Partie contenu droite -->
             <div class="founder-content">
                 <h2 class="founder-title">Le mot du fondateur</h2>
                 <div class="founder-text">
                     <p>Diplômé d'un Master Marketing et Management européen à l'IDRAC Lyon, j'ai souhaité avoir une première expérience commerciale significative pour parfaire ma formation. J'ai donc intégré le Groupe TRYBA afin d'animer commercialement le réseau de franchisés en accompagnant l'ensemble des commerciaux en clientèle.</p>
-                    
                     <p>Puis, j'ai eu l'opportunité d'intégrer le groupe JCDecaux qui m'a permis de maitriser la relation commerciale BtoB et de commencer à gérer des TPE / PME.</p>
-                    
                     <p>Ces deux expériences m'ont amené à devenir manager en agence média et à prendre la gestion d'un portefeuille de clients nationaux, de piloter les réponses aux appels d'offres et de mettre en œuvre une stratégie de développement commercial.</p>
-                    
                     <p>Depuis Octobre 2023, j'ai créé SPOTEVENT et ainsi permis, jusqu'à aujourd'hui, à plus de 1 000 personnes d'accéder à des évènements complets.</p>
                 </div>
                 <div class="founder-signature">Maxime Houzard</div>
-                
-                <!-- Bouton pour prendre RDV -->
                 <div class="founder-cta">
                     <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="founder-button" target="_blank">
                         Prendre rendez-vous en visio
@@ -2602,7 +1658,7 @@ section {
 
 <script src="tag.js"></script>
 
-   <!-- Bulle de contact flottante -->
+<!-- Bulle de contact flottante -->
 <div class="contact-bubble">
     <button class="contact-toggle" onclick="toggleContactOptions()">
         <i class="fas fa-comments"></i>
@@ -2611,39 +1667,24 @@ section {
         <div class="contact-message">
             <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
         </div>
-        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
-        </a>
-        <a href="tel:+33646558520" class="contact-option">
-            <i class="fas fa-phone"></i>
-            <span>Appeler</span>
-        </a>
-        <a href="sms:+33646558520" class="contact-option">
-            <i class="fas fa-sms"></i>
-            <span>SMS</span>
-        </a>
-        <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-    <span>WhatsApp</span>
-</a>
-<a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank">
-    <i class="fas fa-calendar-alt"></i>
-    <span>Prendre RDV en visio</span>
-</a>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
     </div>
 </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
-            <p>Tous droits réservés</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés</p>
+    </div>
+</footer>
 
-    <script>
-        // Animation au scroll
+<script>
+// Animation au scroll
 function animateOnScroll() {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach(element => {
@@ -2691,15 +1732,11 @@ function openContactBubble() {
     }
 }
 
-// Fermer la bulle
 function closeContactBubble() {
     const el = document.getElementById('contactOptions');
-    if (el) {
-        el.style.display = 'none';
-    }
+    if (el) { el.style.display = 'none'; }
 }
 
-// Toggle pour la bulle ronde
 function toggleContactOptions() {
     const el = document.getElementById('contactOptions');
     if (el) {
@@ -2717,22 +1754,18 @@ document.addEventListener('click', function(event) {
     const contactBubble = document.querySelector('.contact-bubble');
     const ctaButtons = document.querySelectorAll('.cta-button');
     const contactLink = document.querySelector('a[onclick*="toggleContactOptions"]');
-    
+
     if (contactOptions && contactOptions.style.display === 'block') {
-       let clickedOnButton = false;
+        let clickedOnButton = false;
         ctaButtons.forEach(button => {
-            if (button.contains(event.target)) {
-                clickedOnButton = true;
-            }
+            if (button.contains(event.target)) { clickedOnButton = true; }
         });
-        if (event.target.classList.contains('ah-btn')) {
-            clickedOnButton = true;
-        }
-        
+        if (event.target.classList.contains('ah-btn')) { clickedOnButton = true; }
+
         let clickedOnContactLink = contactLink && contactLink.contains(event.target);
-        
-        if (!contactOptions.contains(event.target) && 
-            !clickedOnButton && 
+
+        if (!contactOptions.contains(event.target) &&
+            !clickedOnButton &&
             !clickedOnContactLink &&
             !contactBubble.contains(event.target)) {
             closeContactBubble();
@@ -2755,44 +1788,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const reviewCount = 5;
     let currentIndex = 0;
     let autoSlideInterval = null;
-    
+
     if (indicators && carousel) {
-        // Créer les indicateurs
         for (let i = 0; i < reviewCount; i++) {
             const indicator = document.createElement('div');
             indicator.className = 'carousel-indicator';
             if (i === 0) indicator.classList.add('active');
             indicators.appendChild(indicator);
         }
-        
-        // Fonction pour aller à un avis spécifique
+
         function goToReview(index) {
             currentIndex = index;
-            const translateX = -20 * index; // -20% par avis (100% / 5 avis)
+            const translateX = -20 * index;
             carousel.style.transform = `translateX(${translateX}%)`;
-            
-            // Mettre à jour les indicateurs
             document.querySelectorAll('.carousel-indicator').forEach((ind, i) => {
                 ind.classList.toggle('active', i === index);
             });
         }
-        
-        // Auto-défilement toutes les 5 secondes
+
         function startAutoSlide() {
             autoSlideInterval = setInterval(() => {
                 currentIndex = (currentIndex + 1) % reviewCount;
                 goToReview(currentIndex);
             }, 5000);
         }
-        
+
         function stopAutoSlide() {
             if (autoSlideInterval) {
                 clearInterval(autoSlideInterval);
                 autoSlideInterval = null;
             }
         }
-        
-        // Permettre le clic sur les indicateurs
+
         document.querySelectorAll('.carousel-indicator').forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 stopAutoSlide();
@@ -2800,15 +1827,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 startAutoSlide();
             });
         });
-        
-        // Pause au survol
+
         carousel.addEventListener('mouseenter', stopAutoSlide);
         carousel.addEventListener('mouseleave', startAutoSlide);
-        
-        // Démarrer l'auto-défilement
         startAutoSlide();
     }
 });
-    </script>
+</script>
 </body>
 </html>
