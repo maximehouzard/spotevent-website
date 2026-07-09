@@ -296,7 +296,10 @@ document.addEventListener('click', function(e) {
     const bubble = document.querySelector('.contact-bubble');
     const opts = document.getElementById('contactOptions');
     if (opts && opts.classList.contains('active') && bubble && !bubble.contains(e.target)) {
-        opts.classList.remove('active');
+        const clickedOnCtaButton = e.target.closest('.cta-button');
+        if (!clickedOnCtaButton) {
+            opts.classList.remove('active');
+        }
     }
 });
 </script>
