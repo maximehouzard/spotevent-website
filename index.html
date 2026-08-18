@@ -1210,9 +1210,9 @@
 
 <!-- Hero Section -->
 <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="hero-video.mp4" type="video/mp4">
-    </video>
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="hero-poster.jpg">
+    <source src="hero-video.mp4" type="video/mp4">
+</video>
     <div class="hero-content fade-in">
         <h1>🎟️ Comment accéder à un événement complet ?</h1>
         <p>Nous trouverons une place pour l'événement que vous ne vouliez pas manquer.</p>
@@ -1667,6 +1667,40 @@ var EVENTS = [
 </section>
 
 <script src="tag.js"></script>
+<script>
+// Force le lancement de la vidéo hero si l'autoplay natif échoue
+document.addEventListener('DOMContentLoaded', function() {
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+        heroVideo.muted = true; // sécurité supplémentaire pour Safari/iOS
+
+        const tryPlay = () => {
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Autoplay bloqué : on relance au premier clic/tap de l'utilisateur
+                    const resumePlay = () => {
+                        heroVideo.play();
+                        document.removeEventListener('click', resumePlay);
+                        document.removeEventListener('touchstart', resumePlay);
+                    };
+                    document.addEventListener('click', resumePlay, { once: true });
+                    document.addEventListener('touchstart', resumePlay, { once: true });
+                });
+            }
+        };
+
+        tryPlay();
+
+        // Relance aussi si l'onglet redevient visible (utile sur mobile)
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && heroVideo.paused) {
+                tryPlay();
+            }
+        });
+    }
+});
+</script>
 
 <!-- Bulle de contact flottante -->
 <div class="contact-bubble">
