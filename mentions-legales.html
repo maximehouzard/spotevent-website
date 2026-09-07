@@ -188,4 +188,1061 @@
 </footer>
 
 </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPOTEVENT, conciergerie lyonnaise spécialisée dans la billetterie d'événements complets. + de 1000 clients satisfaits et + de 200 avis sur Google. Concerts, événements sportifs, festivals. Service sécurisé et personnalisé. Confiance et transparence.">
+    <title>SPOTEVENT - Billetterie pour TPE,PME et CSE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 247, 239, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .nav-contact a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-contact a:hover {
+            color: var(--gold);
+        }
+
+        .hero-corporate {
+            min-height: 70vh;
+            background-image: 
+                linear-gradient(rgba(255, 247, 239, 0.75), rgba(245, 230, 211, 0.75)),
+                url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-corporate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 247, 239, 0.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .hero-corporate h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            line-height: 1.2;
+        }
+
+        .hero-corporate p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .benefits-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefit-card {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 280px;
+            max-width: 350px;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            width: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .benefit-text {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .offers-section {
+            padding: 5rem 5%;
+            background-color: var(--beige);
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* NOUVEAU: Toggle Switch */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .toggle-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+            transition: color 0.3s ease;
+        }
+
+        .toggle-label.inactive {
+            color: #999;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 70px;
+            height: 36px;
+            background-color: var(--gold);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .toggle-switch.annual .toggle-slider {
+            transform: translateX(34px);
+        }
+
+        .annual-savings {
+            display: inline-block;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .offers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+        }
+
+        .discount-badge {
+            background: var(--beige);
+            color: var(--black);
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            margin: 1rem auto 1.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-card {
+            flex: 0 1 calc(33.333% - 1.5rem);
+            min-width: 300px;
+            max-width: 380px;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .offer-card.popular {
+            border: 3px solid var(--gold);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .offer-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            text-align: center;
+        }
+
+        .offer-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .offer-features li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            font-size: 1rem;
+        }
+
+        .offer-features i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .offer-price {
+            margin-top: auto;
+        }
+
+        .price-display {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-monthly {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+        .price-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--black);
+            line-height: 1;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .price-details {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .price-ttc {
+            font-size: 0.9rem;
+            color: #999;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .savings-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .price-currency {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .price-annual {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(212, 175, 55, 0.08);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .annual-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .annual-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--black);
+            white-space: nowrap;
+        }
+
+        .price-ttc {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
+        .annual-discount {
+            color: var(--gold);
+            font-weight: 800;
+            margin-left: 0.5rem;
+        }
+
+        .offer-cta-button {
+            display: block;
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05rem;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .offer-cta-button:hover {
+            background-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .vip-section {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .vip-card {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 3px solid var(--gold);
+        }
+
+        .cta-container {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 3rem;
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+        }
+
+        .cta-text {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-bubble {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-toggle:hover {
+            background-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .contact-options {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 1.5rem;
+            min-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-options.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .contact-message {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .contact-message p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            background-color: var(--beige);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background-color: var(--gold);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .contact-option i {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 1200px) {
+            .offer-card {
+                flex: 0 1 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-corporate h1 {
+                font-size: 2rem;
+            }
+
+            .hero-corporate p {
+                font-size: 1.2rem;
+            }
+
+            .offers-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .offer-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .benefit-card {
+                flex: 1 1 100%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .price-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                    <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                </svg>
+                <span class="logo-text">SPOTEVENT</span>
+            </a>
+            <div class="nav-contact">
+                <a href="javascript:void(0)" onclick="toggleContactOptions()">Contactez-nous</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-corporate">
+        <div class="hero-content">
+            <h1>Nos solutions Corporate</h1>
+            <p>Apportez de la valeur, générez de l'engagement et de la reconnaissance !</p>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 class="section-title">Quels avantages pour votre entreprise ?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3 class="benefit-title">Cohésion et fédération des équipes</h3>
+                <p class="benefit-text">Créez des moments de partage qui renforcent durablement les liens entre collaborateurs</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏆</div>
+                <h3 class="benefit-title">Marque employeur renforcée</h3>
+                <p class="benefit-text">Attirez et retenez les meilleurs talents grâce à des avantages qui marquent vraiment</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3 class="benefit-title">Exonération de charges sociales</h3>
+                <p class="benefit-text">Les activités sociales et culturelles pour salariés bénéficient d'exonérations de cotisations</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <h3 class="benefit-title">Déductibilité fiscale</h3>
+                <p class="benefit-text">Les dépenses engagées constituent des charges déductibles du résultat imposable</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3 class="benefit-title">Boost de productivité</h3>
+                <p class="benefit-text">Des collaborateurs plus engagés = meilleure productivité</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3 class="benefit-title">Générateur de business</h3>
+                <p class="benefit-text">Fidélisez vos clients et convertissez des prospects en les invitant aux événements les plus prisés de l'année</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-section">
+        <h2 class="section-title">Quels avantages pour vos collaborateurs ?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎫</div>
+                <h3 class="benefit-title">Accès privilégié aux événements complets</h3>
+                <p class="benefit-text">Concerts, événements sportifs, festivals... même quand les billetteries officielles sont fermées</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎉</div>
+                <h3 class="benefit-title">Moments de partage exceptionnels</h3>
+                <p class="benefit-text">Des expériences uniques à vivre en famille, entre amis ou avec ses collègues</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🙏🏼</div>
+                <h3 class="benefit-title">Très forte reconnaissance</h3>
+                <p class="benefit-text">"Merci pour votre travail grâce à vous nous avons passé un moment magique, hors du temps"</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="offers-section">
+        <h2 class="section-title fade-in">Nos solutions</h2>
+        <p class="section-subtitle fade-in">Des réductions et des accès à des événements complets !</p>
+        
+        <!-- NOUVEAU: Toggle Mensuel/Annuel -->
+        <div class="pricing-toggle fade-in">
+            <span class="toggle-label" id="monthlyLabel">Mensuel</span>
+            <div class="toggle-switch" id="pricingToggle" onclick="togglePricing()">
+                <div class="toggle-slider"></div>
+            </div>
+            <span class="toggle-label inactive" id="annualLabel">
+                Annuel
+                <span class="annual-savings">Économisez 10% !</span>
+            </span>
+        </div>
+        
+        <div class="offers-grid">
+            <!-- Offre Classique -->
+            <div class="offer-card fade-in">
+                <h3 class="offer-title">Classique</h3>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 10% par commande de places</div>
+                <div class="offer-price">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">29</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
+                        <div class="price-ttc">34,80€ TTC/mois</div>
+                    </div>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">316</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
+                        </div>
+                        <div class="price-details">
+                            Soit 26€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">379,20€ TTC/an</div>
+                    </div>
+                </div>
+                <a href="https://buy.stripe.com/bJebJ33t9fxZ9GmcsQasg08" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/7sY7sN7JpdpRaKq9gEasg0g" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
+                    Abonnez-vous dès maintenant
+                </a>
+            </div>
+
+            <!-- Offre Privilège -->
+            <div class="offer-card fade-in" style="animation-delay: 0.1s">
+                <h3 class="offer-title">Privilège</h3>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 15% par commande de places</div>
+                <div class="offer-price">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">49</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
+                        <div class="price-ttc">58,80€ TTC/mois</div>
+                    </div>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">534</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
+                        </div>
+                        <div class="price-details">
+                            Soit 44€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">640,80€ TTC/an</div>
+                    </div>
+                </div>
+                <a href="https://buy.stripe.com/dRmbJ31l10D5bOu78wasg09" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/00w4gB1l11H905MakIasg0h" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
+                    Abonnez-vous dès maintenant
+                </a>
+            </div>
+
+            <!-- Offre Prestige (Populaire) -->
+            <div class="offer-card popular fade-in" style="animation-delay: 0.2s">
+                <span class="popular-badge">Le + populaire !</span>
+                <h3 class="offer-title">Prestige</h3>
+                <div class="discount-badge">Un accès aux événements à guichet fermé<p></p>Une réduction de 20% par commande de places</div>
+                <div class="offer-price">
+                    <!-- Vue Mensuelle -->
+                    <div class="price-display monthly-price">
+                        <div class="price-label">Prix mensuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">79</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/mois</span>
+                        </div>
+                        <div class="price-ttc">94,80€ TTC/mois</div>
+                    </div>
+                    <!-- Vue Annuelle -->
+                    <div class="price-display annual-price" style="display: none;">
+                        <div class="price-label">Prix annuel</div>
+                        <div class="price-amount">
+                            <span class="price-value">861</span>
+                            <span class="price-currency">€</span>
+                            <span class="price-period">HT/an</span>
+                        </div>
+                        <div class="price-details">
+                            Soit 71€ HT/mois <span class="savings-badge">-10%</span>
+                        </div>
+                        <div class="price-ttc">1 033,20€ TTC/an</div>
+                    </div>
+                </div>
+                <a href="https://buy.stripe.com/28EdRb6Fl3Ph5q6gJ6asg0a" target="_blank" class="offer-cta-button monthly-cta">
+                    Abonnez-vous dès maintenant
+                </a>
+                <a href="https://buy.stripe.com/3cI8wR6Fl85x3hY2Sgasg0i" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
+                    Abonnez-vous dès maintenant
+                </a>
+            </div>
+        </div>
+
+        <div class="vip-section fade-in" style="animation-delay: 0.3s">
+    <h2 class="section-title" style="font-size: 2rem;">Offrez à votre équipe et à vos clients<br>des accès à un événement !</h2>
+    <div class="vip-card">
+        <h3 class="offer-title">VIP</h3>
+        <div class="discount-badge">2 places offertes par mois pour un événement de votre choix !</div>
+        <div class="offer-price">
+            <!-- Vue Mensuelle -->
+            <div class="price-display monthly-price">
+                <div class="price-label">Prix mensuel</div>
+                <div class="price-amount">
+                    <span class="price-value">1 689</span>
+                    <span class="price-currency">€</span>
+                    <span class="price-period">HT/mois</span>
+                </div>
+                <div class="price-ttc">2 026,80€ TTC/mois</div>
+            </div>
+            <!-- Vue Annuelle -->
+            <div class="price-display annual-price" style="display: none;">
+                <div class="price-label">Prix annuel</div>
+                <div class="price-amount">
+                    <span class="price-value">18 241,20</span>
+                    <span class="price-currency">€</span>
+                    <span class="price-period">HT/an</span>
+                </div>
+                <div class="price-details">
+                    Soit 1 520,10 HT/mois <span class="savings-badge">-10%</span>
+                </div>
+                <div class="price-ttc">21 889,44€ TTC/an</div>
+            </div>
+        </div>
+        <a href="https://buy.stripe.com/5kQdRb7Jp1H9f0G64sasg0b" target="_blank" class="offer-cta-button monthly-cta">
+            Abonnez-vous dès maintenant
+        </a>
+        <a href="https://buy.stripe.com/8x228t2p53Ph19QcsQasg0j" target="_blank" class="offer-cta-button annual-cta" style="display: none;">
+            Abonnez-vous dès maintenant
+        </a>
+    </div>
+</div>
+        <div class="cta-container fade-in" id="contact">
+            <p class="cta-text">Prêt à offrir des expériences exceptionnelles<br>à vos équipes et vos clients ?</p>
+            <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="cta-button">
+                Prenez RDV en visio !
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div class="contact-bubble">
+        <button class="contact-toggle" onclick="toggleContactOptions()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options" id="contactOptions">
+            <div class="contact-message">
+                <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+            </div>
+            <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="tel:+33646558520" class="contact-option">
+                <i class="fas fa-phone"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="sms:+33646558520" class="contact-option">
+                <i class="fas fa-sms"></i>
+                <span>SMS</span>
+            </a>
+            <a href="https://wa.me/33646558520" class="contact-option" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour basculer entre mensuel et annuel
+        function togglePricing() {
+            const toggle = document.getElementById('pricingToggle');
+            const monthlyLabel = document.getElementById('monthlyLabel');
+            const annualLabel = document.getElementById('annualLabel');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const annualPrices = document.querySelectorAll('.annual-price');
+            const monthlyCtas = document.querySelectorAll('.monthly-cta');
+            const annualCtas = document.querySelectorAll('.annual-cta');
+            
+            toggle.classList.toggle('annual');
+            
+            if (toggle.classList.contains('annual')) {
+                // Mode annuel
+                monthlyLabel.classList.add('inactive');
+                annualLabel.classList.remove('inactive');
+                monthlyPrices.forEach(price => price.style.display = 'none');
+                annualPrices.forEach(price => price.style.display = 'block');
+                monthlyCtas.forEach(cta => cta.style.display = 'none');
+                annualCtas.forEach(cta => cta.style.display = 'inline-block');
+            } else {
+                // Mode mensuel
+                monthlyLabel.classList.remove('inactive');
+                annualLabel.classList.add('inactive');
+                monthlyPrices.forEach(price => price.style.display = 'block');
+                annualPrices.forEach(price => price.style.display = 'none');
+                monthlyCtas.forEach(cta => cta.style.display = 'inline-block');
+                annualCtas.forEach(cta => cta.style.display = 'none');
+            }
+        }
+
+        function toggleContactOptions() {
+            const contactOptions = document.getElementById('contactOptions');
+            contactOptions.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const contactOptions = document.getElementById('contactOptions');
+            const contactBubble = document.querySelector('.contact-bubble');
+            const navContact = document.querySelector('.nav-contact');
+            const ctaButtons = document.querySelectorAll('.offer-cta-button, .cta-button');
+            
+            if (contactOptions && contactOptions.classList.contains('active')) {
+                let clickedOnButton = false;
+                ctaButtons.forEach(button => {
+                    if (button.contains(event.target)) {
+                        clickedOnButton = true;
+                    }
+                });
+                
+                if (!contactOptions.contains(event.target) && 
+                    !contactBubble.contains(event.target) &&
+                    !navContact.contains(event.target) &&
+                    !clickedOnButton) {
+                    contactOptions.classList.remove('active');
+                }
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+<script src="../tag.js"></script>
+</html>
 </html>
