@@ -3,489 +3,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comment trouver un billet quand c'est complet ? - SPOTEVENT</title>
+    <title>Concert, match ou festival complet : comment obtenir des billets même à guichet fermé | SPOTEVENT</title>
+    <meta name="description" content="Événement affiché complet ? Découvrez comment accéder à des billets sécurisés pour concerts, matchs et festivals à guichet fermé grâce à SPOTEVENT.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --beige: #fff7ef;
             --white: #FFFFFF;
             --black: #000000;
+            --light-beige: #fff7ef;
             --gold: #D4AF37;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.8;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
             color: var(--black);
-            background-color: var(--beige);
+            background-color: #fff7ef;
+            width: 100%;
         }
 
+        /* Header */
         header {
-            background-color: var(--black);
-            padding: 2rem 5%;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
-        .logo-link {
-            text-decoration: none;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
         }
 
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gold);
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
+        .logo { text-decoration: none; color: var(--black); display: flex; align-items: center; gap: 0.6rem; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08rem; text-transform: uppercase; color: var(--black); }
+
+        .nav-center { display: flex; list-style: none; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; margin: 0 2rem; }
+        .nav-center a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-center a:hover { color: var(--gold); }
+
+        .nav-contact { display: flex; align-items: center; padding-bottom: 0.3rem; }
+        .nav-contact a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-contact a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle { display: none; }
+
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
         }
 
-        .article-container {
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background-color: var(--black); transition: all 0.3s ease; }
+            .nav-center {
+                position: fixed; top: 70px; left: -100%; width: 280px; max-width: 80%;
+                height: auto; max-height: calc(100vh - 70px); background-color: var(--white);
+                flex-direction: column; justify-content: flex-start; padding: 2rem; gap: 2rem;
+                transition: left 0.3s ease; overflow-y: auto; border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-center a { font-size: 1.2rem; }
+            .nav-contact { display: none; }
+        }
+
+        /* Article hero */
+        .article-hero {
+            padding: 10rem 5% 3rem;
             max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 5%;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--black);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 2rem;
+        .article-breadcrumb {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
         }
 
-        .back-button:hover {
-            background-color: var(--gold);
-            transform: translateX(-5px);
-        }
-
-        .article-header {
-            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
-            padding: 3rem;
-            border-radius: 20px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
+        .article-breadcrumb a { color: #999; text-decoration: none; }
+        .article-breadcrumb a:hover { color: var(--gold); }
 
         .article-category {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: var(--gold);
-            color: var(--white);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--black);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .article-meta {
-            display: flex;
-            gap: 2rem;
-            color: #666;
-            font-size: 0.95rem;
-            margin-top: 1.5rem;
-        }
-
-        .article-meta i {
+            background-color: var(--black);
             color: var(--gold);
-            margin-right: 0.5rem;
-        }
-
-        .article-content {
-            background-color: var(--white);
-            padding: 3rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
         }
 
-        .article-content h2 {
-            font-size: 1.8rem;
+        .article-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Article body */
+        .article-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 5% 5rem;
+        }
+
+        .article-body h2 {
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--black);
-            margin: 2.5rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--gold);
+            margin: 3rem 0 1.2rem;
+            padding-top: 0.5rem;
+            border-top: 3px solid var(--gold);
+            padding-top: 1rem;
         }
 
-        .article-content h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--black);
-            margin: 2rem 0 1rem;
+        .article-body h2:first-child { margin-top: 0; }
+
+        .article-body p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #333;
+            margin-bottom: 1.2rem;
         }
 
-        .article-content p {
-            margin-bottom: 1.5rem;
-            text-align: justify;
+        .article-body ul {
+            margin: 0 0 1.2rem 1.3rem;
         }
 
-        .article-content ul, .article-content ol {
-            margin: 1.5rem 0;
-            padding-left: 2rem;
+        .article-body ul li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 0.6rem;
         }
 
-        .article-content li {
-            margin-bottom: 1rem;
+        .article-body ol {
+            margin: 0 0 1.2rem 1.3rem;
         }
+
+        .article-body ol li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-body strong { color: var(--black); }
 
         .highlight-box {
-            background: linear-gradient(135deg, #fffbf5 0%, #fff7ef 100%);
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
             border-left: 4px solid var(--gold);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         }
 
-        .warning-box {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
-            border-left: 4px solid #dc3545;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(220, 53, 69, 0.1);
-        }
+        .highlight-box p:last-child { margin-bottom: 0; }
 
-        .warning-box h3 {
-            color: #dc3545;
-            margin-top: 0;
-        }
-
-        .tip-box {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
-            border-left: 4px solid #0066cc;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 102, 204, 0.1);
-        }
-
-        .tip-box h3 {
-            color: #0066cc;
-            margin-top: 0;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, var(--black) 0%, #333 100%);
-            color: var(--white);
+        /* CTA final */
+        .article-cta {
+            max-width: 760px;
+            margin: 3rem auto 0;
             padding: 2.5rem;
+            background-color: var(--black);
             border-radius: 20px;
             text-align: center;
-            margin: 3rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
-        .cta-box h3 {
-            color: var(--gold);
-            margin-bottom: 1rem;
+        .article-cta h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .article-cta p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
             background-color: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-
-        .cta-button:hover {
-            background-color: var(--white);
             color: var(--black);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, var(--gold) 0%, #c49a2e 100%);
-            color: var(--white);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        footer {
-            background-color: var(--black);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 5rem;
-        }
+        .cta-button:hover { background-color: var(--white); transform: translateY(-3px); }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .article-header, .article-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .article-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .article-hero { padding: 8rem 6% 2rem; }
+            .article-hero h1 { font-size: 1.9rem; }
+            .article-body h2 { font-size: 1.35rem; }
         }
+
+        /* Contact bubble */
+        .contact-bubble { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+
+        .contact-toggle {
+            width: 70px; height: 70px; border-radius: 50%; background: #000000; color: var(--white);
+            border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover { transform: scale(1.1); background: #333333; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .contact-options {
+            position: absolute; bottom: 80px; right: 0; background-color: var(--white); border-radius: 15px;
+            padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; min-width: 280px;
+        }
+
+        .contact-options.active { display: block; }
+
+        .contact-message { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; text-align: left; }
+        .contact-message p { margin: 0; color: var(--black); font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+        .contact-option {
+            display: flex; align-items: center; padding: 0.8rem; text-decoration: none; color: var(--black);
+            border-radius: 8px; margin-bottom: 0.5rem; transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover { background-color: var(--light-beige); }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        /* Footer */
+        footer { background-color: var(--black); color: var(--white); text-align: center; padding: 3rem 5%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-content p { color: var(--white); }
+
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <header>
-        <a href="../index.html" class="logo-link">
-            <div class="logo">SPOTEVENT</div>
+
+<header>
+    <nav>
+        <a href="../index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
         </a>
-    </header>
 
-    <div class="article-container">
-        <a href="../index.html#offres" class="back-button">
-            <i class="fas fa-arrow-left"></i>
-            Retour aux actualités
-        </a>
+        <ul class="nav-center" id="navCenter">
+            <li><a href="../index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="../index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="../index.html#agenda">Les actualités</a></li>
+            <li><a href="../corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="../ambassadeur.html">Devenir Ambassadeur</a></li>
+        </ul>
 
-        <article>
-            <div class="article-header">
-                <span class="article-category">Guide Pratique</span>
-                <h1>Comment trouver un billet pour un artiste ou un événement lorsque c'est complet ?</h1>
-                <div class="article-meta">
-                    <span><i class="fas fa-calendar"></i>Octobre 2025</span>
-                    <span><i class="fas fa-clock"></i>7 min de lecture</span>
-                    <span><i class="fas fa-user"></i>SPOTEVENT</span>
-                </div>
-            </div>
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
 
-            <div class="article-content">
-                <p><strong>Vous rêvez d'assister au concert de votre artiste préféré, au match de football tant attendu ou au festival de l'été, mais la mention "COMPLET" ou "SOLD OUT" s'affiche partout ? Ne désespérez pas !</strong> Il existe plusieurs solutions légales et sécurisées pour obtenir des billets même lorsqu'un événement affiche complet.</p>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Clients satisfaits</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">222</div>
-                        <div class="stat-label">Avis Google 4.9★</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Légal & Sécurisé</div>
-                    </div>
-                </div>
-
-                <h2>🎭 Pourquoi les événements affichent-ils complet si rapidement ?</h2>
-                
-                <p>Plusieurs facteurs expliquent la pénurie de billets pour les événements populaires :</p>
-                
-                <ul>
-                    <li><strong>La demande exponentielle :</strong> Avec l'explosion des réseaux sociaux et du streaming, certains artistes génèrent une demande qui dépasse largement la capacité des salles et stades.</li>
-                    <li><strong>Les préventes multiples :</strong> Les billets sont souvent vendus en avant-première aux membres de fan-clubs, détenteurs de cartes bancaires spécifiques, ou clients de partenaires privilégiés.</li>
-                    <li><strong>Les achats massifs :</strong> Dès l'ouverture des ventes, des milliers de personnes se connectent simultanément, saturant les systèmes de billetterie.</li>
-                    <li><strong>La revente organisée :</strong> Certains professionnels achètent des billets en grande quantité pour les revendre sur le marché secondaire.</li>
-                </ul>
-
-                <h2>✅ Les solutions légales pour obtenir des billets</h2>
-
-                <h3>1. Les plateformes de revente officielles</h3>
-                
-                <p>De nombreux événements proposent des plateformes de revente officielles où les détenteurs de billets peuvent remettre en vente leurs places au prix initial ou à un prix plafonné. Ces plateformes sont 100% légales et sécurisées :</p>
-                
-                <ul>
-                    <li>Ticketswap (France, Belgique, Pays-Bas)</li>
-                    <li>Zepass (marché français)</li>
-                    <li>Les reventes officielles des billetteries (Fnac Spectacles, Ticketmaster, etc.)</li>
-                </ul>
-
-                <div class="tip-box">
-                    <h3>💡 Conseil SPOTEVENT</h3>
-                    <p>Consultez régulièrement ces plateformes, surtout dans les semaines précédant l'événement. De nombreuses personnes remettent leurs billets en vente à cause d'imprévus ou de changements de programme.</p>
-                </div>
-
-                <h3>2. Les listes d'attente officielles</h3>
-                
-                <p>Certains organisateurs proposent des listes d'attente qui vous alertent automatiquement lorsque des billets se libèrent. Inscrivez-vous systématiquement sur ces listes dès que vous constatez qu'un événement est complet.</p>
-
-                <h3>3. Les packages VIP et expériences premium</h3>
-                
-                <p>Lorsque les billets standards sont épuisés, il reste parfois des places disponibles dans les catégories premium :</p>
-                
-                <ul>
-                    <li>Packages VIP avec accès privilégiés</li>
-                    <li>Loges et espaces privatifs</li>
-                    <li>Expériences "meet & greet" avec l'artiste</li>
-                    <li>Packages hospitalité pour les événements sportifs</li>
-                </ul>
-
-                <h3>4. La conciergerie événementielle professionnelle</h3>
-                
-                <p>C'est ici que SPOTEVENT intervient. En tant que conciergerie spécialisée en billetterie événementielle, nous avons développé un réseau étendu et des méthodes efficaces pour accéder à des billets même lorsqu'un événement affiche complet.</p>
-
-                <div class="highlight-box">
-                    <h3>🎯 Comment SPOTEVENT vous aide à obtenir vos billets</h3>
-                    <p><strong>Notre expertise :</strong> Depuis octobre 2023, nous avons permis à plus de 1 000 personnes d'accéder à des événements complets. Notre équipe de 18 professionnels met en œuvre plusieurs stratégies :</p>
-                    <ul>
-                        <li>Recherche sur l'ensemble des plateformes officielles et secondaires légales</li>
-                        <li>Veille permanente des nouvelles mises en vente</li>
-                        <li>Accès à des réseaux professionnels de billetterie</li>
-                        <li>Négociation avec les organisateurs et détenteurs de places</li>
-                        <li>Accompagnement personnalisé de A à Z</li>
-                    </ul>
-                </div>
-
-                <h2>⚠️ Les pièges à éviter absolument</h2>
-
-                <div class="warning-box">
-                    <h3>❌ Attention aux arnaques !</h3>
-                    <p>Le marché de la billetterie attire malheureusement de nombreux escrocs. Voici les pratiques à éviter :</p>
-                    <ul>
-                        <li><strong>Les faux billets :</strong> Des vendeurs peu scrupuleux proposent des billets contrefaits ou déjà utilisés.</li>
-                        <li><strong>Les sites frauduleux :</strong> Des plateformes imitant les sites officiels collectent vos données bancaires sans jamais livrer de billets.</li>
-                        <li><strong>Les prix exorbitants :</strong> Certains revendeurs pratiquent des tarifs 5 à 10 fois supérieurs au prix initial.</li>
-                        <li><strong>Les ventes sans garantie :</strong> Des particuliers vendent sur des forums ou réseaux sociaux sans aucune protection de l'acheteur.</li>
-                        <li><strong>Les billets nominatifs revendus :</strong> Pour certains événements, les billets sont strictement nominatifs et non transférables.</li>
-                    </ul>
-                </div>
-
-                <h2>🔒 La sécurité avant tout</h2>
-
-                <p>Lorsque vous recherchez des billets pour un événement complet, la sécurité doit être votre priorité absolue. Voici nos recommandations :</p>
-
-                <ul>
-                    <li><strong>Privilégiez toujours les canaux officiels</strong> ou des intermédiaires reconnus et légaux</li>
-                    <li><strong>Vérifiez la réputation</strong> du vendeur ou de la plateforme (avis clients, historique, présence légale)</li>
-                    <li><strong>Exigez des garanties</strong> sur l'authenticité des billets et des conditions de remboursement claires</li>
-                    <li><strong>Payez par des moyens sécurisés</strong> qui offrent une protection en cas de litige</li>
-                    <li><strong>Obtenez une confirmation écrite</strong> de votre achat avec tous les détails de la transaction</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <h3>✨ L'avantage SPOTEVENT</h3>
-                    <p>Avec SPOTEVENT, vous bénéficiez de :</p>
-                    <ul>
-                        <li>✅ Un cadre 100% légal et éthique</li>
-                        <li>✅ Des billets authentiques garantis</li>
-                        <li>✅ Une transparence totale sur les prix et les frais</li>
-                        <li>✅ Un accompagnement personnalisé par notre équipe d'experts</li>
-                        <li>✅ Plus de 222 avis Google avec une note de 4.9/5 ⭐</li>
-                        <li>✅ Un devis gratuit sans engagement</li>
-                    </ul>
-                </div>
-
-                <h2>📋 Le processus étape par étape</h2>
-
-                <p>Voici comment obtenir vos billets pour un événement complet avec SPOTEVENT :</p>
-
-                <ol>
-                    <li><strong>Contactez-nous :</strong> Par email, téléphone, SMS ou WhatsApp, partagez-nous les détails de l'événement qui vous intéresse.</li>
-                    <li><strong>Demande de devis gratuit :</strong> Nous analysons votre demande et vous proposons un devis détaillé sans aucun engagement.</li>
-                    <li><strong>Recherche active :</strong> Une fois votre accord donné, notre équipe se met immédiatement en action pour trouver vos billets.</li>
-                    <li><strong>Proposition et validation :</strong> Nous vous présentons les options disponibles avec tous les détails (emplacement, catégorie, prix).</li>
-                    <li><strong>Sécurisation de votre commande :</strong> Nous procédons à l'achat sécurisé de vos billets.</li>
-                    <li><strong>Livraison :</strong> Vous recevez vos billets authentiques dans les meilleurs délais.</li>
-                    <li><strong>Assistance continue :</strong> Notre équipe reste à votre disposition jusqu'au jour J pour répondre à toutes vos questions.</li>
-                </ol>
-
-                <h2>🎪 Les événements pour lesquels nous intervenons</h2>
-
-                <p>SPOTEVENT peut vous aider à obtenir des billets pour une grande variété d'événements :</p>
-
-                <ul>
-                    <li><strong>Concerts :</strong> Pop, rock, rap, électro, classique, jazz... tous les genres musicaux</li>
-                    <li><strong>Événements sportifs :</strong> Football, rugby, tennis, NBA, Formule 1, etc.</li>
-                    <li><strong>Festivals :</strong> Hellfest, Lollapalooza, Tomorrowland, Coachella, etc.</li>
-                    <li><strong>Spectacles :</strong> Comédies musicales, one-man shows, théâtre</li>
-                    <li><strong>Événements exceptionnels :</strong> Finales, galas, cérémonies de remise de prix</li>
-                </ul>
-
-                <div class="tip-box">
-                    <h3>⏰ Quand nous contacter ?</h3>
-                    <p>Plus vous nous contactez tôt, plus nous avons de chances de trouver les billets idéaux à un prix raisonnable. N'hésitez pas à nous solliciter dès que vous constatez qu'un événement affiche complet, même plusieurs mois à l'avance !</p>
-                </div>
-
-                <h2>💬 Ce que disent nos clients</h2>
-
-                <p>Avec plus de 222 avis Google et une note de 4.9/5 ⭐, nos clients témoignent de la qualité de notre service :</p>
-
-                <div class="highlight-box">
-                    <p><em>"Service exceptionnel ! J'ai pu obtenir des places pour un concert sold out en moins de 24h. L'équipe est professionnelle et à l'écoute."</em> - Marie L.</p>
-                </div>
-
-                <div class="highlight-box">
-                    <p><em>"Grâce à SPOTEVENT, j'ai pu assister au match de mes rêves ! Processus transparent et sécurisé. Je recommande vivement."</em> - Thomas M.</p>
-                </div>
-
-                <h2>🌟 Conclusion : Ne renoncez pas à vos rêves !</h2>
-
-                <p>Un événement affiché complet ne signifie pas que vous devez renoncer à y assister. Avec les bonnes stratégies et l'accompagnement d'experts comme SPOTEVENT, vous pouvez transformer votre déception en réalité.</p>
-
-                <p>Notre mission est de rendre accessible à tous ce qui semblait réservé à une clientèle privilégiée. Que vous souhaitiez vivre un moment inoubliable lors d'un concert mythique, encourager votre équipe favorite lors d'un match décisif, ou vibrer au rythme d'un festival légendaire, nous mettons tout en œuvre pour que votre rêve devienne réalité.</p>
-
-                <p><strong>Toute demande de devis est gratuite et sans engagement. Alors, pourquoi attendre ?</strong></p>
-
-                <div class="cta-box">
-                    <h3>🎟️ Prêt à obtenir vos billets ?</h3>
-                    <p>Contactez SPOTEVENT dès maintenant et confiez-nous votre recherche de billets !</p>
-                    <a href="mailto:maxime.houzard@spotevent.fr" class="cta-button">Demander un devis gratuit</a>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem;">
-                        📧 Email : maxime.houzard@spotevent.fr<br>
-                        📱 Téléphone / SMS / WhatsApp : +33 6 46 55 85 20
-                    </p>
-                </div>
-            </div>
-        </article>
+<!-- Article -->
+<article>
+    <div class="article-hero">
+        <div class="article-breadcrumb">
+            <a href="../index.html">Accueil</a> &nbsp;/&nbsp; <a href="../index.html#offres">Actualités</a> &nbsp;/&nbsp; Conseils
+        </div>
+        <span class="article-category">Conseils</span>
+        <h1>Concert, match ou festival complet : comment obtenir des billets même à guichet fermé</h1>
+        <p class="article-intro">Vous venez de vous connecter sur la billetterie officielle et le couperet est tombé : "Complet". Bonne nouvelle : cela ne signifie pas toujours "impossible". Il existe des solutions sécurisées pour transformer cette déception en soirée inoubliable.</p>
     </div>
 
-    <footer>
+    <div class="article-body">
+        <h2>Pourquoi un événement affiche "complet" alors que la demande existe encore</h2>
+        <p>Quand un artiste ou une équipe rencontre un grand succès, la billetterie s'écoule parfois en quelques minutes. Pourtant, la demande réelle continue bien au-delà de ce sold-out officiel. Plusieurs raisons expliquent ce décalage :</p>
+        <ul>
+            <li><strong>Les mises en vente ultra-courtes</strong> : certains guichets s'épuisent avant même que le grand public n'ait eu le temps de se connecter.</li>
+            <li><strong>Les places retenues en amont</strong> : partenaires, sponsors, presse ou VIP mobilisent une partie du stock avant l'ouverture publique.</li>
+            <li><strong>Les décisions de dernière minute</strong> : beaucoup de personnes se décident après l'annonce du "complet", une fois l'événement médiatisé.</li>
+        </ul>
+        <p>Résultat : une demande qui reste forte, et un marché parallèle qui se développe... avec ses risques.</p>
+
+        <h2>Les solutions classiques et leurs limites</h2>
+        <p>Face à un événement complet, les réflexes habituels comportent tous des zones de risque :</p>
+        <ul>
+            <li><strong>Les groupes de revente sur les réseaux sociaux</strong> : aucune garantie sur l'authenticité du billet, ni sur le sérieux du vendeur.</li>
+            <li><strong>Les plateformes de petites annonces généralistes</strong> : le paiement se fait souvent sans protection, avec un risque réel d'arnaque ou de billet déjà scanné.</li>
+            <li><strong>Les sites de reventes non régulés</strong> : prix parfois multipliés par trois ou quatre, sans transparence sur la provenance du billet.</li>
+        </ul>
+        <p>Dans tous les cas, le risque est le même : payer pour un billet et se retrouver bloqué à l'entrée le jour J.</p>
+
+        <h2>Comment fonctionne une conciergerie événementielle sécurisée</h2>
+        <p>C'est précisément pour répondre à cette problématique qu'existe une conciergerie spécialisée comme SPOTEVENT. Le principe est simple :</p>
+        <ol>
+            <li><strong>Vous formulez votre demande</strong> : l'événement souhaité, le nombre de places, vos éventuelles contraintes (catégorie, date, budget).</li>
+            <li><strong>Un devis gratuit vous est transmis</strong>, sans engagement, avec le détail de l'offre disponible.</li>
+            <li><strong>L'acquisition est réalisée dans un cadre sécurisé</strong>, avec des garanties sur l'authenticité et la traçabilité du billet.</li>
+            <li><strong>Vous recevez vos billets</strong> en toute tranquillité, avant l'événement.</li>
+        </ol>
+        <p>Cette approche permet d'accéder à des événements affichés complets, sans naviguer dans l'incertitude d'un marché parallèle non contrôlé.</p>
+
+        <div class="highlight-box">
+            <p><strong>À vérifier avant tout paiement :</strong> l'authenticité du billet, la politique de remboursement en cas d'annulation, la sécurité des transactions, et la transparence sur les délais de livraison des billets. Un service sérieux répond clairement à ces quatre questions.</p>
+        </div>
+
+        <h2>Des solutions pour tous les types d'événements</h2>
+        <p>Cette problématique du "complet" ne concerne pas uniquement la musique. Elle touche tout autant :</p>
+        <ul>
+            <li><strong>Les concerts et tournées</strong> des artistes les plus demandés, où les guichets ferment en quelques minutes.</li>
+            <li><strong>Les grands rendez-vous sportifs</strong> (finales, derbys, compétitions internationales), où la demande dépasse largement l'offre.</li>
+            <li><strong>Les festivals prisés</strong>, dont les pass s'épuisent parfois avant l'annonce complète de la programmation.</li>
+        </ul>
+        <p>Dans chacun de ces cas, une conciergerie événementielle permet d'explorer des solutions que la billetterie classique ne propose plus.</p>
+
+        <h2>Un service désormais accessible à tous</h2>
+        <p>Longtemps réservé à une clientèle privilégiée, ce type d'accompagnement s'ouvre aujourd'hui à un public plus large. Que vous soyez un particulier souhaitant vivre un moment unique, ou une <a href="../corporate.html" style="color:var(--black); font-weight:600;">entreprise</a> désireuse d'offrir une expérience marquante à ses collaborateurs ou clients, l'accès à des événements à guichet fermé devient une option concrète et sécurisée.</p>
+
+        <div class="article-cta">
+            <h3>Un événement complet vous fait de l'œil ?</h3>
+            <p>Faites une demande de devis gratuite et sans engagement.</p>
+            <a href="javascript:void(0)" class="cta-button" onclick="toggleContactOptions()">Demander un devis gratuit</a>
+        </div>
+    </div>
+</article>
+
+<!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
         <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
-        <p>Tous droits réservés</p>
-    </footer>
+        <p>Tous droits réservés — <a href="../mentions-legales.html" style="color: var(--gold); text-decoration: underline;">Mentions légales</a></p>
+    </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('navCenter').classList.toggle('active');
+}
+
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const contactOptions = document.getElementById('contactOptions');
+    const contactBubble = document.querySelector('.contact-bubble');
+    if (contactOptions && contactOptions.style.display === 'block') {
+        if (!contactBubble.contains(event.target)) {
+            contactOptions.style.display = 'none';
+        }
+    }
+});
+</script>
+
 </body>
-    <script src="../tag.js"></script>
+<script src="../tag.js"></script>
 </html>
