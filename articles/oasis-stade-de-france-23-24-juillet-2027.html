@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis au Stade de France les 23 et 24 juillet 2027 : billetterie et places | SPOTEVENT</title>
+    <meta name="description" content="Oasis en concert au Stade de France les 23 et 24 juillet 2027. Inscription, tirage au sort, prix des billets : toutes les infos, et comment obtenir vos places si c'est complet.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo { text-decoration: none; color: var(--black); display: flex; align-items: center; gap: 0.6rem; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08rem; text-transform: uppercase; color: var(--black); }
+
+        .nav-center { display: flex; list-style: none; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; margin: 0 2rem; }
+        .nav-center a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-center a:hover { color: var(--gold); }
+
+        .nav-contact { display: flex; align-items: center; padding-bottom: 0.3rem; }
+        .nav-contact a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-contact a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle { display: none; }
+
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background-color: var(--black); transition: all 0.3s ease; }
+            .nav-center {
+                position: fixed; top: 70px; left: -100%; width: 280px; max-width: 80%;
+                height: auto; max-height: calc(100vh - 70px); background-color: var(--white);
+                flex-direction: column; justify-content: flex-start; padding: 2rem; gap: 2rem;
+                transition: left 0.3s ease; overflow-y: auto; border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-center a { font-size: 1.2rem; }
+            .nav-contact { display: none; }
+        }
+
+        .article-hero {
+            padding: 10rem 5% 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .article-breadcrumb { font-size: 0.85rem; color: #999; margin-bottom: 1.5rem; }
+        .article-breadcrumb a { color: #999; text-decoration: none; }
+        .article-breadcrumb a:hover { color: var(--gold); }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro { font-size: 1.15rem; color: #555; line-height: 1.7; }
+
+        .info-card { max-width: 760px; margin: 0 auto 2rem; padding: 0 5%; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 1.8rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .info-item { text-align: center; }
+        .info-item i { font-size: 1.4rem; color: var(--gold); margin-bottom: 0.5rem; display: block; }
+        .info-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; font-weight: 700; margin-bottom: 0.3rem; }
+        .info-value { font-size: 0.95rem; font-weight: 700; color: var(--black); }
+
+        .article-body { max-width: 760px; margin: 0 auto; padding: 0 5% 5rem; }
+
+        .article-body h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 3rem 0 1.2rem;
+            border-top: 3px solid var(--gold);
+            padding-top: 1rem;
+        }
+
+        .article-body h2:first-child { margin-top: 0; }
+
+        .article-body p { font-size: 1.05rem; line-height: 1.85; color: #333; margin-bottom: 1.2rem; }
+        .article-body ul { margin: 0 0 1.2rem 1.3rem; }
+        .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 0.6rem; }
+        .article-body ol { margin: 0 0 1.2rem 1.3rem; }
+        .article-body ol li { font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 0.8rem; }
+        .article-body strong { color: var(--black); }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        .article-cta {
+            max-width: 760px;
+            margin: 3rem auto 0;
+            padding: 2.5rem;
+            background-color: var(--black);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .article-cta h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .article-cta p { color: #ccc; font-size: 1rem; margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover { background-color: var(--white); transform: translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .article-hero { padding: 8rem 6% 2rem; }
+            .article-hero h1 { font-size: 1.9rem; }
+            .article-body h2 { font-size: 1.35rem; }
+        }
+
+        .contact-bubble { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+
+        .contact-toggle {
+            width: 70px; height: 70px; border-radius: 50%; background: #000000; color: var(--white);
+            border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover { transform: scale(1.1); background: #333333; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .contact-options {
+            position: absolute; bottom: 80px; right: 0; background-color: var(--white); border-radius: 15px;
+            padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; min-width: 280px;
+        }
+
+        .contact-options.active { display: block; }
+
+        .contact-message { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; text-align: left; }
+        .contact-message p { margin: 0; color: var(--black); font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+        .contact-option {
+            display: flex; align-items: center; padding: 0.8rem; text-decoration: none; color: var(--black);
+            border-radius: 8px; margin-bottom: 0.5rem; transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover { background-color: var(--light-beige); }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        footer { background-color: var(--black); color: var(--white); text-align: center; padding: 3rem 5%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-content p { color: var(--white); }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="../index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
+        </a>
+
+        <ul class="nav-center" id="navCenter">
+            <li><a href="../index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="../index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="../index.html#agenda">Les actualités</a></li>
+            <li><a href="../corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="../ambassadeur.html">Devenir Ambassadeur</a></li>
+        </ul>
+
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Article -->
+<article>
+    <div class="article-hero">
+        <div class="article-breadcrumb">
+            <a href="../index.html">Accueil</a> &nbsp;/&nbsp; <a href="../index.html#offres">Actualités</a> &nbsp;/&nbsp; Concert
+        </div>
+        <span class="article-category">Concert</span>
+        <h1>Oasis au Stade de France les 23 et 24 juillet 2027 : billetterie, inscription et comment obtenir vos places</h1>
+        <p class="article-intro">Dix-huit ans après leur séparation, Liam et Noel Gallagher se reforment sur scène pour deux concerts événement au Stade de France. Inscription obligatoire, tirage au sort, billetterie saturée : voici tout ce qu'il faut savoir pour assister à ce retour historique.</p>
+    </div>
+
+    <div class="info-card">
+        <div class="info-grid">
+            <div class="info-item"><i class="fas fa-calendar-day"></i><div class="info-label">Dates</div><div class="info-value">23 & 24 juillet 2027</div></div>
+            <div class="info-item"><i class="fas fa-map-marker-alt"></i><div class="info-label">Lieu</div><div class="info-value">Stade de France</div></div>
+            <div class="info-item"><i class="fas fa-euro-sign"></i><div class="info-label">Tarifs</div><div class="info-value">De 84 € à 249 €</div></div>
+            <div class="info-item"><i class="fas fa-users"></i><div class="info-label">Capacité</div><div class="info-value">~80 000 places</div></div>
+        </div>
+    </div>
+
+    <div class="article-body">
+        <h2>Le grand retour d'Oasis à Paris</h2>
+        <p>C'est l'un des retours les plus attendus de la décennie musicale. Oasis, le groupe culte de Manchester, jouera deux concerts au Stade de France les vendredi 23 et samedi 24 juillet 2027, dans le cadre de sa tournée mondiale "Oasis Live '27". Cette étape parisienne marque le grand retour du groupe dans la capitale, dix-huit ans après son dernier concert à Bercy en mars 2009, quelques mois avant la séparation des frères Gallagher à Rock en Seine.</p>
+        <p>Paris est pour l'instant l'unique date française de cette tournée européenne de 38 concerts, qui passera également par Glasgow, Manchester, Barcelone, Amsterdam et Rome. Autant dire que la demande pour ces deux soirées au Stade de France s'annonce colossale.</p>
+
+        <h2>Est-ce que les gens se sont inscrits pour accéder à la billetterie ?</h2>
+        <p>Oui, massivement. Contrairement à une mise en vente classique, Oasis a fait le choix d'un système d'inscription obligatoire suivi d'un tirage au sort, présenté par le groupe comme la seule voie publique pour espérer acheter un billet. Les fans devaient s'inscrire sur la plateforme officielle avant le jeudi 17 septembre 2026 à 17h, en renseignant un email, un nom, une date de naissance et leur ville préférée.</p>
+        <p>Compte tenu de la notoriété du groupe et de l'attente accumulée depuis leur séparation, l'inscription a rencontré un succès massif partout en Europe. Les ventes réservées aux personnes tirées au sort se déroulent ensuite sur une fenêtre très courte, du 25 au 27 septembre 2026.</p>
+
+        <div class="highlight-box">
+            <p><strong>À retenir :</strong> il n'y aura pas de mise en vente générale pour ce concert. Seules les personnes inscrites avant la date limite et sélectionnées par tirage au sort reçoivent un code d'accès à la billetterie, sur une fenêtre de vente de quelques jours seulement.</p>
+        </div>
+
+        <h2>Pourquoi la billetterie s'annonce complète</h2>
+        <p>Avec une jauge d'environ 80 000 places par soir et une demande qui dépasse très largement l'offre disponible, le système de tirage au sort ne garantit en rien l'obtention d'un billet, même pour les fans inscrits dans les temps. De nombreux inscrits recevront un message d'indisponibilité une fois les places attribuées, un phénomène classique pour les grandes tournées à forte demande (Coldplay, Taylor Swift ou plus récemment Stevie Wonder ont connu le même scénario).</p>
+        <p>Résultat attendu : les deux dates parisiennes du Stade de France devraient afficher complet en quelques minutes une fois la fenêtre de vente ouverte, laissant une grande partie des fans sans solution via les canaux officiels.</p>
+
+        <h2>Que faire si vous n'obtenez pas de billet ?</h2>
+        <p>Si votre inscription n'a pas été retenue, ou si le concert affiche complet au moment où vous consultez la billetterie officielle, il reste possible d'assister à l'un des deux concerts d'Oasis au Stade de France en toute sécurité. Plutôt que de vous tourner vers des reventes non régulées ou des groupes de reventes sur les réseaux sociaux, une conciergerie événementielle comme SPOTEVENT vous accompagne pour accéder à des places même lorsque l'événement est officiellement complet, avec des garanties sur l'authenticité des billets et la sécurité de la transaction.</p>
+        <ul>
+            <li><strong>Un devis gratuit et sans engagement</strong>, quelle que soit la catégorie recherchée.</li>
+            <li><strong>Un accompagnement personnalisé</strong> pour les deux dates du 23 et 24 juillet 2027.</li>
+            <li><strong>Un cadre sécurisé</strong>, loin des risques d'arnaque du marché parallèle.</li>
+        </ul>
+
+        <div class="article-cta">
+            <h3>Concert Oasis complet ? Contactez SPOTEVENT</h3>
+            <p>Faites une demande de devis gratuite pour obtenir vos places pour Oasis au Stade de France, même si la billetterie officielle affiche complet.</p>
+            <a href="javascript:void(0)" class="cta-button" onclick="toggleContactOptions()">Demander un devis gratuit</a>
+        </div>
+    </div>
+</article>
+
+<!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés — <a href="../mentions-legales.html" style="color: var(--gold); text-decoration: underline;">Mentions légales</a></p>
+    </div>
+</footer>
+
+<script src="../tag.js"></script>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('navCenter').classList.toggle('active');
+}
+
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const contactOptions = document.getElementById('contactOptions');
+    const contactBubble = document.querySelector('.contact-bubble');
+    if (contactOptions && contactOptions.style.display === 'block') {
+        if (!contactBubble.contains(event.target)) {
+            contactOptions.style.display = 'none';
+        }
+    }
+});
+</script>
+
+</body>
+</html>
