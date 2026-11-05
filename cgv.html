@@ -462,8 +462,21 @@ function toggleContactOptions() {
 document.addEventListener('click', function(event) {
     const contactOptions = document.getElementById('contactOptions');
     const contactBubble = document.querySelector('.contact-bubble');
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    const contactLink = document.querySelector('a[onclick*="toggleContactOptions"]');
+
     if (contactOptions && contactOptions.style.display === 'block') {
-        if (!contactBubble.contains(event.target)) {
+        let clickedOnButton = false;
+        ctaButtons.forEach(button => {
+            if (button.contains(event.target)) { clickedOnButton = true; }
+        });
+
+        let clickedOnContactLink = contactLink && contactLink.contains(event.target);
+
+        if (!contactOptions.contains(event.target) &&
+            !clickedOnButton &&
+            !clickedOnContactLink &&
+            !contactBubble.contains(event.target)) {
             contactOptions.style.display = 'none';
         }
     }
