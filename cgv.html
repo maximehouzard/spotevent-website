@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions Générales de Vente | SPOTEVENT</title>
+    <meta name="description" content="Conditions Générales de Vente de SPOTEVENT, conciergerie spécialisée dans l'acquisition de billets pour concerts, événements sportifs et festivals.">
+    <meta name="robots" content="noindex, follow">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo { text-decoration: none; color: var(--black); display: flex; align-items: center; gap: 0.6rem; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08rem; text-transform: uppercase; color: var(--black); }
+
+        .nav-center { display: flex; list-style: none; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; margin: 0 2rem; }
+        .nav-center a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-center a:hover { color: var(--gold); }
+
+        .nav-contact { display: flex; align-items: center; padding-bottom: 0.3rem; }
+        .nav-contact a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-contact a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle { display: none; }
+
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background-color: var(--black); transition: all 0.3s ease; }
+            .nav-center {
+                position: fixed; top: 70px; left: -100%; width: 280px; max-width: 80%;
+                height: auto; max-height: calc(100vh - 70px); background-color: var(--white);
+                flex-direction: column; justify-content: flex-start; padding: 2rem; gap: 2rem;
+                transition: left 0.3s ease; overflow-y: auto; border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-center a { font-size: 1.2rem; }
+            .nav-contact { display: none; }
+        }
+
+        .legal-hero {
+            padding: 10rem 5% 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .legal-breadcrumb { font-size: 0.85rem; color: #999; margin-bottom: 1.5rem; }
+        .legal-breadcrumb a { color: #999; text-decoration: none; }
+        .legal-breadcrumb a:hover { color: var(--gold); }
+
+        .legal-hero h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+        }
+
+        .legal-updated { font-size: 0.95rem; color: #888; }
+
+        .legal-identity {
+            max-width: 780px;
+            margin: 0 auto 2rem;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .legal-identity p { font-size: 0.92rem; color: #555; line-height: 1.7; margin: 0; }
+        .legal-identity strong { color: var(--black); }
+
+        .legal-body { max-width: 780px; margin: 0 auto; padding: 2rem 5% 5rem; }
+
+        .legal-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 2.6rem 0 1rem;
+            border-top: 3px solid var(--gold);
+            padding-top: 1rem;
+        }
+
+        .legal-body h2:first-child { margin-top: 0; }
+
+        .legal-body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 1.6rem 0 0.6rem;
+        }
+
+        .legal-body p { font-size: 0.98rem; line-height: 1.8; color: #333; margin-bottom: 1.1rem; }
+        .legal-body ul { margin: 0 0 1.1rem 1.3rem; }
+        .legal-body ul li { font-size: 0.98rem; line-height: 1.75; color: #333; margin-bottom: 0.5rem; }
+        .legal-body strong { color: var(--black); }
+
+        .legal-toc {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .legal-toc-box {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .legal-toc-box p { margin: 0 0 0.6rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; }
+
+        .legal-toc-box ol { margin: 0 0 0 1.2rem; padding: 0; columns: 2; column-gap: 2rem; }
+        .legal-toc-box ol li { font-size: 0.92rem; margin-bottom: 0.45rem; }
+        .legal-toc-box ol li a { color: var(--black); text-decoration: none; }
+        .legal-toc-box ol li a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .legal-toc-box ol { columns: 1; }
+        }
+
+        .legal-cta {
+            max-width: 780px;
+            margin: 3rem auto 0;
+            padding: 2.2rem;
+            background-color: var(--black);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .legal-cta h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.7rem; }
+        .legal-cta p { color: #ccc; font-size: 0.95rem; margin-bottom: 1.3rem; }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover { background-color: var(--white); transform: translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .legal-hero { padding: 8rem 6% 1.5rem; }
+            .legal-hero h1 { font-size: 1.7rem; }
+            .legal-body h2 { font-size: 1.2rem; }
+        }
+
+        .contact-bubble { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+
+        .contact-toggle {
+            width: 70px; height: 70px; border-radius: 50%; background: #000000; color: var(--white);
+            border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover { transform: scale(1.1); background: #333333; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .contact-options {
+            position: absolute; bottom: 80px; right: 0; background-color: var(--white); border-radius: 15px;
+            padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; min-width: 280px;
+        }
+
+        .contact-options.active { display: block; }
+
+        .contact-message { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; text-align: left; }
+        .contact-message p { margin: 0; color: var(--black); font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+        .contact-option {
+            display: flex; align-items: center; padding: 0.8rem; text-decoration: none; color: var(--black);
+            border-radius: 8px; margin-bottom: 0.5rem; transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover { background-color: var(--light-beige); }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        footer { background-color: var(--black); color: var(--white); text-align: center; padding: 3rem 5%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-content p { color: var(--white); }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
+        </a>
+
+        <ul class="nav-center" id="navCenter">
+            <li><a href="index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="index.html#agenda">Les actualités</a></li>
+            <li><a href="corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="ambassadeur.html">Devenir Ambassadeur</a></li>
+        </ul>
+
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- CGV -->
+<article>
+    <div class="legal-hero">
+        <div class="legal-breadcrumb">
+            <a href="index.html">Accueil</a> &nbsp;/&nbsp; Conditions Générales de Vente
+        </div>
+        <h1>Conditions Générales de Vente</h1>
+        <p class="legal-updated">Dernière révision : 10/01/2026</p>
+    </div>
+
+    <div class="legal-identity">
+        <p><strong>SPOTEVENT</strong> — SARL au capital social de 1,00 € — 980 617 146 R.C.S. Villefranche-Tarare — N° SIRET : 980 617 146 00017 — Siège social : 164 rue de la mairie, 69640 Ville-sur-Jarnioux.</p>
+    </div>
+
+    <div class="legal-toc">
+        <div class="legal-toc-box">
+            <p>Sommaire</p>
+            <ol>
+                <li><a href="#art1">Art. 1 — Utilisation du site internet</a></li>
+                <li><a href="#art2">Art. 2 — Informations publiées sur le site</a></li>
+                <li><a href="#art3">Art. 3 — Catégories de billets</a></li>
+                <li><a href="#art4">Art. 4 — Processus d'achat</a></li>
+                <li><a href="#art5">Art. 5 — Prix des places et règlement</a></li>
+                <li><a href="#art6">Art. 6 — Modalités de paiement</a></li>
+                <li><a href="#art7">Art. 7 — Sécurisation des paiements</a></li>
+                <li><a href="#art8">Art. 8 — Validation de la commande</a></li>
+                <li><a href="#art9">Art. 9 — Obtention des billets</a></li>
+                <li><a href="#art10">Art. 10 — Rétractation, annulation, remboursement</a></li>
+                <li><a href="#art10bis">Art. 10 bis — Force majeure</a></li>
+                <li><a href="#art11">Art. 11 — Droit applicable</a></li>
+                <li><a href="#art12">Art. 12 — Assurance et obligation de moyens</a></li>
+                <li><a href="#art13">Art. 13 — Mentions légales</a></li>
+                <li><a href="#art14">Art. 14 — Abonnement entreprises</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="legal-body">
+        <p>Les présentes conditions générales régissent les prestations de billetterie de SPOTEVENT.</p>
+
+        <h2 id="preambule">Préambule</h2>
+        <p>Les présentes conditions générales de vente (ci-après les « Conditions d'utilisation ») à nos clients en direct, sur le site internet et par email à nos adresses de contact (ci-après le « Site ») régissent la relation entre :</p>
+        <p>SPOTEVENT, société à responsabilité limitée unipersonnelle immatriculée sous le numéro B 980 617 146 au R.C.S. de Villefranche-sur-Saône - Tarare. SPOTEVENT est une agence d'événementiel, prestation de services en mission de conseil, d'expertise et d'action pour l'accompagnement de projets dans le secteur de l'événementiel et du loisir dont le siège social est au 164 rue de la mairie 69640 Ville-sur-Jarnioux, et tout utilisateur (« Utilisateur »).</p>
+        <p>SPOTEVENT fournit une prestation individualisée pour chaque utilisateur visant à rechercher des billets pour un événement sportif ou culturel déterminé et à les lui livrer. SPOTEVENT se réserve le droit de modifier et de mettre à jour unilatéralement les conditions d'utilisation à tout moment, sans préavis ni formalité particulière étant précisé que tout changement relatif aux dites conditions d'utilisation sera publié sur cette page. Il appartient à l'internaute de consulter régulièrement les conditions d'utilisation.</p>
+
+        <h2 id="art1">Article 1 : Utilisation du site internet</h2>
+        <p>En naviguant sur ce site, vous reconnaissez avoir lu, compris et accepté les présentes conditions générales, et de vous conformer à toutes les lois et réglementations applicables à travers celles-ci. Si vous n'acceptez pas ces conditions, nous vous prions de ne pas utiliser ce site. Vous certifiez par la présente que vous avez l'âge légal pour utiliser ce site et que vous êtes légalement compétent et dûment autorisé à le faire.</p>
+
+        <h2 id="art2">Article 2 : Informations publiées sur le site</h2>
+        <p>Toute information et tout contenu mis à disposition via ce site sont soumis à diverses mises à jour et modifications, plus particulièrement les informations liées aux prix des billets ainsi que les dates des événements. Ce site peut contenir et offrir, entre autres, des informations qui ne sont pas détenues et/ou contrôlées par SPOTEVENT, notamment les dates et heures des événements. Par exemple, lors de la publication des calendriers concernant des événements sportifs, SPOTEVENT dépend entièrement des informations fournies par les organisateurs ou tiers. Par conséquent, vous devez vérifier toutes les informations provenant d'un tiers, publiées sur ce site. SPOTEVENT veille à publier des informations précises, mais ne sera pas tenue responsable des informations provenant de toute tierce partie, de plus vous ne pouvez considérer ces données sans vérification indépendante.</p>
+
+        <h2 id="art3">Article 3 : Segmentation et dénomination des différentes catégories disponibles</h2>
+        <p>Les catégories de billets disponibles sur notre site sont spécifiées sur la page de l'événement en question. Nous donnons autant d'informations que possible sur la segmentation et la dénomination des catégories. Néanmoins, il arrive parfois que les catégories portent des noms différents de la dénomination officielle. Il revient à l'utilisateur de se renseigner et SPOTEVENT ne sera pas tenue responsable d'une incompréhension et ne s'engage à livrer que ce qui a été commandé par l'utilisateur. Ainsi, SPOTEVENT s'engage à livrer des places correspondant à la catégorie sélectionnée par l'utilisateur dans sa commande.</p>
+        <p>Dans l'hypothèse où l'utilisateur ne serait pas satisfait de son placement au sein de la catégorie demandée, aucun remboursement ni remise ne sera accepté. Si l'utilisateur désire un placement spécifique, il devra l'indiquer en amont de la commande et SPOTEVENT vérifiera la faisabilité de cette demande en lui proposant le cas échéant un devis personnalisé.</p>
+        <p><strong>Possibilité de surclassement :</strong> à l'occasion de certains événements, SPOTEVENT peut être amenée à proposer à l'utilisateur une catégorie de place supérieure à celle qu'il avait commandée sans qu'aucun supplément ne lui soit facturé. L'utilisateur ne peut en aucun cas refuser le surclassement.</p>
+
+        <h2 id="art4">Article 4 : Processus d'achat</h2>
+        <p>Vous acceptez de fournir toutes les informations requises et nécessaires à SPOTEVENT pour traiter et finaliser votre achat, notamment en fournissant une copie d'un justificatif d'identité et de tous les détails et documents supplémentaires, dans la mesure requise.</p>
+        <p>Dès lors que la confirmation de la commande vous sera transmise, la commande ne pourra être modifiée et/ou annulée par vos soins à l'exception d'un accord écrit préalable de la part de SPOTEVENT.</p>
+        <p>En passant commande en effectuant un virement ou en effectuant un paiement par carte bancaire via un lien sécurisé, vous acceptez que SPOTEVENT encaisse le montant total de la commande ainsi que les frais de livraison imputés à celle-ci. Votre commande sera considérée comme exécutable à partir du moment où les billets commandés sont disponibles. SPOTEVENT accepte le paiement par carte bancaire et virement bancaire.</p>
+
+        <h2 id="art5">Article 5 : Prix des places et règlement</h2>
+        <p>Le montant qui vous sera facturé est celui indiqué sur SPOTEVENT au moment de l'achat. Sans déroger à ce qui précède, SPOTEVENT se réserve le droit de modifier les prix des articles et/ou des services tels qu'ils sont communiqués à tout moment sans préavis.</p>
+        <p>SPOTEVENT exerce ses activités sur le marché secondaire à travers lequel la disponibilité des billets et leurs prix sont déterminés et mis à jour en fonction de l'offre et la demande du dit marché.</p>
+        <p>Les prix des commandes sont exprimés en euros et incluent les taxes, les participations aux frais de traitement et d'expédition ainsi que les frais de recherche et de transaction évoqués à l'article 10 des présentes conditions générales de vente.</p>
+        <p>SPOTEVENT ne reprend ni n'échange aucun billet, même en cas de perte ou de vol.</p>
+        <p>Dans l'hypothèse où un événement est annulé par son organisateur et si ce dernier propose un remboursement aux détenteurs de billets, SPOTEVENT pourra procéder au remboursement du billet livré à l'utilisateur dans la limite de sa valeur faciale. L'utilisateur devra alors prendre contact sans délai avec SPOTEVENT pour que SPOTEVENT puisse procéder aux formalités de remboursement.</p>
+        <p>SPOTEVENT se réserve le droit de modifier ses prix à tout moment, cependant les produits seront facturés sur la base des tarifs en vigueur au moment de l'enregistrement du bon pour accord du client.</p>
+        <p>En l'absence de règlement de la facture, la commande n'est pas considérée comme définitive et ne peut donc être validée.</p>
+
+        <h2 id="art6">Article 6 : Modalités de paiement</h2>
+        <p>Lorsque vous effectuez votre réservation, vous aurez le choix entre deux modes de paiement :</p>
+        <ul>
+            <li>Le règlement de votre commande par virement bancaire suite à la réception de la facture et de la validation de votre réservation.</li>
+            <li>Le paiement par carte bancaire vous permet de payer votre réservation automatiquement, une fois validée par nos équipes.</li>
+        </ul>
+        <p>Les cartes acceptées pour le paiement d'une commande en billetterie de spectacles sont les cartes des réseaux : CARTE BLEUE / VISA ; EUROCARD / MASTERCARD / AMERICAN EXPRESS.</p>
+
+        <h2 id="art7">Article 7 : Sécurisation des paiements et données personnelles</h2>
+        <p>SPOTEVENT a confié son système d'encaissement à STRIPE, prestataire spécialisé dans la sécurisation des paiements en ligne. Nous vous garantissons la totale confidentialité de vos informations bancaires, sécurisées par le protocole SSL et qui contrôle systématiquement la validité des droits d'accès lors de votre paiement par carte bancaire et crypte tous les échanges afin d'en garantir la confidentialité. Aucune information relative à vos moyens de paiement n'est enregistrée.</p>
+        <p>Les données personnelles que vous communiquez nous permettent de mener à bien votre transaction. SPOTEVENT ne dispose que des informations renseignées dans votre espace personnel sécurisé.</p>
+        <p>Pour des raisons de sécurité, nous pouvons être amenés à vous demander des compléments d'informations sur l'identité de l'acheteur et l'identité du porteur de la carte bancaire qui a servi au paiement.</p>
+
+        <h2 id="art8">Article 8 : Validation de votre commande</h2>
+        <p>Lorsque vous nous transmettez le « bon pour accord » ou la « validation du devis », votre commande est validée sous réserve de disponibilités et après paiement. Ainsi, vous déclarez accepter votre commande ainsi que l'intégralité des présentes Conditions Générales de Vente pleinement et sans réserve. Les données et emails reçus par SPOTEVENT font foi et constituent la preuve de l'ensemble des transactions passées.</p>
+
+        <h2 id="art9">Article 9 : Obtention des billets</h2>
+        <p>Le format de vos billets (e-billet, papier, carte d'abonné, m-ticket, bracelet) est lié à nos disponibilités et est précisé dans nos devis. Vous vous engagez à fournir à SPOTEVENT une adresse de livraison correcte et précise ainsi que d'autres détails pouvant être raisonnablement requis par SPOTEVENT dans le but de procéder à l'expédition des billets en temps voulu. Vous êtes tenu d'informer SPOTEVENT de tout changement concernant l'adresse de livraison des billets au plus tard une semaine avant la date de l'événement ou avant que les billets aient été livrés.</p>
+        <p>SPOTEVENT ne sera pas tenu responsable si vous n'avez pas réceptionné, accepté ou récupéré les billets livrés à l'adresse renseignée. Dans ce cas, les billets seront considérés comme livrés et vous serez facturé à hauteur de 100% du montant de la commande, en sus des frais de livraison. SPOTEVENT ne sera pas tenue responsable si les billets en question ont été dûment livrés à l'adresse renseignée par le client, mais n'ont pas été remis aux clients par le destinataire des billets. Par exemple, SPOTEVENT ne peut être tenu responsable si les billets ont été livrés à la réception de l'hôtel ou de l'immeuble du client, mais que les clients n'ont pas reçu les billets parce que l'hôtel n'a pas transmis les billets au client, ou si le client a mandaté une tierce personne pour la réception des billets, et que cette tierce personne ne peut pas les livrer.</p>
+        <p>SPOTEVENT se réserve le droit de modifier le mode de livraison des billets (par exemple, retrait des billets à la réception d'un hôtel ou point de collecte), si nécessaire. Dans ce cas, SPOTEVENT vous informera en temps voulu et raisonnablement mais ne sera pas tenue responsable des causes à effet dues à un tel changement. Cela ne constitue pas un motif valable de rupture de contrat.</p>
+        <p>Les billets partiellement souillés, endommagés ou illisibles ne seront pas acceptés et considérés de fait comme non valables. Le client est le seul responsable de l'état de ces billets dès leur réception et nous déclinons toute responsabilité. Ce billet codé est uniquement valable pour le lieu, la séance, la date et l'heure précisés sur ce dernier. Vous devez, de plus, conserver ce titre pendant toute la durée de votre présence sur le lieu de l'événement. Il est recommandé d'occuper sa place au moins 30 minutes avant le début du spectacle. L'accès au site et/ou aux places numérotées n'est pas garanti après l'heure de début du spectacle et ne donne droit à aucun remboursement. Nous nous laissons jusqu'à 48 heures avant le début de l'événement (sauf mention contraire) pour vous fournir ces derniers par les différents moyens suivants :</p>
+        <ul>
+            <li><strong>Par courrier :</strong> l'envoi de vos billets par voie postale en France Métropolitaine est entièrement à notre charge (sauf mention contraire). Selon la valeur du billet, nous procédons à l'envoi par lettre suivie, lettre recommandée, coursier(s), ou transporteur international. Les frais d'envoi de vos billets hors métropole seront à votre charge et seront déterminés par notre transporteur privé. Dans le cas d'une livraison à une adresse de service de location courte durée hors hôtels avec réception, nous déclinons toute responsabilité en cas de non réception du pli.</li>
+            <li><strong>Par voie électronique :</strong> chaque e-billet vous est fourni par email sous forme d'un fichier au format PDF muni d'un code barre permettant l'accès à l'événement. Une pièce d'identité pourra vous être demandée. Les billets doivent disposer d'une bonne qualité d'impression.</li>
+            <li><strong>Par carte d'abonnement :</strong> cette carte n'est disponible qu'aux manifestations de sports d'équipe et vous sera livrée à l'hôtel la veille ou le jour même de la rencontre. Si le client ne dispose pas d'hôtel, un retrait en picking-point pourra être organisé. À la fin de la manifestation, vous serez dans l'obligation de rendre cette carte à l'expéditeur. En cas de non-retour de la carte, nous pourrons vous facturer des frais de réémission de 100 € (cent euros) par carte non rendue.</li>
+            <li><strong>Par m-billet :</strong> le client recevra le m-billet sur son smartphone et devra le présenter à l'entrée du spectacle ou de la rencontre. Nous déclinons toute responsabilité en cas d'incompatibilité du téléphone avec ce format de billet ou en cas d'absence de batterie du client au moment de présenter son m-billet.</li>
+            <li><strong>Contremarque à récupérer sur place :</strong> suite à la demande de certains organisateurs, il peut arriver que vous receviez des contremarques au lieu des billets. Vous devrez alors vous présenter 30 minutes avant le début du spectacle devant la salle afin de récupérer vos billets en échange des contremarques.</li>
+        </ul>
+        <p>Nous nous réservons le droit de modifier les modes de livraison à nos frais après votre commande.</p>
+
+        <h2 id="art10">Article 10 : Délai de rétractation, annulation et remboursement</h2>
+        <p>Toutes les commandes sont fermes et ne peuvent être annulées sans l'accord écrit préalable de SPOTEVENT. Occasionnellement, les événements sont annulés, reprogrammés ou modifiés de manière importante par l'équipe, l'artiste ou l'organisateur pour diverses raisons. Toute décision d'annulation, de report ou de modification d'un événement est de la seule et entière responsabilité de l'organisateur et ne saurait être imputée à SPOTEVENT. En cas d'annulation d'un événement, l'organisateur peut être amené à proposer un remboursement des billets. S'il est convenu entre l'organisateur et SPOTEVENT que nous assurons, au nom et pour le compte de l'organisateur, le remboursement, celui-ci sera fait si les conditions du présent article sont réunies. Ce remboursement se fera par virement bancaire ou par crédit de votre carte bancaire selon le mode de paiement effectué.</p>
+        <p><strong>Annulation :</strong> si un événement est annulé (et non pas reprogrammé), il vous sera proposé un remboursement à hauteur de la seule valeur faciale du billet. Les frais d'envoi des billets et les frais de transaction ne sont quant à eux pas remboursables. En effet, les prestations proposées par SPOTEVENT ne sauraient être assimilées à de simples achats de billets pour le compte de l'utilisateur mais consistent à rechercher des places en ayant recours à des partenaires privilégiés. Les coûts ainsi avancés par SPOTEVENT pour la recherche de places de billetterie varient en fonction de la complexité de la demande du client et de la disponibilité de ces places sur un marché plus ou moins tendu. Ces coûts, qualifiés de frais de transaction, sont englobés dans le prix proposé par SPOTEVENT dans le devis communiqué à l'utilisateur et accepté par ce dernier au moment de la validation de la commande. Ils ne peuvent être remboursés à l'utilisateur et comprennent notamment :</p>
+        <ul>
+            <li>les <strong>frais de dossier</strong>, qui correspondent à la constitution du dossier de l'utilisateur auprès de l'organisateur de l'événement par SPOTEVENT et à l'ouverture d'un dossier administratif numérique et/ou papier au sein de ses locaux ;</li>
+            <li>les <strong>frais de recherche</strong> : il est très fréquent que SPOTEVENT ait recours à son réseau de partenaires privés pour pouvoir obtenir certains billets n'étant plus disponibles à la vente sur les billetteries classiques. Ces recherches constituent un coût financier non négligeable pour SPOTEVENT en termes de mobilisation de personnel ;</li>
+            <li>les <strong>frais bancaires</strong> : SPOTEVENT peut être amené à engager des frais de transaction bancaire pour le compte de l'utilisateur afin de réaliser sa prestation. Ces coûts sont supportés exclusivement par l'utilisateur et ne peuvent faire l'objet d'aucun remboursement même partiel ;</li>
+            <li>le <strong>service client</strong> : SPOTEVENT met à disposition de chacun de ses clients une équipe pour garantir une prise en charge individualisée et réactive, notamment en cas de report ou d'annulation d'événement.</li>
+        </ul>
+        <p>Si un événement se déroule sur plusieurs jours et un ou plusieurs jour(s) est/sont annulés (mais pas l'ensemble des jours constituant l'événement), un remboursement pourra être effectué à hauteur de la seule valeur faciale du billet et dans la limite des conditions posées par l'organisateur de l'événement.</p>
+        <p><strong>Reprogrammation d'un concert :</strong> sauf indication contraire de la production, si un événement est avancé ou reporté, les billets resteront valables à la date de report. L'événement n'étant pas annulé mais reporté à une date ultérieure, aucun remboursement ne sera proposé.</p>
+        <p><strong>Reprogrammation sport :</strong> dans de nombreux cas, les rencontres sportives ne sont pas fixées à une date définitive. Lors de la vente, sauf communication officielle, nous vendons la rencontre à une date envisagée et non pas à une date arrêtée. Nous déclinons toute responsabilité dans le cas où le client ne peut plus se rendre à la rencontre, sauf décision contraire des organisateurs.</p>
+
+        <h2 id="art10bis">Article 10 bis : Force majeure</h2>
+        <p>La prestation fournie par SPOTEVENT correspond à la recherche, l'achat et la livraison de billets pour l'utilisateur mais reste parfaitement indépendante et ne saurait être confondue avec la responsabilité de l'organisateur de l'événement.</p>
+        <p>SPOTEVENT décline ainsi toute responsabilité en cas d'annulation d'un événement pour cause de force majeure au sens de l'article 1218 du Code civil. De même, SPOTEVENT ne saurait être tenue responsable de la qualité d'un événement et de tout incident apparu à l'occasion de celui-ci.</p>
+        <p><strong>Clause exceptionnelle Pandémie de la COVID-19 et cas de réduction des jauges lors d'événement sportif ou culturel :</strong> les jauges des salles d'événements peuvent être réduites par décision de l'organisateur ou des autorités compétentes en France ou à l'étranger. SPOTEVENT ne peut être tenue responsable pour la réduction des capacités d'accueil de la salle de l'événement et peut être amenée, dans cette situation, à annuler la commande passée par un client lorsque le ou les billets concerné(s) par cette commande ont été annulés par l'organisateur de la manifestation. Dans cette situation, le client doit prendre contact avec SPOTEVENT dans les plus brefs délais afin que son dossier soit étudié. Un remboursement supérieur à la valeur faciale du billet pourra être proposé de manière exceptionnelle au regard des circonstances particulières du dossier. SPOTEVENT ne peut en aucun cas être tenue responsable des frais annexes engendrés par la commande (réservations d'hôtel, frais de transport…).</p>
+
+        <h2 id="art11">Article 11 : Droit applicable</h2>
+        <p>Les présentes Conditions Générales de Vente sont soumises au droit français pour l'ensemble de nos clients, ce quel que soit leur nationalité. Les tribunaux français ont compétence pour se prononcer sur tous les litiges susceptibles de naître entre les parties à l'occasion de l'exécution des présentes Conditions Générales de Vente.</p>
+
+        <h2 id="art12">Article 12 : Assurance professionnelle de la société et obligation de moyens</h2>
+        <p>Toutes nos propositions sont faites sous réserve de disponibilités lors de la commande. La commande est définitivement considérée comme acceptée après encaissement et validation de notre part. SPOTEVENT s'engage à mettre l'ensemble des moyens et son réseau à la réalisation de la prestation. De plus, SPOTEVENT s'engage :</p>
+        <ul>
+            <li>à livrer des billets valables (qui permettent d'assister à l'événement) ;</li>
+            <li>à envoyer les billets dans un temps raisonnable avant l'événement (le temps raisonnable variant en fonction de la date de la commande et des modalités de livraison) ;</li>
+            <li>à utiliser un moyen de livraison correspondant à la valeur de la commande, notre responsabilité s'arrêtant lorsque le pli est remis au client ;</li>
+            <li>l'ensemble des transactions sont garanties à hauteur de 120% du montant payé par l'acheteur en cas d'erreur avérée de SPOTEVENT. Cette garantie est plafonnée à 150 € par place ;</li>
+            <li>en cas d'échec ou de non réalisation de la prestation, si la responsabilité de SPOTEVENT est engagée, le client/utilisateur sera remboursé du montant de la transaction.</li>
+        </ul>
+
+        <h2 id="art13">Article 13 : Mentions légales</h2>
+        <p>SPOTEVENT est une société spécialisée dans la commercialisation de la billetterie événementielle, culturelle et sportive. Conformément à l'article L 221-28 du code de la consommation, les billets de spectacles ne font pas l'objet d'un droit de rétractation.</p>
+        <p>Toute commande est ferme et définitive.</p>
+        <p>Les présentes Conditions Générales de Vente sont systématiquement portées à la connaissance de chaque acheteur pour lui permettre de passer commande. En conséquence, le fait de passer commande implique l'adhésion entière et sans réserve de l'acheteur à ces Conditions Générales de Vente. Toutefois, certaines activités proposées peuvent comporter des conditions particulières spécifiques. L'existence de telles conditions est indiquée dans la présentation de chaque événement en question lors de la réservation.</p>
+
+        <h2 id="art14">Article 14 : Service d'abonnement destiné aux entreprises</h2>
+        <p>SPOTEVENT propose un service d'abonnement réservé aux entreprises, leur permettant de bénéficier de prestations récurrentes dans le cadre de la billetterie événementielle, culturelle ou sportive.</p>
+        <p>L'abonnement est souscrit pour une durée initiale d'un (1) an à compter de la date de signature du contrat d'abonnement. Il est renouvelable tacitement par périodes successives d'un an, sauf résiliation par l'une des parties.</p>
+        <p>Toute demande de résiliation doit être notifiée par courrier recommandé avec accusé de réception, adressé au siège social de SPOTEVENT, au moins trois (3) mois avant la date d'échéance annuelle. À défaut, l'abonnement sera automatiquement reconduit pour une nouvelle période d'un an.</p>
+        <p>Les conditions tarifaires, les services inclus et les modalités de règlement sont précisés dans le contrat d'abonnement spécifique conclu entre l'entreprise cliente et SPOTEVENT.</p>
+        <p>Aucune résiliation anticipée ne pourra être acceptée en dehors des cas de manquement grave de l'une des parties à ses obligations contractuelles.</p>
+
+        <div class="legal-cta">
+            <h3>Une question sur votre commande ou nos conditions ?</h3>
+            <p>Notre équipe reste disponible pour tout complément d'information avant ou après votre réservation.</p>
+            <a href="javascript:void(0)" class="cta-button" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+    </div>
+</article>
+
+<!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés — <a href="mentions-legales.html" style="color: var(--gold); text-decoration: underline;">Mentions légales</a></p>
+    </div>
+</footer>
+
+<script src="tag.js"></script>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('navCenter').classList.toggle('active');
+}
+
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const contactOptions = document.getElementById('contactOptions');
+    const contactBubble = document.querySelector('.contact-bubble');
+    if (contactOptions && contactOptions.style.display === 'block') {
+        if (!contactBubble.contains(event.target)) {
+            contactOptions.style.display = 'none';
+        }
+    }
+});
+</script>
+
+</body>
+</html>
