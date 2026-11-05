@@ -153,16 +153,23 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.06);
         }
 
-        .legal-toc-box p { margin: 0 0 0.6rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; }
+        .legal-toc-box p { margin: 0 0 0.9rem; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: #999; }
 
-        .legal-toc-box ol { margin: 0 0 0 1.2rem; padding: 0; columns: 2; column-gap: 2rem; }
-        .legal-toc-box ol li { font-size: 0.92rem; margin-bottom: 0.45rem; }
-        .legal-toc-box ol li a { color: var(--black); text-decoration: none; }
-        .legal-toc-box ol li a:hover { color: var(--gold); }
-
-        @media (max-width: 768px) {
-            .legal-toc-box ol { columns: 1; }
+        .legal-toc-box ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.55rem;
         }
+        .legal-toc-box ol li { font-size: 0.92rem; }
+        .legal-toc-box ol li a {
+            display: block;
+            color: var(--black);
+            text-decoration: none;
+        }
+        .legal-toc-box ol li a:hover { color: var(--gold); }
 
         .legal-cta {
             max-width: 780px;
