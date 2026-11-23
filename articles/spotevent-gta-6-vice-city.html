@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPOTEVENT dans GTA 6 ? Quand Vice City ressemble à notre conciergerie</title>
+    <meta name="description" content="GTA 6 est sorti le 19 novembre 2026 et son univers façon Miami/Vice City ressemble étrangement à SPOTEVENT. Petit clin d'œil (très sérieux) entre jeu vidéo et vrais billets d'événements complets.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --beige: #fff7ef;
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-beige: #fff7ef;
+            --gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: #fff7ef;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff7ef;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 1.5rem 5%;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        .logo { text-decoration: none; color: var(--black); display: flex; align-items: center; gap: 0.6rem; }
+        .logo-icon { width: 32px; height: 32px; }
+        .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: 0.08rem; text-transform: uppercase; color: var(--black); }
+
+        .nav-center { display: flex; list-style: none; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; margin: 0 2rem; }
+        .nav-center a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 0.95rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-center a:hover { color: var(--gold); }
+
+        .nav-contact { display: flex; align-items: center; padding-bottom: 0.3rem; }
+        .nav-contact a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 1.1rem; transition: color 0.3s ease; white-space: nowrap; }
+        .nav-contact a:hover { color: var(--gold); }
+
+        .mobile-menu-toggle { display: none; }
+
+        @media (max-width: 1024px) {
+            nav { padding: 1rem 3%; }
+            .nav-center { gap: 1.5rem; margin: 0 1rem; }
+            .nav-center a, .nav-contact a { font-size: 0.85rem; }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
+            .mobile-menu-toggle span { width: 25px; height: 3px; background-color: var(--black); transition: all 0.3s ease; }
+            .nav-center {
+                position: fixed; top: 70px; left: -100%; width: 280px; max-width: 80%;
+                height: auto; max-height: calc(100vh - 70px); background-color: var(--white);
+                flex-direction: column; justify-content: flex-start; padding: 2rem; gap: 2rem;
+                transition: left 0.3s ease; overflow-y: auto; border-radius: 0 15px 15px 0;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            .nav-center.active { left: 0; }
+            .nav-center a { font-size: 1.2rem; }
+            .nav-contact { display: none; }
+        }
+
+        .article-hero {
+            padding: 10rem 5% 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .article-breadcrumb { font-size: 0.85rem; color: #999; margin-bottom: 1.5rem; }
+        .article-breadcrumb a { color: #999; text-decoration: none; }
+        .article-breadcrumb a:hover { color: var(--gold); }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-intro { font-size: 1.15rem; color: #555; line-height: 1.7; }
+
+        .article-body { max-width: 760px; margin: 0 auto; padding: 0 5% 5rem; }
+
+        .article-body h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--black);
+            margin: 3rem 0 1.2rem;
+            border-top: 3px solid var(--gold);
+            padding-top: 1rem;
+        }
+
+        .article-body h2:first-child { margin-top: 0; }
+
+        .article-body p { font-size: 1.05rem; line-height: 1.85; color: #333; margin-bottom: 1.2rem; }
+        .article-body ul { margin: 0 0 1.2rem 1.3rem; }
+        .article-body ul li { font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 0.6rem; }
+        .article-body strong { color: var(--black); }
+
+        .article-image {
+            margin: 2.5rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+        .article-image img { width: 100%; display: block; }
+        .article-image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        .article-image-round {
+            max-width: 340px;
+            margin: 2.5rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+        }
+        .article-image-round img { width: 100%; display: block; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--white) 0%, #f8f9fa 100%);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 1.8rem 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        .article-cta {
+            max-width: 760px;
+            margin: 3rem auto 0;
+            padding: 2.5rem;
+            background-color: var(--black);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .article-cta h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .article-cta p { color: #ccc; font-size: 1rem; margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover { background-color: var(--white); transform: translateY(-3px); }
+
+        @media (max-width: 768px) {
+            .article-hero { padding: 8rem 6% 2rem; }
+            .article-hero h1 { font-size: 1.9rem; }
+            .article-body h2 { font-size: 1.35rem; }
+            .article-image-round { max-width: 240px; }
+        }
+
+        .contact-bubble { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+
+        .contact-toggle {
+            width: 70px; height: 70px; border-radius: 50%; background: #000000; color: var(--white);
+            border: none; font-size: 1.5rem; cursor: pointer; box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+
+        .contact-toggle:hover { transform: scale(1.1); background: #333333; }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .contact-options {
+            position: absolute; bottom: 80px; right: 0; background-color: var(--white); border-radius: 15px;
+            padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); display: none; min-width: 280px;
+        }
+
+        .contact-options.active { display: block; }
+
+        .contact-message { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; text-align: left; }
+        .contact-message p { margin: 0; color: var(--black); font-size: 0.95rem; font-weight: 500; line-height: 1.4; }
+
+        .contact-option {
+            display: flex; align-items: center; padding: 0.8rem; text-decoration: none; color: var(--black);
+            border-radius: 8px; margin-bottom: 0.5rem; transition: background-color 0.3s ease;
+        }
+
+        .contact-option:hover { background-color: var(--light-beige); }
+        .contact-option:last-child { margin-bottom: 0; }
+        .contact-option i { margin-right: 0.8rem; font-size: 1.2rem; }
+
+        footer { background-color: var(--black); color: var(--white); text-align: center; padding: 3rem 5%; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-content p { color: var(--white); }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="../index.html" class="logo">
+            <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="60" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+                <circle cx="140" cy="140" r="45" fill="none" stroke="currentColor" stroke-width="10"/>
+            </svg>
+            <span class="logo-text">SPOTEVENT</span>
+        </a>
+
+        <ul class="nav-center" id="navCenter">
+            <li><a href="../index.html#video">Qui sommes-nous ?</a></li>
+            <li><a href="../index.html#avis">Les avis de nos clients</a></li>
+            <li><a href="../index.html#agenda">Les actualités</a></li>
+            <li><a href="../corporate.html">TPE, PME & CSE</a></li>
+            <li><a href="../ambassadeur.html">Devenir Ambassadeur</a></li>
+        </ul>
+
+        <div class="nav-contact">
+            <a href="javascript:void(0)" onclick="toggleContactOptions()">Nous contacter</a>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- Article -->
+<article>
+    <div class="article-hero">
+        <div class="article-breadcrumb">
+            <a href="../index.html">Accueil</a> &nbsp;/&nbsp; <a href="../index.html#offres">Actualités</a> &nbsp;/&nbsp; Clin d'œil
+        </div>
+        <span class="article-category">GTA 6 x SPOTEVENT</span>
+        <h1>GTA 6 est sorti... et notre siège social ressemble à un bâtiment de Vice City</h1>
+        <p class="article-intro">Le 19 novembre 2026, Rockstar a enfin lâché GTA 6 dans la nature. Palmiers, néons, skyline façon Miami la nuit : en voyant débarquer les premières images du jeu le plus attendu de la décennie, on s'est dit qu'on avait presque l'impression de se regarder dans un miroir. Alors on a décidé d'en rire, à notre façon.</p>
+    </div>
+
+    <div class="article-body">
+        <h2>GTA 6, le jeu que toute la planète attendait, est enfin là</h2>
+        <p>Après plusieurs reports (le dernier en date l'ayant fait glisser du printemps à ce fameux <strong>19 novembre 2026</strong>), <strong>GTA 6</strong> est officiellement disponible. Et comme attendu, le jeu a immédiatement cassé tous les compteurs : records de ventes, serveurs qui chauffent, et un monde ouvert, <strong>Leonida</strong> et sa ville phare <strong>Vice City</strong>, qui ressemble à s'y méprendre à un Miami sous stéroïdes — palmiers, gratte-ciels, néons roses et ambiance nocturne électrique.</p>
+        <p>Nous, chez SPOTEVENT, on ne fait évidemment pas de la fiction. Mais en voyant l'identité visuelle du jeu tourner en boucle sur les réseaux depuis sa sortie, on n'a pas pu s'empêcher de remarquer une ressemblance troublante avec... nous-mêmes.</p>
+
+        <div class="article-image">
+            <img src="../images/spotevent-gta-building.png" alt="Bâtiment SPOTEVENT façon Vice City, style GTA 6, avec palmiers et skyline nocturne">
+        </div>
+        <p class="article-image-caption">Notre "siège social" façon Vice City. On attend toujours le permis de construire pour la vraie version.</p>
+
+        <h2>Et si le QG de SPOTEVENT existait dans Vice City ?</h2>
+        <p>Palmiers en premier plan, skyline qui scintille la nuit, scène de concert éclairée en fond : il ne manquerait presque qu'un hélicoptère de la police pour que ce visuel passe directement pour un screenshot du jeu. On a même gardé notre vrai logo sur la façade, parce qu'on assume complètement le délire.</p>
+        <p>Dans le jeu, les personnages de Leonida vivent entourés de clubs, de concerts et d'événements qui, eux, restent malheureusement virtuels. Dans la vraie vie, c'est une autre histoire : les concerts, les matchs et les festivals existent bel et bien, ils affichent juste complet beaucoup trop vite.</p>
+
+        <div class="highlight-box">
+            <p><strong>Le parallèle qu'on assume :</strong> dans GTA 6, on explore un monde ouvert où tout semble accessible en un clic. Dans la vraie vie, la billetterie d'un concert complet, elle, ne s'ouvre pas aussi facilement. C'est exactement là que SPOTEVENT entre en jeu (sans mauvais jeu de mots).</p>
+        </div>
+
+        <h2>Notre "personnage" aussi a du style</h2>
+        <p>Pas de mission de braquage ni de course-poursuite au programme ici, mais on a quand même eu envie de se glisser un instant dans la peau d'un personnage de Vice City. Verdict : le hoodie SPOTEVENT passe plutôt bien, même sous les palmiers.</p>
+
+        <div class="article-image-round">
+            <img src="../images/spotevent-gta-character.png" alt="Portrait du fondateur de SPOTEVENT façon personnage de GTA 6, avec skyline et scène de concert en arrière-plan">
+        </div>
+
+        <h2>Pourquoi on vous parle de ça ?</h2>
+        <ul>
+            <li><strong>Parce que GTA 6 est partout</strong> en ce moment, et qu'on avait juste envie de s'amuser avec l'actualité comme tout le monde.</li>
+            <li><strong>Parce que l'univers du jeu (fête, musique, vie nocturne) ressemble furieusement à ce qu'on fait vivre à nos clients</strong>, en version 100% réelle.</li>
+            <li><strong>Parce qu'un jeu vidéo peut rendre une ville fictive accessible en un clic</strong>, alors qu'un vrai concert complet, lui, demande un peu plus de débrouille. Et ça, c'est notre métier depuis 2023.</li>
+        </ul>
+
+        <h2>De Vice City aux vrais événements complets</h2>
+        <p>Pendant que des millions de joueurs arpentent les rues de Leonida à la recherche de sensations fortes, nous, on continue notre mission bien réelle : permettre à nos clients de vivre les concerts, matchs et festivals qui affichent complet sur les billetteries officielles. Pas de GTA$ ni de map fictive ici, juste un accompagnement sécurisé et un devis gratuit pour accéder aux événements les plus demandés du moment.</p>
+        <p>Alors que vous soyez plutôt équipe PS5, PC ou plutôt équipe "je préfère vivre les concerts en vrai", on a sans doute quelque chose à vous proposer.</p>
+
+        <div class="article-cta">
+            <h3>Pas de GTA 6 ici, mais de vrais billets pour vos événements complets</h3>
+            <p>Concert, match ou festival affiché complet ? Faites une demande de devis gratuite et sans engagement avec SPOTEVENT.</p>
+            <a href="javascript:void(0)" class="cta-button" onclick="toggleContactOptions()">Demander un devis gratuit</a>
+        </div>
+    </div>
+</article>
+
+<!-- Bulle de contact flottante -->
+<div class="contact-bubble">
+    <button class="contact-toggle" onclick="toggleContactOptions()">
+        <i class="fas fa-comments"></i>
+    </button>
+    <div class="contact-options" id="contactOptions">
+        <div class="contact-message">
+            <p>Dites-nous ce que vous cherchez<br>en nous contactant par :</p>
+        </div>
+        <a href="mailto:maxime.houzard@spotevent.fr" class="contact-option"><i class="fas fa-envelope"></i><span>Email</span></a>
+        <a href="tel:+33646558520" class="contact-option"><i class="fas fa-phone"></i><span>Appeler</span></a>
+        <a href="sms:+33646558520" class="contact-option"><i class="fas fa-sms"></i><span>SMS</span></a>
+        <a href="https://wa.me/33646558520" class="contact-option" target="_blank"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+        <a href="https://outlook.office.com/book/SPOTEVENTMaximeHouzard@spotevent.fr/?ismsaljsauthenabled" class="contact-option" target="_blank"><i class="fas fa-calendar-alt"></i><span>Prendre RDV en visio</span></a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2026 SPOTEVENT - Conciergerie spécialisée en billetterie événementielle</p>
+        <p>Tous droits réservés — <a href="../mentions-legales.html" style="color: var(--gold); text-decoration: underline;">Mentions légales</a> — <a href="../cgv.html" style="color: var(--gold); text-decoration: underline;">CGV</a></p>
+    </div>
+</footer>
+
+<script src="../tag.js"></script>
+
+<script>
+function toggleMobileMenu() {
+    document.getElementById('navCenter').classList.toggle('active');
+}
+
+function toggleContactOptions() {
+    const el = document.getElementById('contactOptions');
+    if (el) {
+        el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const contactOptions = document.getElementById('contactOptions');
+    const contactBubble = document.querySelector('.contact-bubble');
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    const contactLink = document.querySelector('a[onclick*="toggleContactOptions"]');
+
+    if (contactOptions && contactOptions.style.display === 'block') {
+        let clickedOnButton = false;
+        ctaButtons.forEach(button => {
+            if (button.contains(event.target)) { clickedOnButton = true; }
+        });
+
+        let clickedOnContactLink = contactLink && contactLink.contains(event.target);
+
+        if (!contactOptions.contains(event.target) &&
+            !clickedOnButton &&
+            !clickedOnContactLink &&
+            !contactBubble.contains(event.target)) {
+            contactOptions.style.display = 'none';
+        }
+    }
+});
+</script>
+
+</body>
+</html>
